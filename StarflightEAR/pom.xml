@@ -1,0 +1,92 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>gal.cor</groupId>
+		<artifactId>Starflight</artifactId>
+		<version>1</version>
+	</parent>
+
+	<groupId>gal.cor.ear</groupId>
+	<artifactId>StarflightEAR</artifactId>
+	<version>1.0</version>
+
+	<packaging>ear</packaging>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>gal.cor</groupId>
+			<artifactId>StarflightEntities</artifactId>
+			<version>1.0</version>
+			<type>jar</type>
+		</dependency>
+		
+		<dependency>
+			<groupId>gal.cor</groupId>
+			<artifactId>StarflightPersistenceAPI</artifactId>
+			<version>1.0</version>
+			<type>jar</type>
+		</dependency>
+		
+		<dependency>
+			<groupId>gal.cor</groupId>
+			<artifactId>StarflightServicesAPI</artifactId>
+			<version>1.0</version>
+			<type>jar</type>
+		</dependency>
+		
+		<dependency>
+			<groupId>gal.cor.services</groupId>
+			<artifactId>StarflightServices</artifactId>
+			<version>1.0</version>
+			<type>ejb</type>
+		</dependency>
+		
+		<dependency>
+			<groupId>gal.cor.persistence</groupId>
+			<artifactId>StarflightPersistence</artifactId>
+			<version>1.0</version>
+			<type>ejb</type>
+		</dependency>
+		
+		<dependency>
+			<groupId>gal.cor.web</groupId>
+			<artifactId>StarflightWeb</artifactId>
+			<version>1.0</version>
+			<type>war</type>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.10.1</version>
+				<configuration> 
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+				<modules>
+					<webModule>
+						<groupId>gal.cor.web</groupId>
+						<artifactId>StarflightWeb</artifactId>
+						<contextRoot>coucou</contextRoot>
+					</webModule>
+					
+					<ejbModule>
+						<groupId>gal.cor.persistence</groupId>
+						<artifactId>StarflightPersistence</artifactId>
+					</ejbModule>
+					<ejbModule>
+						<groupId>gal.cor.services</groupId>
+						<artifactId>StarflightServices</artifactId>
+					</ejbModule>
+				</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
