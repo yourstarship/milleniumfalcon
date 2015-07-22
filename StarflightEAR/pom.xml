@@ -8,7 +8,7 @@
 		<version>1</version>
 	</parent>
 
-	<groupId>gal.cor.ear</groupId>
+	<groupId>gal.cor</groupId>
 	<artifactId>StarflightEAR</artifactId>
 	<version>1.0</version>
 
@@ -22,37 +22,37 @@
 			<version>1.0</version>
 			<type>jar</type>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>gal.cor</groupId>
 			<artifactId>StarflightPersistenceAPI</artifactId>
 			<version>1.0</version>
 			<type>jar</type>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>gal.cor</groupId>
 			<artifactId>StarflightServicesAPI</artifactId>
 			<version>1.0</version>
 			<type>jar</type>
 		</dependency>
-		
+
 		<dependency>
-			<groupId>gal.cor.services</groupId>
+			<groupId>gal.cor</groupId>
 			<artifactId>StarflightServices</artifactId>
 			<version>1.0</version>
 			<type>ejb</type>
 		</dependency>
-		
+
 		<dependency>
-			<groupId>gal.cor.persistence</groupId>
+			<groupId>gal.cor</groupId>
 			<artifactId>StarflightPersistence</artifactId>
 			<version>1.0</version>
 			<type>ejb</type>
 		</dependency>
-		
+
 		<dependency>
-			<groupId>gal.cor.web</groupId>
+			<groupId>gal.cor</groupId>
 			<artifactId>StarflightWeb</artifactId>
 			<version>1.0</version>
 			<type>war</type>
@@ -66,24 +66,24 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-ear-plugin</artifactId>
 				<version>2.10.1</version>
-				<configuration> 
+				<configuration>
 					<defaultLibBundleDir>lib</defaultLibBundleDir>
-				<modules>
-					<webModule>
-						<groupId>gal.cor.web</groupId>
-						<artifactId>StarflightWeb</artifactId>
-						<contextRoot>coucou</contextRoot>
-					</webModule>
-					
-					<ejbModule>
-						<groupId>gal.cor.persistence</groupId>
-						<artifactId>StarflightPersistence</artifactId>
-					</ejbModule>
-					<ejbModule>
-						<groupId>gal.cor.services</groupId>
-						<artifactId>StarflightServices</artifactId>
-					</ejbModule>
-				</modules>
+					<modules>
+						<webModule>
+							<groupId>gal.cor</groupId>
+							<artifactId>StarflightWeb</artifactId>
+							<contextRoot>coucou</contextRoot>
+						</webModule>
+
+						<ejbModule>
+							<groupId>gal.cor</groupId>
+							<artifactId>StarflightPersistence</artifactId>
+						</ejbModule>
+						<ejbModule>
+							<groupId>gal.cor</groupId>
+							<artifactId>StarflightServices</artifactId>
+						</ejbModule>
+					</modules>
 				</configuration>
 			</plugin>
 		</plugins>

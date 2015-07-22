@@ -8,7 +8,7 @@
 		<version>1</version>
 	</parent>
 
-	<groupId>gal.cor.web</groupId>
+	<groupId>gal.cor</groupId>
 	<artifactId>StarflightWeb</artifactId>
 	<version>1.0</version>
 
