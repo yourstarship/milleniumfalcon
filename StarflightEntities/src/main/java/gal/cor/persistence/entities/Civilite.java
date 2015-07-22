@@ -1,5 +1,6 @@
 package gal.cor.persistence.entities;
 
+import java.io.Serializable;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -10,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Civilite
+public class Civilite implements Serializable
 {
 
 	@Id

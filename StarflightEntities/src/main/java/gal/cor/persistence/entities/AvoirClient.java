@@ -1,5 +1,6 @@
 package gal.cor.persistence.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
@@ -8,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class AvoirClient
+public class AvoirClient implements Serializable
 {
 	@Id
 	private Integer id;

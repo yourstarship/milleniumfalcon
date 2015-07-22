@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+<ui:composition template="/Templates/baseTemplate.xhtml">
+	<ui:define name="scripts">
+		<script type='text/javascript'
+			src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
+	</ui:define>
+
+	<ui:define name="content">
+
+		<div id="contenuFormInscription">
+
+			<div id="titrePageFormInsc">
+				<span>Formulaire d'Inscription</span>
+			</div>
+
+			<!-- Espace Promotions -->
+			<div class="Promo">
+				<span id="titrePromo" style="visibility: visible">PROMOTIONS</span>
+				<div id="imgPromo1" class="alignePromo">
+					<span id="reducPromo" style="visibility: visible">-5%</span> <img
+						src="image/e04b1581.jpg" />
+				</div>
+				<div id="imgPromo2" class="alignePromo">
+					<img src="image/Promos/29 - AT-ST.jpg" />
+				</div>
+				<div id="imgPromo3" class="alignePromo">
+					<img src="image/Promos/63 - T47 A-Wing.jpg" />
+				</div>
+			</div>
+
+			<form>
+				<div class="IP">
+					<span class="titreColonneFormInsc">Information personnelle</span> <br />
+					<br />
+					<div class="bottom">
+						<span>Civilité</span>
+						<div class="droite">
+							<input type="radio" name="civilite" value="M.">M.</input> <input
+								type="radio" name="civilite" value="Mme">Mme.</input>
+						</div>
+					</div>
+					<div class="bottom">
+						<span>Nom : </span>
+						<div class="droite">
+							<input type="text" value="Nom" class="centVingtpx" />
+						</div>
+					</div>
+					<div class="bottom">
+						<span>Prénom : </span>
+						<div class="droite">
+							<input type="text" value="Prénom" class="centVingtpx" />
+						</div>
+
+					</div>
+					<div class="bottom">
+						<span>naissance : </span>
+						<div class="droite">
+							<input type="text" name="14/02/1989" class="centVingtpx" />
+						</div>
+
+					</div>
+					<div class="bottom">
+						<span>Tel : </span>
+						<div class="droite">
+							<input type="text" value="0145708432" class="centVingtpx" />
+						</div>
+					</div>
+					<div class="bottom">
+						<span>Mail : </span>
+						<div class="droite">
+							<input type="text" value="xx@mma.fr" class="centVingtpx" />
+						</div>
+					</div>
+				</div>
+
+				<div class="IP">
+					<span class="titreColonneFormInsc">Adresse</span> <br /> <br /> <br />
+					<br />
+					<div class="bottom">
+						<span>Coordonnée X : </span>
+						<div class="droite">
+							<input type="text" value="32" class="centVingtpx" />
+						</div>
+					</div>
+					<div class="bottom">
+						<span>Coordonnée Y : </span>
+						<div class="droite">
+							<input type="text" value="64" class="centVingtpx" />
+						</div>
+					</div>
+					<div class="bottom">
+						<span>Coordonnée Z : </span>
+						<div class="droite">
+							<input type="text" value="78" class="centVingtpx" />
+						</div>
+					</div>
+					<div class="bottom">
+						<span>Planète : </span>
+						<div class="droite">
+							<select name="Planete" size="1" class="centVingtpx">
+								<option>Agamar</option>
+								<option>Hoth</option>
+								<option>Kashyyyk</option>
+								<option>Naboo</option>
+							</select>
+						</div>
+
+					</div>
+					<div class="bottom">
+						<span>Système : </span>
+						<div class="droite">
+							<select name="systeme" size="1" class="centVingtpx">
+								<option>Agamar</option>
+								<option>Hoth</option>
+								<option>Kashyyyk</option>
+								<option>Naboo</option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<div class="IP">
+					<span class="titreColonneFormInsc">Identification</span> <br /> <br />
+					<br /> <br />
+					<div class="bottom">
+						<span>Login : </span>
+						<div class="droite">
+							<input type="text" value="Login" class="centVingtpx" />
+						</div>
+					</div>
+					<div class="bottom">
+						<span>mot de passe : </span>
+						<div class="droite">
+							<input type="password" value="Mdp" class="centVingtpx" />
+						</div>
+					</div>
+					<div class="bottom">
+						<span>Type</span>
+						<div class="droite">
+							<select name="type" size="1" class="centVingtpx">
+								<option>Civil</option>
+								<option>Militaire</option>
+							</select>
+						</div>
+					</div>
+					<div class="bottom">
+						<span>code militaire : </span>
+						<div class="droite">
+							<input type="password" value="Code" class="centVingtpx" />
+						</div>
+					</div>
+					<div class="bottom">
+						<div class="center">
+							<input type="button" value="Valider" class="center2" /> <input
+								type="button" value="Annuler" class="right2" />
+						</div>
+					</div>
+
+				</div>
+			</form>
+
+			<!-- Panier lateral droit -->
+			<div id="panierFormInscript">
+				<div id="hauteurPanierFormInscript">
+					<div id="titrePanier">
+						<a href="">Panier</a>
+						<div id="iconePanier"></div>
+					</div>
+
+					<ul>
+						<li>v1 <a href="">supp</a></li>
+						<li>v2 <a href="">supp</a></li>
+						<li>v4 <a href="">supp</a></li>
+						<li>v8 <a href="">supp</a></li>
+					</ul>
+				</div>
+				<div id="totalPanierFormInscript">Total : 125€</div>
+				<div>
+					<input type="button" value="Detail du Panier"
+						id="detailPanierFormInscript" />
+				</div>
+			</div>
+		</div>
+		<script>
+function blink(ob)
+{
+	if (ob.style.visibility == "visible" )
+	{
+		ob.style.visibility = "hidden";
+	}
+	else
+	{
+		ob.style.visibility = "visible";
+	}
+}
+setInterval("blink(titrePromo)",500);
+
+</script>
+	</ui:define>
+</ui:composition>
+
+</html>

@@ -1,0 +1,215 @@
+/***************************************/
+/*********      Content     ************/
+/***************************************/
+
+
+/***************************************/
+/*********      Contenu     ************/
+/***************************************/
+
+#contenuAccueil
+{
+	padding-top: 0.5%;
+	padding-left: 1%;
+	padding-right: 1%;	
+}
+
+/*******************************************/
+/*********      Menu Gauche     ************/
+/*******************************************/
+
+nav
+{
+	border: 2px,solid,black;
+	border-radius:10px;
+	float :left;
+	margin-right:130px;
+	width: 190px;
+	height:500px;
+	background-color: rgba(150, 200, 255, 0.3);
+}
+
+.recherche
+{
+	margin-bottom:5px;
+	padding-top:3%;
+	padding-left: 10%;
+	color: #E2C926;
+	font-size: 1.1em;
+	font-weight: bold;
+	font-family: Lucida Sans;
+}
+
+ #buttRechercheAccueil
+{
+	background-image: url("./../Images/Icones/bouton-search.30px.30px.png");
+	width: 30px;
+	margin-top: 2%;
+	margin-left: 1.5%;
+	height: 30px;
+}
+
+#menuAccordeon {
+  padding:0;
+  margin:0;
+  list-style:none;
+  text-align: center;
+  width: 150px;
+  padding-left: 10%;
+}
+#menuAccordeon ul {
+  padding:0;
+  margin:0;
+  list-style:none;
+  text-align: center;
+}
+#menuAccordeon li {
+   background-color:#557DD4; 
+   border-radius: 6px;
+   margin-bottom:2px;
+   border:solid 1px #333A40
+}
+#menuAccordeon li li {
+   max-height:0;
+   overflow: hidden;
+   transition: all .5s;
+   border-radius:0;
+   background: #444444;
+   box-shadow: none;
+   border:none;
+   margin:0
+}
+#menuAccordeon a {
+  display:block;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 8px 0;
+  font-family: verdana;
+  font-size:0.9em
+}
+#menuAccordeon ul li a, #menuAccordeon li:hover li a {
+  font-size:0.8em
+}
+#menuAccordeon li:hover {
+   background: #729EBF
+}
+#menuAccordeon li li:hover {
+   background: #999999;
+}
+#menuAccordeon ul li:last-child {
+   border-radius: 0 0 6px 6px;
+   border:none;
+}
+#menuAccordeon li:hover li {
+  max-height: 15em;
+}
+
+/************************************************/
+/*********      Affichage Central    ************/
+/************************************************/
+
+.Liste
+{
+	width: 1000px;
+	height: 585px;
+	margin-left: -5%;
+	margin-right: auto;
+	float: left;
+	background-color: rgba(128, 128, 128, 0.43);
+	border-radius: 10px;
+	overflow: auto;
+}
+
+.right
+{
+	float:right;
+}
+
+.gauche
+{
+	margin-top: 10px;
+	margin-right: 5px;
+	margin-left:25px;
+	float:left;
+	width:200px;
+	border:solid 1px #ffffff;
+}
+ 
+.Liste img
+{
+	width: 100%;
+	height: 100%;
+}
+
+/*************************************/
+/*********      Panier    ************/
+/*************************************/
+
+#panierAccueil
+{
+	float :right;
+	width: 200px;
+	height: 399px;
+	border-radius:10px;
+	background-color: rgba(150, 200, 255, 0.3);
+	margin-top: 0.5%;
+	padding-top: 0.4%;
+	padding-left: 1%;
+	color: #E2C926;
+	font-size: 1em;
+	margin-right: 1%;
+}
+
+#titrePanier
+{
+	font-weight: bold;
+	font-family: Lucida Sans;
+	font-size: 1.1em;
+}
+
+#iconePanier
+{
+	background-image: url("./../Images/Icones/cadie.39px.39px.png");
+	position: absolute;
+	width: 2.5%;
+	height: 38px;
+	margin-left: 10%;
+	margin-top: -1.6%;
+}
+
+#hauteurPanierAccueil
+{
+	height:270px;
+}
+
+#totalPanierAccueil
+{
+	font-weight: bold;
+	font-family: Lucida Sans;
+	font-size: 1em;
+}
+
+#listePanierAccueil
+{
+	color: #BDE3DE;
+	overflow: auto;	
+}
+
+#detailPanierAccueil
+{
+	width:200px;
+	height:30px;
+	border-radius:10px;
+	border:2px solid black;
+	margin-left:-3%;
+}
+
+#lancerCommandeAccueil
+{
+	width:200px;
+	height:30px;
+	border-radius:10px;
+	border:2px solid black;
+	margin-left:-3%;
+}
+

@@ -1,5 +1,6 @@
 package gal.cor.persistence.entities;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -8,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Fonction
+public class Fonction implements Serializable
 {
 
 	@Id

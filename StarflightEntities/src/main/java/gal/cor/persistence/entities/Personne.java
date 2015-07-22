@@ -1,5 +1,6 @@
 package gal.cor.persistence.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.DiscriminatorColumn;
@@ -15,7 +16,7 @@ import javax.persistence.ManyToOne;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "type")
-public abstract class Personne
+public abstract class Personne implements Serializable
 {
 
 	@Id

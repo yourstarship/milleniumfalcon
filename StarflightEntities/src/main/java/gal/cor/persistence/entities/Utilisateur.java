@@ -1,11 +1,12 @@
 package gal.cor.persistence.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
 
 @Entity
-public abstract class Utilisateur extends Personne
+public abstract class Utilisateur extends Personne implements Serializable
 {
 
 	private String identifiant;

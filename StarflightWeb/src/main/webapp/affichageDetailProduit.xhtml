@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+
+
+<ui:composition template="/Templates/baseTemplate.xhtml">
+	<ui:define name="scripts">
+
+		<script type='text/javascript'
+			src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
+
+	</ui:define>
+	<ui:define name="content">
+
+		<!-- ICI Le Contenu  -->
+		<!-- Espace Promotions -->
+		<div id="contenuDetailProduit">
+			<div class="Promo">
+				<span id="titrePromo" style="visibility: visible">PROMOTIONS</span>
+				<div id="imgPromo1" class="alignePromo">
+					<span id="reducPromo" style="visibility: visible">-5%</span> <img
+						src="image/e04b1581.jpg" />
+				</div>
+				<div id="imgPromo2" class="alignePromo">
+					<img src="image/Promos/29 - AT-ST.jpg" />
+				</div>
+				<div id="imgPromo3" class="alignePromo">
+					<img src="image/Promos/63 - T47 A-Wing.jpg" />
+				</div>
+			</div>
+
+			<form>
+				<div id="titrePageDetailProduit">
+					<span>Présentation Détaillées du </span><span>@ insérer ici
+						le nom du vaisseaux @</span>
+				</div>
+				<div id="ficheDetail">
+
+					<div class="detailNiveau">
+						<div id="alignementNiveau1">
+							<div id="nomProdEtRef">
+								<span class="miniTitreNiveaux">Produit : </span> <span
+									class="miniTitreNiveaux">@ nom produit @</span> <br /> <br />
+								<span class="miniTitreNiveaux">Référence : </span> <span
+									class="miniTitreNiveaux">@ référence @</span> <br /> <br /> <span
+									class="miniTitreNiveaux">Catégorie : </span> <span
+									class="miniTitreNiveaux">@ Chasseur @</span> <br /> <br /> <span
+									class="miniTitreNiveaux">Type : </span> <span
+									class="miniTitreNiveaux">@ Intercepteur @</span>
+							</div>
+							<div id="imgFicheDetail">
+								<img src="image/e04b1581.jpg" />
+							</div>
+							<div id="descDroite">
+								<span class="miniTitreNiveaux">Description</span>
+								<p>
+									jjjjjjjjjjjjjjjjjjjjjjjjjjjfrvrfverez<br />
+									deeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee<br />
+									cr;^zzzzzzzzzzzzzzzzzzzzzzzzggggggggggg
+								</p>
+							</div>
+							<div id="prixAjoutPanier">
+								<div id="zoneFavorisIcones">
+									<div id="buttNoFavIcone"></div>
+									<div id="buttYesFavIcone"></div>
+								</div>
+								<span class="miniTitreNiveaux">Prix : </span> <br /> <br /> <span
+									class="miniTitreNiveaux">2 450 000 crédits</span> <br /> <br />
+								<br /> <input type="button" value="Ajouter au Panier" />
+							</div>
+						</div>
+					</div>
+
+					<div class="detailNiveau">
+						<div>
+							<span class="miniTitreNiveaux">Caractéristiques</span> <br />
+						</div>
+						<br />
+						<div>
+							<table style="width: 100%">
+								<tr>
+									<td class="tailleColonneCaracFicheDetaille">Equipage</td>
+									<td class="tailleColonneCaracFicheDetaille">Passagers</td>
+									<td class="tailleColonneCaracFicheDetaille">vitesse max</td>
+									<td class="tailleColonneCaracFicheDetaille">Couleur</td>
+								</tr>
+								<tr>
+									<td>1 pilote</td>
+									<td>aucun</td>
+									<td>30.2 années lumières</td>
+									<td>Blanc</td>
+								</tr>
+								<tr>
+									<td class="detailleLigneDemarcation"></td>
+									<td class="detailleLigneDemarcation"></td>
+									<td class="detailleLigneDemarcation"></td>
+									<td class="detailleLigneDemarcation"></td>
+								</tr>
+								<tr>
+									<td>Longueur</td>
+									<td>Largeur</td>
+									<td>poids</td>
+									<td>moteur</td>
+								</tr>
+								<tr>
+									<td>5.47 mètres</td>
+									<td>4.3 mètres</td>
+									<td>42 tonnes</td>
+									<td>propulseur Z4</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="detailNiveau" id="fieldCommentaire">
+						<div>
+							<span class="miniTitreNiveaux" style="position: absolute;">Commentaires</span>
+							<br />
+						</div>
+						<!--  Ici on fait un système de repeat  -->
+						<fieldset>
+							<legend>@ auteur du commentaire @</legend>
+							<span>Il est trop bien ce vaisseau ! aucun problème.
+								léger, rapide comme prévu</span>
+						</fieldset>
+						<fieldset>
+							<legend>@ auteur du commentaire @</legend>
+							<span>Il est trop bien ce vaisseau ! aucun problème.
+								léger, rapide comme prévu</span>
+						</fieldset>
+						<fieldset>
+							<legend>@ auteur du commentaire @</legend>
+							<span>Il est trop bien ce vaisseau ! aucun problème.
+								léger, rapide comme prévu</span>
+						</fieldset>
+					</div>
+				</div>
+			</form>
+
+			<!-- Panier lateral droit -->
+			<div id="panierDetailProduit">
+				<div id="hauteurPanierDetailProduit">
+					<div id="titrePanier">
+						<a href="">Panier</a>
+						<div id="iconePanier"></div>
+					</div>
+
+					<ul>
+						<li>v1 <a href="">supp</a></li>
+						<li>v2 <a href="">supp</a></li>
+						<li>v4 <a href="">supp</a></li>
+						<li>v8 <a href="">supp</a></li>
+					</ul>
+				</div>
+				<div id="totalPanierDetailProduit">Total : 125€</div>
+				<div>
+					<input type="button" value="Detail du Panier"
+						id="detailPanierDetailProduit" />
+				</div>
+			</div>
+
+		</div>
+		<script>
+function blink(ob)
+{
+	if (ob.style.visibility == "visible" )
+	{
+		ob.style.visibility = "hidden";
+	}
+	else
+	{
+		ob.style.visibility = "visible";
+	}
+}
+setInterval("blink(titrePromo)",500);
+
+
+    $('#zoneFavorisIcones').click(function () {	 
+         $('#buttNoFavIcone').toggle();
+         $('#buttYesFavIcone').toggle();
+       });
+
+</script>
+	</ui:define>
+</ui:composition>
+
+
+
+</html>

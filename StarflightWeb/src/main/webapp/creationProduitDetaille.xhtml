@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+
+<ui:composition template="/Templates/baseTemplate.xhtml">
+	<ui:define name="scripts">
+		<script type='text/javascript'
+			src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
+	</ui:define>
+	
+	<ui:define name="content">
+
+		<!-- ICI Le Contenu  -->
+		<!-- Espace Promotions -->
+		<div id="contenuDetailProduit">
+			<div class="Promo">
+				<span id="titrePromo" style="visibility: visible">PROMOTIONS</span>
+				<div id="imgPromo1" class="alignePromo">
+					<span id="reducPromo" style="visibility: visible">-5%</span> <img
+						src="image/e04b1581.jpg" />
+				</div>
+				<div id="imgPromo2" class="alignePromo">
+					<img src="image/Promos/29 - AT-ST.jpg" />
+				</div>
+				<div id="imgPromo3" class="alignePromo">
+					<img src="image/Promos/63 - T47 A-Wing.jpg" />
+				</div>
+			</div>
+
+			<form>
+				<div id="titrePageDetailProduit">
+					<span>Présentation Détaillées du </span><span>@ insérer ici
+						le nom du vaisseaux @</span>
+				</div>
+				<div id="ficheDetail">
+
+					<div class="detailNiveau">
+						<div id="alignementNiveau1">
+							<div id="nomProdEtRef">
+								<span class="miniTitreNiveaux">Produit : </span> <input
+									type="text" value="Nom" class="centVingtpx" /> <br /> <br />
+								<span class="miniTitreNiveaux">Référence : </span> <input
+									type="text" value="Nom" class="centVingtpx" /> <br /> <br />
+								<span class="miniTitreNiveaux">Catégorie : </span> <input
+									type="text" value="Nom" class="centVingtpx" /> <br /> <br />
+								<span class="miniTitreNiveaux">Type : </span> <input type="text"
+									value="Nom" class="centVingtpx" />
+							</div>
+							<div id="rechercheImgCreatNewProd">
+								<span>Rechercher une image à associer au produit : </span> <br />
+								<input type="text" value="Nom" id="zoneRechercheImgCreatNewProd" />
+								<div id="buttSearchImgProduit"></div>
+
+							</div>
+							<div id="descDroite">
+								<span class="miniTitreNiveaux">Description</span>
+								<textarea rows="7" cols="34"></textarea>
+							</div>
+							<div id="prixAjoutPanier">
+								<span class="miniTitreNiveaux">Prix : </span> <br /> <br /> <input
+									type="text" value="Nom" class="centVingtpx" /> <br /> <br />
+								<input type="radio" name="okVente" value="okVente">
+									Mettre en vente</input> <br /> <input type="radio" name="noVente"
+									value="noVente"> Retirer de la vente</input>
+							</div>
+						</div>
+					</div>
+
+					<div class="detailNiveau">
+						<div>
+							<span class="miniTitreNiveaux">Caractéristiques</span> <br />
+						</div>
+						<br />
+						<div>
+							<table style="width: 100%">
+								<tr>
+									<td class="tailleColonneCaracFicheDetaille">Equipage</td>
+									<td class="tailleColonneCaracFicheDetaille">Passagers</td>
+									<td class="tailleColonneCaracFicheDetaille">vitesse max</td>
+									<td class="tailleColonneCaracFicheDetaille">Couleur</td>
+								</tr>
+								<tr>
+									<td><input type="text" value="Nom" class="centVingtpx" /></td>
+									<td><input type="text" value="Nom" class="centVingtpx" /></td>
+									<td><input type="text" value="Nom" class="centVingtpx" /></td>
+									<td><input type="text" value="Nom" class="centVingtpx" /></td>
+								</tr>
+								<tr>
+									<td class="detailleLigneDemarcation"></td>
+									<td class="detailleLigneDemarcation"></td>
+									<td class="detailleLigneDemarcation"></td>
+									<td class="detailleLigneDemarcation"></td>
+								</tr>
+								<tr>
+									<td>Longueur</td>
+									<td>Largeur</td>
+									<td>poids</td>
+									<td>moteur</td>
+								</tr>
+								<tr>
+									<td><input type="text" value="Nom" class="centVingtpx" /></td>
+									<td><input type="text" value="Nom" class="centVingtpx" /></td>
+									<td><input type="text" value="Nom" class="centVingtpx" /></td>
+									<td><input type="text" value="Nom" class="centVingtpx" /></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="detailNiveau" id="fieldCommentaire">
+						<div>
+							<span class="miniTitreNiveaux" style="position: absolute;">Commentaires</span>
+							<br />
+						</div>
+						<!--  Ici on fait un système de repeat  -->
+						<fieldset>
+							<legend>@ auteur du commentaire @</legend>
+							<span>Il est trop bien ce vaisseau ! aucun problème.
+								léger, rapide comme prévu</span>
+						</fieldset>
+						<fieldset>
+							<legend>@ auteur du commentaire @</legend>
+							<span>Il est trop bien ce vaisseau ! aucun problème.
+								léger, rapide comme prévu</span>
+						</fieldset>
+						<fieldset>
+							<legend>@ auteur du commentaire @</legend>
+							<span>Il est trop bien ce vaisseau ! aucun problème.
+								léger, rapide comme prévu</span>
+						</fieldset>
+					</div>
+				</div>
+			</form>
+
+			<!-- Panier lateral droit -->
+			<div id="surfaceProduitAdministre">
+				<div id="surfaceProduitAdministreTaille">
+					<div id="titreGestionPromo">
+						<a href="">Gestion des Promotions : </a>
+					</div>
+					<br /> <input type="radio" name="noVente" value="noVente">Créer
+						une Promotion sur ce Produit.</input> <br /> <br /> <span>Indiquez
+						la valeur de cette nouvelle promotion : </span> <input type="text"
+						value="5" id="valeurPromoProd" /> <span> %</span> <br /> <br />
+					<div id="sousTitreGestionPromo">
+						<a href="">Promotions en cours : </a>
+					</div>
+					<div id="listePromosEncours">
+						<ul>
+							<li>Produit 1 5% <a href="retirer1"> retirer</a></li>
+							<li>Produit 2 5% <a href="retirer2"> retirer</a></li>
+							<li>Produit 4 5% <a href="retirer4"> retirer</a></li>
+							<li>Produit 8 5% <a href="retirer8"> retirer</a></li>
+							<li>Produit 1 5% <a href="retirer1"> retirer</a></li>
+							<li>Produit 2 5% <a href="retirer2"> retirer</a></li>
+							<li>Produit 4 5% <a href="retirer4"> retirer</a></li>
+							<li>Produit 8 5% <a href="retirer8"> retirer</a></li>
+						</ul>
+					</div>
+				</div>
+				<div>
+					<input type="button" value="Enregistrer les Modifications"
+						id="buttValidAdminProdui" />
+				</div>
+			</div>
+
+		</div>
+		<script>
+function blink(ob)
+{
+	if (ob.style.visibility == "visible" )
+	{
+		ob.style.visibility = "hidden";
+	}
+	else
+	{
+		ob.style.visibility = "visible";
+	}
+}
+setInterval("blink(titrePromo)",500);
+
+</script>
+	</ui:define>
+</ui:composition>
+
+
+</html>

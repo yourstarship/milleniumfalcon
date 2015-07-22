@@ -1,5 +1,6 @@
 package gal.cor.persistence.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
@@ -13,7 +14,7 @@ import javax.persistence.OneToMany;
 
 @Entity
 @DiscriminatorValue(value = "client")
-public class Client extends Utilisateur
+public class Client extends Utilisateur implements Serializable
 {
 	private Date dernierAcces;
 	private Boolean aSurveiller;
