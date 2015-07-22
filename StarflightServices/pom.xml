@@ -36,14 +36,8 @@
 		</dependency>
 
 		<dependency>
-			<groupId>gal.cor.persistence</groupId>
-			<artifactId>StarflightPersistence</artifactId>
-			<version>1.0</version>
-		</dependency>
-
-		<dependency>
 			<groupId>gal.cor</groupId>
-			<artifactId>StarflightServicesAPI</artifactId>
+			<artifactId>StarflightPersistenceAPI</artifactId>
 			<version>1.0</version>
 		</dependency>
 
