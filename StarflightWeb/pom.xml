@@ -8,7 +8,7 @@
 		<version>1</version>
 	</parent>
 
-	<groupId>gal.cor.web</groupId>
+	<groupId>gal.cor</groupId>
 	<artifactId>StarflightWeb</artifactId>
 	<version>1.0</version>
 
@@ -32,13 +32,13 @@
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
-			<version>7.0</version>
+			<version>6.0</version>
 			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
-			<groupId>gal.cor.services</groupId>
-			<artifactId>StarflightServices</artifactId>
+			<groupId>gal.cor</groupId>
+			<artifactId>StarflightServicesAPI</artifactId>
 			<version>1.0</version>
 		</dependency>
 
