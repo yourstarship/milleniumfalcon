@@ -48,14 +48,14 @@ public class PersonneTest {
 		log.info("Fermeture du conteneur EJB");
 		log.info("===========================");
 
-		context.close();
+		//context.close();
 	}
 	
 	@Test
 	public void testPersonne() {
 		log.info("Execution du test");
 		//fail("Not yet implemented");
-		try {
+		/*try {
 			context = EJBContainer.createEJBContainer().getContext();
 			// JNDI
 			// java:global[/application name]/module name/enterprise bean name[/interface name]
@@ -65,8 +65,7 @@ public class PersonneTest {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		
+		}*/
 		
 	}
 }

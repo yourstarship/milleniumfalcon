@@ -5,6 +5,11 @@ import gal.cor.persistence.entities.Produit;
 
 import java.util.Collection;
 
+import javax.ejb.Remote;
+import javax.ejb.Stateless;
+
+@Stateless
+@Remote(IDaoProduit.class)
 public class DaoProduitImpl extends DaoGenericImpl<Produit> implements IDaoProduit {
 
 	@Override

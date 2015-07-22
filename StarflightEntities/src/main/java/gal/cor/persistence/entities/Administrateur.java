@@ -1,5 +1,6 @@
 package gal.cor.persistence.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.DiscriminatorValue;
@@ -7,8 +8,12 @@ import javax.persistence.Entity;
 
 @Entity
 @DiscriminatorValue(value = "administrateur")
-public class Administrateur extends Utilisateur
+public class Administrateur extends Utilisateur implements Serializable
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5041028374523577174L;
 
 	public Administrateur(Integer id, String nom, String prenom, Date dateDeNaissance, Integer idUtilisateur, String identifiant, String motDePasse, Date dateOuverture)
 	{
