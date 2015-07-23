@@ -55,8 +55,10 @@ public class PersonneTest {
 	public void testPersonne() {
 		log.info("Execution du test");
 		//fail("Not yet implemented");
-		/*try {
-			context = EJBContainer.createEJBContainer().getContext();
+		/*
+		try {
+			EJBContainer ec = EJBContainer.createEJBContainer(); 
+			context = ec.getContext();
 			// JNDI
 			// java:global[/application name]/module name/enterprise bean name[/interface name]
 			// crud : create,read,update,delete
@@ -65,7 +67,8 @@ public class PersonneTest {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}*/
+		}
+		*/
 		
 	}
 }

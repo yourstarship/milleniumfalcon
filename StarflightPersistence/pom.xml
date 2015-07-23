@@ -8,7 +8,6 @@
 		<version>1</version>
 	</parent>
 
-	<groupId>gal.cor</groupId>
 	<artifactId>StarflightPersistence</artifactId>
 	<version>1.0</version>
 

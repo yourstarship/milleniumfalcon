@@ -14,7 +14,7 @@
 	</ui:define>
 
 	<ui:define name="content">
-
+	<h:form>
 		<!-- ICI Le Contenu  -->
 		<!-- Espace Promotions -->
 		<div id="contenuAccueil">
@@ -35,72 +35,105 @@
 			<!-- Menu Deroulant Gauche -->
 			<nav>
 			<div class="recherche">
-				Recherche : <input type="text" value="rechercher...type" />
+				Recherche : <h:inputText value="rechercher...type" />
 				<div id="buttRechercheAccueil"></div>
 			</div>
 			<ul id="menuAccordeon">
-				<li><a href="#">Véhicule aquatique</a>
+				<li><h:commandLink value="Véhicule aquatique" action="#{accueilManagedBean}" />
 					<ul>
-						<li><a href="#">lien sous menu 1</a></li>
-						<li><a href="#">lien sous menu 1</a></li>
-						<li><a href="#">lien sous menu 1</a></li>
-						<li><a href="#">lien sous menu 1</a></li>
+						<li><h:commandLink value="lien sous menu 1" action="#{accueilManagedBean}" /></li>
+						<li><h:commandLink value="lien sous menu 1" action="#{accueilManagedBean}" /></li>
+						<li><h:commandLink value="lien sous menu 1" action="#{accueilManagedBean}" /></li>
+						<li><h:commandLink value="lien sous menu 1" action="#{accueilManagedBean}" /></li>
+					</ul>
+					</li>
+				<li><h:commandLink value="Véhicule terrestre" action="#{accueilManagedBean}" />
+					<ul>
+						<li><h:commandLink value="Lien sous menu 2" action="#{accueilManagedBean}" /></li>
+						<li><h:commandLink value="Lien sous menu 2" action="#{accueilManagedBean}" /></li>
+						<li><h:commandLink value="Lien sous menu 2" action="#{accueilManagedBean}" /></li>
+						<li><h:commandLink value="Lien sous menu 2" action="#{accueilManagedBean}" /></li>
 					</ul></li>
-				<li><a href="#">Véhicule terrestre</a>
+				<li><h:commandLink value="Véhicule légers" action="#{accueilManagedBean}" />
 					<ul>
-						<li><a href="#">Lien sous menu 2</a></li>
-						<li><a href="#">Lien sous menu 2</a></li>
-						<li><a href="#">Lien sous menu 2</a></li>
-						<li><a href="#">Lien sous menu 2</a></li>
+						<li><h:commandLink value="Lien sous menu 3" action="#{accueilManagedBean}" /></li>
+						<li><h:commandLink value="Lien sous menu 3" action="#{accueilManagedBean}" /></li>
+						<li><h:commandLink value="Lien sous menu 3" action="#{accueilManagedBean}" /></li>
+						<li><h:commandLink value="Lien sous menu 3" action="#{accueilManagedBean}" /></li>
 					</ul></li>
-				<li><a href="#">Véhicule légers</a>
+				<li><h:commandLink value="Véhicule Moyen" action="#{accueilManagedBean}" />
 					<ul>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
+						<li><h:commandLink value="Lien sous menu 3" action="#{accueilManagedBean}" /></li>
+						<li><h:commandLink value="Lien sous menu 3" action="#{accueilManagedBean}" /></li>
+						<li><h:commandLink value="Lien sous menu 3" action="#{accueilManagedBean}" /></li>
+						<li><h:commandLink value="Lien sous menu 3" action="#{accueilManagedBean}" /></li>
 					</ul></li>
-				<li><a href="#">Véhicule Moyen</a>
+				<li><h:commandLink value="Véhicule Lourd" action="#{accueilManagedBean}" />
 					<ul>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
+						<li><h:commandLink value="Lien sous menu 3" action="#{accueilManagedBean}" /></li>
+						<li><h:commandLink value="Lien sous menu 3" action="#{accueilManagedBean}" /></li>
+						<li><h:commandLink value="Lien sous menu 3" action="#{accueilManagedBean}" /></li>
+						<li><h:commandLink value="Lien sous menu 3" action="#{accueilManagedBean}" /></li>
 					</ul></li>
-				<li><a href="#">Véhicule Lourd</a>
+				<li><h:commandLink value="Chasseur" action="#{accueilManagedBean}" />
 					<ul>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
+						<li><h:commandLink value="Lien sous menu 3" action="#{accueilManagedBean}" /></li>
+						<li><h:commandLink value="Lien sous menu 3" action="#{accueilManagedBean}" /></li>
+						<li><h:commandLink value="Lien sous menu 3" action="#{accueilManagedBean}" /></li>
+						<li><h:commandLink value="Lien sous menu 3" action="#{accueilManagedBean}" /></li>
 					</ul></li>
-				<li><a href="#">Chasseur</a>
+				<li><h:commandLink value="Station Spatiale" action="#{accueilManagedBean}" />
 					<ul>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
-					</ul></li>
-				<li><a href="#">Station Spatiale</a>
-					<ul>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
+						<li><h:commandLink value="Lien sous menu 3" action="#{accueilManagedBean}" /></li>
+						<li><h:commandLink value="Lien sous menu 3" action="#{accueilManagedBean}" /></li>
+						<li><h:commandLink value="Lien sous menu 3" action="#{accueilManagedBean}" /></li>
+						<li><h:commandLink value="Lien sous menu 3" action="#{accueilManagedBean}" /></li>
 					</ul></li>
 			</ul>
 			</nav>
 
 			<!-- Espace d'Affichage Central -->
 			<div class="Liste">
-			<ui:repeat var="produit" value="#{testManagedBean.listeProduit}">
 				<div class="gauche">
-					<img src="#{produit.photo}" />
-					<p>#{produit.nom}</p>
-					<input type="button" value="add" class="right" /> <input
-						type="button" value="détailler" class="right" />
+					<img src="image/e04b1581.jpg" />
+					<h:outputText value="Vaisseau PiouPiou" /> <br />
+					<h:outputText value="666" /><span>  Crédits</span>
+					<br />
+					<h:commandButton action="#{accueilManagedBean.ajoutProduitAuPanier()}" value="Ajouter" class="buttListeAccueil"/>
+					<h:commandButton action="#{accueilManagedBean.accesDetailProduit()}" value="Détailler" class="buttListeAccueil"/>
 				</div>
-			</ui:repeat>
+				<div class="gauche">
+					<img src="image/e04b1581.jpg" />
+					<h:outputText value="Vaisseau PiouPiou" /> <br />
+					<h:outputText value="666" /><span>  Crédits</span>
+					<br />
+					<h:commandButton action="#{accueilManagedBean.ajoutProduitAuPanier()}" value="Ajouter" class="buttListeAccueil"/>
+					<h:commandButton action="#{accueilManagedBean.accesDetailProduit()}" value="Détailler" class="buttListeAccueil"/>
+				</div>
+				<div class="gauche">
+					<img src="image/e04b1581.jpg" />
+					<h:outputText value="Vaisseau PiouPiou" /> <br />
+					<h:outputText value="666" /><span>  Crédits</span>
+					<br />
+					<h:commandButton action="#{accueilManagedBean.ajoutProduitAuPanier()}" value="Ajouter" class="buttListeAccueil"/>
+					<h:commandButton action="#{accueilManagedBean.accesDetailProduit()}" value="Détailler" class="buttListeAccueil"/>
+				</div>
+				<div class="gauche">
+					<img src="image/e04b1581.jpg" />
+					<h:outputText value="Vaisseau PiouPiou" /> <br />
+					<h:outputText value="666" /><span>  Crédits</span>
+					<br />
+					<h:commandButton action="#{accueilManagedBean.ajoutProduitAuPanier()}" value="Ajouter" class="buttListeAccueil"/>
+					<h:commandButton action="#{accueilManagedBean.accesDetailProduit()}" value="Détailler" class="buttListeAccueil"/>
+				</div>
+				<div class="gauche">
+					<img src="image/e04b1581.jpg" />
+					<h:outputText value="Vaisseau PiouPiou" /> <br />
+					<h:outputText value="666" /><span>  Crédits</span>
+					<br />
+					<h:commandButton action="#{accueilManagedBean.ajoutProduitAuPanier()}" value="Ajouter" class="buttListeAccueil"/>
+					<h:commandButton action="#{accueilManagedBean.accesDetailProduit()}" value="Détailler" class="buttListeAccueil"/>
+				</div>
 			</div>
 
 			<!-- Panier lateral droit -->
@@ -112,21 +145,23 @@
 					</div>
 					<div id="listePanierAccueil">
 						<ul>
-							<li>v1 <a href="annuler1">annuler</a></li>
-							<li>v2 <a href="annuler2">annuler</a></li>
-							<li>v4 <a href="annuler3">annuler</a></li>
-							<li>v8 <a href="annuler4">annuler</a></li>
+							<li>v1 <h:commandLink value="annuler1" action="#{compteUtilisateurMBean}" /></li>
+							<li>v2 <h:commandLink value="annuler2" action="#{compteUtilisateurMBean}" /></li>
+							<li>v4 <h:commandLink value="annuler3" action="#{compteUtilisateurMBean}" /></li>
+							<li>v8 <h:commandLink value="annuler4" action="#{compteUtilisateurMBean}" /></li>
 						</ul>
 					</div>
 				</div>
 				<div id="totalPanierAccueil">Total : 125€</div>
 				<div>
-					<br /> <input type="button" value="Detail du Panier"
-						id="detailPanierAccueil" /> <br /> <br /> <input type="button"
-						value="Effectuer votre Commande" id="lancerCommandeAccueil" />
+					<br />
+						<h:commandButton action="#{accueilManagedBean.accesDetailPanier()}" value="Detail du Panier" class="detailPanierAccueil" />
+						 <br /> <br /> 
+						 <h:commandButton action="#{accueilManagedBean.validerLaCommande()}" value="Effectuer votre Commande" class="lancerCommandeAccueil"/>
 				</div>
 			</div>
 		</div>
+		</h:form>
 		<script>
 function blink(ob)
 {

@@ -12,34 +12,34 @@
 	</ui:define>
 
 	<ui:define name="content">
+		<h:form>
+			<div id="contenuFormInscription">
 
-		<div id="contenuFormInscription">
-
-			<div id="titrePageFormInsc">
-				<span>Formulaire d'Inscription</span>
-			</div>
-
-			<!-- Espace Promotions -->
-			<div class="Promo">
-				<span id="titrePromo" style="visibility: visible">PROMOTIONS</span>
-				<div id="imgPromo1" class="alignePromo">
-					<span id="reducPromo" style="visibility: visible">-5%</span> <img
-						src="image/e04b1581.jpg" />
+				<div id="titrePageFormInsc">
+					<span>Formulaire d'Inscription</span>
 				</div>
-				<div id="imgPromo2" class="alignePromo">
-					<img src="image/Promos/29 - AT-ST.jpg" />
-				</div>
-				<div id="imgPromo3" class="alignePromo">
-					<img src="image/Promos/63 - T47 A-Wing.jpg" />
-				</div>
-			</div>
 
-			<form>
-				<div class="IP">
+				<!-- Espace Promotions -->
+				<div class="Promo">
+					<span id="titrePromo" style="visibility: visible">PROMOTIONS</span>
+					<div id="imgPromo1" class="alignePromo">
+						<span id="reducPromo" style="visibility: visible">-5%</span> <img
+							src="image/e04b1581.jpg" />
+					</div>
+					<div id="imgPromo2" class="alignePromo">
+						<img src="image/Promos/29 - AT-ST.jpg" />
+					</div>
+					<div id="imgPromo3" class="alignePromo">
+						<img src="image/Promos/63 - T47 A-Wing.jpg" />
+					</div>
+				</div>
+
+
+				<div class="colonneFormeInscription">
 					<span class="titreColonneFormInsc">Information personnelle</span> <br />
 					<br />
 					<div class="bottom">
-						<span>Civilité</span>
+						<span>Civilité : </span>
 						<div class="droite">
 							<input type="radio" name="civilite" value="M.">M.</input> <input
 								type="radio" name="civilite" value="Mme">Mme.</input>
@@ -48,56 +48,56 @@
 					<div class="bottom">
 						<span>Nom : </span>
 						<div class="droite">
-							<input type="text" value="Nom" class="centVingtpx" />
+							<h:inputText value="Nom" class="centVingtpx" />
 						</div>
 					</div>
 					<div class="bottom">
 						<span>Prénom : </span>
 						<div class="droite">
-							<input type="text" value="Prénom" class="centVingtpx" />
+							<h:inputText value="Prénom" class="centVingtpx" />
 						</div>
 
 					</div>
 					<div class="bottom">
 						<span>naissance : </span>
 						<div class="droite">
-							<input type="text" name="14/02/1989" class="centVingtpx" />
+							<h:inputText name="14/02/1989" class="centVingtpx" />
 						</div>
 
 					</div>
 					<div class="bottom">
 						<span>Tel : </span>
 						<div class="droite">
-							<input type="text" value="0145708432" class="centVingtpx" />
+							<h:inputText value="0145708432" class="centVingtpx" />
 						</div>
 					</div>
 					<div class="bottom">
 						<span>Mail : </span>
 						<div class="droite">
-							<input type="text" value="xx@mma.fr" class="centVingtpx" />
+							<h:inputText value="xx@mma.fr" class="centVingtpx" />
 						</div>
 					</div>
 				</div>
 
-				<div class="IP">
+				<div class="colonneFormeInscription">
 					<span class="titreColonneFormInsc">Adresse</span> <br /> <br /> <br />
 					<br />
 					<div class="bottom">
 						<span>Coordonnée X : </span>
 						<div class="droite">
-							<input type="text" value="32" class="centVingtpx" />
+							<h:inputText value="32" class="centVingtpx" />
 						</div>
 					</div>
 					<div class="bottom">
 						<span>Coordonnée Y : </span>
 						<div class="droite">
-							<input type="text" value="64" class="centVingtpx" />
+							<h:inputText value="64" class="centVingtpx" />
 						</div>
 					</div>
 					<div class="bottom">
 						<span>Coordonnée Z : </span>
 						<div class="droite">
-							<input type="text" value="78" class="centVingtpx" />
+							<h:inputText value="78" class="centVingtpx" />
 						</div>
 					</div>
 					<div class="bottom">
@@ -125,68 +125,74 @@
 					</div>
 				</div>
 
-				<div class="IP">
+				<div class="colonneFormeInscription">
 					<span class="titreColonneFormInsc">Identification</span> <br /> <br />
 					<br /> <br />
 					<div class="bottom">
 						<span>Login : </span>
 						<div class="droite">
-							<input type="text" value="Login" class="centVingtpx" />
+							<h:inputText value="Login" class="centVingtpx" />
 						</div>
 					</div>
 					<div class="bottom">
 						<span>mot de passe : </span>
 						<div class="droite">
-							<input type="password" value="Mdp" class="centVingtpx" />
+							<h:inputText value="Mdp" class="centVingtpx" />
 						</div>
 					</div>
 					<div class="bottom">
-						<span>Type</span>
+						<span>Type : </span>
 						<div class="droite">
 							<select name="type" size="1" class="centVingtpx">
-								<option>Civil</option>
-								<option>Militaire</option>
+								<option id="choixCivil">Civil</option>
+								<option id="choixMilitaire">Militaire</option>
 							</select>
 						</div>
 					</div>
-					<div class="bottom">
-						<span>code militaire : </span>
+					<div class="bottom" id="accesCodeMilitaire">
+						<span>Code Militaire : </span>
 						<div class="droite">
-							<input type="password" value="Code" class="centVingtpx" />
+							<h:inputText value="Code" class="centVingtpx" />
 						</div>
 					</div>
 					<div class="bottom">
 						<div class="center">
-							<input type="button" value="Valider" class="center2" /> <input
-								type="button" value="Annuler" class="right2" />
+							<h:commandButton action="#{formInsciptMBean.accesCompteUtilisateur()}" value="Valider" class="buttValiderFormInsc" />
+							<h:commandButton action="#{formInsciptMBean}" value="Annuler" class="buttAnnulerFormInsc"/>
 						</div>
 					</div>
 
 				</div>
-			</form>
 
-			<!-- Panier lateral droit -->
-			<div id="panierFormInscript">
-				<div id="hauteurPanierFormInscript">
-					<div id="titrePanier">
-						<a href="">Panier</a>
-						<div id="iconePanier"></div>
+
+				<!-- Panier lateral droit -->
+				<div id="panierFormInscript">
+					<div id="hauteurPanierFormInscript">
+						<div id="titrePanier">
+							<a href="">Panier</a>
+							<div id="iconePanier"></div>
+						</div>
+						<div id="listePanierFormInsc">
+							<ul>
+								<li>v1 <h:commandLink value="annuler1"
+										action="#{formInsciptMBean}" /></li>
+								<li>v2 <h:commandLink value="annuler2"
+										action="#{formInsciptMBean}" /></li>
+								<li>v4 <h:commandLink value="annuler3"
+										action="#{formInsciptMBean}" /></li>
+								<li>v8 <h:commandLink value="annuler4"
+										action="#{formInsciptMBean}" /></li>
+							</ul>
+						</div>
 					</div>
-
-					<ul>
-						<li>v1 <a href="">supp</a></li>
-						<li>v2 <a href="">supp</a></li>
-						<li>v4 <a href="">supp</a></li>
-						<li>v8 <a href="">supp</a></li>
-					</ul>
-				</div>
-				<div id="totalPanierFormInscript">Total : 125€</div>
-				<div>
-					<input type="button" value="Detail du Panier"
-						id="detailPanierFormInscript" />
+					<div id="totalPanierFormInscript">Total : 125€</div>
+					<div>
+						<br /> <br /> <br />
+						 <h:commandButton action="#{formInsciptMBean.accesDetailPanier()}" value="Detail du Panier" class="detailPanierFormInscript"/>
+					</div>
 				</div>
 			</div>
-		</div>
+		</h:form>
 		<script>
 function blink(ob)
 {
@@ -201,6 +207,12 @@ function blink(ob)
 }
 setInterval("blink(titrePromo)",500);
 
+$('#choixCivil').click(function () {	 
+	$('#accesCodeMilitaire').hide();
+	  });
+$('#choixMilitaire').click(function () {
+	$('#accesCodeMilitaire').show(); 
+	  });
 </script>
 	</ui:define>
 </ui:composition>

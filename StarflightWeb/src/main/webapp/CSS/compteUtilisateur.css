@@ -1,0 +1,450 @@
+/***************************************/
+/*********      Content     ************/
+/***************************************/
+
+
+/***************************************/
+/*********      Contenu     ************/
+/***************************************/
+
+#contenuCompteUtilisateur
+{
+	padding-top: 0.5%;
+	padding-left: 1%;
+	padding-right: 1%;	
+}
+
+/********************************/
+/*********      Titre    ********/
+/********************************/
+
+#titrePageCompteUtilisateur
+{
+	width: 265px;
+	margin-left: 10%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	border-radius: 10px;
+	background-color: rgba(128, 128, 128, 0.43);
+	text-align: center;
+	position: absolute;
+	font-weight: bold;
+	font-family: Lucida Sans;
+	color: #BDE3DE;
+}
+
+/*************************************************/
+/*********      Formulaire Utilisateur    ********/
+/*************************************************/
+
+.titreColonneUtilisateur
+{
+	font-weight: bold;
+	font-family: Lucida Sans;
+	color: #BDE3DE;
+	text-align: center;
+	margin-left: 5%;
+}
+
+ 
+ .right2
+{
+	float:right;
+	width:80px;
+	border-radius:10px;
+	border:2px solid black;
+}
+ 
+.centVingtpx
+{
+	width:120px;
+}
+
+.droite
+{
+	float:right;
+	width:150px;
+}
+
+#ficheUtilisateurInfoPerso
+ {
+	border-radius: 10px;
+	float: left;
+	margin-left: 1%;
+	width: 255px;
+	height: 327px;
+	background-color: rgba(128, 128, 128, 0.43);
+	margin-top: 4%;
+	padding-top: 1%;
+	padding-left: 1%;
+}
+
+#ficheUtilisateurAdresse
+ {
+	border-radius: 10px;
+	float: left;
+	margin-left: 1%;
+	width: 255px;
+	height: 327px;
+	background-color: rgba(128, 128, 128, 0.43);
+	margin-top: 4%;
+	padding-top: 1%;
+	padding-left: 1%;
+}
+
+#ficheUtilisateurIdentification
+ {
+	background-color: rgba(128, 128, 128, 0.43);
+	border-radius: 10px;
+	margin-left: 1%;
+	width: 540px;
+	height: 147px;
+	padding-top: 0.4%;
+	padding-left: 1%;
+	position: absolute;
+	margin-top: 26.5%;
+}
+
+.détail
+{
+width:800px;
+height:800px;
+float:left;
+margin-left:300px;
+
+border: 2px,solid,black;
+border-radius:10px;
+margin-bottom:100px;
+}
+
+.detailNiveau1,.detailNiveau3,.detailNiveau2
+{
+
+background-color: rgba(128, 128, 128, 0.43);
+padding-bottom:20px;
+
+}
+
+.detailNiveau1
+{
+	padding-left:100px;
+}
+ 
+ .colonneUtil
+ {
+	margin-bottom:30px;
+	color:#321954;
+	font-weight: bold;
+ }
+ 
+ .colonneUtilIdent
+ {
+	margin-bottom:10px;
+	color:#321954;
+	font-weight: bold;
+ }
+ 
+ .center
+ {
+	width:200px;
+	margin-left:auto;
+	margin-right:auto;
+ }
+ 
+ .centerIdent
+ {
+	margin-right: 40%;
+	float: right;
+ }
+ 
+.centVingtpxPlus
+{
+	width:126px;
+}
+ 
+ .buttFicheUtilisateur
+ {
+	width:80px;
+	border-radius:10px;
+	border:2px solid black;
+	margin-left: 12%;
+	position: absolute;
+ }
+ 
+.buttFicheUtilisateur:hover
+{
+	-moz-box-shadow: 0 0 15px #00C6DC;
+	-webkit-box-shadow: 0 0 15px #00C6DC;
+	box-shadow: 0 0 15px #00C6DC;
+}
+ 
+ .gauche{
+ margin-top: 10px;
+ margin-right: 5px;
+ margin-left:25px;
+ float:left;
+ width:200px;
+ border:solid 1px #ffffff;
+ 
+ }
+ 
+/****************************************************************/
+/*********   Informations de Payement et Livraisons  ************/
+/****************************************************************/
+
+#ficheUtiliPayementLivraison
+{
+	background-color: rgba(128, 128, 128, 0.43);
+	border-radius: 10px;
+	margin-left: -2%;
+	width: 660px;
+	height: 205px;
+	padding-top: 0.4%;
+	padding-left: 1%;
+	position: absolute;
+	margin-top: -14.8%;
+}
+
+#typePaypal
+{
+	display:none;
+}
+
+#typeCarteBanquaire
+{
+	display:none;
+}
+
+.numCarteBanqueCompte
+{
+	margin-left: 4.6%;
+	width:121px;
+}
+
+.titreCodeSecuriteUtil
+{
+	padding-left:5%;
+}
+
+.codeSecuriteUtil
+{
+	width:25px;
+}
+
+#dateCarteBanquaire
+{
+	margin-left: 5%;
+}
+
+#selectLocalLivraison
+{
+	width: 150px;
+}
+
+#autreLieuDeLivraison
+ {
+	display:none;
+	border-radius: 30px;
+	float: left;
+	margin-left: 18%;
+	width: 255px;
+	height: 327px;
+	background-color: rgba(100, 150, 200, 0.89);
+	margin-top: -2.5%;
+	padding-top: 1%;
+	padding-left: 1%;
+	position: absolute;
+}
+
+#lienAutreLieuDeLivraison
+{
+	display:none;
+	font-family: Lucida Sans;
+	color: #3E186F;
+	text-align: center;
+	margin-left: 5%;
+	font-size: 0.8em;
+}
+
+.titreColonneAutreLieuDeLivraison
+{
+	font-weight: bold;
+	font-family: Lucida Sans;
+	color: #BDE3DE;
+	text-align: center;
+	margin-left: 5%;
+	font-size: 0.9em;
+}
+
+/******************************************/
+/*********   Listing Produit   ************/
+/******************************************/
+#listingProduitAchete
+{
+	float :right;
+	width: 630px;
+	height: 340px;
+	border-radius:10px;
+	background-color: rgba(150, 200, 255, 0.3);
+	padding-top: 0.5%;
+	padding-left: 1%;
+	font-size: 1em;
+	margin-right: 2%;
+	overflow: auto;
+	margin-top: 15%;
+	
+}
+
+#titreListingProduitAchete
+{
+	font-weight: bold;
+	font-family: Lucida Sans;
+	font-size: 1.1em;
+	position:absolute;
+	color: #E2C926;
+}
+
+#ListeProduitUtilisateur
+{
+	margin-left:-2%;
+	margin-top: 5%;
+	margin-right: auto;
+	float: left;
+	overflow: auto;	
+}
+
+#tableListeProdUtilisateur
+{
+	border-color: #321954;
+	border-style: inset;
+	border-width:4px;
+	width:610px;
+	margin-left: 2%;
+	font-size: 0.8em;
+	color: #321954;
+	font-family: Lucida Sans; 
+
+}
+
+#titreTableCompteUtilisateur
+{
+	font-weight: bold;
+	font-family: Lucida Sans;
+	font-size:1.2em;
+	color: #3E186F;
+}
+
+.bordTabUtiltitre
+{
+	border-width:3px;
+ 	border-style:outset; 
+	border-color:#321954;
+	width:20%
+}
+
+.bordTabUtil
+{
+	border-width:2px;
+ 	border-style:outset; 
+	border-color: #BDE3DE;
+	width:20%
+}
+
+.produitUtilisateurListee
+{
+	margin-top: 10px;
+	float:left;
+	width:200px;
+	border:solid 1px #ffffff;
+	margin-left:1%;
+}
+ 
+/*************************************/
+/*********      Panier    ************/
+/*************************************/
+
+#panierCompteUtilisateur
+{
+	width: 200px;
+	height: 399px;
+	border-radius:10px;
+	background-color: rgba(150, 200, 255, 0.3);
+	margin-top: 11%;
+	padding-top: 0.4%;
+	padding-left: 1%;
+	color: #E2C926;
+	font-size: 1em;
+	margin-right: 1%;
+	margin-left: 82.5%;
+	position:absolute;
+}
+
+#titrePanier
+{
+	font-weight: bold;
+	font-family: Lucida Sans;
+	font-size: 1.1em;
+}
+
+#iconePanierUtilisateur
+{
+	background-image: url("./../image/Icones/cadie.39px.39px.png");
+	position: absolute;
+	width: 18.3%;
+	height: 38px;
+	margin-left: 73%;
+	margin-top: -11.6%;
+}
+
+
+#hauteurPanierCompteUtilisateur
+{
+	height:270px;
+}
+
+#listePanierCompteUtilisateur
+{
+	color: #BDE3DE;
+	overflow: auto;	
+}
+
+#totalPanierCompteUtilisateur
+{
+	font-weight: bold;
+	font-family: Lucida Sans;
+	font-size: 1em;
+}
+
+.detailPanierCompteUtilisateur
+{
+	width:200px;
+	height:30px;
+	border-radius:10px;
+	border:2px solid black;
+	margin-left:-3%;
+}
+
+.detailPanierCompteUtilisateur:hover
+ {
+	-moz-box-shadow: 0 0 25px #64EDAD;
+	-webkit-box-shadow: 0 0 25px #64EDAD;
+	box-shadow: 0 0 25px #64EDAD;
+}
+
+.lancerCommandeCompteUtilisateur
+{
+	width:200px;
+	height:30px;
+	border-radius:10px;
+	border:2px solid black;
+	margin-left:-3%;
+}
+
+.lancerCommandeCompteUtilisateur:hover
+ {
+	-moz-box-shadow: 0 0 25px #BDF22D;
+	-webkit-box-shadow: 0 0 25px #BDF22D;
+	box-shadow: 0 0 25px #BDF22D;
+}
+
+ 

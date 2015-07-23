@@ -12,42 +12,43 @@
 			src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
 
 	</ui:define>
-	<div>
-		<div id="titreLogo">
-			<img src="Images/logoXWingVR.png" />
-		</div>
-		<h1>Your Starship</h1>
-	</div>
-	<div id="loginIn">
+	<h:form>
 		<div>
-			<input type="text" value="Email" />
+			<div id="titreLogo">
+				<img src="image/logoXWingVR.png" />
+			</div>
+			<h:commandLink class="titreHeaderSite" value="Your Starship" action="#{headerManagedBean.retourAccueil()}" />
 		</div>
-		<div>
-			<input type="text" value="Password" />
+	</h:form>
+	<h:form>
+		<div id="loginIn">
+			<div>
+			<h:inputText value="#{informationsLogin.login}" />
+			</div>
+			<div>
+			<h:inputSecret value="#{informationsLogin.motDePasse}" />
+			</div>
+			<div>
+				<input type="button" value="OK" id="buttloginIn" />
+				<h:commandButton action="#{headerManagedBean.pasDeCompte()}" value="Inscription" />
+			</div>
 		</div>
-		<div>
-			<input type="button" value="OK" id="buttloginIn" /> <a
-				id="lienPasDeCompte" href="formulaireInscription.xhtml">Pas
-				encore de compte ?</a>
-		</div>
-	</div>
-	<div id="loginOut">
-		<div>
-			<span>Bonjour : </span>
-			<h:outputText value="{inséré le login}" />
-		</div>
-		<br />
-		<div>
-			<input type="button" value="Déconnexion" id="buttloginOut" />
-			<div id="accesGestionDuCompte">
-			<span>Gérer</span>
-			<div id="iconeAccessCompteClient">
+		<div id="loginOut">
+			<div>
+				<span>Bonjour : </span>
+				<h:outputText value="{inséré le login}" />
 			</div>
 			<br />
-			<span>votre Compte</span>
+			<div>
+				<input type="button" value="Déconnexion" id="buttloginOut" />
+				<div id="accesGestionDuCompte">
+					<h:commandLink value="Gérer" action="#{headerManagedBean.accesCompteUtilisateur()}" class="titreAccesCompteAccueil"/>
+					<div id="iconeAccessCompteClient"></div>
+					<br /> <h:commandLink value="votre Compte" action="#{headerManagedBean.accesCompteUtilisateur()}" class="titreAccesCompteAccueil"/>
+				</div>
 			</div>
 		</div>
-	</div>
+	</h:form>
 	<script>		
 		$('#buttloginIn').click(function () {	 
         	$('#loginIn').toggle();

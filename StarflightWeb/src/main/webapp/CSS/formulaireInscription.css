@@ -48,12 +48,19 @@
 }
 
  
- .right2
+ .buttAnnulerFormInsc
 {
 	float:right;
 	width:80px;
 	border-radius:10px;
 	border:2px solid black;
+}
+
+.buttAnnulerFormInsc:hover
+ {
+	-moz-box-shadow: 0 0 15px #00C6DC;
+	-webkit-box-shadow: 0 0 15px #00C6DC;
+	box-shadow: 0 0 15px #00C6DC;
 }
  
 .centVingtpx
@@ -67,7 +74,7 @@
 	width:150px;
 }
 
-.IP 
+.colonneFormeInscription
 {
 	border: 2px, solid, black;
 	border-radius: 10px;
@@ -79,6 +86,7 @@
 	margin-top: 110px;
 	padding-top: 1%;
 	padding-left: 1%;
+	color:#321954;
 }
 
 .détail
@@ -121,7 +129,8 @@ padding-bottom:20px;
 	margin-right:auto;
  
  }
-  .center2
+ 
+ .buttValiderFormInsc
  {
 	margin-left:auto;
 	margin-right:18px;
@@ -129,6 +138,13 @@ padding-bottom:20px;
 	border-radius:10px;
 	border:2px solid black;
  }
+ 
+ .buttValiderFormInsc:hover
+ {
+	-moz-box-shadow: 0 0 15px #00C6DC;
+	-webkit-box-shadow: 0 0 15px #00C6DC;
+	box-shadow: 0 0 15px #00C6DC;
+}
  
  .gauche{
  margin-top: 10px;
@@ -138,6 +154,11 @@ padding-bottom:20px;
  width:200px;
  border:solid 1px #ffffff;
  
+ }
+ 
+ #accesCodeMilitaire
+ {
+ 	display: none;
  }
  
 /*************************************/
@@ -168,7 +189,7 @@ padding-bottom:20px;
 
 #iconePanier
 {
-	background-image: url("./../Images/Icones/cadie.39px.39px.png");
+	background-image: url("./../image/Icones/cadie.39px.39px.png");
 	position: absolute;
 	width: 2.5%;
 	height: 38px;
@@ -179,7 +200,13 @@ padding-bottom:20px;
 
 #hauteurPanierFormInscript
 {
-	height:340px;
+	height:270px;
+}
+
+#listePanierFormInsc
+{
+	color: #BDE3DE;
+	overflow: auto;	
 }
 
 #totalPanierFormInscript
@@ -196,4 +223,27 @@ padding-bottom:20px;
 	border-radius:10px;
 	border:2px solid black;
 	margin-left:-3%;
+}
+
+#detailPanierFormInscript:hover
+ {
+	-moz-box-shadow: 0 0 25px #64EDAD;
+	-webkit-box-shadow: 0 0 25px #64EDAD;
+	box-shadow: 0 0 25px #64EDAD;
+}
+
+.lancerCommandeFormInscript
+{
+	width:200px;
+	height:30px;
+	border-radius:10px;
+	border:2px solid black;
+	margin-left:-3%;
+}
+
+.lancerCommandeFormInscript:hover
+{
+	-moz-box-shadow: 0 0 25px #BDF22D;
+	-webkit-box-shadow: 0 0 25px #BDF22D;
+	box-shadow: 0 0 25px #BDF22D;
 }

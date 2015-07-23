@@ -8,7 +8,6 @@
 		<version>1</version>
 	</parent>
 
-	<groupId>gal.cor</groupId>
 	<artifactId>StarflightEAR</artifactId>
 	<version>1.0</version>
 
@@ -72,7 +71,8 @@
 						<webModule>
 							<groupId>gal.cor</groupId>
 							<artifactId>StarflightWeb</artifactId>
-							<contextRoot>StarflightWeb</contextRoot>
+							<contextRoot>starflight</contextRoot>
+							<uri>starflight.war</uri>
 						</webModule>
 
 						<ejbModule>

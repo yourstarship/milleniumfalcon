@@ -1,0 +1,429 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+
+<ui:composition template="/Templates/baseTemplate.xhtml">
+	<ui:define name="scripts">
+		<script type='text/javascript'
+			src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
+	</ui:define>
+
+	<ui:define name="content">
+	<h:form>
+		<div id="contenuCompteUtilisateur">
+
+			<div id="titrePageCompteUtilisateur">
+				<span>Compte Utilisateur</span>
+			</div>
+
+			<!-- Espace Promotions -->
+			<div class="Promo">
+				<span id="titrePromo" style="visibility: visible">PROMOTIONS</span>
+				<div id="imgPromo1" class="alignePromo">
+					<span id="reducPromo" style="visibility: visible">-5%</span> <img
+						src="image/e04b1581.jpg" />
+				</div>
+				<div id="imgPromo2" class="alignePromo">
+					<img src="image/Promos/29 - AT-ST.jpg" />
+				</div>
+				<div id="imgPromo3" class="alignePromo">
+					<img src="image/Promos/63 - T47 A-Wing.jpg" />
+				</div>
+			</div>
+
+			
+				<div id="ficheUtilisateurInfoPerso">
+					<span class="titreColonneUtilisateur">Information
+						personnelle</span> <br /> <br />
+					<div class="colonneUtil">
+						<span>Civilité : </span>
+						<div class="droite">
+							<input type="radio" name="civilite" value="M.">M.</input> <input
+								type="radio" name="civilite" value="Mme">Mme.</input>
+						</div>
+					</div>
+					<div class="colonneUtil">
+						<span>Nom : </span>
+						<div class="droite">
+							<h:inputText value="Nom" class="centVingtpx" />
+						</div>
+					</div>
+					<div class="colonneUtil">
+						<span>Prénom : </span>
+						<div class="droite">
+							<h:inputText value="Prénom" class="centVingtpx" />
+						</div>
+
+					</div>
+					<div class="colonneUtil">
+						<span>Naissance : </span>
+						<div class="droite">
+							<h:inputText name="14/02/1989" class="centVingtpx" />
+						</div>
+
+					</div>
+					<div class="colonneUtil">
+						<span>Tel : </span>
+						<div class="droite">
+							<h:inputText value="0145708432" class="centVingtpx" />
+						</div>
+					</div>
+					<div class="colonneUtil">
+						<span>Mail : </span>
+						<div class="droite">
+							<h:inputText value="xx@mma.fr" class="centVingtpx" />
+						</div>
+					</div>
+				</div>
+
+				<div id="ficheUtilisateurAdresse">
+					<span class="titreColonneUtilisateur">Adresse</span> <br /> <br />
+					<br />
+					<div class="colonneUtil">
+						<span>Coordonnée X : </span>
+						<div class="droite">
+							<input type="text" value="32" class="centVingtpx" />
+						</div>
+					</div>
+					<div class="colonneUtil">
+						<span>Coordonnée Y : </span>
+						<div class="droite">
+							<input type="text" value="64" class="centVingtpx" />
+						</div>
+					</div>
+					<div class="colonneUtil">
+						<span>Coordonnée Z : </span>
+						<div class="droite">
+							<input type="text" value="78" class="centVingtpx" />
+						</div>
+					</div>
+					<div class="colonneUtil">
+						<span>Planète : </span>
+						<div class="droite">
+							<select name="Planete" size="1" class="centVingtpx">
+								<option>Agamar</option>
+								<option>Hoth</option>
+								<option>Kashyyyk</option>
+								<option>Naboo</option>
+							</select>
+						</div>
+					</div>
+					<div class="colonneUtil">
+						<span>Système : </span>
+						<div class="droite">
+							<select name="systeme" size="1" class="centVingtpx">
+								<option>Agamar</option>
+								<option>Hoth</option>
+								<option>Kashyyyk</option>
+								<option>Naboo</option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<div id="ficheUtilisateurIdentification">
+					<span class="titreColonneUtilisateur">Identification</span>
+					<div class="colonneUtilIdent">
+						<span>Login : </span>
+						<div class="centerIdent">
+							<h:inputText value="Login" class="centVingtpx" />
+						</div>
+					</div>
+					<div class="colonneUtilIdent">
+						<span>mot de passe : </span>
+						<div class="centerIdent">
+							<h:inputText value="Mdp" class="centVingtpx" /> 
+							<h:commandButton action="#{compteUtilisateurMBean}" value="Valider" class="buttFicheUtilisateur"/>
+						</div>
+					</div>
+					<div class="colonneUtilIdent">
+						<span>Type : </span>
+						<div class="centerIdent">
+							<select name="type" size="1" class="centVingtpxPlus">
+								<option id="choixCivil">Civil</option>
+								<option id="choixMilitaire">Militaire</option>
+							</select>
+							<h:commandButton action="#{compteUtilisateurMBean}" value="Annuler" class="buttFicheUtilisateur"/>
+						</div>
+					</div>
+					<div class="colonneUtilIdent" id="accesCodeMilitaire">
+						<span>code militaire : </span>
+						<div class="centerIdent">
+							<h:inputText value="Code" class="centVingtpx" />
+						</div>
+
+					</div>
+				</div>
+			
+
+			<!-- Listing Produit Acheté -->
+			<div id="listingProduitAchete">
+				<!-- Informations de Payement et Livraisons -->
+				<div id="ficheUtiliPayementLivraison">
+					<span class="titreColonneUtilisateur">Informations de
+						Payements et de Livraisons</span>
+					<div class="colonneUtilIdent">
+						<span>Sélectionner le type de payement : </span>
+						<div class="centerIdent">
+							<select name="type" size="1" class="centVingtpxPlus">
+								<option id="carteBanquaire">Carte Banquaire</option>
+								<option id="Paypal">Paypal</option>
+							</select>
+						</div>
+					</div>
+					<div class="colonneUtilIdent" id="typeCarteBanquaire">
+						<span>Type de Cartes : </span>
+						<div class="centerIdent">
+							<select name="type" size="1" class="centVingtpxPlus">
+								<option id="CarteBLeue">Carte BLeue</option>
+								<option id="Visa">Visa</option>
+								<option id="Gold">Gold</option>
+								<option id="Millenium">Millenium</option>
+								<option id="LunarGold">LunarGold</option>
+							</select>
+						</div>
+						<br/>
+						<div id="numCarte">
+						<br/>
+							<span>Numéro de la carte : </span> <h:inputText
+								value="7548 6245 4855 7854" class="numCarteBanqueCompte"/> 
+								<span class="titreCodeSecuriteUtil">Code de Sécurité : </span> <h:inputText value="987"
+								class="codeSecuriteUtil" /> <br /> <br/> <span>Propriétaire de la
+								Carte : </span> <h:inputText value="Jack Sparrow"
+								class="centVingtpx" />
+								<span id="dateCarteBanquaire">Date d'expiration : </span><h:inputText value="21/12/2012"
+								class="centVingtpx" />
+						</div>
+					</div>
+					<div class="colonneUtilIdent" id="typePaypal">
+							<span>Numéro de Compte : </span> <h:inputText
+								value="7548 6245 4855 7854" class="numCarteBanqueCompte" />
+							<span class="titreCodeSecuriteUtil">Code de Sécurité : </span> 
+							<h:inputText value="987" class="codeSecuriteUtil" />
+						
+						<div id="numCompte">
+						
+						</div>
+					</div>
+					<div class="colonneUtilIdent" id="localisationLivraison">
+						<span>Lieu de Livraison : </span>
+						<div class="centerIdent">
+							<select name="type" size="1" id="selectLocalLivraison">
+								<option id="adressePersonnelle">Adresse Personnelle</option>
+								<option id="autreAdresse">Autre Adresse</option>
+							</select>
+						</div>
+						<br />
+						<span id="lienAutreLieuDeLivraison">Déployer Nouvelle Adresse</span>
+					</div>
+				</div>
+				<div id="autreLieuDeLivraison">
+					<span class="titreColonneAutreLieuDeLivraison">Nouvelle Adresse de Livraison</span> <br /> <br />
+					<br />
+					<div class="colonneUtil">
+						<span>Coordonnée X : </span>
+						<div class="droite">
+							<h:inputText value="32" class="centVingtpx" />
+						</div>
+					</div>
+					<div class="colonneUtil">
+						<span>Coordonnée Y : </span>
+						<div class="droite">
+							<h:inputText value="64" class="centVingtpx" />
+						</div>
+					</div>
+					<div class="colonneUtil">
+						<span>Coordonnée Z : </span>
+						<div class="droite">
+							<h:inputText value="78" class="centVingtpx" />
+						</div>
+					</div>
+					<div class="colonneUtil">
+						<span>Planète : </span>
+						<div class="droite">
+							<select name="Planete" size="1" class="centVingtpx">
+								<option>Agamar</option>
+								<option>Hoth</option>
+								<option>Kashyyyk</option>
+								<option>Naboo</option>
+							</select>
+						</div>
+					</div>
+					<div class="colonneUtil">
+						<span>Système : </span>
+						<div class="droite">
+							<select name="systeme" size="1" class="centVingtpx">
+								<option>Agamar</option>
+								<option>Hoth</option>
+								<option>Kashyyyk</option>
+								<option>Naboo</option>
+							</select>
+						</div>
+					</div>
+					<span class="titreColonneAutreLieuDeLivraison"> Réduire </span>
+				</div>
+				<!-- Listing Produit Acheté -->
+				<div id="titreListingProduitAchete">
+					<span>Vos Achats Passés : </span>
+				</div>
+				<!-- Ce qui suit est à mettre dans un ui:repeater -->
+				<br /> <span class="msgAlert">### Message à Caractère
+					informatif, ###</span> <br /> <span class="msgAlert">### les
+					lignes du tableau sont à mettre dans un ui:repeater, ###</span>
+
+				<div id="ListeProduitUtilisateur">
+					<table id="tableListeProdUtilisateur">
+						<tr id="titreTableCompteUtilisateur">
+							<th class="bordTabUtiltitre">Date</th>
+							<th class="bordTabUtiltitre">Nom du Produit</th>
+							<th class="bordTabUtiltitre">Quantité</th>
+							<th class="bordTabUtiltitre">Prix Unitaire</th>
+							<th class="bordTabUtiltitre">Coût Total</th>
+						</tr>
+						<tr>
+							<td class="bordTabUtil">Achats</td>
+							<td class="bordTabUtil"><h:commandLink value="NomDuProduit1" action="#{compteUtilisateurMBean}" /></td>
+							<td class="bordTabUtil">Achats</td>
+							<td class="bordTabUtil">Achats</td>
+							<td class="bordTabUtil">Achats</td>
+						</tr>
+						<tr>
+							<td class="bordTabUtil">Achats</td>
+							<td class="bordTabUtil"><h:commandLink value="NomDuProduit2" action="#{compteUtilisateurMBean}" /></td>
+							<td class="bordTabUtil">Achats</td>
+							<td class="bordTabUtil">Achats</td>
+							<td class="bordTabUtil">Achats</td>
+						</tr>
+						<tr>
+							<td class="bordTabUtil">Achats</td>
+							<td class="bordTabUtil"><h:commandLink value="NomDuProduit3" action="#{compteUtilisateurMBean}" /></td>
+							<td class="bordTabUtil">Achats</td>
+							<td class="bordTabUtil">Achats</td>
+							<td class="bordTabUtil">Achats</td>
+						</tr>
+						<tr>
+							<td class="bordTabUtil">Achats</td>
+							<td class="bordTabUtil"><h:commandLink value="NomDuProduit4" action="#{compteUtilisateurMBean}" /></td>
+							<td class="bordTabUtil">Achats</td>
+							<td class="bordTabUtil">Achats</td>
+							<td class="bordTabUtil">Achats</td>
+						</tr>
+						<tr>
+							<td class="bordTabUtil">Achats</td>
+							<td class="bordTabUtil"><h:commandLink value="NomDuProduit5" action="#{compteUtilisateurMBean}" /></td>
+							<td class="bordTabUtil">Achats</td>
+							<td class="bordTabUtil">Achats</td>
+							<td class="bordTabUtil">Achats</td>
+						</tr>
+						<tr>
+							<td class="bordTabUtil">Achats</td>
+							<td class="bordTabUtil"><h:commandLink value="NomDuProduit6" action="#{compteUtilisateurMBean}" /></td>
+							<td class="bordTabUtil">Achats</td>
+							<td class="bordTabUtil">Achats</td>
+							<td class="bordTabUtil">Achats</td>
+						</tr>
+						<tr>
+							<td class="bordTabUtil">Achats</td>
+							<td class="bordTabUtil"><h:commandLink value="NomDuProduit7" action="#{compteUtilisateurMBean}" /></td>
+							<td class="bordTabUtil">Achats</td>
+							<td class="bordTabUtil">Achats</td>
+							<td class="bordTabUtil">Achats</td>
+						</tr>
+						<tr>
+							<td class="bordTabUtil">Achats</td>
+							<td class="bordTabUtil"><h:commandLink value="NomDuProduit8" action="#{compteUtilisateurMBean}" /></td>
+							<td class="bordTabUtil">Achats</td>
+							<td class="bordTabUtil">Achats</td>
+							<td class="bordTabUtil">Achats</td>
+						</tr>
+						<tr>
+							<td class="bordTabUtil">Achats</td>
+							<td class="bordTabUtil"><h:commandLink value="NomDuProduit9" action="#{compteUtilisateurMBean}" /></td>
+							<td class="bordTabUtil">Achats</td>
+							<td class="bordTabUtil">Achats</td>
+							<td class="bordTabUtil">Achats</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<!-- Panier lateral droit -->
+			<div id="panierCompteUtilisateur">
+				<div id="hauteurPanierCompteUtilisateur">
+					<div id="titrePanier">
+						<a href="">Panier</a>
+						<div id="iconePanierUtilisateur"></div>
+					</div>
+					<div id="listePanierFCompteUtilisateur">
+						<ul>
+							<li>v1 <h:commandLink value="annuler1" action="#{compteUtilisateurMBean}" /></li>
+							<li>v2 <h:commandLink value="annuler2" action="#{compteUtilisateurMBean}" /></li>
+							<li>v4 <h:commandLink value="annuler3" action="#{compteUtilisateurMBean}" /></li>
+							<li>v8 <h:commandLink value="annuler4" action="#{compteUtilisateurMBean}" /></li>
+						</ul>
+					</div>
+				</div>
+				<div id="totalPanierCompteUtilisateur">Total : 125€</div>
+				<div>
+					<br /> 
+					<h:commandButton action="#{compteUtilisateurMBean.accesDetailPanier()}" value="Detail du Panier" class="detailPanierCompteUtilisateur"/>
+					 <br /> <br /> 
+					 <h:commandButton action="#{compteUtilisateurMBean.validerLaCommande()}" value="Effectuer votre Commande" class="lancerCommandeCompteUtilisateur"/>
+				</div>
+			</div>
+
+		</div>
+</h:form>
+		<script>
+		function blink(ob)
+		{
+			if (ob.style.visibility == "visible" )
+			{
+				ob.style.visibility = "hidden";
+			}
+			else
+			{
+				ob.style.visibility = "visible";
+			}
+		}
+		setInterval("blink(titrePromo)",500);
+		
+		$('#carteBanquaire').click(function () {	 
+			$('#typePaypal').hide();
+			$('#typeCarteBanquaire').show(); 
+			  });
+		$('#Paypal').click(function () {
+			$('#typeCarteBanquaire').hide();
+			$('#typePaypal').show(); 
+		});
+		
+		$('#choixCivil').click(function () {	 
+			$('#accesCodeMilitaire').hide();
+			  });
+		$('#choixMilitaire').click(function () {
+			$('#accesCodeMilitaire').show(); 
+		});
+
+		$('#autreAdresse').click(function () {	 
+			$('#autreLieuDeLivraison').show("size");
+			$('#lienAutreLieuDeLivraison').show();
+			  });
+		$('#adressePersonnelle').click(function () {
+			$('#autreLieuDeLivraison').hide("size"); 
+		});
+		$('#lienAutreLieuDeLivraison').click(function () {
+			$('#autreLieuDeLivraison').show("size"); 
+		});
+		$('.titreColonneAutreLieuDeLivraison').click(function () {
+			$('#autreLieuDeLivraison').hide("size"); 
+		});
+
+			</script>
+	</ui:define>
+</ui:composition>
+
+</html>

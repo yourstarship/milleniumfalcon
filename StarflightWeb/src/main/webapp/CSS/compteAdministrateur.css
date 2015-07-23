@@ -50,9 +50,9 @@
 	color: #BDE3DE;
 }
 
-/****************************************************/
-/*********      Formulaire d'inscription     ********/
-/****************************************************/
+/******************************************************/
+/*********      Formulaire d'Administrateur    ********/
+/******************************************************/
 
 .titreColonneFormInsc
 {
@@ -94,6 +94,7 @@
 	margin-top: 4%;
 	padding-top: 1%;
 	padding-left: 1%;
+	color:#321954;
 }
 
 #ficheAdminAdresse
@@ -107,6 +108,7 @@
 	margin-top: 4%;
 	padding-top: 1%;
 	padding-left: 1%;
+	color:#321954;
 }
 
 #ficheAdminIdentification
@@ -120,18 +122,7 @@
 	padding-left: 1%;
 	position: absolute;
 	margin-top: 26.5%;
-}
-
-.détail
-{
-width:800px;
-height:800px;
-float:left;
-margin-left:300px;
-
-border: 2px,solid,black;
-border-radius:10px;
-margin-bottom:100px;
+	color:#321954;
 }
 
 .detailNiveau1,.detailNiveau3,.detailNiveau2
@@ -180,9 +171,15 @@ padding-bottom:20px;
 	width:80px;
 	border-radius:10px;
 	border:2px solid black;
-	margin-left: 55%;
-	position: absolute;
+	margin-left: 23%;
  }
+ 
+ .buttFicheAdmin:hover
+ {
+	-moz-box-shadow: 0 0 15px #00C6DC;
+	-webkit-box-shadow: 0 0 15px #00C6DC;
+	box-shadow: 0 0 15px #00C6DC;
+}
  
  .gauche{
  margin-top: 10px;
@@ -218,6 +215,15 @@ padding-bottom:20px;
 	font-size: 1.1em;
 	font-weight: bold;
 	font-family: Lucida Sans;
+}
+
+ #buttRechercheAdmin
+{
+	background-image: url("./../image/Icones/bouton-search.30px.30px.png");
+	width: 30px;
+	margin-top: 2%;
+	margin-left: 1.5%;
+	height: 30px;
 }
 
 #menuAccordeon {
@@ -299,10 +305,10 @@ padding-bottom:20px;
 	background-color: rgba(150, 200, 255, 0.3);
 	padding-top: 0.4%;
 	padding-left: 1%;
-	color: #E2C926;
 	font-size: 1em;
 	margin-right: 1%;
 	overflow: auto;
+	color:#321954;
 }
 
 #titreListingProduit
@@ -311,6 +317,7 @@ padding-bottom:20px;
 	font-family: Lucida Sans;
 	font-size: 1.1em;
 	position:absolute;
+	color: #E2C926;
 }
 
 #ListeProduitAdmin
@@ -330,10 +337,26 @@ padding-bottom:20px;
 	border:solid 1px #ffffff;
 	margin-left:1%;
 }
+
+.buttListeDetailAdmin
+{
+	float:right;
+	width:70px;
+	height:25px;
+	border-radius:10px;
+	border:2px solid black;
+}
+
+.buttListeDetailAdmin:hover
+ {
+	-moz-box-shadow: 0 0 15px #00C6DC;
+	-webkit-box-shadow: 0 0 15px #00C6DC;
+	box-shadow: 0 0 15px #00C6DC;
+}
  
-/*************************************/
-/*********      Panier    ************/
-/*************************************/
+/***************************************************/
+/*********     Bouton d'ajout Produit   ************/
+/***************************************************/
 
 #surfaceBoutonAjoutProduitCompteAdmin
 {
@@ -351,12 +374,19 @@ padding-bottom:20px;
 	padding-top:1%;
 }
 
-#butAjoutProduitCompteAdmin
+.butAjoutProduitCompteAdmin
 {
 	width:200px;
 	height:30px;
 	border-radius:10px;
 	border:2px solid black;
 	margin-left:-4%;
+}
+
+.butAjoutProduitCompteAdmin:hover
+ {
+	-moz-box-shadow: 0 0 25px #25AE0A;
+	-webkit-box-shadow: 0 0 25px #25AE0A;
+	box-shadow: 0 0 25px #25AE0A;
 }
  

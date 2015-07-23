@@ -1,5 +1,6 @@
 package gal.cor.services.impl;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -38,7 +39,7 @@ public class ProduitServicesImpl implements IProduitServices {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
 	@Override
 	public Produit rechercherParId(Produit t) {
 		// TODO Auto-generated method stub
@@ -74,7 +75,8 @@ public class ProduitServicesImpl implements IProduitServices {
 
 	@Override
 	public List<Produit> obtenirTousProduitServices() {
-		return proxyProduit.obtenirTous();
+		List<Produit> maListe = (List<Produit>) proxyProduit.obtenirTousProduit(); 
+		return maListe;
 	}
 
 }
