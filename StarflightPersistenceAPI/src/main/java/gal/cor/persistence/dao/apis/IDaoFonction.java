@@ -7,11 +7,7 @@ import java.util.Map;
 import gal.cor.persistence.entities.Fonction;
 
 
-<<<<<<< HEAD
-public interface IDaoFonction {
-=======
 public interface IDaoFonction  {
->>>>>>> mf/master
 	void creerFonction(Fonction t);
 	void supprimerFonction(Fonction t);
 	Fonction mettreAjourFonction(Fonction t);

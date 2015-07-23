@@ -7,11 +7,7 @@ import java.util.Map;
 import gal.cor.persistence.entities.Planete;
 
 
-<<<<<<< HEAD
-public interface IDaoPlanete {
-=======
 public interface IDaoPlanete  {
->>>>>>> mf/master
 	void creerPlanete(Planete t);
 	void supprimerPlanete(Planete t);
 	Planete mettreAjourPlanete(Planete t);

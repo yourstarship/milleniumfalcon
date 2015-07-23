@@ -7,11 +7,7 @@ import java.util.Map;
 import gal.cor.persistence.entities.TVA;
 
 
-<<<<<<< HEAD
-public interface IDaoTVA {
-=======
 public interface IDaoTVA  {
->>>>>>> mf/master
 	void creerTVA(TVA t);
 	void supprimerTVA(TVA t);
 	TVA mettreAjourTVA(TVA t);

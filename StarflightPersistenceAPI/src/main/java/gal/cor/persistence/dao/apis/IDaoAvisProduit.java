@@ -12,14 +12,6 @@ public interface IDaoAvisProduit {
 	
 	List<AvisProduit> rechercherParRequeteNommee(Integer IdPersonne);
 
-<<<<<<< HEAD
-	//Requetes personnalis�es
-	List<AvisProduit> rechercherParRequeteNommee(String requeteNommee);
-	List<AvisProduit> rechercherParRequeteNommee(String requeteNommee, Map<String,Object> parametres,int nbreMaxElements);
-	List<AvisProduit> rechercherParRequeteNommee(String requeteNommee, Map<String,Object> parametres);
-	List<AvisProduit> rechercherParRequeteNommee(String requeteNommee, int nbreMaxElements);
-=======
->>>>>>> mf/master
 
 	Collection<AvisProduit> obtenirTousAvisProduit();
 }

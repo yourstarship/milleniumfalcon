@@ -6,11 +6,7 @@ import java.util.Map;
 
 import gal.cor.persistence.entities.CommandeFournisseur;
 
-<<<<<<< HEAD
-public interface IDaoCommandeFournisseur  {
-=======
 public interface IDaoCommandeFournisseur {
->>>>>>> mf/master
 	void creerCommandeFournisseur(CommandeFournisseur t);
 	void supprimerCommandeFournisseur(CommandeFournisseur t);
 	CommandeFournisseur mettreAjourCommandeFournisseur(CommandeFournisseur t);

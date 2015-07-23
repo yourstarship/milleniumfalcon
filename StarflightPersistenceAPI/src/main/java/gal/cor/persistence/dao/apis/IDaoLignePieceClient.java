@@ -10,11 +10,6 @@ public interface IDaoLignePieceClient
 {
 	void creerLignePieceClient(LignePieceClient lignePieceClient);
 
-<<<<<<< HEAD
-=======
-public interface IDaoLignePieceClient  {
-	void creerLignePieceClient(LignePieceClient t);
->>>>>>> mf/master
 	void supprimerLignePieceClient(LignePieceClient t);
 
 	LignePieceClient mettreAjourLignePieceClient(LignePieceClient t);

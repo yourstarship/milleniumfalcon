@@ -52,11 +52,6 @@
 	<build>
 		<plugins>
 
-<<<<<<< HEAD
-=======
-			
-
->>>>>>> mf/master
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-ejb-plugin</artifactId>
@@ -65,7 +60,7 @@
 					<ejbVersion>3.0</ejbVersion>
 				</configuration>
 			</plugin>
-			
+
 		</plugins>
 	</build>
 
