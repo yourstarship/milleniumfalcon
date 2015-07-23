@@ -1,7 +1,8 @@
 package gal.cor.persistence.dao.apis;
 
+import java.util.Collection;
 import java.util.List;
-
+import java.util.Map;
 
 import gal.cor.persistence.entities.Produit;
 
@@ -11,7 +12,8 @@ public interface IDaoProduit {
 
 	Produit mettreAjourProduit(Produit t);
 	Produit rechercherParId(Produit t);
-	List<Produit> rechercherParRequeteNommee(String requeteNommee);
+	List<Produit> rechercherParCategorie(Integer idCategorie);
 	List<Produit> obtenirTousProduit();
-
+	List<Produit> rechercherProduitParCategorieEtType(Integer idCategorie, Integer idType);
+	
 }
