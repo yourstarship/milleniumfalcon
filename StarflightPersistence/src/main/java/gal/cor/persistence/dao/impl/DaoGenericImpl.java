@@ -17,67 +17,67 @@ import javax.persistence.Query;
 @Stateless
 public class DaoGenericImpl<T> implements IDaoGeneric<T> {
 
-	@PersistenceContext(unitName = "YourStarshipPersistence", type = PersistenceContextType.TRANSACTION)
-    private EntityManager entityManager;
+	//(unitName = "YourStarshipPersistence", type = PersistenceContextType.TRANSACTION)
+	//private EntityManager entityManager;
 
-	private String requeteObtenirTous;
-	private Class<T> type;    
-	
+	//private String requeteObtenirTous;
+	//private Class<T> type;    
+
 	public DaoGenericImpl() {
-		this.type = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
-		requeteObtenirTous = "SELECT m From " + type.getName() + " m";
+	//	this.type = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
+		//requeteObtenirTous = "SELECT m From " + type.getName() + " m";
 	}
-	
+
 	@Override
 	public void creer(T t) {
-		entityManager.persist(t);		
+	//	entityManager.persist(t);		
 	}
 
 	@Override
 	public void supprimer(Class type, Object id) {
-		Object ref = (Object) entityManager.find(type, id);
-		if (ref != null) {
-			entityManager.remove(ref);
-		}
-		
+	//	Object ref = (Object) entityManager.find(type, id);
+		//if (ref != null) {
+		//	entityManager.remove(ref);
+		//}
+
 	}
 
 	@Override
 	public T mettreAjour(T t) {
-		return entityManager.merge(t);
-		
+		return null;//entityManager.merge(t);
+
 	}
-	
+
 	@Override
 	public List<T> obtenirTous() {
-		Query query = entityManager.createQuery(requeteObtenirTous);
-        return (List<T>) query.getResultList();
+		//Query query = entityManager.createQuery(requeteObtenirTous);
+		return  null ;//(List<T>) query.getResultList();
 	}
 
 	@Override
 	public T rechercherParId(Class<T> type, Object clefPrimaire) {
-		return entityManager.find(type, clefPrimaire);
+		return  null; //entityManager.find(type, clefPrimaire);
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<T> rechercherParRequeteNommee(String requeteNommee) {
-		return (List<T>) entityManager.createNamedQuery(requeteNommee).getResultList();
+		return null; //(List<T>) entityManager.createNamedQuery(requeteNommee).getResultList();
 	}
 
 	@Override
 	public List<T> rechercherParRequeteNommee(String requeteNommee,Map<String, Object> parametres, int nbreMaxElements) {
-		
+
 		Set<Entry<String, Object>> rawParameters = parametres.entrySet();
-        Query query = entityManager.createNamedQuery(requeteNommee);
-        if (nbreMaxElements > 0)
-            query.setMaxResults(nbreMaxElements);
-        for (Entry<String, Object> entry : rawParameters) {
-            query.setParameter(entry.getKey(), entry.getValue());
-        }
-        return (List<T>)query.getResultList();
+		//Query query = entityManager.createNamedQuery(requeteNommee);
+		if (nbreMaxElements > 0)
+			//query.setMaxResults(nbreMaxElements);
+		for (Entry<String, Object> entry : rawParameters) {
+			//query.setParameter(entry.getKey(), entry.getValue());
+		}
+		return  null;//(List<T>)query.getResultList();
 	}
-	
+
 	@Override
 	public List<T> rechercherParRequeteNommee(String requeteNommee, Map<String, Object> parametres) {
 		return rechercherParRequeteNommee(requeteNommee, parametres, 0);
@@ -85,20 +85,20 @@ public class DaoGenericImpl<T> implements IDaoGeneric<T> {
 
 	@Override
 	public List<T> rechercherParRequeteNommee(String requeteNommee,int nbreMaxElements) {
-		return (List<T>) entityManager.createNamedQuery(requeteNommee).setMaxResults(nbreMaxElements).getResultList();
+		return null; //(List<T>) entityManager.createNamedQuery(requeteNommee).setMaxResults(nbreMaxElements).getResultList();
 	}
 
 	@Override
 	public List<T> rechercherParRequeteNative(String requeteSQL,Class<T> type) {
-		return (List<T>) entityManager.createNativeQuery(requeteSQL, type).getResultList();
+		return null;// (List<T>) entityManager.createNativeQuery(requeteSQL, type).getResultList();
 	}
 
-	public EntityManager getEntityManager() {
-		return entityManager;
-	}
+//	public EntityManager getEntityManager() {
+//		return entityManager;
+//	}
 
-	public void setEntityManager(EntityManager entityManager) {
-		this.entityManager = entityManager;
-	}
+//	public void setEntityManager(EntityManager entityManager) {
+//		this.entityManager = entityManager;
+//	}
 
 }

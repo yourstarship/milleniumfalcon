@@ -7,17 +7,12 @@ import java.util.Map;
 import gal.cor.persistence.entities.Produit;
 
 
-public interface IDaoProduit extends IDaoGeneric<Produit> {
+public interface IDaoProduit {
 	void creerProduit(Produit t);
-	void supprimerProduit(Produit t);
+
 	Produit mettreAjourProduit(Produit t);
 	Produit rechercherParId(Produit t);
-
-	//Requetes personnalis�es
 	List<Produit> rechercherParRequeteNommee(String requeteNommee);
-	List<Produit> rechercherParRequeteNommee(String requeteNommee, Map<String,Object> parametres,int nbreMaxElements);
-	List<Produit> rechercherParRequeteNommee(String requeteNommee, Map<String,Object> parametres);
-	List<Produit> rechercherParRequeteNommee(String requeteNommee, int nbreMaxElements);
-
-	Collection<Produit> obtenirTousProduit();
+	List<Produit> obtenirTousProduit();
+	
 }

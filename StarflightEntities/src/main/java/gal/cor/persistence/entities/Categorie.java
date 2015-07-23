@@ -19,7 +19,7 @@ public class Categorie implements Serializable
 	private String nom;
 
 	@OneToMany(mappedBy = "categorie")
-	private Set<Produit> produits;
+	private Set<Produit>produits;
 
 	public Categorie(Integer id, String nom, Set<Produit> produits)
 	{

@@ -40,6 +40,7 @@
 			<groupId>gal.cor</groupId>
 			<artifactId>StarflightServicesAPI</artifactId>
 			<version>1.0</version>
+			<scope>provided</scope>
 		</dependency>
 
 	</dependencies>
