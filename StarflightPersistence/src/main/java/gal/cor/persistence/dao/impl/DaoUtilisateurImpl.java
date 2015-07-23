@@ -4,33 +4,115 @@ import gal.cor.persistence.dao.apis.IDaoUtilisateur;
 import gal.cor.persistence.entities.Utilisateur;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
-public class DaoUtilisateurImpl extends DaoGenericImpl<Utilisateur> implements IDaoUtilisateur {
+public class DaoUtilisateurImpl implements IDaoUtilisateur
+{
 
 	@Override
-	public void creerUtilisateur(Utilisateur t) {
-		this.creer(t);
+	public void creer(Utilisateur t)
+	{
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override
-	public void supprimerUtilisateur(Utilisateur t) {
-		this.supprimer(Utilisateur.class, t.getId());
+	public void supprimer(Class<Utilisateur> type, Object id)
+	{
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override
-	public Utilisateur mettreAjourUtilisateur(Utilisateur t) {
-		
-		return this.mettreAjour(t);
+	public Utilisateur mettreAjour(Utilisateur t)
+	{
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public Utilisateur rechercherParId(Utilisateur t) {
-		return this.rechercherParId(Utilisateur.class, t.getId());
+	public List<Utilisateur> obtenirTous()
+	{
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public Collection<Utilisateur> obtenirTousUtilisateur() {
-		return this.obtenirTous();
+	public Utilisateur rechercherParId(Class<Utilisateur> type, Object clefPrimaire)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Utilisateur> rechercherParRequeteNative(String requeteSQL, Class<Utilisateur> type)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void creerUtilisateur(Utilisateur t)
+	{
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void supprimerUtilisateur(Utilisateur t)
+	{
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Utilisateur mettreAjourUtilisateur(Utilisateur t)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Utilisateur rechercherParId(Utilisateur t)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Utilisateur> rechercherParRequeteNommee(String requeteNommee)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Utilisateur> rechercherParRequeteNommee(String requeteNommee, Map<String, Object> parametres, int nbreMaxElements)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Utilisateur> rechercherParRequeteNommee(String requeteNommee, Map<String, Object> parametres)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Utilisateur> rechercherParRequeteNommee(String requeteNommee, int nbreMaxElements)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Collection<Utilisateur> obtenirTousUtilisateur()
+	{
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

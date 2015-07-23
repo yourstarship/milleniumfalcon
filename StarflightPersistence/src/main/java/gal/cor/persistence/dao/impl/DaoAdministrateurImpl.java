@@ -4,33 +4,115 @@ import gal.cor.persistence.dao.apis.IDaoAdministrateur;
 import gal.cor.persistence.entities.Administrateur;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
-public class DaoAdministrateurImpl extends DaoGenericImpl<Administrateur> implements IDaoAdministrateur {
-
-	@Override
-	public void creerAdministrateur(gal.cor.persistence.entities.Administrateur t) {
-		this.creer(t);
-	}
+public class DaoAdministrateurImpl implements IDaoAdministrateur
+{
 
 	@Override
-	public void supprimerAdministrateur(Administrateur t) {
-		this.supprimer(Administrateur.class, t.getId());
-	}
-
-	@Override
-	public Administrateur mettreAjourAdministrateur(Administrateur t) {
+	public void creer(Administrateur t)
+	{
+		// TODO Auto-generated method stub
 		
-		return this.mettreAjour(t);
 	}
 
 	@Override
-	public Administrateur rechercherParId(Administrateur t) {
-		return this.rechercherParId(Administrateur.class, t.getId());
+	public void supprimer(Class<Administrateur> type, Object id)
+	{
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
-	public Collection<Administrateur> obtenirTousAdministrateur() {
-		return this.obtenirTous();
+	public Administrateur mettreAjour(Administrateur t)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Administrateur> obtenirTous()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Administrateur rechercherParId(Class<Administrateur> type, Object clefPrimaire)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Administrateur> rechercherParRequeteNative(String requeteSQL, Class<Administrateur> type)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void creerAdministrateur(Administrateur t)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void supprimerAdministrateur(Administrateur t)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Administrateur mettreAjourAdministrateur(Administrateur t)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Administrateur rechercherParId(Administrateur t)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Administrateur> rechercherParRequeteNommee(String requeteNommee)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Administrateur> rechercherParRequeteNommee(String requeteNommee, Map<String, Object> parametres, int nbreMaxElements)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Administrateur> rechercherParRequeteNommee(String requeteNommee, Map<String, Object> parametres)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Administrateur> rechercherParRequeteNommee(String requeteNommee, int nbreMaxElements)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Collection<Administrateur> obtenirTousAdministrateur()
+	{
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

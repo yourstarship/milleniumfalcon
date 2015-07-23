@@ -4,33 +4,115 @@ import gal.cor.persistence.dao.apis.IDaoCommandeClient;
 import gal.cor.persistence.entities.CommandeClient;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
-public class DaoCommandeClientImpl extends DaoGenericImpl<CommandeClient> implements IDaoCommandeClient {
+public class DaoCommandeClientImpl implements IDaoCommandeClient
+{
 
 	@Override
-	public void creerCommandeClient(CommandeClient t) {
-		this.creer(t);
+	public void creer(CommandeClient t)
+	{
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override
-	public void supprimerCommandeClient(CommandeClient t) {
-		this.supprimer(CommandeClient.class, t.getId());
+	public void supprimer(Class<CommandeClient> type, Object id)
+	{
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override
-	public CommandeClient mettreAjourCommandeClient(CommandeClient t) {
-		
-		return this.mettreAjour(t);
+	public CommandeClient mettreAjour(CommandeClient t)
+	{
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public CommandeClient rechercherParId(CommandeClient t) {
-		return this.rechercherParId(CommandeClient.class, t.getId());
+	public List<CommandeClient> obtenirTous()
+	{
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public Collection<CommandeClient> obtenirTousCommandeClient() {
-		return this.obtenirTous();
+	public CommandeClient rechercherParId(Class<CommandeClient> type, Object clefPrimaire)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<CommandeClient> rechercherParRequeteNative(String requeteSQL, Class<CommandeClient> type)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void creerCommandeClient(CommandeClient t)
+	{
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void supprimerCommandeClient(CommandeClient t)
+	{
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public CommandeClient mettreAjourCommandeClient(CommandeClient t)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public CommandeClient rechercherParId(CommandeClient t)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<CommandeClient> rechercherParRequeteNommee(String requeteNommee)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<CommandeClient> rechercherParRequeteNommee(String requeteNommee, Map<String, Object> parametres, int nbreMaxElements)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<CommandeClient> rechercherParRequeteNommee(String requeteNommee, Map<String, Object> parametres)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<CommandeClient> rechercherParRequeteNommee(String requeteNommee, int nbreMaxElements)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Collection<CommandeClient> obtenirTousCommandeClient()
+	{
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -4,33 +4,115 @@ import gal.cor.persistence.dao.apis.IDaoAvisProduit;
 import gal.cor.persistence.entities.AvisProduit;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
-public class DaoAvisProduitImpl extends DaoGenericImpl<AvisProduit> implements IDaoAvisProduit {
+public class DaoAvisProduitImpl implements IDaoAvisProduit
+{
 
 	@Override
-	public void creerAvisProduit(AvisProduit t) {
-		this.creer(t);
+	public void creer(AvisProduit t)
+	{
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override
-	public void supprimerAvisProduit(AvisProduit t) {
-		this.supprimer(AvisProduit.class, t.getId());
+	public void supprimer(Class<AvisProduit> type, Object id)
+	{
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override
-	public AvisProduit mettreAjourAvisProduit(AvisProduit t) {
-		
-		return this.mettreAjour(t);
+	public AvisProduit mettreAjour(AvisProduit t)
+	{
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public AvisProduit rechercherParId(AvisProduit t) {
-		return this.rechercherParId(AvisProduit.class, t.getId());
+	public List<AvisProduit> obtenirTous()
+	{
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public Collection<AvisProduit> obtenirTousAvisProduit() {
-		return this.obtenirTous();
+	public AvisProduit rechercherParId(Class<AvisProduit> type, Object clefPrimaire)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<AvisProduit> rechercherParRequeteNative(String requeteSQL, Class<AvisProduit> type)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void creerAvisProduit(AvisProduit t)
+	{
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void supprimerAvisProduit(AvisProduit t)
+	{
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public AvisProduit mettreAjourAvisProduit(AvisProduit t)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public AvisProduit rechercherParId(AvisProduit t)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<AvisProduit> rechercherParRequeteNommee(String requeteNommee)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<AvisProduit> rechercherParRequeteNommee(String requeteNommee, Map<String, Object> parametres, int nbreMaxElements)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<AvisProduit> rechercherParRequeteNommee(String requeteNommee, Map<String, Object> parametres)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<AvisProduit> rechercherParRequeteNommee(String requeteNommee, int nbreMaxElements)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Collection<AvisProduit> obtenirTousAvisProduit()
+	{
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

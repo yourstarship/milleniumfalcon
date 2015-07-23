@@ -4,32 +4,115 @@ import gal.cor.persistence.dao.apis.IDaoMilitaire;
 import gal.cor.persistence.entities.Militaire;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
-public class DaoMilitaireImpl extends DaoGenericImpl<Militaire> implements IDaoMilitaire {
-
-	@Override
-	public void creerMilitaire(Militaire t) {
-		this.creer(t);
-	}
+public class DaoMilitaireImpl implements IDaoMilitaire
+{
 
 	@Override
-	public void supprimerMilitaire(Militaire t) {
-		this.supprimer(Militaire.class, t.getId());
-	}
-
-	@Override
-	public Militaire mettreAjourMilitaire(Militaire t) {
+	public void creer(Militaire t)
+	{
+		// TODO Auto-generated method stub
 		
-		return this.mettreAjour(t);
 	}
 
 	@Override
-	public Militaire rechercherParId(Militaire t) {
-		return this.rechercherParId(Militaire.class, t.getId());
+	public void supprimer(Class<Militaire> type, Object id)
+	{
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
-	public Collection<Militaire> obtenirTousMilitaire() {
-		return this.obtenirTous();
+	public Militaire mettreAjour(Militaire t)
+	{
+		// TODO Auto-generated method stub
+		return null;
 	}
+
+	@Override
+	public List<Militaire> obtenirTous()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Militaire rechercherParId(Class<Militaire> type, Object clefPrimaire)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Militaire> rechercherParRequeteNative(String requeteSQL, Class<Militaire> type)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void creerMilitaire(Militaire t)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void supprimerMilitaire(Militaire t)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Militaire mettreAjourMilitaire(Militaire t)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Militaire rechercherParId(Militaire t)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Militaire> rechercherParRequeteNommee(String requeteNommee)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Militaire> rechercherParRequeteNommee(String requeteNommee, Map<String, Object> parametres, int nbreMaxElements)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Militaire> rechercherParRequeteNommee(String requeteNommee, Map<String, Object> parametres)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Militaire> rechercherParRequeteNommee(String requeteNommee, int nbreMaxElements)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Collection<Militaire> obtenirTousMilitaire()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

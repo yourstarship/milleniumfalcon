@@ -4,33 +4,115 @@ import gal.cor.persistence.dao.apis.IDaoPlanete;
 import gal.cor.persistence.entities.Planete;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
-public class DaoPlaneteImpl extends DaoGenericImpl<Planete> implements IDaoPlanete {
+public class DaoPlaneteImpl implements IDaoPlanete
+{
 
 	@Override
-	public void creerPlanete(Planete t) {
-		this.creer(t);
+	public void creer(Planete t)
+	{
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override
-	public void supprimerPlanete(Planete t) {
-		this.supprimer(Planete.class, t.getId());
+	public void supprimer(Class<Planete> type, Object id)
+	{
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override
-	public Planete mettreAjourPlanete(Planete t) {
-		
-		return this.mettreAjour(t);
+	public Planete mettreAjour(Planete t)
+	{
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public Planete rechercherParId(Planete t) {
-		return this.rechercherParId(Planete.class, t.getId());
+	public List<Planete> obtenirTous()
+	{
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public Collection<Planete> obtenirTousPlanete() {
-		return this.obtenirTous();
+	public Planete rechercherParId(Class<Planete> type, Object clefPrimaire)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Planete> rechercherParRequeteNative(String requeteSQL, Class<Planete> type)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void creerPlanete(Planete t)
+	{
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void supprimerPlanete(Planete t)
+	{
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Planete mettreAjourPlanete(Planete t)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Planete rechercherParId(Planete t)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Planete> rechercherParRequeteNommee(String requeteNommee)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Planete> rechercherParRequeteNommee(String requeteNommee, Map<String, Object> parametres, int nbreMaxElements)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Planete> rechercherParRequeteNommee(String requeteNommee, Map<String, Object> parametres)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Planete> rechercherParRequeteNommee(String requeteNommee, int nbreMaxElements)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Collection<Planete> obtenirTousPlanete()
+	{
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
