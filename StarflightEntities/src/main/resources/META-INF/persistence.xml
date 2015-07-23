@@ -33,8 +33,7 @@
 		<class>gal.cor.persistence.entities.TVA</class>
 		<class>gal.cor.persistence.entities.Type</class>
 		<class>gal.cor.persistence.entities.TypeAdresse</class>
-				<class>gal.cor.persistence.entities.TypeCarte</class>
-		
+		<class>gal.cor.persistence.entities.TypeCarte</class>
 		<class>gal.cor.persistence.entities.Utilisateur</class>
 
 		<properties>

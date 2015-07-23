@@ -1,0 +1,199 @@
+/***************************************/
+/*********      Content     ************/
+/***************************************/
+
+
+/***************************************/
+/*********      Contenu     ************/
+/***************************************/
+
+#contenuFormInscription
+{
+	padding-top: 0.5%;
+	padding-left: 1%;
+	padding-right: 1%;	
+}
+
+/********************************/
+/*********      Titre    ********/
+/********************************/
+
+#titrePageFormInsc
+{
+	width:400px;
+	margin-left:28%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	border-radius:10px;
+	background-color: rgba(128, 128, 128, 0.43);
+	text-align: center;
+	margin-top: 2%;
+	position: absolute;
+	font-weight: bold;
+	font-family: Lucida Sans;
+	color: #BDE3DE;
+}
+
+/****************************************************/
+/*********      Formulaire d'inscription     ********/
+/****************************************************/
+
+.titreColonneFormInsc
+{
+	font-weight: bold;
+	font-family: Lucida Sans;
+	color: #BDE3DE;
+	text-align: center;
+	margin-left: 5%;
+}
+
+ 
+ .right2
+{
+	float:right;
+	width:80px;
+	border-radius:10px;
+	border:2px solid black;
+}
+ 
+.centVingtpx
+{
+	width:120px;
+}
+
+.droite
+{
+	float:right;
+	width:150px;
+}
+
+.IP 
+{
+	border: 2px, solid, black;
+	border-radius: 10px;
+	float: left;
+	margin-left: 85px;
+	width: 300px;
+	height: 400px;
+	background-color: rgba(128, 128, 128, 0.43);
+	margin-top: 110px;
+	padding-top: 1%;
+	padding-left: 1%;
+}
+
+.détail
+{
+width:800px;
+height:800px;
+float:left;
+margin-left:300px;
+
+border: 2px,solid,black;
+border-radius:10px;
+margin-bottom:100px;
+}
+.detailNiveau1,.detailNiveau3,.detailNiveau2
+{
+
+background-color: rgba(128, 128, 128, 0.43);
+padding-bottom:20px;
+
+}
+
+.detailNiveau1
+{
+	padding-left:100px;
+
+
+}
+ 
+ .bottom
+ {
+	margin-bottom:30px;
+ 
+ 
+ 
+ }
+ .center
+ {
+	width:200px;
+	margin-left:auto;
+	margin-right:auto;
+ 
+ }
+  .center2
+ {
+	margin-left:auto;
+	margin-right:18px;
+	width:80px;
+	border-radius:10px;
+	border:2px solid black;
+ }
+ 
+ .gauche{
+ margin-top: 10px;
+ margin-right: 5px;
+ margin-left:25px;
+ float:left;
+ width:200px;
+ border:solid 1px #ffffff;
+ 
+ }
+ 
+/*************************************/
+/*********      Panier    ************/
+/*************************************/
+
+#panierFormInscript
+{
+	float :right;
+	width: 200px;
+	height: 399px;
+	border-radius:10px;
+	background-color: rgba(150, 200, 255, 0.3);
+	margin-top: 0.5%;
+	padding-top: 0.4%;
+	padding-left: 1%;
+	color: #E2C926;
+	font-size: 1em;
+	margin-right: 1%;
+}
+
+#titrePanier
+{
+	font-weight: bold;
+	font-family: Lucida Sans;
+	font-size: 1.1em;
+}
+
+#iconePanier
+{
+	background-image: url("./../Images/Icones/cadie.39px.39px.png");
+	position: absolute;
+	width: 2.5%;
+	height: 38px;
+	margin-left: 10%;
+	margin-top: -1.6%;
+}
+
+
+#hauteurPanierFormInscript
+{
+	height:340px;
+}
+
+#totalPanierFormInscript
+{
+	font-weight: bold;
+	font-family: Lucida Sans;
+	font-size: 1em;
+}
+
+#detailPanierFormInscript
+{
+	width:200px;
+	height:30px;
+	border-radius:10px;
+	border:2px solid black;
+	margin-left:-3%;
+}

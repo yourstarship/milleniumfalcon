@@ -1,5 +1,6 @@
 package gal.cor.persistence.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.DiscriminatorValue;
@@ -10,7 +11,7 @@ import javax.persistence.PrimaryKeyJoinColumn;
 
 @Entity
 @DiscriminatorValue(value = "employe")
-public class Employe extends Personne
+public class Employe extends Personne implements Serializable
 {
 
 	@ManyToOne

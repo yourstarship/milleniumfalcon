@@ -1,5 +1,6 @@
 package gal.cor.persistence.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.DiscriminatorValue;
@@ -7,7 +8,7 @@ import javax.persistence.Entity;
 
 @Entity
 @DiscriminatorValue(value = "militaire")
-public class Militaire extends Client
+public class Militaire extends Client implements Serializable
 {
 
 	private String code;

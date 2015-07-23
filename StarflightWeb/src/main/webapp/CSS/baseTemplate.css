@@ -1,0 +1,86 @@
+/*************************************/
+/*********      BODY      ************/
+/*************************************/
+
+body
+{
+	
+	background-image: url("./../Images/matt7.jpg");
+}
+
+#content
+{
+	height: 605px;
+}
+
+/****************************************************/
+/*********      Bandeau de Promotion     ************/
+/****************************************************/
+
+.Promo
+{
+	width: 245px;
+	/* margin-left:35%;
+	margin-right:auto; */
+	border : 3px;
+	border : solid;
+	border-color: rgba(150, 200, 255, 0.3);
+	border-radius:10px;
+	margin-bottom:10px;
+	height : 155px;
+	float:right;
+	margin-right: 1%;
+}
+
+.Promo img
+{
+	width: 100%;
+	height: 155px;
+}
+
+#titrePromo
+{
+	color: #E9B91D;
+	position: absolute;
+	transform: rotate(-45deg);
+	padding-top: 2%;
+	padding-right: 1%;
+	margin-left: -1.6%;
+	font-weight: bold;
+	font-family: Lucida Sans;
+	text-decoration: blink;
+}
+
+#reducPromo
+{
+	color: #FF2828;
+	position: absolute;
+	padding-top: 5%;
+	margin-left: 10%;
+	font-weight: bold;
+	font-family: Lucida Sans;
+	text-decoration: blink;
+	font-size: 1.9em;
+	
+}
+
+#imgPromo1
+{
+	visibility: visible;
+}
+
+#imgPromo2
+{
+	visibility: hidden;
+}
+
+#imgPromo3
+{
+	visibility: hidden;
+}
+
+/*************************************/
+/*************************************/
+/*************************************/
+/*************************************/
+/*************************************/

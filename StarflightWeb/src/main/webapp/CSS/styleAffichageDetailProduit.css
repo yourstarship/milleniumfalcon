@@ -1,0 +1,193 @@
+/***************************************/
+/*********      Content     ************/
+/***************************************/
+
+
+/***************************************/
+/*********      Contenu     ************/
+/***************************************/
+
+#contenuDetailProduit
+{
+	padding-top: 0.5%;
+	padding-left: 1%;
+	padding-right: 1%;	
+}
+
+/*********************************************/
+/*********      Fiche Produit     ************/
+/*********************************************/
+
+#titrePageDetailProduit
+{
+	width:400px;
+	margin-left:28%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	border-radius:10px;
+	background-color: rgba(128, 128, 128, 0.43);
+	text-align: center;
+	font-weight: bold;
+	font-family: Lucida Sans;
+	color: #BDE3DE;
+}
+
+#ficheDetail
+{
+	float :left;
+	width: 70%;
+	margin-left: 7%;
+}
+
+.miniTitreNiveaux
+{
+	font-weight: bold;
+	font-family: Lucida Sans;
+	color: #BDE3DE;
+}
+
+.detailNiveau
+{
+	background-color: rgba(128, 128, 128, 0.43);
+	border-radius:10px;
+	padding-left: 1%;
+	padding-right: 1%;
+	height: 160px;
+	margin-top: 1%;
+ 	margin-bottom: 1%;
+}
+
+#nomProdEtRef
+{
+	float:left;
+	margin-right: 1%;
+	width: 29%;
+}
+
+#imgFicheDetail
+ {
+	width: 200px;
+	height: 138px;
+	float: left;
+	padding-top: 1%;
+	margin-right: 1%;
+	width: 20%;
+ }
+ 
+ #descDroite
+ {
+ 	float:left;
+ 	margin-right: 1%;
+ 	width: 29%;
+ }
+ 
+ /***** [ Zone droite : Favoris + Prix + Ajout-Panier ] *****/
+ 
+ #zoneFavorisIcones
+ {
+ 	width: 26px;
+	height: 26px;
+	position: absolute;
+	margin-left: 11.3%;
+	margin-top: -0.7%;
+ }
+ 
+ #buttNoFavIcone
+ {
+ 	visibility: visible;
+ 	position: absolute;
+	background-image: url("./../Images/Icones/NoFavoritesIcon.26.26.png");
+ 	width: 26px;
+	height: 26px;
+ }
+ 
+ #buttYesFavIcone
+ {
+ 	display:none;
+ 	position: absolute;
+	background-image: url("./../Images/Icones/FavoriteIcon.26.26.png");
+ 	width: 26px;
+	height: 26px;
+ }
+ 
+ #prixAjoutPanier
+ {
+ 	float:left;
+ 	padding-top: 1.5%;
+ 	width: 19%;
+ }
+ 
+ .tailleColonneCaracFicheDetaille
+ {
+ 	width: 25%;
+ }
+ .detailleLigneDemarcation
+ {
+ 	height: 2px;
+ 	background-color: rgba(128, 128, 200, 0.80);
+ }
+
+#fieldCommentaire
+{
+	overflow: auto;	
+}
+
+
+/*************************************/
+/*********      Panier    ************/
+/*************************************/
+
+#panierDetailProduit
+{
+	float :right;
+	width: 200px;
+	height: 399px;
+	border-radius:10px;
+	background-color: rgba(150, 200, 255, 0.3);
+	margin-top: 0.5%;
+	padding-top: 0.4%;
+	padding-left: 1%;
+	color: #E2C926;
+	font-size: 1em;
+	margin-right: 1%;
+}
+
+#titrePanier
+{
+	font-weight: bold;
+	font-family: Lucida Sans;
+	font-size: 1.1em;
+}
+
+#iconePanier
+{
+	background-image: url("./../Images/Icones/cadie.39px.39px.png");
+	position: absolute;
+	width: 2.5%;
+	height: 38px;
+	margin-left: 10%;
+	margin-top: -1.6%;
+}
+
+#hauteurPanierDetailProduit
+{
+	height:340px;
+}
+
+#totalPanierDetailProduit
+{
+	font-weight: bold;
+	font-family: Lucida Sans;
+	font-size: 1em;
+}
+
+#detailPanierDetailProduit
+{
+	width:200px;
+	height:30px;
+	border-radius:10px;
+	border:2px solid black;
+	margin-left:-3%;
+}
+
+

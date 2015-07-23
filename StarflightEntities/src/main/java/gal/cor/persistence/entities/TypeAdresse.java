@@ -1,5 +1,6 @@
 package gal.cor.persistence.entities;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -9,7 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.OneToMany;
 
 @Entity
-public class TypeAdresse
+public class TypeAdresse implements Serializable
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

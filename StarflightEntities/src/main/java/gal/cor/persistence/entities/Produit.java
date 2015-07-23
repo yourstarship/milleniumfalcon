@@ -1,5 +1,6 @@
 package gal.cor.persistence.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
@@ -13,7 +14,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Produit
+public class Produit implements Serializable
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,21 +22,21 @@ public class Produit
 	private String nom;
 	private String description;
 	private String photo;
-	private double prixAchatHT;
-	private double prixVenteHT;
-	private double marge;
+	private Double prixAchatHT;
+	private Double prixVenteHT;
+	private Double marge;
 	private Date dateCreation;
 	private Boolean estMilitaire;
-	private int quantiteDisponible;
+	private Integer quantiteDisponible;
 	private Date dateVisible;
 	private Date dateInvisible;
-	private int vitesse;
-	private int poids;
-	private double longueur;
-	private double largeur;
-	private double hauteur;
-	private int nombrePassagersMax;
-	private int nombreEquipage;
+	private Integer vitesse;
+	private Integer poids;
+	private Double longueur;
+	private Double largeur;
+	private Double hauteur;
+	private Integer nombrePassagersMax;
+	private Integer nombreEquipage;
 
 	@ManyToOne
 	@JoinColumn(name = "idTva")
@@ -90,280 +91,339 @@ public class Produit
 		this.nombreEquipage = nombreEquipage;
 	}
 
-	public Produit()
-	{
+
+
+	public Produit() {
 		super();
 	}
 
-	public Integer getId()
-	{
+
+
+
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Integer id)
-	{
+
+
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public String getNom()
-	{
+
+
+	public String getNom() {
 		return nom;
 	}
 
-	public void setNom(String nom)
-	{
+
+
+	public void setNom(String nom) {
 		this.nom = nom;
 	}
 
-	public String getDescription()
-	{
+
+
+	public String getDescription() {
 		return description;
 	}
 
-	public void setDescription(String description)
-	{
+
+
+	public void setDescription(String description) {
 		this.description = description;
 	}
 
-	public String getPhoto()
-	{
+
+
+	public String getPhoto() {
 		return photo;
 	}
 
-	public void setPhoto(String photo)
-	{
+
+
+	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
 
-	public double getPrixAchatHT()
-	{
+
+
+	public Double getPrixAchatHT() {
 		return prixAchatHT;
 	}
 
-	public void setPrixAchatHT(double prixAchatHT)
-	{
+
+
+	public void setPrixAchatHT(Double prixAchatHT) {
 		this.prixAchatHT = prixAchatHT;
 	}
 
-	public double getPrixVenteHT()
-	{
+
+
+	public Double getPrixVenteHT() {
 		return prixVenteHT;
 	}
 
-	public void setPrixVenteHT(double prixVenteHT)
-	{
+
+
+	public void setPrixVenteHT(Double prixVenteHT) {
 		this.prixVenteHT = prixVenteHT;
 	}
 
-	public double getMarge()
-	{
+
+
+	public Double getMarge() {
 		return marge;
 	}
 
-	public void setMarge(double marge)
-	{
+
+
+	public void setMarge(Double marge) {
 		this.marge = marge;
 	}
 
-	public Date getDateCreation()
-	{
+
+
+	public Date getDateCreation() {
 		return dateCreation;
 	}
 
-	public void setDateCreation(Date dateCreation)
-	{
+
+
+	public void setDateCreation(Date dateCreation) {
 		this.dateCreation = dateCreation;
 	}
 
-	public Boolean getEstMilitaire()
-	{
+
+
+	public Boolean getEstMilitaire() {
 		return estMilitaire;
 	}
 
-	public void setEstMilitaire(Boolean estMilitaire)
-	{
+
+
+	public void setEstMilitaire(Boolean estMilitaire) {
 		this.estMilitaire = estMilitaire;
 	}
 
-	public int getQuantiteDisponible()
-	{
+
+
+	public Integer getQuantiteDisponible() {
 		return quantiteDisponible;
 	}
 
-	public void setQuantiteDisponible(int quantiteDisponible)
-	{
+
+
+	public void setQuantiteDisponible(Integer quantiteDisponible) {
 		this.quantiteDisponible = quantiteDisponible;
 	}
 
-	public Date getDateVisible()
-	{
+
+
+	public Date getDateVisible() {
 		return dateVisible;
 	}
 
-	public void setDateVisible(Date dateVisible)
-	{
+
+
+	public void setDateVisible(Date dateVisible) {
 		this.dateVisible = dateVisible;
 	}
 
-	public Date getDateInvisible()
-	{
+
+
+	public Date getDateInvisible() {
 		return dateInvisible;
 	}
 
-	public void setDateInvisible(Date dateInvisible)
-	{
+
+
+	public void setDateInvisible(Date dateInvisible) {
 		this.dateInvisible = dateInvisible;
 	}
 
-	public int getVitesse()
-	{
+
+
+	public Integer getVitesse() {
 		return vitesse;
 	}
 
-	public void setVitesse(int vitesse)
-	{
+
+
+	public void setVitesse(Integer vitesse) {
 		this.vitesse = vitesse;
 	}
 
-	public int getPoids()
-	{
+
+
+	public Integer getPoids() {
 		return poids;
 	}
 
-	public void setPoids(int poids)
-	{
+
+
+	public void setPoids(Integer poids) {
 		this.poids = poids;
 	}
 
-	public double getLongueur()
-	{
+
+
+	public Double getLongueur() {
 		return longueur;
 	}
 
-	public void setLongueur(double longueur)
-	{
+
+
+	public void setLongueur(Double longueur) {
 		this.longueur = longueur;
 	}
 
-	public double getLargeur()
-	{
+
+
+	public Double getLargeur() {
 		return largeur;
 	}
 
-	public void setLargeur(double largeur)
-	{
+
+
+	public void setLargeur(Double largeur) {
 		this.largeur = largeur;
 	}
 
-	public double getHauteur()
-	{
+
+
+	public Double getHauteur() {
 		return hauteur;
 	}
 
-	public void setHauteur(double hauteur)
-	{
+
+
+	public void setHauteur(Double hauteur) {
 		this.hauteur = hauteur;
 	}
 
-	public int getNombrePassagersMax()
-	{
+
+
+	public Integer getNombrePassagersMax() {
 		return nombrePassagersMax;
 	}
 
-	public void setNombrePassagersMax(int nombrePassagersMax)
-	{
+
+
+	public void setNombrePassagersMax(Integer nombrePassagersMax) {
 		this.nombrePassagersMax = nombrePassagersMax;
 	}
 
-	public int getNombreEquipage()
-	{
+
+
+	public Integer getNombreEquipage() {
 		return nombreEquipage;
 	}
 
-	public void setNombreEquipage(int nombreEquipage)
-	{
+
+
+	public void setNombreEquipage(Integer nombreEquipage) {
 		this.nombreEquipage = nombreEquipage;
 	}
 
-	public TVA getTva()
-	{
+
+
+	public TVA getTva() {
 		return tva;
 	}
 
-	public void setTva(TVA tva)
-	{
+
+
+	public void setTva(TVA tva) {
 		this.tva = tva;
 	}
 
-	public Type getType()
-	{
+
+
+	public Type getType() {
 		return type;
 	}
 
-	public void setType(Type type)
-	{
+
+
+	public void setType(Type type) {
 		this.type = type;
 	}
 
-	public Categorie getCategorie()
-	{
+
+
+	public Categorie getCategorie() {
 		return categorie;
 	}
 
-	public void setCategorie(Categorie categorie)
-	{
+
+
+	public void setCategorie(Categorie categorie) {
 		this.categorie = categorie;
 	}
 
-	public Set<Promotion> getPromotions()
-	{
+
+
+	public Set<Promotion> getPromotions() {
 		return promotions;
 	}
 
-	public void setPromotions(Set<Promotion> promotions)
-	{
+
+
+	public void setPromotions(Set<Promotion> promotions) {
 		this.promotions = promotions;
 	}
 
-	public Set<LignePieceClient> getLignePieceClients()
-	{
+
+
+	public Set<LignePieceClient> getLignePieceClients() {
 		return lignePieceClients;
 	}
 
-	public void setLignePieceClients(Set<LignePieceClient> lignePieceClients)
-	{
+
+
+	public void setLignePieceClients(Set<LignePieceClient> lignePieceClients) {
 		this.lignePieceClients = lignePieceClients;
 	}
 
-	public Couleur getCouleur()
-	{
+
+
+	public Couleur getCouleur() {
 		return couleur;
 	}
 
-	public void setCouleur(Couleur couleur)
-	{
+
+
+	public void setCouleur(Couleur couleur) {
 		this.couleur = couleur;
 	}
 
-	public Fournisseur getConstructeur()
-	{
+
+
+	public Fournisseur getConstructeur() {
 		return constructeur;
 	}
 
-	public void setConstructeur(Fournisseur constructeur)
-	{
+
+
+	public void setConstructeur(Fournisseur constructeur) {
 		this.constructeur = constructeur;
 	}
 
-	public Set<Client> getClientsPourLesquelsSuisFavori()
-	{
+
+
+	public Set<Client> getClientsPourLesquelsSuisFavori() {
 		return clientsPourLesquelsSuisFavori;
 	}
 
-	public void setClientsPourLesquelsSuisFavori(Set<Client> clientsPourLesquelsSuisFavori)
-	{
+
+
+	public void setClientsPourLesquelsSuisFavori(
+			Set<Client> clientsPourLesquelsSuisFavori) {
 		this.clientsPourLesquelsSuisFavori = clientsPourLesquelsSuisFavori;
 	}
+
+
 
 	@Override
 	public String toString()

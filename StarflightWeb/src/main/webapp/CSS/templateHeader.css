@@ -1,0 +1,75 @@
+/************************************/
+/********* BODY - Header ************/
+/************************************/
+#header
+{
+	width:99%;
+	height:90px;
+	background-color: rgba(70, 100, 135, 0.6);
+	border-radius:10px;
+	margin-bottom:9px;
+	
+}
+
+#titreLogo
+{
+	float:left;
+	position:absolute;
+	height:98px;
+	margin-top: -0.5%;
+}
+
+h1
+{
+	position: absolute;
+	width: 300px;
+	opacity: 1;	
+	margin-left: 3%;
+	margin-top: 3.1%;
+	color: #E2C926;
+	font-size: 2.1em;
+	font-family: Lucida Sans;
+}
+
+#loginIn
+{
+	float:right;
+	margin-top:10px;
+	margin-right: 1%;
+}
+
+#loginOut
+{
+	float:right;
+	margin-top:10px;
+	margin-right: 1%;
+	display:none;
+	font-size: 1.1em;
+	color: #00C6DC;
+	font-family: Lucida Sans;
+}
+
+#lienPasDeCompte
+{
+	color: #E2C926;
+	font-size: 1em;
+}
+
+#accesGestionDuCompte
+{
+	float: right;
+	font-size: 0.9em;
+	color: #2C8FC5;
+	margin-top: -2%;
+}
+
+#iconeAccessCompteClient
+{
+	float: right;
+	background-image: url("./../Images/Icones/iconeCompteClient.35px.35px.png");
+	width:35px;
+	height:35px;
+	position: absolute;
+	margin-top: -1.9%;
+	margin-left: 3.5%;
+}

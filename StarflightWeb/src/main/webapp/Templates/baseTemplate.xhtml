@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head>
+	<link rel="stylesheet" type="text/css" href="CSS/baseTemplate.css"/>
+	<link rel="stylesheet" type="text/css" href="CSS/templateFooter.css"/>
+	<link rel="stylesheet" type="text/css" href="CSS/templateHeader.css"/>
+	<link rel="stylesheet" type="text/css" href="CSS/styleAccueil.css"/>
+	<link rel="stylesheet" type="text/css" href="CSS/formulaireInscription.css"/>
+	<link rel="stylesheet" type="text/css" href="CSS/styleAffichageDetailProduit.css"/>
+	<link rel="stylesheet" type="text/css" href="CSS/compteAdministrateur.css"/>
+	<link rel="stylesheet" type="text/css" href="CSS/administrationProduitDetaille.css"/>
+	<link rel="stylesheet" type="text/css" href="CSS/creationProduitDetaille.css"/>
+	<link rel="stylesheet" type="text/css" href="CSS/compteUtilisateur.css"/>
+	<ui:insert name="scripts"></ui:insert>
+</h:head> 
+<body>
+	<!-- ICI Le Header  -->
+	<div id="header">
+		<ui:insert name="header">
+			<ui:include src="/Templates/header.xhtml"></ui:include>
+		</ui:insert>
+	</div>
+	
+	<!-- ICI Le Contenu  -->
+	<div id="content">
+		<ui:insert name="content"></ui:insert>
+	</div>
+	
+	<!-- ICI Le Footer -->
+	<div id="footer">
+		<ui:insert name="footer">
+			<ui:include src="/Templates/footer.xhtml"></ui:include>
+		</ui:insert>
+	</div>
+</body> 
+</html>

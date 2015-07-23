@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+<ui:composition>
+	<ui:define name="scripts">
+
+		<script type='text/javascript'
+			src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
+
+	</ui:define>
+	<div>
+		<div id="titreLogo">
+			<img src="Images/logoXWingVR.png" />
+		</div>
+		<h1>Your Starship</h1>
+	</div>
+	<div id="loginIn">
+		<div>
+			<input type="text" value="Email" />
+		</div>
+		<div>
+			<input type="text" value="Password" />
+		</div>
+		<div>
+			<input type="button" value="OK" id="buttloginIn" /> <a
+				id="lienPasDeCompte" href="formulaireInscription.xhtml">Pas
+				encore de compte ?</a>
+		</div>
+	</div>
+	<div id="loginOut">
+		<div>
+			<span>Bonjour : </span>
+			<h:outputText value="{inséré le login}" />
+		</div>
+		<br />
+		<div>
+			<input type="button" value="Déconnexion" id="buttloginOut" />
+			<div id="accesGestionDuCompte">
+			<span>Gérer</span>
+			<div id="iconeAccessCompteClient">
+			</div>
+			<br />
+			<span>votre Compte</span>
+			</div>
+		</div>
+	</div>
+	<script>		
+		$('#buttloginIn').click(function () {	 
+        	$('#loginIn').toggle();
+         	$('#loginOut').toggle();
+         	$('#fieldCommentaire').toggle();
+         	$('#fieldAjoutCommentaire').toggle();
+     	  });
+		$('#buttloginOut').click(function () {
+			$('#loginOut').toggle(); 
+        	$('#loginIn').toggle();	
+        	$('#fieldAjoutCommentaire').toggle();
+        	$('#fieldCommentaire').toggle();
+     	  });
+		</script>
+</ui:composition>
+</html>

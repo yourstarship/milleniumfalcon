@@ -1,0 +1,57 @@
+/************************************/
+/********* BODY - Footer ************/
+/************************************/
+
+ #footer{
+	width:99%;
+	height:69px;
+	background-color: rgba(70, 100, 135, 0.6);
+	border-radius:10px;
+	
+ }
+ 
+#logosLiensFooter
+{
+	float: right;
+} 
+
+#newsMail
+{
+ margin-left: 2%;
+ color: #00C6DC;
+ float:left;
+}
+
+.logoFooter
+{
+	width: 4%;
+	height: 40%;	
+	float: right;
+	margin-right: 1%;
+	margin-top: 0.7%;
+}
+
+#logoFooterTwitter
+{
+	width: 4%;
+	height: 77%;	
+	float: right;
+	margin-right: 1%;
+	margin-top: 0.6%;
+}
+#logoFooterFacebook
+{
+	width: 4%;
+	height: 80%;	
+	float: right;
+	margin-right: 1%;
+	margin-top: 0.4%;
+}
+#logoFooterYoutube
+{
+	width: 4%;
+	height: 75%;	
+	float: right;
+	margin-right: 1%;
+	margin-top: 0.5%;
+}

@@ -1,5 +1,6 @@
 package gal.cor.persistence.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 import java.util.jar.Attributes.Name;
@@ -13,7 +14,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
-public class CommandeFournisseur
+public class CommandeFournisseur implements Serializable
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
