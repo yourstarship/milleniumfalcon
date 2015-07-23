@@ -35,8 +35,7 @@
 
 			
 				<div id="titrePageDetailProduit">
-					<span>Présentation Détaillées du </span><span>@ insérer ici
-						le nom du vaisseaux @</span>
+					<span>Présentation Détaillées du </span><span>#{detailProduitMBean.accueilManagedBean.produit} </span>
 				</div>
 				<div id="ficheDetail">
 
@@ -44,6 +43,7 @@
 						<div id="alignementNiveau1">
 							<div id="nomProdEtRef">
 							<span class="miniTitreNiveaux">Produit : </span> 
+<<<<<<< HEAD
 								<h:outputText value="Vaisseau PiouPiou" /> <br />
 									<br /> <span class="miniTitreNiveaux">Référence : </span> 
 									<h:outputText value="Vaisseau PiouPiou" /> <br /> <br />
@@ -51,16 +51,23 @@
 									<h:outputText value="Vaisseau PiouPiou" /> <br /> <br />
 									<span class="miniTitreNiveaux">Type : </span> 
 									<h:outputText value="Vaisseau PiouPiou" />
+=======
+								<h:outputText value="#{detailProduitMBean.accueilManagedBean.produit.nom}" /> <br />
+									<br /> <span class="miniTitreNiveaux">Référence : </span> 
+									<h:outputText value="#{detailProduitMBean.accueilManagedBean.produit.id}" /> <br /> <br />
+									<span class="miniTitreNiveaux">Catégorie : </span> 
+									<h:outputText value="#{detailProduitMBean.accueilManagedBean.produit.categorie.nom}" /> <br /> <br />
+									<span class="miniTitreNiveaux">Type : </span> 
+									<h:outputText value="#{detailProduitMBean.accueilManagedBean.produit.type.nom}" />
+>>>>>>> mf/master
 							</div>
 							<div id="imgFicheDetail">
-								<img src="image/e04b1581.jpg" />
+								<img src="#{detailProduitMBean.accueilManagedBean.produit.photo}" />
 							</div>
 							<div id="descDroite">
 								<span class="miniTitreNiveaux">Description</span>
 								<p>
-									jjjjjjjjjjjjjjjjjjjjjjjjjjjfrvrfverez<br />
-									deeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee<br />
-									cr;^zzzzzzzzzzzzzzzzzzzzzzzzggggggggggg
+									#{detailProduitMBean.accueilManagedBean.produit.description}
 								</p>
 							</div>
 							<div id="prixAjoutPanier">

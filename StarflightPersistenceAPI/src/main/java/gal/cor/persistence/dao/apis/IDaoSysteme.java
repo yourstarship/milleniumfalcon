@@ -7,7 +7,11 @@ import java.util.Map;
 import gal.cor.persistence.entities.Systeme;
 
 
+<<<<<<< HEAD
 public interface IDaoSysteme  {
+=======
+public interface IDaoSysteme   {
+>>>>>>> mf/master
 	void creerSysteme(Systeme t);
 	void supprimerSysteme(Systeme t);
 	Systeme mettreAjourSysteme(Systeme t);

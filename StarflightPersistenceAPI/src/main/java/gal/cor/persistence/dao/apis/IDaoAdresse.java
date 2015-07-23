@@ -7,7 +7,11 @@ import java.util.Map;
 import gal.cor.persistence.entities.Adresse;
 
 
+<<<<<<< HEAD
 public interface IDaoAdresse{
+=======
+public interface IDaoAdresse  {
+>>>>>>> mf/master
 	void creerAdresse(Adresse t);
 	void supprimerAdresse(Adresse t);
 	Adresse mettreAjourAdresse(Adresse t);

@@ -7,7 +7,11 @@ import java.util.Map;
 import gal.cor.persistence.entities.FactureFournisseur;
 
 
+<<<<<<< HEAD
 public interface IDaoFactureFournisseur {
+=======
+public interface IDaoFactureFournisseur  {
+>>>>>>> mf/master
 	void creerFactureFournisseur(FactureFournisseur t);
 	void supprimerFactureFournisseur(FactureFournisseur t);
 	FactureFournisseur mettreAjourFactureFournisseur(FactureFournisseur t);

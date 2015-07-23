@@ -9,6 +9,7 @@ import gal.cor.persistence.entities.Categorie;
 
 public interface IDaoCategorie  {
 	void creerCategorie(Categorie t);
+<<<<<<< HEAD
 	void supprimerCategorie(Categorie t);
 	Categorie mettreAjourCategorie(Categorie t);
 	Categorie rechercherParId(Categorie t);
@@ -18,6 +19,8 @@ public interface IDaoCategorie  {
 	List<Categorie> rechercherParRequeteNommee(String requeteNommee, Map<String,Object> parametres,int nbreMaxElements);
 	List<Categorie> rechercherParRequeteNommee(String requeteNommee, Map<String,Object> parametres);
 	List<Categorie> rechercherParRequeteNommee(String requeteNommee, int nbreMaxElements);
+=======
+>>>>>>> mf/master
 
 	Collection<Categorie> obtenirTousCategorie();
 }

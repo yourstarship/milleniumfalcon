@@ -7,7 +7,11 @@ import java.util.Map;
 import gal.cor.persistence.entities.LignePieceFournisseur;
 
 
+<<<<<<< HEAD
 public interface IDaoLignePieceFournisseur {
+=======
+public interface IDaoLignePieceFournisseur  {
+>>>>>>> mf/master
 	void creerLignePieceFournisseur(LignePieceFournisseur t);
 	void supprimerLignePieceFournisseur(LignePieceFournisseur t);
 	LignePieceFournisseur mettreAjourLignePieceFournisseur(LignePieceFournisseur t);

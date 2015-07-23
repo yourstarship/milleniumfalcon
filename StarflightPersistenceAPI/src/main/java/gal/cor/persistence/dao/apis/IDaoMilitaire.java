@@ -7,7 +7,11 @@ import java.util.Map;
 import gal.cor.persistence.entities.Militaire;
 
 
+<<<<<<< HEAD
 public interface IDaoMilitaire  {
+=======
+public interface IDaoMilitaire{
+>>>>>>> mf/master
 	void creerMilitaire(Militaire t);
 	void supprimerMilitaire(Militaire t);
 	Militaire mettreAjourMilitaire(Militaire t);

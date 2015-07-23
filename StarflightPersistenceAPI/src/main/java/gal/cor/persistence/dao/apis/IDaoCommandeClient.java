@@ -8,16 +8,22 @@ import gal.cor.persistence.entities.CommandeClient;
 
 
 public interface IDaoCommandeClient {
+<<<<<<< HEAD
 	public void creerCommandeClient(CommandeClient t);
 	void supprimerCommandeClient(CommandeClient t);
 	CommandeClient mettreAjourCommandeClient(CommandeClient t);
 	CommandeClient rechercherParId(CommandeClient t);
 
 	//Requetes personnalis�es
+=======
+	
+	void creerCommandeClient(CommandeClient t);
+	
+	CommandeClient rechercherParId(CommandeClient t);
+	
+>>>>>>> mf/master
 	List<CommandeClient> rechercherParRequeteNommee(String requeteNommee);
-	List<CommandeClient> rechercherParRequeteNommee(String requeteNommee, Map<String,Object> parametres,int nbreMaxElements);
-	List<CommandeClient> rechercherParRequeteNommee(String requeteNommee, Map<String,Object> parametres);
-	List<CommandeClient> rechercherParRequeteNommee(String requeteNommee, int nbreMaxElements);
 
-	Collection<CommandeClient> obtenirTousCommandeClient();
+
+	List<CommandeClient> obtenirTousCommandeClient();
 }

@@ -7,7 +7,11 @@ import java.util.Map;
 import gal.cor.persistence.entities.FactureClient;
 
 
+<<<<<<< HEAD
 public interface IDaoFactureClient {
+=======
+public interface IDaoFactureClient  {
+>>>>>>> mf/master
 	void creerFactureClient(FactureClient t);
 	void supprimerFactureClient(FactureClient t);
 	FactureClient mettreAjourFactureClient(FactureClient t);

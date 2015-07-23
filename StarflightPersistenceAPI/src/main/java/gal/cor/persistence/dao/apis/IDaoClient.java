@@ -6,15 +6,23 @@ import java.util.Map;
 
 import gal.cor.persistence.entities.Client;
 
+<<<<<<< HEAD
 public interface IDaoClient 
 {
 	void creerClient(Client t);
 
 	void supprimerClient(Client t);
 
+=======
+
+public interface IDaoClient{
+	void creerClient(Client t);
+	
+>>>>>>> mf/master
 	Client mettreAjourClient(Client t);
 
 	Client rechercherParId(Client t);
+<<<<<<< HEAD
 
 	//Requetes personnalisées
 	List<Client> rechercherParRequeteNommee(String requeteNommee);
@@ -27,4 +35,7 @@ public interface IDaoClient
 
 	Collection<Client> obtenirTousClient();
 
+=======
+	List<Client> obtenirTousClient();
+>>>>>>> mf/master
 }

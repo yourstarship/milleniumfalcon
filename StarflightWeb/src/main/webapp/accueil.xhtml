@@ -40,6 +40,7 @@
 				<div id="buttRechercheAccueil"></div>
 			</div>
 			<ul id="menuAccordeon">
+<<<<<<< HEAD
 				<li><h:commandLink value="Véhicules aquatiques" actionListener="#{accueilManagedBean.afficherLesSelections(testManagedBean.nomCategorie)}"/> 
 						
 					<ul>
@@ -71,6 +72,40 @@
 				<li><h:commandLink value="Stations spatiales" actionListener="#{accueilManagedBean.afficherLesSelections(testManagedBean.nomCategorie7)}"/> 
 				</li>
 					<li><h:commandLink value="Chasseurs" actionListener="#{accueilManagedBean.afficherLesSelections(testManagedBean.nomCategorie3)}"/> 
+=======
+				<li><h:commandLink value="Véhicules aquatiques" actionListener="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie)}"/> 
+						
+					<ul>
+						<li><h:commandLink value="Navire de surface" actionListener="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie,accueilManagedBean.typeNavireDeSuface)}"/> </li>
+						<li><h:commandLink value="Submersible " actionListener="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie,accueilManagedBean.typeSubmersible)}"/></li>
+					
+					</ul></li>
+				<li><h:commandLink value="Véhicules terrestres" actionListener="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie1)}"/> 
+					<ul>
+						<li><h:commandLink value="Reconnaissance " actionListener="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie1,accueilManagedBean.typeReconnaissance)}"/></li>
+						<li><h:commandLink value="Tank " actionListener="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie1,accueilManagedBean.typeTank)}"/></li>
+						<li><h:commandLink value="Transport " actionListener="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie1,accueilManagedBean.typeTransport)}"/></li>
+					</ul></li>
+				<li><h:commandLink value="Véhicules à répulseurs" actionListener="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie2)}"/> 
+					<ul>
+						<li><h:commandLink value="Speeder " actionListener="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie2,accueilManagedBean.typeSpeeder)}"/></li>
+					</ul></li>
+				<li><h:commandLink value="Vaisseaux légers " actionListener="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie4)}"/> 
+					</li>
+				<li><h:commandLink value="Vaisseaux moyens" actionListener="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie5)}"/> 
+					
+				</li>
+				<li><h:commandLink value="Vaisseaux lourds" actionListener="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie6)}"/> 
+				</li>
+				<li><h:commandLink value="Stations spatiales" actionListener="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie7)}"/> 
+				</li>
+					<li><h:commandLink value="Chasseurs" actionListener="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie3)}"/> 
+					<ul>
+						<li><h:commandLink value="Bombardier " actionListener="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie3,accueilManagedBean.typeBombardier)}"/></li>
+						<li><h:commandLink value="Chasseur " actionListener="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie3,accueilManagedBean.typeChasseur)}"/></li>
+						<li><h:commandLink value="Intercepteur " actionListener="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie3,accueilManagedBean.typeIntercepteur)}"/></li>
+					</ul>
+>>>>>>> mf/master
 					</li>
 			</ul>
 			</nav>
