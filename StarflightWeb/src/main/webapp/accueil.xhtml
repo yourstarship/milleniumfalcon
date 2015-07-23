@@ -40,71 +40,51 @@
 				<div id="buttRechercheAccueil"></div>
 			</div>
 			<ul id="menuAccordeon">
-				<li><h:commandLink value="Véhicules aquatiques" actionListener="#{testManagedBean.afficherLesSelections()}" > 
-				<f:actionListener >
-				
-				</f:actionListener>
+				<li><h:commandLink value="Véhicules aquatiques" actionListener="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie)}"/> 
 						
-					</h:commandLink>
 					<ul>
-						<li><a href="#">lien sous menu 1</a></li>
-						<li><a href="#">lien sous menu 1</a></li>
-						<li><a href="#">lien sous menu 1</a></li>
-						<li><a href="#">lien sous menu 1</a></li>
+						<li><h:commandLink value="Navire de surface" actionListener="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie,accueilManagedBean.typeNavireDeSuface)}"/> </li>
+						<li><h:commandLink value="Submersible " actionListener="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie,accueilManagedBean.typeSubmersible)}"/></li>
+					
 					</ul></li>
-				<li><a href="#">Véhicule terrestre</a>
+				<li><h:commandLink value="Véhicules terrestres" actionListener="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie1)}"/> 
 					<ul>
-						<li><a href="#">Lien sous menu 2</a></li>
-						<li><a href="#">Lien sous menu 2</a></li>
-						<li><a href="#">Lien sous menu 2</a></li>
-						<li><a href="#">Lien sous menu 2</a></li>
+						<li><h:commandLink value="Reconnaissance " actionListener="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie1,accueilManagedBean.typeReconnaissance)}"/></li>
+						<li><h:commandLink value="Tank " actionListener="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie1,accueilManagedBean.typeTank)}"/></li>
+						<li><h:commandLink value="Transport " actionListener="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie1,accueilManagedBean.typeTransport)}"/></li>
 					</ul></li>
-				<li><a href="#">Véhicule légers</a>
+				<li><h:commandLink value="Véhicules à répulseurs" actionListener="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie2)}"/> 
 					<ul>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
+						<li><h:commandLink value="Speeder " actionListener="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie2,accueilManagedBean.typeSpeeder)}"/></li>
 					</ul></li>
-				<li><a href="#">Véhicule Moyen</a>
+				<li><h:commandLink value="Vaisseaux légers " actionListener="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie4)}"/> 
+					</li>
+				<li><h:commandLink value="Vaisseaux moyens" actionListener="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie5)}"/> 
+					
+				</li>
+				<li><h:commandLink value="Vaisseaux lourds" actionListener="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie6)}"/> 
+				</li>
+				<li><h:commandLink value="Stations spatiales" actionListener="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie7)}"/> 
+				</li>
+					<li><h:commandLink value="Chasseurs" actionListener="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie3)}"/> 
 					<ul>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
-					</ul></li>
-				<li><a href="#">Véhicule Lourd</a>
-					<ul>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
-					</ul></li>
-				<li><a href="#">Chasseur</a>
-					<ul>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
-					</ul></li>
-				<li><a href="#">Station Spatiale</a>
-					<ul>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
-						<li><a href="#">Lien sous menu 3</a></li>
-					</ul></li>
+						<li><h:commandLink value="Bombardier " actionListener="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie3,accueilManagedBean.typeBombardier)}"/></li>
+						<li><h:commandLink value="Chasseur " actionListener="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie3,accueilManagedBean.typeChasseur)}"/></li>
+						<li><h:commandLink value="Intercepteur " actionListener="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie3,accueilManagedBean.typeIntercepteur)}"/></li>
+					</ul>
+					</li>
 			</ul>
 			</nav>
 
 			<!-- Espace d'Affichage Central -->
 			<div class="Liste">
-			<ui:repeat var="produit" value="#{testManagedBean.listeProduit}">
+			<ui:repeat var="produit" value="#{accueilManagedBean.listeProduit}">
 				<div class="gauche">
 					<img src="#{produit.photo}" />
 					<p>#{produit.nom}</p>
-					<input type="button" value="add" class="right" /> <input
-						type="button" value="détailler" class="right" />
+					<p>pro#{produit.prixAchatHT}</p>
+					<h:commandButton action="#{accueilManagedBean.ajoutProduitAuPanier()}" value="Ajouter" class="buttListeAccueil"/>
+					<h:commandButton action="#{accueilManagedBean.accesDetailProduit(produit)}" value="Détailler" class="buttListeAccueil"/>
 				</div>
 			</ui:repeat>
 			</div>

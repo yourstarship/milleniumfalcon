@@ -7,7 +7,7 @@ import java.util.Map;
 import gal.cor.persistence.entities.TVA;
 
 
-public interface IDaoTVA extends IDaoGeneric<TVA> {
+public interface IDaoTVA  {
 	void creerTVA(TVA t);
 	void supprimerTVA(TVA t);
 	TVA mettreAjourTVA(TVA t);

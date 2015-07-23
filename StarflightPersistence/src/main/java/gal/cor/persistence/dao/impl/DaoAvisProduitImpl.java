@@ -4,33 +4,26 @@ import gal.cor.persistence.dao.apis.IDaoAvisProduit;
 import gal.cor.persistence.entities.AvisProduit;
 
 import java.util.Collection;
+import java.util.List;
 
-public class DaoAvisProduitImpl extends DaoGenericImpl<AvisProduit> implements IDaoAvisProduit {
+public class DaoAvisProduitImpl implements IDaoAvisProduit {
 
 	@Override
 	public void creerAvisProduit(AvisProduit t) {
-		this.creer(t);
-	}
-
-	@Override
-	public void supprimerAvisProduit(AvisProduit t) {
-		this.supprimer(AvisProduit.class, t.getId());
-	}
-
-	@Override
-	public AvisProduit mettreAjourAvisProduit(AvisProduit t) {
+		// TODO Auto-generated method stub
 		
-		return this.mettreAjour(t);
 	}
 
 	@Override
-	public AvisProduit rechercherParId(AvisProduit t) {
-		return this.rechercherParId(AvisProduit.class, t.getId());
+	public List<AvisProduit> rechercherParRequeteNommee(Integer IdPersonne) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public Collection<AvisProduit> obtenirTousAvisProduit() {
-		return this.obtenirTous();
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

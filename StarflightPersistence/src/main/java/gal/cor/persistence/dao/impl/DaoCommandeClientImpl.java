@@ -4,33 +4,34 @@ import gal.cor.persistence.dao.apis.IDaoCommandeClient;
 import gal.cor.persistence.entities.CommandeClient;
 
 import java.util.Collection;
+import java.util.List;
 
-public class DaoCommandeClientImpl extends DaoGenericImpl<CommandeClient> implements IDaoCommandeClient {
+public class DaoCommandeClientImpl  implements IDaoCommandeClient {
 
 	@Override
 	public void creerCommandeClient(CommandeClient t) {
-		this.creer(t);
-	}
-
-	@Override
-	public void supprimerCommandeClient(CommandeClient t) {
-		this.supprimer(CommandeClient.class, t.getId());
-	}
-
-	@Override
-	public CommandeClient mettreAjourCommandeClient(CommandeClient t) {
+		// TODO Auto-generated method stub
 		
-		return this.mettreAjour(t);
 	}
 
 	@Override
 	public CommandeClient rechercherParId(CommandeClient t) {
-		return this.rechercherParId(CommandeClient.class, t.getId());
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public Collection<CommandeClient> obtenirTousCommandeClient() {
-		return this.obtenirTous();
+	public List<CommandeClient> rechercherParRequeteNommee(String requeteNommee) {
+		// TODO Auto-generated method stub
+		return null;
 	}
+
+	@Override
+	public List<CommandeClient> obtenirTousCommandeClient() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 
 }

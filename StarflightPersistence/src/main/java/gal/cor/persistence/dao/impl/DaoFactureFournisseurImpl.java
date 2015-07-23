@@ -4,33 +4,70 @@ import gal.cor.persistence.dao.apis.IDaoFactureFournisseur;
 import gal.cor.persistence.entities.FactureFournisseur;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
-public class DaoFactureFournisseurImpl extends DaoGenericImpl<FactureFournisseur> implements IDaoFactureFournisseur {
+public class DaoFactureFournisseurImpl  implements IDaoFactureFournisseur {
 
 	@Override
 	public void creerFactureFournisseur(FactureFournisseur t) {
-		this.creer(t);
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void supprimerFactureFournisseur(FactureFournisseur t) {
-		this.supprimer(FactureFournisseur.class, t.getIdFF());
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public FactureFournisseur mettreAjourFactureFournisseur(FactureFournisseur t) {
-		
-		return this.mettreAjour(t);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public FactureFournisseur rechercherParId(FactureFournisseur t) {
-		return this.rechercherParId(FactureFournisseur.class, t.getIdFF());
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<FactureFournisseur> rechercherParRequeteNommee(
+			String requeteNommee) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<FactureFournisseur> rechercherParRequeteNommee(
+			String requeteNommee, Map<String, Object> parametres,
+			int nbreMaxElements) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<FactureFournisseur> rechercherParRequeteNommee(
+			String requeteNommee, Map<String, Object> parametres) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<FactureFournisseur> rechercherParRequeteNommee(
+			String requeteNommee, int nbreMaxElements) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public Collection<FactureFournisseur> obtenirTousFactureFournisseur() {
-		return this.obtenirTous();
+		// TODO Auto-generated method stub
+		return null;
 	}
+
+	
 
 }

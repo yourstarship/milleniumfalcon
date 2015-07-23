@@ -4,33 +4,71 @@ import gal.cor.persistence.dao.apis.IDaoCommandeFournisseur;
 import gal.cor.persistence.entities.CommandeFournisseur;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
-public class DaoCommandeFournisseurImpl extends DaoGenericImpl<CommandeFournisseur> implements IDaoCommandeFournisseur {
+public class DaoCommandeFournisseurImpl  implements IDaoCommandeFournisseur {
 
 	@Override
 	public void creerCommandeFournisseur(CommandeFournisseur t) {
-		this.creer(t);
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void supprimerCommandeFournisseur(CommandeFournisseur t) {
-		this.supprimer(CommandeFournisseur.class, t.getId());
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
-	public CommandeFournisseur mettreAjourCommandeFournisseur(CommandeFournisseur t) {
-		
-		return this.mettreAjour(t);
+	public CommandeFournisseur mettreAjourCommandeFournisseur(
+			CommandeFournisseur t) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public CommandeFournisseur rechercherParId(CommandeFournisseur t) {
-		return this.rechercherParId(CommandeFournisseur.class, t.getId());
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<CommandeFournisseur> rechercherParRequeteNommee(
+			String requeteNommee) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<CommandeFournisseur> rechercherParRequeteNommee(
+			String requeteNommee, Map<String, Object> parametres,
+			int nbreMaxElements) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<CommandeFournisseur> rechercherParRequeteNommee(
+			String requeteNommee, Map<String, Object> parametres) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<CommandeFournisseur> rechercherParRequeteNommee(
+			String requeteNommee, int nbreMaxElements) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public Collection<CommandeFournisseur> obtenirTousCommandeFournisseur() {
-		return this.obtenirTous();
+		// TODO Auto-generated method stub
+		return null;
 	}
+
+	
 
 }

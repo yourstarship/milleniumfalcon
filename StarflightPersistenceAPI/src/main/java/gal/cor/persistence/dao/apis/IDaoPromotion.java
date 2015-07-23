@@ -7,7 +7,7 @@ import java.util.Map;
 import gal.cor.persistence.entities.Promotion;
 
 
-public interface IDaoPromotion extends IDaoGeneric<Promotion> {
+public interface IDaoPromotion  {
 	void creerPromotion(Promotion t);
 	void supprimerPromotion(Promotion t);
 	Promotion mettreAjourPromotion(Promotion t);

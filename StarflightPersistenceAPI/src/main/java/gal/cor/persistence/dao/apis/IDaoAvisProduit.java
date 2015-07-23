@@ -7,17 +7,11 @@ import java.util.Map;
 import gal.cor.persistence.entities.AvisProduit;
 
 
-public interface IDaoAvisProduit extends IDaoGeneric<AvisProduit> {
+public interface IDaoAvisProduit {
 	void creerAvisProduit(AvisProduit t);
-	void supprimerAvisProduit(AvisProduit t);
-	AvisProduit mettreAjourAvisProduit(AvisProduit t);
-	AvisProduit rechercherParId(AvisProduit t);
+	
+	List<AvisProduit> rechercherParRequeteNommee(Integer IdPersonne);
 
-	//Requetes personnalisées
-	List<AvisProduit> rechercherParRequeteNommee(String requeteNommee);
-	List<AvisProduit> rechercherParRequeteNommee(String requeteNommee, Map<String,Object> parametres,int nbreMaxElements);
-	List<AvisProduit> rechercherParRequeteNommee(String requeteNommee, Map<String,Object> parametres);
-	List<AvisProduit> rechercherParRequeteNommee(String requeteNommee, int nbreMaxElements);
 
 	Collection<AvisProduit> obtenirTousAvisProduit();
 }

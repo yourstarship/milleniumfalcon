@@ -4,33 +4,56 @@ import gal.cor.persistence.dao.apis.IDaoCarte;
 import gal.cor.persistence.entities.Carte;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
-public class DaoCarteImpl extends DaoGenericImpl<Carte> implements IDaoCarte {
+public class DaoCarteImpl  implements IDaoCarte {
 
 	@Override
 	public void creerCarte(Carte t) {
-		this.creer(t);
-	}
-
-	@Override
-	public void supprimerCarte(Carte t) {
-		this.supprimer(Carte.class, t.getId());
-	}
-
-	@Override
-	public Carte mettreAjourCarte(Carte t) {
+		// TODO Auto-generated method stub
 		
-		return this.mettreAjour(t);
 	}
 
 	@Override
 	public Carte rechercherParId(Carte t) {
-		return this.rechercherParId(Carte.class, t.getId());
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Carte> rechercherParRequeteNommee(String requeteNommee) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Carte> rechercherParRequeteNommee(String requeteNommee,
+			Map<String, Object> parametres, int nbreMaxElements) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Carte> rechercherParRequeteNommee(String requeteNommee,
+			Map<String, Object> parametres) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Carte> rechercherParRequeteNommee(String requeteNommee,
+			int nbreMaxElements) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public Collection<Carte> obtenirTousCarte() {
-		return this.obtenirTous();
+		// TODO Auto-generated method stub
+		return null;
 	}
+
+
 
 }

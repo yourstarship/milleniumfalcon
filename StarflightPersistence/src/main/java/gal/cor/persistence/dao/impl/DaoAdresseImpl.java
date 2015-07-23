@@ -4,33 +4,67 @@ import gal.cor.persistence.dao.apis.IDaoAdresse;
 import gal.cor.persistence.entities.Adresse;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
-public class DaoAdresseImpl extends DaoGenericImpl<Adresse> implements IDaoAdresse {
+public class DaoAdresseImpl  implements IDaoAdresse {
 
 	@Override
 	public void creerAdresse(Adresse t) {
-		this.creer(t);
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void supprimerAdresse(Adresse t) {
-		this.supprimer(Adresse.class, t.getId());
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public Adresse mettreAjourAdresse(Adresse t) {
-		
-		return this.mettreAjour(t);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public Adresse rechercherParId(Adresse t) {
-		return this.rechercherParId(Adresse.class, t.getId());
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Adresse> rechercherParRequeteNommee(String requeteNommee) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Adresse> rechercherParRequeteNommee(String requeteNommee,
+			Map<String, Object> parametres, int nbreMaxElements) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Adresse> rechercherParRequeteNommee(String requeteNommee,
+			Map<String, Object> parametres) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Adresse> rechercherParRequeteNommee(String requeteNommee,
+			int nbreMaxElements) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public Collection<Adresse> obtenirTousAdresse() {
-		return this.obtenirTous();
+		// TODO Auto-generated method stub
+		return null;
 	}
 
+	
 }

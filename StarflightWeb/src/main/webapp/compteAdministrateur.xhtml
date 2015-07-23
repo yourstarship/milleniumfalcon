@@ -13,34 +13,34 @@
 	</ui:define>
 
 	<ui:define name="content">
+		<h:form>
+			<div id="contenuCompteAdministrateur">
 
-		<div id="contenuCompteAdministrateur">
-
-			<div id="titrePageCompteAdmin">
-				<span>Compte Administrateur</span>
-			</div>
-
-			<!-- Espace Promotions -->
-			<div class="Promo">
-				<span id="titrePromoAdmin">Promotion Actuelles</span>
-				<div id="imgPromo1" class="alignePromo">
-					<span id="reducPromo" style="visibility: visible">-5%</span> <img
-						src="image/e04b1581.jpg" />
+				<div id="titrePageCompteAdmin">
+					<span>Compte Administrateur</span>
 				</div>
-				<div id="imgPromo2" class="alignePromo">
-					<img src="image/Promos/29 - AT-ST.jpg" />
-				</div>
-				<div id="imgPromo3" class="alignePromo">
-					<img src="image/Promos/63 - T47 A-Wing.jpg" />
-				</div>
-			</div>
 
-			<form>
+				<!-- Espace Promotions -->
+				<div class="Promo">
+					<span id="titrePromoAdmin">Promotion Actuelles</span>
+					<div id="imgPromo1" class="alignePromo">
+						<span id="reducPromo" style="visibility: visible">-5%</span> <img
+							src="image/e04b1581.jpg" />
+					</div>
+					<div id="imgPromo2" class="alignePromo">
+						<img src="image/Promos/29 - AT-ST.jpg" />
+					</div>
+					<div id="imgPromo3" class="alignePromo">
+						<img src="image/Promos/63 - T47 A-Wing.jpg" />
+					</div>
+				</div>
+
+
 				<div id="ficheAdminInfoPerso">
 					<span class="titreColonneFormInsc">Information personnelle</span> <br />
 					<br />
 					<div class="colonneAdmin">
-						<span>Civilité</span>
+						<span>Civilité : </span>
 						<div class="droite">
 							<input type="radio" name="civilite" value="M.">M.</input> <input
 								type="radio" name="civilite" value="Mme">Mme.</input>
@@ -49,33 +49,33 @@
 					<div class="colonneAdmin">
 						<span>Nom : </span>
 						<div class="droite">
-							<input type="text" value="Nom" class="centVingtpx" />
+							<h:inputText value="Nom" class="centVingtpx" />
 						</div>
 					</div>
 					<div class="colonneAdmin">
 						<span>Prénom : </span>
 						<div class="droite">
-							<input type="text" value="Prénom" class="centVingtpx" />
+							<h:inputText value="Prénom" class="centVingtpx" />
 						</div>
 
 					</div>
 					<div class="colonneAdmin">
 						<span>naissance : </span>
 						<div class="droite">
-							<input type="text" name="14/02/1989" class="centVingtpx" />
+							<h:inputText name="14/02/1989" class="centVingtpx" />
 						</div>
 
 					</div>
 					<div class="colonneAdmin">
 						<span>Tel : </span>
 						<div class="droite">
-							<input type="text" value="0145708432" class="centVingtpx" />
+							<h:inputText value="0145708432" class="centVingtpx" />
 						</div>
 					</div>
 					<div class="colonneAdmin">
 						<span>Mail : </span>
 						<div class="droite">
-							<input type="text" value="xx@mma.fr" class="centVingtpx" />
+							<h:inputText value="xx@mma.fr" class="centVingtpx" />
 						</div>
 					</div>
 				</div>
@@ -129,148 +129,203 @@
 					<div class="colonneAdminIdent">
 						<span>Login : </span>
 						<div class="centerIdent">
-							<input type="text" value="Login" class="centVingtpx" />
+							<h:inputText value="Login" class="centVingtpx" />
 						</div>
 					</div>
 					<div class="colonneAdminIdent">
 						<span>mot de passe : </span>
 						<div class="centerIdent">
-							<input type="password" value="Mdp" class="centVingtpx" />
+							<h:inputText value="Mdp" class="centVingtpx" />
 						</div>
-						<input type="button" value="Valider" class="buttFicheAdmin" />
+
 					</div>
 					<div class="colonneAdminIdent">
 						<span>Type : </span>
 						<div class="centerIdent">
-							<select name="type" size="1" class="centVingtpxPlus">
-								<option>Civil</option>
-								<option>Militaire</option>
-							</select>
+							<h:inputText value="Administrateur" class="centVingtpx" />
 						</div>
 					</div>
 					<div class="colonneAdminIdent">
-						<span>code militaire : </span>
-						<div class="centerIdent">
-							<input type="password" value="Code" class="centVingtpx" />
+						<h:commandButton action="#{compteAdminMBean}" value="Valider" class="buttFicheAdmin"/>
+						<h:commandButton action="#{compteAdminMBean}" value="Annuler" class="buttFicheAdmin"/>
+					</div>
+				</div>
+
+
+				<!-- Panneau d'administration des Produits -->
+				<!-- Menu Deroulant Central -->
+				<div id="menuProduitAdmin">
+					<div class="recherche">
+						Recherche : <input type="text" value="rechercher...type" />
+						<div id="buttRechercheAdmin"></div>
+					</div>
+					<div id="surfaceAccordeonAdministrateur">
+						<ul id="menuAccordeon">
+							<li><h:commandLink value="Véhicule aquatique"
+									action="#{compteAdminMBean}" />
+								<ul>
+									<li><h:commandLink value="lien sous menu 1"
+											action="#{compteAdminMBean}" /></li>
+									<li><h:commandLink value="lien sous menu 1"
+											action="#{compteAdminMBean}" /></li>
+									<li><h:commandLink value="lien sous menu 1"
+											action="#{compteAdminMBean}" /></li>
+									<li><h:commandLink value="lien sous menu 1"
+											action="#{compteAdminMBean}" /></li>
+								</ul></li>
+							<li><h:commandLink value="Véhicule terrestre"
+									action="#{compteAdminMBean}" />
+								<ul>
+									<li><h:commandLink value="Lien sous menu 2"
+											action="#{compteAdminMBean}" /></li>
+									<li><h:commandLink value="Lien sous menu 2"
+											action="#{compteAdminMBean}" /></li>
+									<li><h:commandLink value="Lien sous menu 2"
+											action="#{compteAdminMBean}" /></li>
+									<li><h:commandLink value="Lien sous menu 2"
+											action="#{compteAdminMBean}" /></li>
+								</ul></li>
+							<li><h:commandLink value="Véhicule légers"
+									action="#{compteAdminMBean}" />
+								<ul>
+									<li><h:commandLink value="Lien sous menu 3"
+											action="#{compteAdminMBean}" /></li>
+									<li><h:commandLink value="Lien sous menu 3"
+											action="#{compteAdminMBean}" /></li>
+									<li><h:commandLink value="Lien sous menu 3"
+											action="#{compteAdminMBean}" /></li>
+									<li><h:commandLink value="Lien sous menu 3"
+											action="#{compteAdminMBean}" /></li>
+								</ul></li>
+							<li><h:commandLink value="Véhicule Moyen"
+									action="#{compteAdminMBean}" />
+								<ul>
+									<li><h:commandLink value="Lien sous menu 3"
+											action="#{compteAdminMBean}" /></li>
+									<li><h:commandLink value="Lien sous menu 3"
+											action="#{compteAdminMBean}" /></li>
+									<li><h:commandLink value="Lien sous menu 3"
+											action="#{compteAdminMBean}" /></li>
+									<li><h:commandLink value="Lien sous menu 3"
+											action="#{compteAdminMBean}" /></li>
+								</ul></li>
+							<li><h:commandLink value="Véhicule Lourd"
+									action="#{compteAdminMBean}" />
+								<ul>
+									<li><h:commandLink value="Lien sous menu 3"
+											action="#{compteAdminMBean}" /></li>
+									<li><h:commandLink value="Lien sous menu 3"
+											action="#{compteAdminMBean}" /></li>
+									<li><h:commandLink value="Lien sous menu 3"
+											action="#{compteAdminMBean}" /></li>
+									<li><h:commandLink value="Lien sous menu 3"
+											action="#{compteAdminMBean}" /></li>
+								</ul></li>
+							<li><h:commandLink value="Chasseur"
+									action="#{compteAdminMBean}" />
+								<ul>
+									<li><h:commandLink value="Lien sous menu 3"
+											action="#{compteAdminMBean}" /></li>
+									<li><h:commandLink value="Lien sous menu 3"
+											action="#{compteAdminMBean}" /></li>
+									<li><h:commandLink value="Lien sous menu 3"
+											action="#{compteAdminMBean}" /></li>
+									<li><h:commandLink value="Lien sous menu 3"
+											action="#{compteAdminMBean}" /></li>
+								</ul></li>
+							<li><h:commandLink value="Station Spatiale"
+									action="#{compteAdminMBean}" />
+								<ul>
+									<li><h:commandLink value="Lien sous menu 3"
+											action="#{compteAdminMBean}" /></li>
+									<li><h:commandLink value="Lien sous menu 3"
+											action="#{compteAdminMBean}" /></li>
+									<li><h:commandLink value="Lien sous menu 3"
+											action="#{compteAdminMBean}" /></li>
+									<li><h:commandLink value="Lien sous menu 3"
+											action="#{compteAdminMBean}" /></li>
+								</ul></li>
+						</ul>
+					</div>
+					<select name="statut" size="1" id="selectStatutProdAdmin">
+						<option>Tous les Produits</option>
+						<option>Produits en Vente</option>
+						<option>Produits Hors Vente</option>
+					</select>
+				</div>
+
+
+				<!-- Listing Produit -->
+				<div id="listingProduit">
+
+					<div id="titreListingProduit">
+						<a href="">Listing Produit</a>
+					</div>
+					<div id="ListeProduitAdmin">
+						<div class="produitAdminListee">
+							<img src="image/e04b1581.jpg" />
+							<h:outputText value="Vaisseau PiouPiou" />
+							<br />
+							<h:outputText value="666" />
+							<span> Crédits</span> <br />
+							<h:commandButton
+								action="#{compteAdminMBean.accesDetailProduit()}"
+								value="détailler" class="buttListeDetailAdmin" />
 						</div>
-						<input type="button" value="Annuler" class="buttFicheAdmin" />
+						<div class="produitAdminListee">
+							<img src="image/e04b1581.jpg" />
+							<h:outputText value="Vaisseau PiouPiou" />
+							<br />
+							<h:outputText value="666" />
+							<span> Crédits</span> <br />
+							<h:commandButton
+								action="#{compteAdminMBean.accesDetailProduit()}"
+								value="détailler" class="buttListeDetailAdmin" />
+						</div>
+						<div class="produitAdminListee">
+							<img src="image/e04b1581.jpg" />
+							<h:outputText value="Vaisseau PiouPiou" />
+							<br />
+							<h:outputText value="666" />
+							<span> Crédits</span> <br />
+							<h:commandButton
+								action="#{compteAdminMBean.accesDetailProduit()}"
+								value="détailler" class="buttListeDetailAdmin" />
+						</div>
+						<div class="produitAdminListee">
+							<img src="image/e04b1581.jpg" />
+							<h:outputText value="Vaisseau PiouPiou" />
+							<br />
+							<h:outputText value="666" />
+							<span> Crédits</span> <br />
+							<h:commandButton
+								action="#{compteAdminMBean.accesDetailProduit()}"
+								value="détailler" class="buttListeDetailAdmin" />
+						</div>
+						<div class="produitAdminListee">
+							<img src="image/e04b1581.jpg" />
+							<h:outputText value="Vaisseau PiouPiou" />
+							<br />
+							<h:outputText value="666" />
+							<span> Crédits</span> <br />
+							<h:commandButton
+								action="#{compteAdminMBean.accesDetailProduit()}"
+								value="détailler" class="buttListeDetailAdmin" />
+						</div>
 					</div>
 				</div>
-			</form>
 
-			<!-- Panneau d'administration des Produits -->
-			<!-- Menu Deroulant Central -->
-			<div id="menuProduitAdmin">
-				<div class="recherche">
-					Recherche : <input type="text" value="rechercher...type" /> <input
-						type="button" value="Ok" />
+				<!-- Panier lateral droit -->
+				<div id="surfaceBoutonAjoutProduitCompteAdmin">
+					<div>
+						<h:commandButton
+							action="#{compteAdminMBean.accesCreationProduit()}"
+							value="Ajouter un Produit" class="butAjoutProduitCompteAdmin" />
+					</div>
 				</div>
-				<div id="surfaceAccordeonAdministrateur">
-					<ul id="menuAccordeon">
-						<li><a href="#">Véhicule aquatique</a>
-							<ul>
-								<li><a href="#">lien sous menu 1</a></li>
-								<li><a href="#">lien sous menu 1</a></li>
-								<li><a href="#">lien sous menu 1</a></li>
-								<li><a href="#">lien sous menu 1</a></li>
-							</ul></li>
-						<li><a href="#">Véhicule terrestre</a>
-							<ul>
-								<li><a href="#">Lien sous menu 2</a></li>
-								<li><a href="#">Lien sous menu 2</a></li>
-								<li><a href="#">Lien sous menu 2</a></li>
-								<li><a href="#">Lien sous menu 2</a></li>
-							</ul></li>
-						<li><a href="#">Véhicule légers</a>
-							<ul>
-								<li><a href="#">Lien sous menu 3</a></li>
-								<li><a href="#">Lien sous menu 3</a></li>
-								<li><a href="#">Lien sous menu 3</a></li>
-								<li><a href="#">Lien sous menu 3</a></li>
-							</ul></li>
-						<li><a href="#">Véhicule Moyen</a>
-							<ul>
-								<li><a href="#">Lien sous menu 3</a></li>
-								<li><a href="#">Lien sous menu 3</a></li>
-								<li><a href="#">Lien sous menu 3</a></li>
-								<li><a href="#">Lien sous menu 3</a></li>
-							</ul></li>
-						<li><a href="#">Véhicule Lourd</a>
-							<ul>
-								<li><a href="#">Lien sous menu 3</a></li>
-								<li><a href="#">Lien sous menu 3</a></li>
-								<li><a href="#">Lien sous menu 3</a></li>
-								<li><a href="#">Lien sous menu 3</a></li>
-							</ul></li>
-						<li><a href="#">Chasseur</a>
-							<ul>
-								<li><a href="#">Lien sous menu 3</a></li>
-								<li><a href="#">Lien sous menu 3</a></li>
-								<li><a href="#">Lien sous menu 3</a></li>
-								<li><a href="#">Lien sous menu 3</a></li>
-							</ul></li>
-						<li><a href="#">Station Spatiale</a>
-							<ul>
-								<li><a href="#">Lien sous menu 3</a></li>
-								<li><a href="#">Lien sous menu 3</a></li>
-								<li><a href="#">Lien sous menu 3</a></li>
-								<li><a href="#">Lien sous menu 3</a></li>
-							</ul></li>
-					</ul>
-				</div>
-				<select name="statut" size="1" id="selectStatutProdAdmin">
-					<option>Tous les Produits</option>
-					<option>Produits en Vente</option>
-					<option>Produits Hors Vente</option>
-				</select>
+
 			</div>
-
-
-			<!-- Listing Produit -->
-			<div id="listingProduit">
-
-				<div id="titreListingProduit">
-					<a href="">Listing Produit</a>
-				</div>
-				<div id="ListeProduitAdmin">
-					<div class="produitAdminListee">
-						<img src="image/e04b1581.jpg" />
-						<p>blablabla</p>
-						<input type="button" value="détailler" class="right" />
-					</div>
-					<div class="produitAdminListee">
-						<img src="image/e04b1581.jpg" />
-						<p>blablabla</p>
-						<input type="button" value="détailler" class="right" />
-					</div>
-					<div class="produitAdminListee">
-						<img src="image/e04b1581.jpg" />
-						<p>blablabla</p>
-						<input type="button" value="détailler" class="right" />
-					</div>
-					<div class="produitAdminListee">
-						<img src="image/e04b1581.jpg" />
-						<p>blablabla</p>
-						<input type="button" value="détailler" class="right" />
-					</div>
-					<div class="produitAdminListee">
-						<img src="image/e04b1581.jpg" />
-						<p>blablabla</p>
-						<input type="button" value="détailler" class="right" />
-					</div>
-				</div>
-			</div>
-
-			<!-- Panier lateral droit -->
-			<div id="surfaceBoutonAjoutProduitCompteAdmin">
-				<div>
-					<input type="button" value="Ajouter un Produit"
-						id="butAjoutProduitCompteAdmin" />
-				</div>
-			</div>
-
-		</div>
-
+		</h:form>
 		<script>
 
 

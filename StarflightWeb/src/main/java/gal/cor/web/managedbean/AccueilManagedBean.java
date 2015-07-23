@@ -1,27 +1,27 @@
 package gal.cor.web.managedbean;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import gal.cor.persistence.entities.Produit;
 import gal.cor.services.api.IProduitServices;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-
 import org.apache.log4j.Logger;
 
-@ManagedBean
+@ManagedBean (name="accueilManagedBean")
 @SessionScoped
-public class testManagedBean {
-private static Logger log = Logger.getLogger(testManagedBean.class);
+public class AccueilManagedBean {
+	private static Logger log = Logger.getLogger(AccueilManagedBean.class);
 	@EJB
-	private IProduitServices proxyProduitSevices;
+	private IProduitServices proxyProduitServices;
 	
 	List<Produit> listeProduit = new ArrayList<Produit>();
+	private Produit produit;
 	
 	private Integer nomCategorie=1;
 	private Integer nomCategorie1=2;
@@ -45,7 +45,7 @@ private static Logger log = Logger.getLogger(testManagedBean.class);
 	@PostConstruct
 	public void afficherListeProduit(){
 		listeProduit.clear();
-		listeProduit = proxyProduitSevices.obtenirTousProduitServices();
+		listeProduit = proxyProduitServices.obtenirTousProduitServices();
 		for (Produit p : listeProduit) {
 			log.info(p.getId());
 		}
@@ -55,18 +55,30 @@ private static Logger log = Logger.getLogger(testManagedBean.class);
 
 	public void afficherLesSelections(Integer idCategorie ){
 		log.info(nomCategorie);
-		listeProduit=proxyProduitSevices.rechercherParCategorie(idCategorie);
+		listeProduit=proxyProduitServices.rechercherParCategorie(idCategorie);
 	}
 	
 	
 	public void afficherSousCategorie(Integer idCategorie, Integer idType){
-		listeProduit=proxyProduitSevices.rechercherProduitParCategorieEtType(idCategorie, idType);
+		listeProduit=proxyProduitServices.rechercherProduitParCategorieEtType(idCategorie, idType);
 	
 	}
 	
 	
 	
+	public String accesDetailProduit(Produit produit){
+			this.produit= produit;
+		
+		return ("affichageDetailProduit.xhtml");
+	}
 	
+	public String accesDetailPanier(){
+		return ("affichageDetailPanier.xhtml");
+	}
+	
+	public String validerLaCommande(){
+		return ("compteUtilisateur.xhtml");
+	}
 	
 	
 	
@@ -83,6 +95,16 @@ private static Logger log = Logger.getLogger(testManagedBean.class);
 		return typeSubmersible;
 	}
 
+
+
+	public Produit getProduit() {
+		return produit;
+	}
+
+
+	public void setProduit(Produit produit) {
+		this.produit = produit;
+	}
 
 
 	public void setTypeSubmersible(Integer typeSubmersible) {
@@ -190,10 +212,10 @@ private static Logger log = Logger.getLogger(testManagedBean.class);
 
 
 	public IProduitServices getProxyProduitSevices() {
-		return proxyProduitSevices;
+		return proxyProduitServices;
 	}
 	public void setProxyProduitSevices(IProduitServices proxyProduitSevices) {
-		this.proxyProduitSevices = proxyProduitSevices;
+		this.proxyProduitServices = proxyProduitSevices;
 	}
 	public List<Produit> getListeProduit() {
 		return listeProduit;
@@ -283,9 +305,13 @@ private static Logger log = Logger.getLogger(testManagedBean.class);
 	}
 	
 
-
-
-
+	
+	public void ajoutProduitAuPanier(){
+		
+	}
+	
+	/***** [ Fonctions ] *****/
+	
 	
 	
 }

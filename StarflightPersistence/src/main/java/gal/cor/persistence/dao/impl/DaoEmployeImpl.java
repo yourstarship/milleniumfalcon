@@ -4,33 +4,67 @@ import gal.cor.persistence.dao.apis.IDaoEmploye;
 import gal.cor.persistence.entities.Employe;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
-public class DaoEmployeImpl extends DaoGenericImpl<Employe> implements IDaoEmploye {
+public class DaoEmployeImpl  implements IDaoEmploye {
 
 	@Override
 	public void creerEmploye(Employe t) {
-		this.creer(t);
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void supprimerEmploye(Employe t) {
-		this.supprimer(Employe.class, t.getId());
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public Employe mettreAjourEmploye(Employe t) {
-		
-		return this.mettreAjour(t);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public Employe rechercherParId(Employe t) {
-		return this.rechercherParId(Employe.class, t.getId());
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Employe> rechercherParRequeteNommee(String requeteNommee) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Employe> rechercherParRequeteNommee(String requeteNommee,
+			Map<String, Object> parametres, int nbreMaxElements) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Employe> rechercherParRequeteNommee(String requeteNommee,
+			Map<String, Object> parametres) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Employe> rechercherParRequeteNommee(String requeteNommee,
+			int nbreMaxElements) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public Collection<Employe> obtenirTousEmploye() {
-		return this.obtenirTous();
+		// TODO Auto-generated method stub
+		return null;
 	}
+
 
 }

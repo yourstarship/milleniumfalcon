@@ -36,11 +36,7 @@ public class ProduitServicesImpl implements IProduitServices {
 		return null;
 	}
 
-	@Override
-	public List<Produit> rechercherParRequeteNommee(String requeteNommee) {
-		// TODO Auto-generated method stub
-		return proxyProduit.rechercherParRequeteNommee(requeteNommee);
-	}
+
 
 	@Override
 	public List<Produit> obtenirTousProduitServices() {
@@ -48,6 +44,20 @@ public class ProduitServicesImpl implements IProduitServices {
 		return proxyProduit.obtenirTousProduit();
 	}
 
+	@Override
+	public List<Produit> rechercherProduitParCategorieEtType(
+			Integer idCategorie, Integer idType) {
+		// TODO Auto-generated method stub
+		return proxyProduit.rechercherProduitParCategorieEtType(idCategorie, idType);
+	}
+
+	@Override
+	public List<Produit> rechercherParCategorie(Integer idCategorie) {
+		// TODO Auto-generated method stub
+		return proxyProduit.rechercherParCategorie(idCategorie);
+	}
+
+	
 	
 	
 

@@ -7,10 +7,8 @@ import java.util.Map;
 import gal.cor.persistence.entities.Carte;
 
 
-public interface IDaoCarte extends IDaoGeneric<Carte> {
+public interface IDaoCarte  {
 	void creerCarte(Carte t);
-	void supprimerCarte(Carte t);
-	Carte mettreAjourCarte(Carte t);
 	Carte rechercherParId(Carte t);
 
 	//Requetes personnalis�es

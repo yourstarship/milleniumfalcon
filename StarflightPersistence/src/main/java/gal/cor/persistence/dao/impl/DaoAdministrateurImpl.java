@@ -5,32 +5,26 @@ import gal.cor.persistence.entities.Administrateur;
 
 import java.util.Collection;
 
-public class DaoAdministrateurImpl extends DaoGenericImpl<Administrateur> implements IDaoAdministrateur {
+public class DaoAdministrateurImpl  implements IDaoAdministrateur {
 
 	@Override
-	public void creerAdministrateur(gal.cor.persistence.entities.Administrateur t) {
-		this.creer(t);
-	}
-
-	@Override
-	public void supprimerAdministrateur(Administrateur t) {
-		this.supprimer(Administrateur.class, t.getId());
+	public void creerAdministrateur(Administrateur t) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public Administrateur mettreAjourAdministrateur(Administrateur t) {
-		
-		return this.mettreAjour(t);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public Administrateur rechercherParId(Administrateur t) {
-		return this.rechercherParId(Administrateur.class, t.getId());
+		// TODO Auto-generated method stub
+		return null;
 	}
 
-	@Override
-	public Collection<Administrateur> obtenirTousAdministrateur() {
-		return this.obtenirTous();
-	}
+
 
 }

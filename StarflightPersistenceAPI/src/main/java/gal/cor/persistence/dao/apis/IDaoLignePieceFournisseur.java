@@ -7,13 +7,13 @@ import java.util.Map;
 import gal.cor.persistence.entities.LignePieceFournisseur;
 
 
-public interface IDaoLignePieceFournisseur extends IDaoGeneric<LignePieceFournisseur> {
+public interface IDaoLignePieceFournisseur  {
 	void creerLignePieceFournisseur(LignePieceFournisseur t);
 	void supprimerLignePieceFournisseur(LignePieceFournisseur t);
 	LignePieceFournisseur mettreAjourLignePieceFournisseur(LignePieceFournisseur t);
 	LignePieceFournisseur rechercherParId(LignePieceFournisseur t);
 
-	//Requetes personnalisées
+	//Requetes personnalisï¿½es
 	List<LignePieceFournisseur> rechercherParRequeteNommee(String requeteNommee);
 	List<LignePieceFournisseur> rechercherParRequeteNommee(String requeteNommee, Map<String,Object> parametres,int nbreMaxElements);
 	List<LignePieceFournisseur> rechercherParRequeteNommee(String requeteNommee, Map<String,Object> parametres);

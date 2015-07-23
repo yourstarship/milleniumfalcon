@@ -7,13 +7,13 @@ import java.util.Map;
 import gal.cor.persistence.entities.Adresse;
 
 
-public interface IDaoAdresse extends IDaoGeneric<Adresse> {
+public interface IDaoAdresse  {
 	void creerAdresse(Adresse t);
 	void supprimerAdresse(Adresse t);
 	Adresse mettreAjourAdresse(Adresse t);
 	Adresse rechercherParId(Adresse t);
 
-	//Requetes personnalisées
+	//Requetes personnalisï¿½es
 	List<Adresse> rechercherParRequeteNommee(String requeteNommee);
 	List<Adresse> rechercherParRequeteNommee(String requeteNommee, Map<String,Object> parametres,int nbreMaxElements);
 	List<Adresse> rechercherParRequeteNommee(String requeteNommee, Map<String,Object> parametres);

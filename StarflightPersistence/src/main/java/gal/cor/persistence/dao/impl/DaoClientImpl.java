@@ -4,33 +4,34 @@ import gal.cor.persistence.dao.apis.IDaoClient;
 import gal.cor.persistence.entities.Client;
 
 import java.util.Collection;
+import java.util.List;
 
-public class DaoClientImpl extends DaoGenericImpl<Client> implements IDaoClient {
-
-	@Override
-	public void creerClient(gal.cor.persistence.entities.Client t) {
-		this.creer(t);
-	}
+public class DaoClientImpl implements IDaoClient {
 
 	@Override
-	public void supprimerClient(Client t) {
-		this.supprimer(Client.class, t.getId());
+	public void creerClient(Client t) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public Client mettreAjourClient(Client t) {
-		
-		return this.mettreAjour(t);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public Client rechercherParId(Client t) {
-		return this.rechercherParId(Client.class, t.getId());
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public Collection<Client> obtenirTousClient() {
-		return this.obtenirTous();
+	public List<Client> obtenirTousClient() {
+		// TODO Auto-generated method stub
+		return null;
 	}
+
+	
 
 }

@@ -7,7 +7,7 @@ import java.util.Map;
 import gal.cor.persistence.entities.Fonction;
 
 
-public interface IDaoFonction extends IDaoGeneric<Fonction> {
+public interface IDaoFonction  {
 	void creerFonction(Fonction t);
 	void supprimerFonction(Fonction t);
 	Fonction mettreAjourFonction(Fonction t);

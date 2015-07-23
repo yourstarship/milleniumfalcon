@@ -7,7 +7,7 @@ import java.util.Map;
 import gal.cor.persistence.entities.LignePieceClient;
 
 
-public interface IDaoLignePieceClient extends IDaoGeneric<LignePieceClient> {
+public interface IDaoLignePieceClient  {
 	void creerLignePieceClient(LignePieceClient t);
 	void supprimerLignePieceClient(LignePieceClient t);
 	LignePieceClient mettreAjourLignePieceClient(LignePieceClient t);

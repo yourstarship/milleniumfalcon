@@ -7,7 +7,7 @@ import java.util.Map;
 import gal.cor.persistence.entities.Utilisateur;
 
 
-public interface IDaoUtilisateur extends IDaoGeneric<Utilisateur> {
+public interface IDaoUtilisateur  {
 	void creerUtilisateur(Utilisateur t);
 	void supprimerUtilisateur(Utilisateur t);
 	Utilisateur mettreAjourUtilisateur(Utilisateur t);

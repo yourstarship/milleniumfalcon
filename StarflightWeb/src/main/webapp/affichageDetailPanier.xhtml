@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+
+
+<ui:composition template="/Templates/baseTemplate.xhtml">
+	<ui:define name="scripts">
+
+		<script type='text/javascript'
+			src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
+
+	</ui:define>
+	<ui:define name="content">
+		<h:form>
+			<!-- ICI Le Contenu  -->
+			<!-- Espace Promotions -->
+			<div id="contenuDetailPanier">
+				<div class="Promo">
+					<span id="titrePromo" style="visibility: visible">PROMOTIONS</span>
+					<div id="imgPromo1" class="alignePromo">
+						<span id="reducPromo" style="visibility: visible">-5%</span> <img
+							src="image/e04b1581.jpg" />
+					</div>
+					<div id="imgPromo2" class="alignePromo">
+						<img src="image/Promos/29 - AT-ST.jpg" />
+					</div>
+					<div id="imgPromo3" class="alignePromo">
+						<img src="image/Promos/63 - T47 A-Wing.jpg" />
+					</div>
+				</div>
+
+					<div id="titrePageDetailPanier">
+						<span>Contenu Détaillé de Votre Panier </span>
+					</div>
+					<div id="ficheDetailPanier">
+
+						<div class="detailProdPanier">
+							<div id="alignementNiveau1">
+								<div id="nomProdEtRef">
+									<span class="miniTitreNiveaux">Produit : </span> 
+									<h:outputText value="Vaisseau PiouPiou" /> <br />
+									<br /> <span class="miniTitreNiveaux">Référence : </span> 
+									<h:outputText value="Vaisseau PiouPiou" /> <br /> <br />
+									<span class="miniTitreNiveaux">Catégorie : </span> 
+									<h:outputText value="Vaisseau PiouPiou" /> <br /> <br />
+									<span class="miniTitreNiveaux">Type : </span> 
+									<h:outputText value="Vaisseau PiouPiou" />
+								</div>
+								<div id="imgFicheDetail">
+									<img src="image/e04b1581.jpg" />
+								</div>
+								<div id="orgaDetailPanier">
+									<span class="miniTitreNiveaux">Organisation</span> <br />
+									<br /> <span>Ajouter une quantité : </span>
+									<h:inputText value="2" class="qteProdDetailPanier" />
+									<br />
+									<br /> <span>Prix unitaire : </span>
+									<h:outputText value="2 450 000" />
+									<span> Crédits</span> <br /> <br />
+									<h:commandButton action="#{detailPanierMBean.accesDetailProduit()}" value="Détailler" class="buttDetailProduitDetailPanier"/>
+								</div>
+								<div id="prixAjoutPanier">
+									<span class="miniTitreNiveaux">Coût Total : </span> <br /> <br />
+									<h:outputText value="4 900 000" class="miniTitreNiveaux" />
+									<span class="miniTitreNiveaux"> Crédits</span> <br />
+								</div>
+							</div>
+						</div>
+
+						<div class="detailProdPanier">
+							<div id="alignementNiveau1">
+								<div id="nomProdEtRef">
+									<span class="miniTitreNiveaux">Produit : </span> 
+									<h:outputText value="Vaisseau PiouPiou" /> <br />
+									<br /> <span class="miniTitreNiveaux">Référence : </span> 
+									<h:outputText value="Vaisseau PiouPiou" /> <br /> <br />
+									<span class="miniTitreNiveaux">Catégorie : </span> 
+									<h:outputText value="Vaisseau PiouPiou" /> <br /> <br />
+									<span class="miniTitreNiveaux">Type : </span> 
+									<h:outputText value="Vaisseau PiouPiou" />
+								</div>
+								<div id="imgFicheDetail">
+									<img src="image/e04b1581.jpg" />
+								</div>
+								<div id="orgaDetailPanier">
+									<span class="miniTitreNiveaux">Organisation</span> <br />
+									<br /> <span>Ajouter une quantité : </span>
+									<h:inputText value="2" class="qteProdDetailPanier" />
+									<br />
+									<br /> <span>Prix unitaire : </span>
+									<h:outputText value="2 450 000" />
+									<span> Crédits</span> <br /> <br /> 
+									<h:commandButton action="#{detailPanierMBean.accesDetailProduit()}" value="Détailler" class="buttDetailProduitDetailPanier"/>
+								</div>
+								<div id="prixAjoutPanier">
+									<span class="miniTitreNiveaux">Coût Total : </span> <br /> <br />
+									<h:outputText value="4 900 000" class="miniTitreNiveaux" />
+									<span class="miniTitreNiveaux"> Crédits</span> <br />
+								</div>
+							</div>
+						</div>
+						<div class="detailProdPanier">
+							<div id="alignementNiveau1">
+								<div id="nomProdEtRef">
+									<span class="miniTitreNiveaux">Produit : </span> 
+									<h:outputText value="Vaisseau PiouPiou" /> <br />
+									<br /> <span class="miniTitreNiveaux">Référence : </span> 
+									<h:outputText value="Vaisseau PiouPiou" /> <br /> <br />
+									<span class="miniTitreNiveaux">Catégorie : </span> 
+									<h:outputText value="Vaisseau PiouPiou" /> <br /> <br />
+									<span class="miniTitreNiveaux">Type : </span> 
+									<h:outputText value="Vaisseau PiouPiou" />
+								</div>
+								<div id="imgFicheDetail">
+									<img src="image/e04b1581.jpg" />
+								</div>
+								<div id="orgaDetailPanier">
+									<span class="miniTitreNiveaux">Organisation</span> <br />
+									<br /> <span>Ajouter une quantité : </span>
+									<h:inputText value="2" class="qteProdDetailPanier" />
+									<br />
+									<br /> <span>Prix unitaire : </span>
+									<h:outputText value="2 450 000" />
+									<span> Crédits</span> <br /> <br /> 
+									<h:commandButton action="#{detailPanierMBean.accesDetailProduit()}" value="Détailler" class="buttDetailProduitDetailPanier"/>
+								</div>
+								<div id="prixAjoutPanier">
+									<span class="miniTitreNiveaux">Coût Total : </span> <br /> <br />
+									<h:outputText value="4 900 000" class="miniTitreNiveaux" />
+									<span class="miniTitreNiveaux"> Crédits</span> <br />
+								</div>
+							</div>
+						</div>
+						<div class="detailProdPanier">
+							<div id="alignementNiveau1">
+								<div id="nomProdEtRef">
+						<span class="miniTitreNiveaux">Produit : </span> 
+									<h:outputText value="Vaisseau PiouPiou" /> <br />
+									<br /> <span class="miniTitreNiveaux">Référence : </span> 
+									<h:outputText value="Vaisseau PiouPiou" /> <br /> <br />
+									<span class="miniTitreNiveaux">Catégorie : </span> 
+									<h:outputText value="Vaisseau PiouPiou" /> <br /> <br />
+									<span class="miniTitreNiveaux">Type : </span> 
+									<h:outputText value="Vaisseau PiouPiou" />
+								</div>
+								<div id="imgFicheDetail">
+									<img src="image/e04b1581.jpg" />
+								</div>
+								<div id="orgaDetailPanier">
+									<span class="miniTitreNiveaux">Organisation</span> <br />
+									<br /> <span>Ajouter une quantité : </span>
+									<h:inputText value="2" class="qteProdDetailPanier" />
+									<br />
+									<br /> <span>Prix unitaire : </span>
+									<h:outputText value="2 450 000" />
+									<span> Crédits</span> <br /> <br /> 
+									<h:commandButton action="#{detailPanierMBean.accesDetailProduit()}" value="Détailler" class="buttDetailProduitDetailPanier"/>
+								</div>
+								<div id="prixAjoutPanier">
+									<span class="miniTitreNiveaux">Coût Total : </span> <br /> <br />
+									<h:outputText value="4 900 000" class="miniTitreNiveaux" />
+									<span class="miniTitreNiveaux"> Crédits</span> <br />
+								</div>
+							</div>
+						</div>
+					</div>
+
+				<!-- Panier lateral droit -->
+				<div id="panierDetailProduit">
+					<div id="hauteurPanierDetailProduit">
+						<div id="titrePanier">
+							<span>Panier</span>
+							<div id="iconePanier"></div>
+						</div>
+						<div id="listePanierDetailProduit">
+							<ul>
+								<li>v1 <h:commandLink value="annuler1" action="#{compteUtilisateurMBean}" /></li>
+								<li>v2 <h:commandLink value="annuler2" action="#{compteUtilisateurMBean}" /></li>
+								<li>v4 <h:commandLink value="annuler3" action="#{compteUtilisateurMBean}" /></li>
+								<li>v8 <h:commandLink value="annuler4" action="#{compteUtilisateurMBean}" /></li>
+							</ul>
+						</div>
+					</div>
+					<div id="totalPanierDetailProduit">Total : 125€</div>
+					<div>
+						<br /> <br /> <br />
+						<h:commandButton action="#{detailPanierMBean.validerLaCommande()}" value="Effectuer votre Commande" class="lancerCommandeDetailProduit"/>
+					</div>
+				</div>
+			</div>
+		</h:form>
+
+		<script>
+function blink(ob)
+{
+	if (ob.style.visibility == "visible" )
+	{
+		ob.style.visibility = "hidden";
+	}
+	else
+	{
+		ob.style.visibility = "visible";
+	}
+}
+setInterval("blink(titrePromo)",500);
+
+
+    $('#zoneFavorisIcones').click(function () {	 
+         $('#buttNoFavIcone').toggle();
+         $('#buttYesFavIcone').toggle();
+       });
+
+</script>
+	</ui:define>
+</ui:composition>
+
+
+
+</html>

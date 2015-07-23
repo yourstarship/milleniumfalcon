@@ -72,7 +72,8 @@
 						<webModule>
 							<groupId>gal.cor</groupId>
 							<artifactId>StarflightWeb</artifactId>
-							<contextRoot>StarflightWeb</contextRoot>
+							<contextRoot>starflight</contextRoot>
+							<uri>starflight.war</uri>
 						</webModule>
 
 						<ejbModule>
