@@ -1,0 +1,500 @@
+   33  git add *
+   34  git commit
+   35  clea
+   36  clear
+   37  git log --decorate --graph --all
+   38  git checkout master
+   39  git log --decorate --graph --all
+   40  git status
+   41  git add *
+   42  git commit
+   43  clear
+   44  git log --decorate --graph --all
+   45  git remote
+   46  git remote add ys https://github.com/yourstarship/milleniumfalcon
+   47  git remote
+   48  git push
+   49  git push ys
+   50  git push ys *
+   51  git push ys master
+   52  git branch
+   53  git push ys branchB
+   54  git remote -vv
+   55  clear
+   56  git remote show ys
+   57  git push
+   58  git push ys
+   59  clear
+   60  git remote show ys
+   61  git clone
+   62  git clone ys
+   63  git remote
+   64  git remote show ys
+   65  git clone -o mf ys
+   66  git clone -o mf https://github.com/yourstarship/milleniumfalcon
+   67  git remote
+   68  ls
+   69  git remote
+   70  git clone -o mf https://github.com/yourstarship/milleniumfalcon
+   71  cd milleniufalcon
+   72  cd milleniumfalcon
+   73  git remote
+   74  cd .. git remote
+   75  cd ..
+   76  dcc gittest
+   77  cd gittest
+   78  git remote
+   79  rm milleniumfalcon
+   80  rmdir milleniumfalcon
+   81  clear
+   82  git help branch
+   83  git branch
+   84  git remote show ys
+   85  git branch branchB -u ys/master
+   86  git branch branchB -u ys/branchB
+   87  git branch master -u ys/master
+   88  git remote show ys
+   89  git fetch
+   90  git fetch ys
+   91  git fetch --all
+   92  exit
+   93  ls
+   94  cd desktop
+   95  cd ws
+   96  ls
+   97  git init
+   98  git remote
+   99  echo > .gitignore
+  100  git status
+  101  cd yourstarship
+  102  git init
+  103  git status
+  104  git add *
+  105  git status
+  106  git status
+  107  clear
+  108  git status
+  109  git add *
+  110  git status
+  111  git status
+  112  git commit
+  113  clear
+  114  git remote add ys https://github.com/yourstarship/milleniumfalcon
+  115  git push
+  116  git push ys
+  117  git push master ys
+  118  git push ys master
+  119  clear
+  120  exit
+  121  cd desktop
+  122  cd ..
+  123  cd desktop/ws
+  124  cd yourstarship
+  125  git difftool
+  126  exit
+  127  cd desktop
+  128  cd ws2
+  129  cd yourstarship
+  130  git init
+  131  git remote add ys  m
+  132  git remote
+  133  git remote add ys https://github.com/yourstarship/milleniumfalcon
+  134  git remote add mf https://github.com/yourstarship/milleniumfalcon
+  135  git clone mf
+  136  git clone mf
+  137  git clone  https://github.com/yourstarship/milleniumfalcon
+  138  ls
+  139  exit
+  140  cd desktop/ws/starflight
+  141  git init
+  142  git remote add https://github.com/yourstarship/milleniumfalcon
+  143  git remote add mf https://github.com/yourstarship/milleniumfalcon
+  144  git push mf
+  145  clear
+  146  git push mf master
+  147  git push mf master
+  148  git push mf master
+  149  git push mf origin
+  150  git add *
+  151  git add *
+  152  clear
+  153  git commit
+  154  clear
+  155  git push mf master
+  156  clear
+  157  git add *
+  158  git add *
+  159  git add *
+  160  git add *
+  161  git add *
+  162  git add *
+  163  git add *
+  164  git add *
+  165  git add *
+  166  git add *
+  167  cd configuration jboss
+  168  cd "configuration jboss"
+  169  cd "mysal"
+  170  cd "mysql"
+  171  c main
+  172  cd main
+  173  clear
+  174  cd ../..
+  175  cd ..
+  176  clear
+  177  cd ..
+  178  cd starflight
+  179  clear
+  180  commit
+  181  git commit
+  182  clear
+  183  git push mf master
+  184  exit
+  185  cd desktop/mf
+  186  git init
+  187  git clone https://github.com/yourstarship/milleniumfalcon master
+  188  cd ..
+  189  cd master
+  190  cd ..
+  191  exit
+  192  exit
+  193  cd desktop
+  194  cd ws
+  195  cd starflight
+  196  clear
+  197  git init
+  198  exit
+  199  clear
+  200  cd desktop
+  201  ls
+  202  cd ws
+  203  ls
+  204  cd Starflight
+  205  clear
+  206  git init
+  207  git remote
+  208  git remote add mf https://github.com/yourstarship/milleniumfalcon
+  209  clear
+  210  git branch filippo
+  211  git log --decorate --graph --all
+  212  git init
+  213  git log --decorate --graph --all
+  214  git add *
+  215  git commit
+  216  git branch filippo
+  217  git push https://github.com/yourstarship/milleniumfalcon master
+  218  git remote
+  219  git fetch mf
+  220  git branch -vv
+  221  git push https://github.com/yourstarship/milleniumfalcon master
+  222  git log --decorate --graph --all
+  223  git merge mf/master
+  224  git fetch mf
+  225  git log --decorate --graph --all
+  226  git merge mf/master
+  227  git add *
+  228  git merge mf/master
+  229  git merge mf/master
+  230  git fetch mf
+  231  git merge mf/master
+  232  git fetch mf
+  233  git merge mf/master
+  234  git fetch mf
+  235  git merge mf/master
+  236  git mergetool
+  237  git mergetool -tool=diff.exe
+  238  git core\git-mergetool -tool=diff.exe
+  239  git-mergetool -tool=diff.exe
+  240  git config --global merge.tool diff.exe
+  241  git mergetool
+  242  git config --global merge.tool emerge
+  243  git mergetool
+  244  git config --global merge.tool gvimdiff
+  245  git mergetool
+  246  git mergetool
+  247  git merge
+  248  git merge mf/master
+  249  git help commit
+  250  git merge
+  251  git merge
+  252  git add *
+  253  git commit
+  254  git add *
+  255  git add *
+  256  git commit
+  257  git add *
+  258  git commit
+  259  git add *
+  260  git commit
+  261  git fetch mf
+  262  git 
+  263  git add *
+  264  git commit
+  265  git rm StarflightPersistence/target/classes/Meta-inf/maven/gal.cor.persistence/StarflightPersistence/pom.xml
+  266  rm StarflightPersistence/target/classes/Meta-inf/maven/gal.cor.persistence/StarflightPersistence/pom.xml
+  267  clear
+  268  git commit
+  269  git config --global credential.helper 'cache'
+  270  git fetch mf
+  271  git config --global credential.helper staore
+  272  git config --global credential.helper store
+  273  git commit
+  274  git status
+  275  git add Adresse.java
+  276  git add */Adresse.java
+  277  git add */Civilite.java
+  278  git add */Client.java
+  279  git add */CommandeClient.java
+  280  git add */LignePieceClient.java
+  281  git add */pom.java
+  282  git add */pom.xml
+  283  git commit
+  284  git rm */target/*/pom.xml
+  285  git commit
+  286  git push https://github.com/yourstarship/milleniumfalcon master
+  287  git fetch mf
+  288  git push https://github.com/yourstarship/milleniumfalcon master
+  289  git --decorate --graph -all
+  290  git log --decorate --graph -all
+  291  git log --decorate --graph --all
+  292  git merge
+  293  git merge mf/master
+  294  git rm *.settings/*
+  295  git rm */.settings/*
+  296  git rm */.settings/*.*
+  297  git rm .settings/*.*
+  298  git rm .settings/*
+  299  git status
+  300  clear
+  301  git merge
+  302  git add *
+  303  git add *
+  304  git commit
+  305  rm */target
+  306  clear
+  307  git status
+  308  git status
+  309  git checkout -- starflightpersistence/target/classes/meta-int/persistence.xml
+  310  git checkout -- starflightpersistence/target/classes/meta-int/persistence.xml
+  311  git commit
+  312  git help status
+  313  exit
+  314  cd desktop
+  315  cd starflight
+  316  cd ws
+  317  cd starflight
+  318  clear
+  319  git commit
+  320  git fetch mf
+  321  git add *
+  322  git add --all
+  323  git commit
+  324  git push https://github.com/yourstarship/milleniumfalcon master
+  325  git log --decorate --graph --all
+  326  git merge mf/master
+  327  git commit
+  328  git commit
+  329  git add *
+  330  git commit
+  331  git push https://github.com/yourstarship/milleniumfalcon master
+  332  clear
+  333  git log --decorate --graph --all
+  334  clear
+  335  git checkout filippo
+  336  clear
+  337  exit
+  338  git cd desktop/ws/Starflight
+  339  cd desktop/ws/Starflight
+  340  git init
+  341  git status
+  342  git ? status
+  343  git help status
+  344  git status -u
+  345  git status -u -ignored
+  346  git status -u --ignored
+  347  git status -u --ignored
+  348  clear
+  349  git add *
+  350  git commit -m "premier commit"
+  351  git add */*
+  352  git commit -m --amend "premier commit"
+  353  git commit --amend -m "premier commit"
+  354  git log
+  355  git commit -m "premier commit"
+  356  git log
+  357  git status -u --ignored
+  358  clear
+  359  git add *
+  360  git help add
+  361  git help add
+  362  git add --all
+  363  git status -u --ignored
+  364  git commit -m "premier commit"
+  365  git log
+  366  git remote add mf https://github.com/yourstarship/milleniumfalcon
+  367  git push mf/master
+  368  git push mf master
+  369  clear
+  370  exit
+  371  git cd desktop/ws/starflight
+  372  cd desktop
+  373  cd ws
+  374  dir
+  375  ls
+  376  cd starflight
+  377  git remote
+  378  git status -u --ignore
+  379  git status -u --ignored
+  380  git add --all
+  381  git log
+  382  git log --decorate --graph --all -10
+  383  git push mf master
+  384  clear
+  385  exit
+  386  ls
+  387  cd desktop
+  388  ls
+  389  cd ws
+  390  ls
+  391  cd starflight
+  392  clear
+  393  git help log
+  394  git log --decorate --graph --all
+  395  clear
+  396  exit
+  397  cd desktop
+  398  cd tet
+  399  cd test
+  400  clear
+  401  git init
+  402  ls
+  403  git add committed.txt
+  404  git commit
+  405  git commit
+  406  git commit
+  407  git commit
+  408  git add "staged but not committed.txt"
+  409  git add "staged and modified.txt"
+  410  git status
+  411  git diff --staged --name-only
+  412  git diff --not-staged --name-only
+  413  git diff --staged --name-only
+  414  git status
+  415  git branch otherBranch
+  416  git checkout otherBranch
+  417  git status
+  418  git checkout master
+  419  git add committed..txt
+  420  git commit
+  421  git status
+  422  git add "staged but not committed..txt"
+  423  clear
+  424  git status
+  425  git add "staged and modified..txt"
+  426  git status
+  427  git checkout otherBranch
+  428  git status
+  429  git checkout otherBranch
+  430  git add "changed and modified..txt"
+  431  git add "staged and modified..txt"
+  432  git checkout otherBranch
+  433  git add "staged and modified.txt"
+  434  git checkout otherBranch
+  435  clear
+  436  EXIT
+  437  EXIT
+  438  exit
+  439  cd desktop
+  440  cd ws
+  441  ls
+  442  cd starflight
+  443  clear
+  444  git remote
+  445  git fetch mf
+  446  clear
+  447  git log --decorate --graph --all
+  448  git merge mf/master
+  449  git mergetool
+  450  git status
+  451  git commit
+  452  git add --all
+  453  git status
+  454  git commit
+  455  git merge mf/master
+  456  git mergetool
+  457  git add --all
+  458  git status
+  459  git commit
+  460  git log --decorate --graph --all
+  461  git merge mf/yandev
+  462  git merge mf/master
+  463  git checkout mf/yandev
+  464  git checkout master
+  465  git status
+  466  clear
+  467  git add --all
+  468  git status
+  469  git commit
+  470  git remote
+  471  git fetch mf
+  472  git fetch mf
+  473  clear
+  474  git log --decorate --graph --all
+  475  git merge mf/master
+  476  git mergetool
+  477  clear
+  478  statu
+  479  status
+  480  git status
+  481  git add --all
+  482  git commit
+  483  clear
+  484  git log --decorate --graph --all
+  485  clear
+  486  git diff
+  487  clear
+  488  clear
+  489  git help diff
+  490  git diff --oneline
+  491  clear
+  492  git diff --minimal
+  493  clear
+  494  git diff --histogram
+  495  clear
+  496  git diff --summary
+  497  git diff --name-only
+  498  git diff --name-only
+  499  exit
+  500  cd desktop
+  501  cd ws
+  502  cd starflight
+  503  git status
+  504  clear
+  505  git fetch mf
+  506  git --decorate --graph --all
+  507  git log --decorate --graph --all
+  508  git add --all
+  509  git rm --cached -all
+  510  clear
+  511  git commit
+  512  git merge mf/master
+  513  git merge mf/master
+  514  git add --all
+  515  git merge mf/master
+  516  git mergetool
+  517  git commit
+  518  cd starflight
+  519  git push mf master
+  520  clear
+  521  git log --decorate --graph --all
+  522  git reset --hard 66f5a07b535c9e8e79a0fa29483ab028c88818a1
+  523  git log --decorate --graph --all
+  524  git merge mf/master
+  525  git commit
+  526  git add --all
+  527  git commit
+  528  git log --decorate --graph --all
+  529  git reset --hard 66f5a07b535c9e8e79a0fa29483ab028c88818a1
+  530  clear
+  531  git merge mf/master
+  532  history > history.txt
