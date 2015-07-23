@@ -69,20 +69,23 @@
 				<configuration>
 					<defaultLibBundleDir>lib</defaultLibBundleDir>
 					<modules>
+
 						<webModule>
 							<groupId>gal.cor</groupId>
 							<artifactId>StarflightWeb</artifactId>
-							<contextRoot>coucou</contextRoot>
+							<contextRoot>starflight</contextRoot>
 						</webModule>
 
 						<ejbModule>
 							<groupId>gal.cor</groupId>
 							<artifactId>StarflightPersistence</artifactId>
 						</ejbModule>
+
 						<ejbModule>
 							<groupId>gal.cor</groupId>
 							<artifactId>StarflightServices</artifactId>
 						</ejbModule>
+
 					</modules>
 				</configuration>
 			</plugin>
