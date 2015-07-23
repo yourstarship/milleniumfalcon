@@ -7,7 +7,7 @@ import java.util.Map;
 import gal.cor.persistence.entities.Fournisseur;
 
 
-public interface IDaoFournisseur extends IDaoGeneric<Fournisseur> {
+public interface IDaoFournisseur {
 	void creerFournisseur(Fournisseur t);
 	void supprimerFournisseur(Fournisseur t);
 	Fournisseur mettreAjourFournisseur(Fournisseur t);

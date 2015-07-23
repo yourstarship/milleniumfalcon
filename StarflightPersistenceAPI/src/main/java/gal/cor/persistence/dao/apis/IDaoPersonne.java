@@ -7,7 +7,7 @@ import java.util.Map;
 import gal.cor.persistence.entities.Personne;
 
 
-public interface IDaoPersonne extends IDaoGeneric<Personne> {
+public interface IDaoPersonne  {
 	void creerPersonne(Personne t);
 	void supprimerPersonne(Personne t);
 	Personne mettreAjourPersonne(Personne t);

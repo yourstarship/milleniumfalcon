@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public interface IDaoEmploye extends IDaoGeneric<Employe> {
+public interface IDaoEmploye {
 	void creerEmploye(Employe t);
 	void supprimerEmploye(Employe t);
 	Employe mettreAjourEmploye(Employe t);

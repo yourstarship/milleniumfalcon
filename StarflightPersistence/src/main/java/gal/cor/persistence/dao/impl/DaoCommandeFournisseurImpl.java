@@ -11,48 +11,6 @@ public class DaoCommandeFournisseurImpl implements IDaoCommandeFournisseur
 {
 
 	@Override
-	public void creer(CommandeFournisseur t)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void supprimer(Class<CommandeFournisseur> type, Object id)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public CommandeFournisseur mettreAjour(CommandeFournisseur t)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<CommandeFournisseur> obtenirTous()
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public CommandeFournisseur rechercherParId(Class<CommandeFournisseur> type, Object clefPrimaire)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<CommandeFournisseur> rechercherParRequeteNative(String requeteSQL, Class<CommandeFournisseur> type)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void creerCommandeFournisseur(CommandeFournisseur t)
 	{
 		// TODO Auto-generated method stub

@@ -9,47 +9,7 @@ import java.util.Map;
 
 public class DaoAdresseImpl implements IDaoAdresse {
 
-	@Override
-	public void creer(Adresse t)
-	{
-		// TODO Auto-generated method stub
-		
-	}
 
-	@Override
-	public void supprimer(Class<Adresse> type, Object id)
-	{
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Adresse mettreAjour(Adresse t)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Adresse> obtenirTous()
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Adresse rechercherParId(Class<Adresse> type, Object clefPrimaire)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Adresse> rechercherParRequeteNative(String requeteSQL, Class<Adresse> type)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public void creerAdresse(Adresse t)

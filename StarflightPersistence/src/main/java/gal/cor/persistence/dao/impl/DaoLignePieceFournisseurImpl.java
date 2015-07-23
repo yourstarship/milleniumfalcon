@@ -10,47 +10,6 @@ import java.util.Map;
 public class DaoLignePieceFournisseurImpl implements IDaoLignePieceFournisseur
 {
 
-	@Override
-	public void creer(LignePieceFournisseur t)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void supprimer(Class<LignePieceFournisseur> type, Object id)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public LignePieceFournisseur mettreAjour(LignePieceFournisseur t)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<LignePieceFournisseur> obtenirTous()
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public LignePieceFournisseur rechercherParId(Class<LignePieceFournisseur> type, Object clefPrimaire)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<LignePieceFournisseur> rechercherParRequeteNative(String requeteSQL, Class<LignePieceFournisseur> type)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public void creerLignePieceFournisseur(LignePieceFournisseur t)

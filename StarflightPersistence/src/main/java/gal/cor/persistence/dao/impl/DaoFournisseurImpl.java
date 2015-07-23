@@ -10,47 +10,6 @@ import java.util.Map;
 public class DaoFournisseurImpl implements IDaoFournisseur
 {
 
-	@Override
-	public void creer(Fournisseur t)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void supprimer(Class<Fournisseur> type, Object id)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public Fournisseur mettreAjour(Fournisseur t)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Fournisseur> obtenirTous()
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Fournisseur rechercherParId(Class<Fournisseur> type, Object clefPrimaire)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Fournisseur> rechercherParRequeteNative(String requeteSQL, Class<Fournisseur> type)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public void creerFournisseur(Fournisseur t)

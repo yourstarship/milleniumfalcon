@@ -11,48 +11,6 @@ public class DaoTVAImpl implements IDaoTVA
 {
 
 	@Override
-	public void creer(TVA t)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void supprimer(Class<TVA> type, Object id)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public TVA mettreAjour(TVA t)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<TVA> obtenirTous()
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public TVA rechercherParId(Class<TVA> type, Object clefPrimaire)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<TVA> rechercherParRequeteNative(String requeteSQL, Class<TVA> type)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void creerTVA(TVA t)
 	{
 		// TODO Auto-generated method stub

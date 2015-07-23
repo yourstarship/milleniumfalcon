@@ -11,48 +11,6 @@ public class DaoSystemeImpl implements IDaoSysteme
 {
 
 	@Override
-	public void creer(Systeme t)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void supprimer(Class<Systeme> type, Object id)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public Systeme mettreAjour(Systeme t)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Systeme> obtenirTous()
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Systeme rechercherParId(Class<Systeme> type, Object clefPrimaire)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Systeme> rechercherParRequeteNative(String requeteSQL, Class<Systeme> type)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void creerSysteme(Systeme t)
 	{
 		// TODO Auto-generated method stub

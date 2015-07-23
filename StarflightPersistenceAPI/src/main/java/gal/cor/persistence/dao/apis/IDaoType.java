@@ -7,7 +7,7 @@ import java.util.Map;
 import gal.cor.persistence.entities.Type;
 
 
-public interface IDaoType extends IDaoGeneric<Type> {
+public interface IDaoType {
 	void creerType(Type t);
 	void supprimerType(Type t);
 	Type mettreAjourType(Type t);

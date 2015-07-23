@@ -7,13 +7,13 @@ import java.util.Map;
 import gal.cor.persistence.entities.TypeCarte;
 
 
-public interface IDaoTypeCarte extends IDaoGeneric<TypeCarte> {
+public interface IDaoTypeCarte  {
 	void creerTypeCarte(TypeCarte t);
 	void supprimerTypeCarte(TypeCarte t);
 	TypeCarte mettreAjourTypeCarte(TypeCarte t);
 	TypeCarte rechercherParId(TypeCarte t);
 
-	//Requetes personnalisées
+	//Requetes personnalisï¿½es
 	List<TypeCarte> rechercherParRequeteNommee(String requeteNommee);
 	List<TypeCarte> rechercherParRequeteNommee(String requeteNommee, Map<String,Object> parametres,int nbreMaxElements);
 	List<TypeCarte> rechercherParRequeteNommee(String requeteNommee, Map<String,Object> parametres);

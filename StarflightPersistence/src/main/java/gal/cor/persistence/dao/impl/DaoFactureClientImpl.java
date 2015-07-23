@@ -11,48 +11,6 @@ public class DaoFactureClientImpl implements IDaoFactureClient
 {
 
 	@Override
-	public void creer(FactureClient t)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void supprimer(Class<FactureClient> type, Object id)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public FactureClient mettreAjour(FactureClient t)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<FactureClient> obtenirTous()
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public FactureClient rechercherParId(Class<FactureClient> type, Object clefPrimaire)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<FactureClient> rechercherParRequeteNative(String requeteSQL, Class<FactureClient> type)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void creerFactureClient(FactureClient t)
 	{
 		// TODO Auto-generated method stub

@@ -2,61 +2,39 @@ package gal.cor.persistence.dao.impl;
 
 import gal.cor.persistence.dao.apis.IDaoLignePieceClient;
 import gal.cor.persistence.entities.LignePieceClient;
+import gal.cor.persistence.entities.Produit;
 
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.apache.log4j.Logger;
+
 public class DaoLignePieceClientImpl implements IDaoLignePieceClient
 {
 
-	@Override
-	public void creer(LignePieceClient t)
-	{
-		// TODO Auto-generated method stub
+	Logger logger = Logger.getLogger(DaoLignePieceClientImpl.class);
 
+	@PersistenceContext(unitName = "YourStarshipPersistence")
+	EntityManager em;
+
+	private Produit produit;
+	private double quantitee;
+
+	@Override
+	public void creerLignePieceClient(LignePieceClient lignePieceClient)
+	{
+		em.persist(lignePieceClient);
 	}
 
 	@Override
-	public void supprimer(Class<LignePieceClient> type, Object id)
+	public LignePieceClient mettreAjourLignePieceClient(LignePieceClient lignePieceClient)
 	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public LignePieceClient mettreAjour(LignePieceClient t)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<LignePieceClient> obtenirTous()
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public LignePieceClient rechercherParId(Class<LignePieceClient> type, Object clefPrimaire)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<LignePieceClient> rechercherParRequeteNative(String requeteSQL, Class<LignePieceClient> type)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void creerLignePieceClient(LignePieceClient t)
-	{
-		// TODO Auto-generated method stub
-
+		em.merge(lignePieceClient);
+		return lignePieceClient;
 	}
 
 	@Override
@@ -64,13 +42,6 @@ public class DaoLignePieceClientImpl implements IDaoLignePieceClient
 	{
 		// TODO Auto-generated method stub
 
-	}
-
-	@Override
-	public LignePieceClient mettreAjourLignePieceClient(LignePieceClient t)
-	{
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
@@ -113,6 +84,26 @@ public class DaoLignePieceClientImpl implements IDaoLignePieceClient
 	{
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public Produit getProduit()
+	{
+		return produit;
+	}
+
+	public void setProduit(Produit produit)
+	{
+		this.produit = produit;
+	}
+
+	public double getQuantitee()
+	{
+		return quantitee;
+	}
+
+	public void setQuantitee(double quantitee)
+	{
+		this.quantitee = quantitee;
 	}
 
 }

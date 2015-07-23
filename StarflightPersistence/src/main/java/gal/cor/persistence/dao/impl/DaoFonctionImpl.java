@@ -10,47 +10,6 @@ import java.util.Map;
 public class DaoFonctionImpl implements IDaoFonction
 {
 
-	@Override
-	public void creer(Fonction t)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void supprimer(Class<Fonction> type, Object id)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public Fonction mettreAjour(Fonction t)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Fonction> obtenirTous()
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Fonction rechercherParId(Class<Fonction> type, Object clefPrimaire)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Fonction> rechercherParRequeteNative(String requeteSQL, Class<Fonction> type)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public void creerFonction(Fonction t)

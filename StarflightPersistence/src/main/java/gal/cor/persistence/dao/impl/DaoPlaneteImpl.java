@@ -11,48 +11,6 @@ public class DaoPlaneteImpl implements IDaoPlanete
 {
 
 	@Override
-	public void creer(Planete t)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void supprimer(Class<Planete> type, Object id)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public Planete mettreAjour(Planete t)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Planete> obtenirTous()
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Planete rechercherParId(Class<Planete> type, Object clefPrimaire)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Planete> rechercherParRequeteNative(String requeteSQL, Class<Planete> type)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void creerPlanete(Planete t)
 	{
 		// TODO Auto-generated method stub

@@ -11,48 +11,6 @@ public class DaoTypeCarteImpl implements IDaoTypeCarte
 {
 
 	@Override
-	public void creer(TypeCarte t)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void supprimer(Class<TypeCarte> type, Object id)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public TypeCarte mettreAjour(TypeCarte t)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<TypeCarte> obtenirTous()
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public TypeCarte rechercherParId(Class<TypeCarte> type, Object clefPrimaire)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<TypeCarte> rechercherParRequeteNative(String requeteSQL, Class<TypeCarte> type)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void creerTypeCarte(TypeCarte t)
 	{
 		// TODO Auto-generated method stub

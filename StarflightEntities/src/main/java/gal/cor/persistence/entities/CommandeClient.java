@@ -16,6 +16,11 @@ import javax.persistence.OneToMany;
 public class CommandeClient implements Serializable
 {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
@@ -31,9 +36,9 @@ public class CommandeClient implements Serializable
 	@ManyToOne
 	@JoinColumn(name = "idcarte")
 	private Carte carte;
-	
+
 	@ManyToOne
-	@JoinColumn(name="idclient")
+	@JoinColumn(name = "idclient")
 	private Client client;
 
 	@ManyToOne
@@ -42,6 +47,10 @@ public class CommandeClient implements Serializable
 
 	@OneToMany(mappedBy = "commandeClient")
 	private Set<LignePieceClient> lignesPieceClient;
+
+	@ManyToOne
+	@JoinColumn(name = "idtva")
+	private TVA tva;
 
 	public CommandeClient(Integer id, Double remise, Date dateCreation, Date dateAnnulation, Date dateDerniereTentativePaiement, Date datePaiementAccepte, Date dateSoldee, Date dateEnvoi, Carte carte, Client client, FactureClient factureClient)
 	{
@@ -205,6 +214,21 @@ public class CommandeClient implements Serializable
 	public void setLignesPieceClient(Set<LignePieceClient> lignesPieceClient)
 	{
 		this.lignesPieceClient = lignesPieceClient;
+	}
+
+	public TVA getTva()
+	{
+		return tva;
+	}
+
+	public void setTva(TVA tva)
+	{
+		this.tva = tva;
+	}
+
+	public static long getSerialversionuid()
+	{
+		return serialVersionUID;
 	}
 
 	@Override

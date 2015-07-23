@@ -42,7 +42,7 @@ nav
 
  #buttRechercheAccueil
 {
-	background-image: url("./../Images/Icones/bouton-search.30px.30px.png");
+	background-image: url("./../image/Icones/bouton-search.30px.30px.png");
 	width: 30px;
 	margin-top: 2%;
 	margin-left: 1.5%;
@@ -56,6 +56,7 @@ nav
   text-align: center;
   width: 150px;
   padding-left: 10%;
+  color: #B3DAED;
 }
 #menuAccordeon ul {
   padding:0;
@@ -82,7 +83,7 @@ nav
 #menuAccordeon a {
   display:block;
   text-decoration: none;
-  color: #ffffff;
+  color: #B3DAED;
   padding: 8px 0;
   font-family: verdana;
   font-size:0.9em
@@ -118,11 +119,23 @@ nav
 	background-color: rgba(128, 128, 128, 0.43);
 	border-radius: 10px;
 	overflow: auto;
+	color:#321954;
 }
 
-.right
+.buttListeAccueil
 {
 	float:right;
+	width:70px;
+	height:25px;
+	border-radius:10px;
+	border:2px solid black;
+}
+
+.buttListeAccueil:hover
+ {
+	-moz-box-shadow: 0 0 15px #00C6DC;
+	-webkit-box-shadow: 0 0 15px #00C6DC;
+	box-shadow: 0 0 15px #00C6DC;
 }
 
 .gauche
@@ -169,7 +182,7 @@ nav
 
 #iconePanier
 {
-	background-image: url("./../Images/Icones/cadie.39px.39px.png");
+	background-image: url("./../image/Icones/cadie.39px.39px.png");
 	position: absolute;
 	width: 2.5%;
 	height: 38px;
@@ -195,7 +208,7 @@ nav
 	overflow: auto;	
 }
 
-#detailPanierAccueil
+.detailPanierAccueil
 {
 	width:200px;
 	height:30px;
@@ -204,7 +217,14 @@ nav
 	margin-left:-3%;
 }
 
-#lancerCommandeAccueil
+.detailPanierAccueil:hover
+ {
+	-moz-box-shadow: 0 0 25px #64EDAD;
+	-webkit-box-shadow: 0 0 25px #64EDAD;
+	box-shadow: 0 0 25px #64EDAD;
+}
+
+.lancerCommandeAccueil
 {
 	width:200px;
 	height:30px;
@@ -213,3 +233,9 @@ nav
 	margin-left:-3%;
 }
 
+.lancerCommandeAccueil:hover
+ {
+	-moz-box-shadow: 0 0 25px #BDF22D;
+	-webkit-box-shadow: 0 0 25px #BDF22D;
+	box-shadow: 0 0 25px #BDF22D;
+}

@@ -7,7 +7,7 @@
 /*********      Contenu     ************/
 /***************************************/
 
-#contenuDetailProduit
+#contenuDetailPanier
 {
 	padding-top: 0.5%;
 	padding-left: 1%;
@@ -18,7 +18,7 @@
 /*********      Fiche Produit     ************/
 /*********************************************/
 
-#titrePageDetailProduit
+#titrePageDetailPanier
 {
 	width:400px;
 	margin-left:28%;
@@ -32,11 +32,15 @@
 	color: #BDE3DE;
 }
 
-#ficheDetail
+#ficheDetailPanier
 {
 	float :left;
 	width: 70%;
+	height: 520px;
 	margin-left: 7%;
+	border-radius:10px;
+	overflow: auto;	
+	margin-top:0.45%;
 }
 
 .miniTitreNiveaux
@@ -46,14 +50,14 @@
 	color: #BDE3DE;
 }
 
-.afficheInfoDetailProduit
+.afficheInfoDetailPanier
 {
 	font-family: Lucida Sans;
 	color: #321954;
 	font-size: 1em;
 }
 
-.detailNiveau
+.detailProdPanier
 {
 	background-color: rgba(128, 128, 128, 0.43);
 	border-radius:10px;
@@ -62,7 +66,6 @@
 	height: 160px;
 	margin-top: 1%;
  	margin-bottom: 1%;
- 	color: #321954;
 }
 
 #nomProdEtRef
@@ -82,12 +85,19 @@
 	width: 20%;
  }
  
- #descDroite
+ #orgaDetailPanier
  {
  	float:left;
  	margin-right: 1%;
  	width: 29%;
- 	color: #321954;
+	font-family: Lucida Sans;
+	color: #321954;
+	font-size: 0.9em;
+ }
+ 
+ .qteProdDetailPanier
+ {
+ 	width:20px;
  }
  
  /***** [ Zone droite : Favoris + Prix + Ajout-Panier ] *****/
@@ -126,40 +136,20 @@
  	width: 19%;
  }
  
- .buttDetailProdAjoutPanier
- {
- 	width:125px;
+.buttDetailProduitDetailPanier
+{
+	width:140px;
 	height:25px;
 	border-radius:10px;
 	border:2px solid black;
- }
- 
- .buttDetailProdAjoutPanier:hover
+	margin-left:-3%;
+}
+
+.buttDetailProduitDetailPanier:hover
  {
 	-moz-box-shadow: 0 0 15px #00C6DC;
 	-webkit-box-shadow: 0 0 15px #00C6DC;
 	box-shadow: 0 0 15px #00C6DC;
-}
- 
- .tailleColonneCaracFicheDetaille
- {
- 	width: 25%;
- }
- .detailleLigneDemarcation
- {
- 	height: 2px;
- 	background-color: rgba(128, 128, 200, 0.80);
- }
-
-#fieldCommentaire
-{
-	overflow: auto;	
-}
-
-#fieldAjoutCommentaire
-{
-	display: none;
-	overflow: auto;	
 }
 
 /*************************************/
@@ -214,22 +204,6 @@
 	font-weight: bold;
 	font-family: Lucida Sans;
 	font-size: 1em;
-}
-
-.detailPanierDetailProduit
-{
-	width:200px;
-	height:30px;
-	border-radius:10px;
-	border:2px solid black;
-	margin-left:-3%;
-}
-
-.detailPanierDetailProduit:hover
- {
-	-moz-box-shadow: 0 0 25px #64EDAD;
-	-webkit-box-shadow: 0 0 25px #64EDAD;
-	box-shadow: 0 0 25px #64EDAD;
 }
 
 .lancerCommandeDetailProduit

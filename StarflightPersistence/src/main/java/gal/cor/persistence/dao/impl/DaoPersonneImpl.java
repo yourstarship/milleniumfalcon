@@ -11,48 +11,6 @@ public class DaoPersonneImpl implements IDaoPersonne
 {
 
 	@Override
-	public void creer(Personne t)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void supprimer(Class<Personne> type, Object id)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public Personne mettreAjour(Personne t)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Personne> obtenirTous()
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Personne rechercherParId(Class<Personne> type, Object clefPrimaire)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Personne> rechercherParRequeteNative(String requeteSQL, Class<Personne> type)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void creerPersonne(Personne t)
 	{
 		// TODO Auto-generated method stub

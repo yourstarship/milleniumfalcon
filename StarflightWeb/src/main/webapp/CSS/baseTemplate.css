@@ -5,12 +5,19 @@
 body
 {
 	
-	background-image: url("./../Images/matt7.jpg");
+	background-image: url("./../image/matt7.jpg");
 }
 
 #content
 {
 	height: 605px;
+}
+
+.msgAlert
+{
+	color:red;
+	font-size:1em;
+	font-weight: bold;
 }
 
 /****************************************************/

@@ -2,61 +2,45 @@ package gal.cor.persistence.dao.impl;
 
 import gal.cor.persistence.dao.apis.IDaoCommandeClient;
 import gal.cor.persistence.entities.CommandeClient;
-
+import gal.cor.persistence.entities.LignePieceClient;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 public class DaoCommandeClientImpl implements IDaoCommandeClient
 {
+	@PersistenceContext(unitName="YourStarshipPersistence")
+	EntityManager em;
+	
+	private List<LignePieceClient> lignesPanier;
 
-	@Override
-	public void creer(CommandeClient t)
+	public double montantTotalHT(CommandeClient commandeClient)
 	{
-		// TODO Auto-generated method stub
+		/**
+		 * TODO
+		 * 
+		 */
+		return 0d;
+	}
 
+	public double montantTotalTTC(CommandeClient commandeClient)
+	{
+		return this.montantTotalHT(commandeClient) * (1 + commandeClient.getTva().getTaux() / 100);
+	}
+
+	public void viderPanier()
+	{
+		lignesPanier.clear();
+		//TODO Fil
+		//persister les modifs
 	}
 
 	@Override
-	public void supprimer(Class<CommandeClient> type, Object id)
+	public void creerCommandeClient(CommandeClient commandeClient)
 	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public CommandeClient mettreAjour(CommandeClient t)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<CommandeClient> obtenirTous()
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public CommandeClient rechercherParId(Class<CommandeClient> type, Object clefPrimaire)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<CommandeClient> rechercherParRequeteNative(String requeteSQL, Class<CommandeClient> type)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void creerCommandeClient(CommandeClient t)
-	{
-		// TODO Auto-generated method stub
-
+		em.persist(commandeClient);
 	}
 
 	@Override
@@ -88,20 +72,6 @@ public class DaoCommandeClientImpl implements IDaoCommandeClient
 	}
 
 	@Override
-	public List<CommandeClient> rechercherParRequeteNommee(String requeteNommee, Map<String, Object> parametres, int nbreMaxElements)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<CommandeClient> rechercherParRequeteNommee(String requeteNommee, Map<String, Object> parametres)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public List<CommandeClient> rechercherParRequeteNommee(String requeteNommee, int nbreMaxElements)
 	{
 		// TODO Auto-generated method stub
@@ -110,6 +80,20 @@ public class DaoCommandeClientImpl implements IDaoCommandeClient
 
 	@Override
 	public Collection<CommandeClient> obtenirTousCommandeClient()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<CommandeClient> rechercherParRequeteNommee(String requeteNommee, Map<String, Object> parametres, int nbreMaxElements)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<CommandeClient> rechercherParRequeteNommee(String requeteNommee, Map<String, Object> parametres)
 	{
 		// TODO Auto-generated method stub
 		return null;

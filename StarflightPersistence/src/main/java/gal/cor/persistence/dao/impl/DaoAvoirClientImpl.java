@@ -11,48 +11,6 @@ public class DaoAvoirClientImpl implements IDaoAvoirClient
 {
 
 	@Override
-	public void creer(AvoirClient t)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void supprimer(Class<AvoirClient> type, Object id)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public AvoirClient mettreAjour(AvoirClient t)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<AvoirClient> obtenirTous()
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public AvoirClient rechercherParId(Class<AvoirClient> type, Object clefPrimaire)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<AvoirClient> rechercherParRequeteNative(String requeteSQL, Class<AvoirClient> type)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void creerAvoirClient(AvoirClient t)
 	{
 		// TODO Auto-generated method stub

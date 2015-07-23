@@ -11,48 +11,6 @@ public class DaoAdministrateurImpl implements IDaoAdministrateur
 {
 
 	@Override
-	public void creer(Administrateur t)
-	{
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void supprimer(Class<Administrateur> type, Object id)
-	{
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Administrateur mettreAjour(Administrateur t)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Administrateur> obtenirTous()
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Administrateur rechercherParId(Class<Administrateur> type, Object clefPrimaire)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Administrateur> rechercherParRequeteNative(String requeteSQL, Class<Administrateur> type)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void creerAdministrateur(Administrateur t)
 	{
 		// TODO Auto-generated method stub

@@ -7,13 +7,13 @@ import java.util.Map;
 import gal.cor.persistence.entities.FactureClient;
 
 
-public interface IDaoFactureClient extends IDaoGeneric<FactureClient> {
+public interface IDaoFactureClient {
 	void creerFactureClient(FactureClient t);
 	void supprimerFactureClient(FactureClient t);
 	FactureClient mettreAjourFactureClient(FactureClient t);
 	FactureClient rechercherParId(FactureClient t);
 
-	//Requetes personnaliséees
+	//Requetes personnalisï¿½ees
 	List<FactureClient> rechercherParRequeteNommee(String requeteNommee);
 	List<FactureClient> rechercherParRequeteNommee(String requeteNommee, Map<String,Object> parametres,int nbreMaxElements);
 	List<FactureClient> rechercherParRequeteNommee(String requeteNommee, Map<String,Object> parametres);

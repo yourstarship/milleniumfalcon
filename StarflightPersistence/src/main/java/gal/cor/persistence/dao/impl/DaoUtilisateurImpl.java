@@ -11,48 +11,6 @@ public class DaoUtilisateurImpl implements IDaoUtilisateur
 {
 
 	@Override
-	public void creer(Utilisateur t)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void supprimer(Class<Utilisateur> type, Object id)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public Utilisateur mettreAjour(Utilisateur t)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Utilisateur> obtenirTous()
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Utilisateur rechercherParId(Class<Utilisateur> type, Object clefPrimaire)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Utilisateur> rechercherParRequeteNative(String requeteSQL, Class<Utilisateur> type)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void creerUtilisateur(Utilisateur t)
 	{
 		// TODO Auto-generated method stub

@@ -11,59 +11,17 @@ public class DaoMilitaireImpl implements IDaoMilitaire
 {
 
 	@Override
-	public void creer(Militaire t)
-	{
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void supprimer(Class<Militaire> type, Object id)
-	{
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Militaire mettreAjour(Militaire t)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Militaire> obtenirTous()
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Militaire rechercherParId(Class<Militaire> type, Object clefPrimaire)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Militaire> rechercherParRequeteNative(String requeteSQL, Class<Militaire> type)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void creerMilitaire(Militaire t)
 	{
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void supprimerMilitaire(Militaire t)
 	{
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override

@@ -15,7 +15,7 @@
 
 	</ui:define>
 	<ui:define name="content">
-
+	<h:form>
 		<!-- ICI Le Contenu  -->
 		<!-- Espace Promotions -->
 		<div id="contenuDetailProduit">
@@ -33,7 +33,7 @@
 				</div>
 			</div>
 
-			<form>
+			
 				<div id="titrePageDetailProduit">
 					<span>Présentation Détaillées du </span><span>@ insérer ici
 						le nom du vaisseaux @</span>
@@ -43,14 +43,14 @@
 					<div class="detailNiveau">
 						<div id="alignementNiveau1">
 							<div id="nomProdEtRef">
-								<span class="miniTitreNiveaux">Produit : </span> <span
-									class="miniTitreNiveaux">@ nom produit @</span> <br /> <br />
-								<span class="miniTitreNiveaux">Référence : </span> <span
-									class="miniTitreNiveaux">@ référence @</span> <br /> <br /> <span
-									class="miniTitreNiveaux">Catégorie : </span> <span
-									class="miniTitreNiveaux">@ Chasseur @</span> <br /> <br /> <span
-									class="miniTitreNiveaux">Type : </span> <span
-									class="miniTitreNiveaux">@ Intercepteur @</span>
+							<span class="miniTitreNiveaux">Produit : </span> 
+								<h:outputText value="Vaisseau PiouPiou" /> <br />
+									<br /> <span class="miniTitreNiveaux">Référence : </span> 
+									<h:outputText value="Vaisseau PiouPiou" /> <br /> <br />
+									<span class="miniTitreNiveaux">Catégorie : </span> 
+									<h:outputText value="Vaisseau PiouPiou" /> <br /> <br />
+									<span class="miniTitreNiveaux">Type : </span> 
+									<h:outputText value="Vaisseau PiouPiou" />
 							</div>
 							<div id="imgFicheDetail">
 								<img src="image/e04b1581.jpg" />
@@ -68,9 +68,10 @@
 									<div id="buttNoFavIcone"></div>
 									<div id="buttYesFavIcone"></div>
 								</div>
-								<span class="miniTitreNiveaux">Prix : </span> <br /> <br /> <span
-									class="miniTitreNiveaux">2 450 000 crédits</span> <br /> <br />
-								<br /> <input type="button" value="Ajouter au Panier" />
+								<span class="miniTitreNiveaux">Prix : </span> <br /> <br /> 
+								<h:outputText value="2 450 000" class="miniTitreNiveaux" /> <br /> <br />
+								<br />
+								<h:commandButton action="#{detailProduitMBean.ajoutProduitAuPanier()}" value="Ajouter au Panier" class="buttDetailProdAjoutPanier" />
 							</div>
 						</div>
 					</div>
@@ -89,10 +90,10 @@
 									<td class="tailleColonneCaracFicheDetaille">Couleur</td>
 								</tr>
 								<tr>
-									<td>1 pilote</td>
-									<td>aucun</td>
-									<td>30.2 années lumières</td>
-									<td>Blanc</td>
+									<td><h:outputText value="1 pilote"/></td>
+									<td><h:outputText value="aucun"/></td>
+									<td><h:outputText value="30.2 années lumières"/></td>
+									<td><h:outputText value="Blanc"/></td>
 								</tr>
 								<tr>
 									<td class="detailleLigneDemarcation"></td>
@@ -107,10 +108,10 @@
 									<td>moteur</td>
 								</tr>
 								<tr>
-									<td>5.47 mètres</td>
-									<td>4.3 mètres</td>
-									<td>42 tonnes</td>
-									<td>propulseur Z4</td>
+									<td><h:outputText value="5.47"/><span>mètres</span></td>
+									<td><h:outputText value="4.3"/><span>mètres</span></td>
+									<td><h:outputText value="42"/><span>tonnes</span></td>
+									<td><h:outputText value="propulseur Z4"/></td>
 								</tr>
 							</table>
 						</div>
@@ -138,8 +139,19 @@
 								léger, rapide comme prévu</span>
 						</fieldset>
 					</div>
+					<div class="detailNiveau" id="fieldAjoutCommentaire">
+						<div>
+							<span class="miniTitreNiveaux" style="position: absolute;">Commentaires</span>
+							<br />
+						</div>
+						<!--  Ici c'est l'ajout de commentaire visible uniquement si on est connecté  -->
+						<fieldset>
+							<legend><h:inputText value="Nom" class="centVingtpx"/></legend>
+							<h:inputTextarea rows="4" cols="125" />
+						</fieldset>
+					</div>
 				</div>
-			</form>
+			
 
 			<!-- Panier lateral droit -->
 			<div id="panierDetailProduit">
@@ -148,22 +160,26 @@
 						<a href="">Panier</a>
 						<div id="iconePanier"></div>
 					</div>
-
-					<ul>
-						<li>v1 <a href="">supp</a></li>
-						<li>v2 <a href="">supp</a></li>
-						<li>v4 <a href="">supp</a></li>
-						<li>v8 <a href="">supp</a></li>
-					</ul>
+					<div id="listePanierDetailProduit">
+						<ul>
+							<li>v1 <h:commandLink value="annuler1" action="#{compteUtilisateurMBean}" /></li>
+							<li>v2 <h:commandLink value="annuler2" action="#{compteUtilisateurMBean}" /></li>
+							<li>v4 <h:commandLink value="annuler3" action="#{compteUtilisateurMBean}" /></li>
+							<li>v8 <h:commandLink value="annuler4" action="#{compteUtilisateurMBean}" /></li>
+						</ul>
+					</div>
 				</div>
 				<div id="totalPanierDetailProduit">Total : 125€</div>
 				<div>
-					<input type="button" value="Detail du Panier"
-						id="detailPanierDetailProduit" />
+					<br />
+					<h:commandButton action="#{detailProduitMBean.accesDetailPanier()}" value="Detail du Panier" class="detailPanierDetailProduit" />
+						 <br /> <br />
+					<h:commandButton action="#{detailProduitMBean.validerLaCommande()}" value="Effectuer votre Commande" class="lancerCommandeDetailProduit" />
 				</div>
 			</div>
-
 		</div>
+</h:form>
+		
 		<script>
 function blink(ob)
 {

@@ -10,47 +10,7 @@ import java.util.Map;
 public class DaoPromotionImpl implements IDaoPromotion
 {
 
-	@Override
-	public void creer(Promotion t)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void supprimer(Class<Promotion> type, Object id)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public Promotion mettreAjour(Promotion t)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Promotion> obtenirTous()
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Promotion rechercherParId(Class<Promotion> type, Object clefPrimaire)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Promotion> rechercherParRequeteNative(String requeteSQL, Class<Promotion> type)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	@Override
 	public void creerPromotion(Promotion t)

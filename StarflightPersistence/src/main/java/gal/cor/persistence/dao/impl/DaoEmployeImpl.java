@@ -10,47 +10,6 @@ import java.util.Map;
 public class DaoEmployeImpl implements IDaoEmploye
 {
 
-	@Override
-	public void creer(Employe t)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void supprimer(Class<Employe> type, Object id)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public Employe mettreAjour(Employe t)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Employe> obtenirTous()
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Employe rechercherParId(Class<Employe> type, Object clefPrimaire)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Employe> rechercherParRequeteNative(String requeteSQL, Class<Employe> type)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public void creerEmploye(Employe t)

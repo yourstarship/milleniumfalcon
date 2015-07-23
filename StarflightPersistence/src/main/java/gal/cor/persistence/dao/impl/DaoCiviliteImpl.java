@@ -11,48 +11,6 @@ public class DaoCiviliteImpl implements IDaoCivilite
 {
 
 	@Override
-	public void creer(Civilite t)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void supprimer(Class<Civilite> type, Object id)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public Civilite mettreAjour(Civilite t)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Civilite> obtenirTous()
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Civilite rechercherParId(Class<Civilite> type, Object clefPrimaire)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Civilite> rechercherParRequeteNative(String requeteSQL, Class<Civilite> type)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void creerCivilite(Civilite t)
 	{
 		// TODO Auto-generated method stub

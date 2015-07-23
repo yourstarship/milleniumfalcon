@@ -11,48 +11,6 @@ public class DaoCategorieImpl implements IDaoCategorie
 {
 
 	@Override
-	public void creer(Categorie t)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void supprimer(Class<Categorie> type, Object id)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public Categorie mettreAjour(Categorie t)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Categorie> obtenirTous()
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Categorie rechercherParId(Class<Categorie> type, Object clefPrimaire)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Categorie> rechercherParRequeteNative(String requeteSQL, Class<Categorie> type)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void creerCategorie(Categorie t)
 	{
 		// TODO Auto-generated method stub

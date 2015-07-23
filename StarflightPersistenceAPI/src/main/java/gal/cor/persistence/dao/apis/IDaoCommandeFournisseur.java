@@ -6,13 +6,13 @@ import java.util.Map;
 
 import gal.cor.persistence.entities.CommandeFournisseur;
 
-public interface IDaoCommandeFournisseur extends IDaoGeneric<CommandeFournisseur> {
+public interface IDaoCommandeFournisseur  {
 	void creerCommandeFournisseur(CommandeFournisseur t);
 	void supprimerCommandeFournisseur(CommandeFournisseur t);
 	CommandeFournisseur mettreAjourCommandeFournisseur(CommandeFournisseur t);
 	CommandeFournisseur rechercherParId(CommandeFournisseur t);
 
-	//Requetes personnalisées
+	//Requetes personnalisï¿½es
 	List<CommandeFournisseur> rechercherParRequeteNommee(String requeteNommee);
 	List<CommandeFournisseur> rechercherParRequeteNommee(String requeteNommee, Map<String,Object> parametres,int nbreMaxElements);
 	List<CommandeFournisseur> rechercherParRequeteNommee(String requeteNommee, Map<String,Object> parametres);

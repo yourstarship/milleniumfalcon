@@ -11,48 +11,6 @@ public class DaoTypeImpl implements IDaoType
 {
 
 	@Override
-	public void creer(Type t)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void supprimer(Class<Type> type, Object id)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public Type mettreAjour(Type t)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Type> obtenirTous()
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Type rechercherParId(Class<Type> type, Object clefPrimaire)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Type> rechercherParRequeteNative(String requeteSQL, Class<Type> type)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void creerType(Type t)
 	{
 		// TODO Auto-generated method stub

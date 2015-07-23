@@ -27,23 +27,6 @@ public class DaoProduitImpl implements IDaoProduit {
 	}
 
 	@Override
-	public List<Produit> rechercherParRequeteNommee(String requeteNommee) {
-		String request= "SELECT p FROM Produit p WHERE p.categorie.nom = :param";
-		Query query = em.createQuery(request);
-		query.setParameter("param", requeteNommee);
-		List<Produit>liste =new ArrayList<Produit>();
-		
-		liste=query.getResultList();
-		return liste;
-	}
-	@Override
-	public void supprimerProduit(Produit t)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public Produit mettreAjourProduit(Produit t) {
 		// TODO Auto-generated method stub
 		return null;
@@ -55,6 +38,8 @@ public class DaoProduitImpl implements IDaoProduit {
 		return null;
 	}
 
+
+
 	@Override
 	public List<Produit> obtenirTousProduit() {
 		Query query = em.createQuery("SELECT p FROM Produit p");
@@ -63,6 +48,32 @@ public class DaoProduitImpl implements IDaoProduit {
 		
 		return listes;
 	}
+
+	@Override
+	public List<Produit> rechercherProduitParCategorieEtType(
+			Integer idCategorie, Integer idType) {
+		String request= " SELECT p FROM Produit p WHERE p.categorie.id = :param AND p.type.id =:paramType";
+		Query query = em.createQuery(request);
+		query.setParameter("param", idCategorie);
+		query.setParameter("paramType", idType);
+		List<Produit>liste = new ArrayList<Produit>();
+		liste= query.getResultList();
+		System.out.println(liste);
+		return liste;
+	}
+
+	@Override
+	public List<Produit> rechercherParCategorie(Integer idCategorie) {
+		String request= "SELECT p FROM Produit p WHERE p.categorie.id = :param";
+		Query query = em.createQuery(request);
+		query.setParameter("param", idCategorie);
+		List<Produit>liste =new ArrayList<Produit>();
+		
+		liste=query.getResultList();
+		return liste;
+	}
+
+
 
 	
 

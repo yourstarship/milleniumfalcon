@@ -12,7 +12,8 @@ public interface IDaoProduit {
 
 	Produit mettreAjourProduit(Produit t);
 	Produit rechercherParId(Produit t);
-	List<Produit> rechercherParRequeteNommee(String requeteNommee);
+	List<Produit> rechercherParCategorie(Integer idCategorie);
 	List<Produit> obtenirTousProduit();
+	List<Produit> rechercherProduitParCategorieEtType(Integer idCategorie, Integer idType);
 	
 }

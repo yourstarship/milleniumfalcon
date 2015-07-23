@@ -7,7 +7,7 @@ import java.util.Map;
 import gal.cor.persistence.entities.AvoirClient;
 
 
-public interface IDaoAvoirClient extends IDaoGeneric<AvoirClient> {
+public interface IDaoAvoirClient {
 	void creerAvoirClient(AvoirClient t);
 	void supprimerAvoirClient(AvoirClient t);
 	AvoirClient mettreAjourAvoirClient(AvoirClient t);

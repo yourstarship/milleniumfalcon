@@ -7,7 +7,7 @@ import java.util.Map;
 import gal.cor.persistence.entities.Militaire;
 
 
-public interface IDaoMilitaire extends IDaoGeneric<Militaire> {
+public interface IDaoMilitaire  {
 	void creerMilitaire(Militaire t);
 	void supprimerMilitaire(Militaire t);
 	Militaire mettreAjourMilitaire(Militaire t);

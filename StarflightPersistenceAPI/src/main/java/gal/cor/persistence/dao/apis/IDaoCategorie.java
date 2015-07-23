@@ -7,13 +7,13 @@ import java.util.Map;
 import gal.cor.persistence.entities.Categorie;
 
 
-public interface IDaoCategorie extends IDaoGeneric<Categorie> {
+public interface IDaoCategorie  {
 	void creerCategorie(Categorie t);
 	void supprimerCategorie(Categorie t);
 	Categorie mettreAjourCategorie(Categorie t);
 	Categorie rechercherParId(Categorie t);
 
-	//Requetes personnalisées
+	//Requetes personnalisï¿½es
 	List<Categorie> rechercherParRequeteNommee(String requeteNommee);
 	List<Categorie> rechercherParRequeteNommee(String requeteNommee, Map<String,Object> parametres,int nbreMaxElements);
 	List<Categorie> rechercherParRequeteNommee(String requeteNommee, Map<String,Object> parametres);

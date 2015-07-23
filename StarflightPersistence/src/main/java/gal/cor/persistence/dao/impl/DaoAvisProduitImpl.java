@@ -11,48 +11,6 @@ public class DaoAvisProduitImpl implements IDaoAvisProduit
 {
 
 	@Override
-	public void creer(AvisProduit t)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void supprimer(Class<AvisProduit> type, Object id)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public AvisProduit mettreAjour(AvisProduit t)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<AvisProduit> obtenirTous()
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public AvisProduit rechercherParId(Class<AvisProduit> type, Object clefPrimaire)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<AvisProduit> rechercherParRequeteNative(String requeteSQL, Class<AvisProduit> type)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void creerAvisProduit(AvisProduit t)
 	{
 		// TODO Auto-generated method stub

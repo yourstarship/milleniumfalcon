@@ -1,12 +1,7 @@
 package gal.cor.persistence.test;
 
-import static org.junit.Assert.*;
-
 import java.util.Properties;
 
-import gal.cor.persistence.dao.apis.IDaoPersonne;
-
-import javax.ejb.embeddable.EJBContainer;
 import javax.naming.Context;
 import javax.naming.NamingException;
 
@@ -63,7 +58,6 @@ public class PersonneTest {
 			IDaoPersonne crudServiceBean = (IDaoPersonne) context.lookup("java:global/StarflightPersistence/" + IDaoPersonne.class.getSimpleName()); 
 			assertNull(crudServiceBean);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}*/
 		

@@ -7,7 +7,7 @@ import java.util.Map;
 import gal.cor.persistence.entities.Civilite;
 
 
-public interface IDaoCivilite extends IDaoGeneric<Civilite> {
+public interface IDaoCivilite  {
 	void creerCivilite(Civilite t);
 	void supprimerCivilite(Civilite t);
 	Civilite mettreAjourCivilite(Civilite t);

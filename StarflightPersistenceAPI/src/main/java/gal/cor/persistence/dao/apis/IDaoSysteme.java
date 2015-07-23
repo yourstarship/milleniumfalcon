@@ -7,7 +7,7 @@ import java.util.Map;
 import gal.cor.persistence.entities.Systeme;
 
 
-public interface IDaoSysteme extends IDaoGeneric<Systeme> {
+public interface IDaoSysteme  {
 	void creerSysteme(Systeme t);
 	void supprimerSysteme(Systeme t);
 	Systeme mettreAjourSysteme(Systeme t);

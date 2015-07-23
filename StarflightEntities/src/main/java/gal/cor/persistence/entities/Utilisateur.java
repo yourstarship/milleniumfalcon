@@ -9,6 +9,10 @@ import javax.persistence.Entity;
 public abstract class Utilisateur extends Personne implements Serializable
 {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String identifiant;
 	private String motDePasse;
 	private Date dateOuverture;
