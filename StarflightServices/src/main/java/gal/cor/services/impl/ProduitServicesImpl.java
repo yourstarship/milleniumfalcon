@@ -1,6 +1,5 @@
 package gal.cor.services.impl;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -19,64 +18,47 @@ public class ProduitServicesImpl implements IProduitServices {
 	@EJB
 	private IDaoProduit proxyProduit;
 	
-	/***** [ Procédures ] *****/
-	
 	@Override
 	public void creerProduit(Produit t) {
 		// TODO Auto-generated method stub	
-	}
-
-	@Override
-	public void supprimerProduit(Produit t) {
-		// TODO Auto-generated method stub
 		
 	}
 
-	/***** [ Fonctions ] *****/
-	
 	@Override
 	public Produit mettreAjourProduit(Produit t) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
 	@Override
 	public Produit rechercherParId(Produit t) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
-	public List<Produit> rechercherParRequeteNommee(String requeteNommee) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
-	public List<Produit> rechercherParRequeteNommee(String requeteNommee,
-			Map<String, Object> parametres, int nbreMaxElements) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Produit> rechercherParRequeteNommee(String requeteNommee,
-			Map<String, Object> parametres) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Produit> rechercherParRequeteNommee(String requeteNommee,
-			int nbreMaxElements) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public List<Produit> obtenirTousProduitServices() {
-		List<Produit> maListe = (List<Produit>) proxyProduit.obtenirTousProduit(); 
-		return maListe;
+		
+		return proxyProduit.obtenirTousProduit();
 	}
+
+	@Override
+	public List<Produit> rechercherProduitParCategorieEtType(
+			Integer idCategorie, Integer idType) {
+		// TODO Auto-generated method stub
+		return proxyProduit.rechercherProduitParCategorieEtType(idCategorie, idType);
+	}
+
+	@Override
+	public List<Produit> rechercherParCategorie(Integer idCategorie) {
+		// TODO Auto-generated method stub
+		return proxyProduit.rechercherParCategorie(idCategorie);
+	}
+
+
+	
+	
 
 }

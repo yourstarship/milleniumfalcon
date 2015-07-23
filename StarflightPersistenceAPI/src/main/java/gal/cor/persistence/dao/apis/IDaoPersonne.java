@@ -17,5 +17,5 @@ public interface IDaoPersonne {
 	List<Personne> rechercherParNom(String nom);
 	Personne rechercherParEmail(String email);
 	Collection<Personne> obtenirTousPersonne();
-	
+
 }

@@ -21,7 +21,7 @@ public class DaoPersonneImpl implements IDaoPersonne {
 	
 	@PersistenceContext(name="YourStarshipPersistence")
 	private EntityManager em;
-	
+
 	@Override
 	public void creerPersonne(Personne t) {
 		//Le nom est stocké en majuscule
@@ -38,12 +38,12 @@ public class DaoPersonneImpl implements IDaoPersonne {
 	public Personne mettreAjourPersonne(Personne t) {
 		return em.merge(t);
 	}
-
+		
 	@Override
 	public Personne rechercherParId(Personne t) {
 		return em.find(Personne.class, t.getId());
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Personne> rechercherParNom(String nom) {
@@ -73,7 +73,7 @@ public class DaoPersonneImpl implements IDaoPersonne {
 		}
 		return personne;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Personne> obtenirTousPersonne() {

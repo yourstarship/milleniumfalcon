@@ -13,5 +13,5 @@ public interface IDaoProduit {
 	Produit rechercherParId(Produit t);
 	List<Produit> rechercherParRequeteNommee(String requeteNommee);
 	List<Produit> obtenirTousProduit();
-	
+
 }

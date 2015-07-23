@@ -16,6 +16,10 @@ import javax.persistence.OneToMany;
 @DiscriminatorValue(value = "client")
 public class Client extends Utilisateur implements Serializable
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Date dernierAcces;
 	private Boolean aSurveiller;
 	private Double remise;
@@ -34,6 +38,9 @@ public class Client extends Utilisateur implements Serializable
 
 	@OneToMany(mappedBy = "client")
 	private Set<Carte> cartes;
+
+	@OneToMany(mappedBy = "client")
+	private Set<CommandeClient> commandesClient;
 
 	public Client(Integer id, String nom, String prenom, Date dateDeNaissance, String identifiant, String motDePasse, Date dateOuverture, Date dernierAcces, Boolean aSurveiller, Double remise, Date dateDesactivation, Date dateActivation)
 	{
@@ -128,6 +135,21 @@ public class Client extends Utilisateur implements Serializable
 	public void setCartes(Set<Carte> cartes)
 	{
 		this.cartes = cartes;
+	}
+
+	public Set<CommandeClient> getCommandesClient()
+	{
+		return commandesClient;
+	}
+
+	public void setCommandesClient(Set<CommandeClient> commandesClient)
+	{
+		this.commandesClient = commandesClient;
+	}
+
+	public static long getSerialversionuid()
+	{
+		return serialVersionUID;
 	}
 
 	@Override

@@ -6,10 +6,10 @@ import javax.faces.bean.ManagedBean;
 public class CompteUtilisateurManagedBean {
 
 	/************************/
-	/***** [ Méthodes ] *****/
+	/***** [ M�thodes ] *****/
 	/************************/
 	
-	/***** [ Procédure ] *****/
+	/***** [ Proc�dure ] *****/
 	
 	/***** [ Fonctions ] *****/
 	

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="YourStarshipPersistence">
+
+		<jta-data-source>java:jboss/datasources/YourStarshipDataSource</jta-data-source>
+
+<<<<<<< HEAD
+		<!-- <class>gal.cor.persistence.entities.Administrateur</class>
+		<class>gal.cor.persistence.entities.Adresse</class>
+		<class>gal.cor.persistence.entities.AvisProduit</class>
+		<class>gal.cor.persistence.entities.AvoirClient</class>
+		<class>gal.cor.persistence.entities.Carte</class>
+		<class>gal.cor.persistence.entities.Categorie</class>
+		<class>gal.cor.persistence.entities.Civilite</class>
+		<class>gal.cor.persistence.entities.Client</class>
+		<class>gal.cor.persistence.entities.CommandeClient</class>
+		<class>gal.cor.persistence.entities.CommandeFournisseur</class>
+		<class>gal.cor.persistence.entities.Couleur</class>
+		<class>gal.cor.persistence.entities.Employe</class>
+		<class>gal.cor.persistence.entities.FactureClient</class>
+		<class>gal.cor.persistence.entities.FactureFournisseur</class>
+		<class>gal.cor.persistence.entities.Fonction</class>
+		<class>gal.cor.persistence.entities.Fournisseur</class>
+		<class>gal.cor.persistence.entities.LignePieceFournisseur</class>
+		<class>gal.cor.persistence.entities.LignePieceClient</class>
+		<class>gal.cor.persistence.entities.Militaire</class>
+		<class>gal.cor.persistence.entities.Personne</class>
+		<class>gal.cor.persistence.entities.Planete</class>
+		<class>gal.cor.persistence.entities.Produit</class>
+		<class>gal.cor.persistence.entities.Promotion</class>
+		<class>gal.cor.persistence.entities.Systeme</class>
+		<class>gal.cor.persistence.entities.TVA</class>
+		<class>gal.cor.persistence.entities.Type</class>
+		<class>gal.cor.persistence.entities.TypeAdresse</class>
+		<class>gal.cor.persistence.entities.TypeCarte</class>
+		<class>gal.cor.persistence.entities.Utilisateur</class> -->
+=======
+<!-- 		<class>gal.cor.persistence.entities.Administrateur</class> -->
+<!-- 		<class>gal.cor.persistence.entities.Adresse</class> -->
+<!-- 		<class>gal.cor.persistence.entities.AvisProduit</class> -->
+<!-- 		<class>gal.cor.persistence.entities.AvoirClient</class> -->
+<!-- 		<class>gal.cor.persistence.entities.Carte</class> -->
+<!-- 		<class>gal.cor.persistence.entities.Categorie</class> -->
+<!-- 		<class>gal.cor.persistence.entities.Civilite</class> -->
+<!-- 		<class>gal.cor.persistence.entities.Client</class> -->
+<!-- 		<class>gal.cor.persistence.entities.CommandeClient</class> -->
+<!-- 		<class>gal.cor.persistence.entities.CommandeFournisseur</class> -->
+<!-- 		<class>gal.cor.persistence.entities.Couleur</class> -->
+<!-- 		<class>gal.cor.persistence.entities.Employe</class> -->
+<!-- 		<class>gal.cor.persistence.entities.FactureClient</class> -->
+<!-- 		<class>gal.cor.persistence.entities.FactureFournisseur</class> -->
+<!-- 		<class>gal.cor.persistence.entities.Fonction</class> -->
+<!-- 		<class>gal.cor.persistence.entities.Fournisseur</class> -->
+<!-- 		<class>gal.cor.persistence.entities.LignePieceFournisseur</class> -->
+<!-- 		<class>gal.cor.persistence.entities.LignePieceClient</class> -->
+<!-- 		<class>gal.cor.persistence.entities.Militaire</class> -->
+<!-- 		<class>gal.cor.persistence.entities.Personne</class> -->
+<!-- 		<class>gal.cor.persistence.entities.Planete</class> -->
+<!-- 		<class>gal.cor.persistence.entities.Produit</class> -->
+<!-- 		<class>gal.cor.persistence.entities.Promotion</class> -->
+<!-- 		<class>gal.cor.persistence.entities.Systeme</class> -->
+<!-- 		<class>gal.cor.persistence.entities.TVA</class> -->
+<!-- 		<class>gal.cor.persistence.entities.Type</class> -->
+<!-- 		<class>gal.cor.persistence.entities.TypeAdresse</class> -->
+<!-- 		<class>gal.cor.persistence.entities.TypeCarte</class> -->
+<!-- 		<class>gal.cor.persistence.entities.Utilisateur</class> -->
+>>>>>>> origin
+
+		<properties>
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+			<property name="hibernate.show_sql" value="true" />
+		</properties>
+
+
+	</persistence-unit>
+</persistence>

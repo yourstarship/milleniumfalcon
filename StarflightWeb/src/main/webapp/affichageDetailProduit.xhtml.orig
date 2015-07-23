@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+
+
+<ui:composition template="/Templates/baseTemplate.xhtml">
+	<ui:define name="scripts">
+
+		<script type='text/javascript'
+			src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
+
+	</ui:define>
+	<ui:define name="content">
+	<h:form>
+		<!-- ICI Le Contenu  -->
+		<!-- Espace Promotions -->
+		<div id="contenuDetailProduit">
+			<div class="Promo">
+				<span id="titrePromo" style="visibility: visible">PROMOTIONS</span>
+				<div id="imgPromo1" class="alignePromo">
+					<span id="reducPromo" style="visibility: visible">-5%</span> <img
+						src="image/e04b1581.jpg" />
+				</div>
+				<div id="imgPromo2" class="alignePromo">
+					<img src="image/Promos/29 - AT-ST.jpg" />
+				</div>
+				<div id="imgPromo3" class="alignePromo">
+					<img src="image/Promos/63 - T47 A-Wing.jpg" />
+				</div>
+			</div>
+
+			
+				<div id="titrePageDetailProduit">
+					<span>Présentation Détaillées du </span><span>#{detailProduitMBean.accueilManagedBean.produit} </span>
+				</div>
+				<div id="ficheDetail">
+
+					<div class="detailNiveau">
+						<div id="alignementNiveau1">
+							<div id="nomProdEtRef">
+							<span class="miniTitreNiveaux">Produit : </span> 
+<<<<<<< HEAD
+								<h:outputText value="Vaisseau PiouPiou" /> <br />
+									<br /> <span class="miniTitreNiveaux">Référence : </span> 
+									<h:outputText value="Vaisseau PiouPiou" /> <br /> <br />
+									<span class="miniTitreNiveaux">Catégorie : </span> 
+									<h:outputText value="Vaisseau PiouPiou" /> <br /> <br />
+									<span class="miniTitreNiveaux">Type : </span> 
+									<h:outputText value="Vaisseau PiouPiou" />
+=======
+								<h:outputText value="#{detailProduitMBean.accueilManagedBean.produit.nom}" /> <br />
+									<br /> <span class="miniTitreNiveaux">Référence : </span> 
+									<h:outputText value="#{detailProduitMBean.accueilManagedBean.produit.id}" /> <br /> <br />
+									<span class="miniTitreNiveaux">Catégorie : </span> 
+									<h:outputText value="#{detailProduitMBean.accueilManagedBean.produit.categorie.nom}" /> <br /> <br />
+									<span class="miniTitreNiveaux">Type : </span> 
+									<h:outputText value="#{detailProduitMBean.accueilManagedBean.produit.type.nom}" />
+>>>>>>> origin
+							</div>
+							<div id="imgFicheDetail">
+								<img src="#{detailProduitMBean.accueilManagedBean.produit.photo}" />
+							</div>
+							<div id="descDroite">
+								<span class="miniTitreNiveaux">Description</span>
+								<p>
+									#{detailProduitMBean.accueilManagedBean.produit.description}
+								</p>
+							</div>
+							<div id="prixAjoutPanier">
+								<div id="zoneFavorisIcones">
+									<div id="buttNoFavIcone"></div>
+									<div id="buttYesFavIcone"></div>
+								</div>
+								<span class="miniTitreNiveaux">Prix : </span> <br /> <br /> 
+								<h:outputText value="2 450 000" class="miniTitreNiveaux" /> <br /> <br />
+								<br />
+								<h:commandButton action="#{detailProduitMBean.ajoutProduitAuPanier()}" value="Ajouter au Panier" class="buttDetailProdAjoutPanier" />
+							</div>
+						</div>
+					</div>
+
+					<div class="detailNiveau">
+						<div>
+							<span class="miniTitreNiveaux">Caractéristiques</span> <br />
+						</div>
+						<br />
+						<div>
+							<table style="width: 100%">
+								<tr>
+									<td class="tailleColonneCaracFicheDetaille">Equipage</td>
+									<td class="tailleColonneCaracFicheDetaille">Passagers</td>
+									<td class="tailleColonneCaracFicheDetaille">vitesse max</td>
+									<td class="tailleColonneCaracFicheDetaille">Couleur</td>
+								</tr>
+								<tr>
+									<td><h:outputText value="1 pilote"/></td>
+									<td><h:outputText value="aucun"/></td>
+									<td><h:outputText value="30.2 années lumières"/></td>
+									<td><h:outputText value="Blanc"/></td>
+								</tr>
+								<tr>
+									<td class="detailleLigneDemarcation"></td>
+									<td class="detailleLigneDemarcation"></td>
+									<td class="detailleLigneDemarcation"></td>
+									<td class="detailleLigneDemarcation"></td>
+								</tr>
+								<tr>
+									<td>Longueur</td>
+									<td>Largeur</td>
+									<td>poids</td>
+									<td>moteur</td>
+								</tr>
+								<tr>
+									<td><h:outputText value="5.47"/><span>mètres</span></td>
+									<td><h:outputText value="4.3"/><span>mètres</span></td>
+									<td><h:outputText value="42"/><span>tonnes</span></td>
+									<td><h:outputText value="propulseur Z4"/></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="detailNiveau" id="fieldCommentaire">
+						<div>
+							<span class="miniTitreNiveaux" style="position: absolute;">Commentaires</span>
+							<br />
+						</div>
+						<!--  Ici on fait un système de repeat  -->
+						<fieldset>
+							<legend>@ auteur du commentaire @</legend>
+							<span>Il est trop bien ce vaisseau ! aucun problème.
+								léger, rapide comme prévu</span>
+						</fieldset>
+						<fieldset>
+							<legend>@ auteur du commentaire @</legend>
+							<span>Il est trop bien ce vaisseau ! aucun problème.
+								léger, rapide comme prévu</span>
+						</fieldset>
+						<fieldset>
+							<legend>@ auteur du commentaire @</legend>
+							<span>Il est trop bien ce vaisseau ! aucun problème.
+								léger, rapide comme prévu</span>
+						</fieldset>
+					</div>
+					<div class="detailNiveau" id="fieldAjoutCommentaire">
+						<div>
+							<span class="miniTitreNiveaux" style="position: absolute;">Commentaires</span>
+							<br />
+						</div>
+						<!--  Ici c'est l'ajout de commentaire visible uniquement si on est connecté  -->
+						<fieldset>
+							<legend><h:inputText value="Nom" class="centVingtpx"/></legend>
+							<h:inputTextarea rows="4" cols="125" />
+						</fieldset>
+					</div>
+				</div>
+			
+
+			<!-- Panier lateral droit -->
+			<div id="panierDetailProduit">
+				<div id="hauteurPanierDetailProduit">
+					<div id="titrePanier">
+						<a href="">Panier</a>
+						<div id="iconePanier"></div>
+					</div>
+					<div id="listePanierDetailProduit">
+						<ul>
+							<li>v1 <h:commandLink value="annuler1" action="#{compteUtilisateurMBean}" /></li>
+							<li>v2 <h:commandLink value="annuler2" action="#{compteUtilisateurMBean}" /></li>
+							<li>v4 <h:commandLink value="annuler3" action="#{compteUtilisateurMBean}" /></li>
+							<li>v8 <h:commandLink value="annuler4" action="#{compteUtilisateurMBean}" /></li>
+						</ul>
+					</div>
+				</div>
+				<div id="totalPanierDetailProduit">Total : 125€</div>
+				<div>
+					<br />
+					<h:commandButton action="#{detailProduitMBean.accesDetailPanier()}" value="Detail du Panier" class="detailPanierDetailProduit" />
+						 <br /> <br />
+					<h:commandButton action="#{detailProduitMBean.validerLaCommande()}" value="Effectuer votre Commande" class="lancerCommandeDetailProduit" />
+				</div>
+			</div>
+		</div>
+</h:form>
+		
+		<script>
+function blink(ob)
+{
+	if (ob.style.visibility == "visible" )
+	{
+		ob.style.visibility = "hidden";
+	}
+	else
+	{
+		ob.style.visibility = "visible";
+	}
+}
+setInterval("blink(titrePromo)",500);
+
+
+    $('#zoneFavorisIcones').click(function () {	 
+         $('#buttNoFavIcone').toggle();
+         $('#buttYesFavIcone').toggle();
+       });
+
+</script>
+	</ui:define>
+</ui:composition>
+
+
+
+</html>

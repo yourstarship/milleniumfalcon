@@ -13,13 +13,17 @@ import javax.persistence.OneToMany;
 public class Categorie implements Serializable
 {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	private String nom;
 
 	@OneToMany(mappedBy = "categorie")
-	private Set<Produit> produits;
+	private Set<Produit>produits;
 
 	public Categorie(Integer id, String nom, Set<Produit> produits)
 	{

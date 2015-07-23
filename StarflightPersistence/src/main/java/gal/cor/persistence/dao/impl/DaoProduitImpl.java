@@ -58,6 +58,9 @@ public class DaoProduitImpl implements IDaoProduit {
 		return listes;
 	}
 
-	
+	@Override
+	public Collection<Produit> obtenirTousProduit() {
+		return this.obtenirTous();
+	}
 
 }

@@ -5,7 +5,7 @@ import java.util.List;
 import gal.cor.persistence.entities.Client;
 
 public interface IDaoClient {
-	
+
 	void creerClient(Client t);
 	void supprimerClient(Client t);
 	Client mettreAjourClient(Client t);
