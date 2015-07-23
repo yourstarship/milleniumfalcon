@@ -1,5 +1,6 @@
 package gal.cor.web.managedbean;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import gal.cor.persistence.entities.Produit;
@@ -10,19 +11,49 @@ import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+
+import org.apache.log4j.Logger;
+
 @ManagedBean
 @SessionScoped
 public class testManagedBean {
-
+private static Logger log = Logger.getLogger(testManagedBean.class);
 	@EJB
 	private IProduitServices proxyProduitSevices;
 	
-	List<Produit> listeProduit = null;
+	List<Produit> listeProduit = new ArrayList<Produit>();
+	
+	 
+	
+	private String nomCategorie="";
+	
+
+	public String getNomCategorie() {
+		return nomCategorie;
+	}
+
+
+
+
+	public void setNomCategorie(String nomCategorie) {
+		this.nomCategorie = nomCategorie;
+	}
+
+
+
 
 	@PostConstruct
 	public void afficherListeProduit(){
+		listeProduit.clear();
 		listeProduit = proxyProduitSevices.obtenirTousProduitServices();
 		System.out.println(listeProduit);
+	}
+	
+
+	
+	public void afficherLesSelections(){
+		log.info(nomCategorie);
+		listeProduit=proxyProduitSevices.rechercherParRequeteNommee(nomCategorie);
 	}
 	
 	
@@ -38,5 +69,6 @@ public class testManagedBean {
 	public void setListeProduit(List<Produit> listeProduit) {
 		this.listeProduit = listeProduit;
 	}
+	
 	
 }

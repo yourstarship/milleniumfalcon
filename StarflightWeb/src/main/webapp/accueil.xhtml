@@ -14,7 +14,8 @@
 	</ui:define>
 
 	<ui:define name="content">
-
+<f:view>
+	<h:form>
 		<!-- ICI Le Contenu  -->
 		<!-- Espace Promotions -->
 		<div id="contenuAccueil">
@@ -39,7 +40,12 @@
 				<div id="buttRechercheAccueil"></div>
 			</div>
 			<ul id="menuAccordeon">
-				<li><a href="#">Véhicule aquatique</a>
+				<li><h:commandLink value="Véhicules aquatiques" actionListener="#{testManagedBean.afficherLesSelections()}" > 
+				<f:actionListener >
+				
+				</f:actionListener>
+						
+					</h:commandLink>
 					<ul>
 						<li><a href="#">lien sous menu 1</a></li>
 						<li><a href="#">lien sous menu 1</a></li>
@@ -127,6 +133,8 @@
 				</div>
 			</div>
 		</div>
+			</h:form>
+</f:view>
 		<script>
 function blink(ob)
 {
