@@ -21,6 +21,7 @@ import org.apache.log4j.Logger;
 @Remote
 public class DaoClientImpl implements IDaoClient, Serializable
 {
+	private  Logger log = Logger.getLogger(getClass());
 
 	@PersistenceContext(unitName = "YourStarshipPersistence")
 	EntityManager em;
