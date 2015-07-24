@@ -14,13 +14,16 @@ public interface ICommandeClientService
 	//testée
 	public CommandeClient panierClient(Client client);
 
+	//testée
 	public boolean incrementeQuantiteLigne(LignePieceClient lignePieceClient);
 
+	//testée
 	public boolean decrementeQuantiteLigne(CommandeClient commandeClient, LignePieceClient lignePieceClient);
 
 	//testée
 	public boolean viderPanier(CommandeClient commandeClient);
-
+	
+	//testée
 	public boolean supprimerLignePieceClient(CommandeClient commandeClient, LignePieceClient lignePieceClient);
 
 	//public CommandeClient rechercherParId(int id);

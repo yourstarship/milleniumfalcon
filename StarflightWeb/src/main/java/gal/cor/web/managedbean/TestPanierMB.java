@@ -86,7 +86,7 @@ public class TestPanierMB
 		/**
 		 * Début code de test
 		 */
-		CommandeClient commande = iCommandeClientService.rechercherCommandeParIdAvecSesLignesEtSesProduits(143);
+		CommandeClient commande = iCommandeClientService.rechercherCommandeParIdAvecSesLignesEtSesProduits(34);
 		//TODO	:Fil : penser à enlever l'initialisation
 		LignePieceClient lignePieceClient = (LignePieceClient) commande.getLignesPieceClient().toArray()[0];
 		/**
@@ -105,7 +105,7 @@ public class TestPanierMB
 		/**
 		 * Début code de test
 		 */
-		CommandeClient commandeClient = iCommandeClientService.rechercherCommandeParIdAvecSesLignesEtSesProduits(143);
+		CommandeClient commandeClient = iCommandeClientService.rechercherCommandeParIdAvecSesLignesEtSesProduits(34);
 		//TODO	:Fil : penser à enlever l'initialisation
 		LignePieceClient lignePieceClient = (LignePieceClient) commandeClient.getLignesPieceClient().toArray()[0];
 		/**
