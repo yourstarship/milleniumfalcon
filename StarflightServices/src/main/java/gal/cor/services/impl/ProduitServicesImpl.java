@@ -57,6 +57,18 @@ public class ProduitServicesImpl implements IProduitServices {
 		return proxyProduit.rechercherParCategorie(idCategorie);
 	}
 
+	@Override
+	public List<Produit> ListeDesTroisMeilleursPromo() {
+		
+		return proxyProduit.ListeDesTroisMeilleursPromo();
+	}
+
+	@Override
+	public List<Produit> obtenirTousProduitParNom(String nom) {
+		
+		return (List<Produit>) proxyProduit.obtenirTousProduitParNom(nom);
+	}
+
 	
 	
 	

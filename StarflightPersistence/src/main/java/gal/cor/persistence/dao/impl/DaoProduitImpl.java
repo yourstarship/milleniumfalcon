@@ -5,7 +5,9 @@ import gal.cor.persistence.entities.Produit;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
@@ -16,20 +18,22 @@ import javax.persistence.Query;
 @Stateless
 @Remote(IDaoProduit.class)
 public class DaoProduitImpl implements IDaoProduit {
-	
+
 	@PersistenceContext(name="YourStarshipPersistence")
 	private EntityManager em;
 
 	@Override
 	public void creerProduit(Produit t) {
-		// TODO Auto-generated method stub
-		
+		em.persist(t);
+
 	}
 
 	@Override
 	public Produit mettreAjourProduit(Produit t) {
-		// TODO Auto-generated method stub
-		return null;
+		Produit produit = t;
+		em.merge(produit);
+
+		return produit;
 	}
 
 	@Override
@@ -45,7 +49,7 @@ public class DaoProduitImpl implements IDaoProduit {
 		Query query = em.createQuery("SELECT p FROM Produit p");
 		List<Produit>listes = new ArrayList<Produit>();
 		listes=query.getResultList();
-		
+
 		return listes;
 	}
 
@@ -68,13 +72,36 @@ public class DaoProduitImpl implements IDaoProduit {
 		Query query = em.createQuery(request);
 		query.setParameter("param", idCategorie);
 		List<Produit>liste =new ArrayList<Produit>();
-		
+
 		liste=query.getResultList();
+		return liste;
+	}
+
+	@Override
+	public List<Produit> ListeDesTroisMeilleursPromo() {
+		String request ="SELECT p.produits FROM Promotion p  ";
+		Query query =em.createQuery(request).setMaxResults(3);
+
+		List<Produit>liste =new ArrayList<Produit>();
+		liste = query.getResultList();
+		return liste;
+	}
+
+	/***** [ Test Méthode Louis ] *****/
+	@Override
+	public List<Produit> obtenirTousProduitParNom(String nom) {
+		
+		List<Produit> liste = new ArrayList<Produit>();
+		
+		Query hql = em.createQuery("SELECT np FROM Produit np WHERE np.nom LIKE :paramName");
+		hql.setParameter("paramName", "%"+nom+ "%");
+		
+		liste=hql.getResultList();
 		return liste;
 	}
 
 
 
-	
+
 
 }

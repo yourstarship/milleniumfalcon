@@ -22,6 +22,7 @@ public class AccueilManagedBean {
 	
 	List<Produit> listeProduit = new ArrayList<Produit>();
 	private Produit produit;
+	private List<Produit>listPromotion = new ArrayList<Produit>();
 	
 	private Integer nomCategorie=1;
 	private Integer nomCategorie1=2;
@@ -41,14 +42,17 @@ public class AccueilManagedBean {
 	private Integer typeBombardier = 2;
 	private Integer typeIntercepteur=12;
 	
+	private String nomRecherche;
+	
+	/***** [ Fonctions ] *****/
+
 
 	@PostConstruct
 	public void afficherListeProduit(){
 		listeProduit.clear();
 		listeProduit = proxyProduitServices.obtenirTousProduitServices();
-		for (Produit p : listeProduit) {
-			log.info(p.getId());
-		}
+		listPromotion=proxyProduitServices.ListeDesTroisMeilleursPromo();
+	
 		
 	}
 	
@@ -61,8 +65,15 @@ public class AccueilManagedBean {
 	
 	public void afficherSousCategorie(Integer idCategorie, Integer idType){
 		listeProduit=proxyProduitServices.rechercherProduitParCategorieEtType(idCategorie, idType);
-	
 	}
+	
+	
+	public void afficherListeProduitParRecherche(String nomRecherche){
+		
+		listeProduit.clear();
+		listeProduit = proxyProduitServices.obtenirTousProduitParNom(nomRecherche);
+	}
+	
 	
 	
 	
@@ -71,6 +82,9 @@ public class AccueilManagedBean {
 		
 		return ("affichageDetailProduit.xhtml");
 	}
+	
+	
+	
 	
 	public String accesDetailPanier(){
 		return ("affichageDetailPanier.xhtml");
@@ -95,6 +109,26 @@ public class AccueilManagedBean {
 		return typeSubmersible;
 	}
 
+
+
+	public IProduitServices getProxyProduitServices() {
+		return proxyProduitServices;
+	}
+
+
+	public void setProxyProduitServices(IProduitServices proxyProduitServices) {
+		this.proxyProduitServices = proxyProduitServices;
+	}
+
+
+	public List<Produit> getListPromotion() {
+		return listPromotion;
+	}
+
+
+	public void setListPromotion(List<Produit> listPromotion) {
+		this.listPromotion = listPromotion;
+	}
 
 
 	public Produit getProduit() {
@@ -308,6 +342,16 @@ public class AccueilManagedBean {
 	
 	public void ajoutProduitAuPanier(){
 		
+	}
+
+
+	public String getNomRecherche() {
+		return nomRecherche;
+	}
+
+
+	public void setNomRecherche(String nomRecherche) {
+		this.nomRecherche = nomRecherche;
 	}
 	
 	/***** [ Fonctions ] *****/

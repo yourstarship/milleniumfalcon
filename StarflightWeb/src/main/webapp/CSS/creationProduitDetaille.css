@@ -82,7 +82,7 @@
  
  #buttSearchImgProduit
 {
-	background-image: url("./../Images/Icones/bouton-search.30px.30px.png");
+	background-image: url("./../image/Icones/bouton-search.30px.30px.png");
 	width: 14%;
 	height: 22%;
 	float: right;
@@ -119,6 +119,13 @@
 	overflow: auto;	
 }
 
+.deleteCommentaire
+{
+	float: right;
+	width:26px;
+	height:26px;
+	background-image: url("./../image/Icones/iconeSuspendue.26.26.png")	
+}
 
 /*************************************/
 /*********      Panier    ************/
@@ -144,7 +151,7 @@
 {
 	font-weight: bold;
 	font-family: Lucida Sans;
-	font-size: 1.1em;
+	font-size: 1em;
 }
 
 #sousTitreGestionPromo
@@ -170,11 +177,18 @@
 	height:33%;
 }
 
-#buttValidAdminProdui
+.buttValidAdminProduit
 {
 	width:200px;
 	height:30px;
 	border-radius:10px;
 	border:2px solid black;
 	margin-left:-1%;
+}
+
+.buttValidAdminProduit:hover
+ {
+	-moz-box-shadow: 0 0 25px #64EDAD;
+	-webkit-box-shadow: 0 0 25px #64EDAD;
+	box-shadow: 0 0 25px #64EDAD;
 }

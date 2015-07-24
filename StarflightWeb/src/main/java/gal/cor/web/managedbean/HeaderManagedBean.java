@@ -2,9 +2,10 @@ package gal.cor.web.managedbean;
 
 import javax.faces.bean.ManagedBean;
 
+
 @ManagedBean (name="headerManagedBean")
 public class HeaderManagedBean {
-	
+
 	/****************************/
 	/***** [ D�clarations ] *****/
 	/****************************/
@@ -19,11 +20,12 @@ public class HeaderManagedBean {
 	/***** [ Fonctions ] *****/
 	
 	public String retourAccueil(){
-		return ("accueil.xhtml");
+		
+		return ("accueil.xhtml?faces-redirect=true");
 	}
 	
 	public String pasDeCompte(){
-		return ("formulaireInscription.xhtml");
+		return ("formulaireInscription.xhtml?faces-redirect=true");
 	}
 	
 	public String accesCompteUtilisateur(){
