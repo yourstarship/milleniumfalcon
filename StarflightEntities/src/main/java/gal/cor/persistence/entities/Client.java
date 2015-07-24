@@ -43,9 +43,9 @@ public class Client extends Utilisateur implements Serializable
 	@OneToMany(mappedBy = "client")
 	private Set<CommandeClient> commandesClient = new LinkedHashSet<>();
 
-	public Client(Integer id, String nom, String prenom, Date dateDeNaissance, String identifiant, String motDePasse, Date dateOuverture, Date dernierAcces, Boolean aSurveiller, Double remise, Date dateDesactivation, Date dateActivation)
+	public Client(Integer id, String nom, String prenom, Date dateDeNaissance, String telephone, String email, String identifiant, String motDePasse, Date dateOuverture, Date dernierAcces, Boolean aSurveiller, Double remise, Date dateDesactivation, Date dateActivation)
 	{
-		super(id, nom, prenom, dateDeNaissance, identifiant, motDePasse, dateOuverture);
+		super(id, nom, prenom, dateDeNaissance, telephone, email, identifiant, motDePasse, dateOuverture);
 		this.dernierAcces = dernierAcces;
 		this.aSurveiller = aSurveiller;
 		this.remise = remise;

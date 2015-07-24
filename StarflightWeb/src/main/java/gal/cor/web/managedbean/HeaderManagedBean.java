@@ -1,6 +1,5 @@
 package gal.cor.web.managedbean;
 
-import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
@@ -9,32 +8,35 @@ import org.apache.log4j.Logger;
 
 //Bean controller
 
-@ManagedBean(name="headerManagedBean")
+@ManagedBean(name = "headerManagedBean")
 @SessionScoped
-public class HeaderManagedBean {
+public class HeaderManagedBean
+{
 
 	private Logger log = Logger.getLogger(HeaderManagedBean.class);
-	
-	@ManagedProperty(value="#{informationsLogin}")
+
+	@ManagedProperty(value = "#{informationsLogin}")
 	private InformationsLogin infosLogin;
-	
-	public String retourAccueil(){
+
+	public String retourAccueil()
+	{
 		return ("accueil.xhtml");
 	}
-	
-	public String pasDeCompte(){
+
+	public String pasDeCompte()
+	{
 		return ("formulaireInscription.xhtml");
 	}
-	
-	public String validerLogin(){
-		
+
+	public String validerLogin()
+	{
+
 		log.info("HeaderManagerBean.validerLogin : Tentative de validation de la connexion de l'utilisateur : " + infosLogin.getLogin());
-		
-		if(infosLogin.getLogin().equals("admin") && infosLogin.getMotDePasse().equals("azerty"))
+
+		if (infosLogin.getLogin().equals("admin") && infosLogin.getMotDePasse().equals("azerty"))
 		{
 			return ("compteAdministrateur.xhtml");
-		}
-		else
+		} else
 		{
 			return ("compteUtilisateur.xhtml");
 		}

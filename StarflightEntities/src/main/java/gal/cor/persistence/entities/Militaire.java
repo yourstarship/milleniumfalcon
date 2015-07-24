@@ -17,9 +17,9 @@ public class Militaire extends Client implements Serializable
 	private static final long serialVersionUID = 1L;
 	private String code;
 
-	public Militaire(Integer id, String nom, String prenom, Date dateDeNaissance, String identifiant, String motDePasse, Date dateOuverture, Date dernierAcces, Boolean aSurveiller, Double remise, Date dateDesactivation, Date dateActivation, String code)
+	public Militaire(Integer id, String nom, String prenom, Date dateDeNaissance, String telephone, String email, String identifiant, String motDePasse, Date dateOuverture, Date dernierAcces, Boolean aSurveiller, Double remise, Date dateDesactivation, Date dateActivation, String code)
 	{
-		super(id, nom, prenom, dateDeNaissance, identifiant, motDePasse, dateOuverture, dernierAcces, aSurveiller, remise, dateDesactivation, dateActivation);
+		super(id, nom, prenom, dateDeNaissance, telephone, email, identifiant, motDePasse, dateOuverture, dernierAcces, aSurveiller, remise, dateDesactivation, dateActivation);
 		this.code = code;
 	}
 

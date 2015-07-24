@@ -12,6 +12,15 @@
 		<br />
 		<h:commandButton value="Vider panier"
 			action="#{testPanierMB.viderPanier()}" />
+		<br />
+		<h:commandButton value="Supprime ligne"
+			action="#{testPanierMB.supprimerLignePieceClient()}" />
+		<br />
+		<h:commandButton value="Décrémenter quantité"
+			action="#{testPanierMB.decrementeQuantiteLigne()}" />
+		<br />
+		<h:commandButton value="Incrémenter quantité"
+			action="#{testPanierMB.incrementeQuantiteLigne()}" />
 	</h:form>
 </body>
 </html>

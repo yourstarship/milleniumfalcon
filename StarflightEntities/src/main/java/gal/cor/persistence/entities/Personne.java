@@ -31,7 +31,7 @@ public abstract class Personne implements Serializable
 	private String nom;
 	private String prenom;
 	private Date dateDeNaissance;
-	private int telephone;
+	private String telephone;
 	private String email;
 	//private String type;
 
@@ -43,12 +43,15 @@ public abstract class Personne implements Serializable
 	@JoinColumn(name = "idcivilite")
 	private Civilite civilite;
 
-	public Personne(Integer id, String nom, String prenom, Date dateDeNaissance)
+	public Personne(Integer id, String nom, String prenom, Date dateDeNaissance, String telephone, String email)
 	{
+		super();
 		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.dateDeNaissance = dateDeNaissance;
+		this.telephone = telephone;
+		this.email = email;
 	}
 
 	public Adresse getAdresse()
@@ -65,14 +68,19 @@ public abstract class Personne implements Serializable
 	{
 	}
 
-	public int getTelephone()
+	public String getTelephone()
 	{
 		return telephone;
 	}
 
-	public void setTelephone(int telephone)
+	public void setTelephone(String telephone)
 	{
 		this.telephone = telephone;
+	}
+
+	public static long getSerialversionuid()
+	{
+		return serialVersionUID;
 	}
 
 	public String getEmail()

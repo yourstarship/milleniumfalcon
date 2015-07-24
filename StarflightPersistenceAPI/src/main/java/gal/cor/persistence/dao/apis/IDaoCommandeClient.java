@@ -26,4 +26,6 @@ public interface IDaoCommandeClient
 	List<CommandeClient> rechercherParRequeteNommee(String requeteNommee, int nbreMaxElements);
 
 	Collection<CommandeClient> obtenirTousCommandeClient();
+
+	CommandeClient rechercherCommandeParIdAvecSesLignesEtSesProduits(int id);
 }

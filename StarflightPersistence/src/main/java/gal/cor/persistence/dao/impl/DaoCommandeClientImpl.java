@@ -14,6 +14,7 @@ import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.apache.log4j.Logger;
 
@@ -76,8 +77,22 @@ public class DaoCommandeClientImpl implements IDaoCommandeClient, Serializable
 	@Override
 	public CommandeClient rechercherParId(int id)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		return em.find(CommandeClient.class, id);
+	}
+
+	@Override
+	public CommandeClient rechercherCommandeParIdAvecSesLignesEtSesProduits(int id)
+	{
+		CommandeClient resultat = null;
+		String rawQuery = "from CommandeClient c left join fetch c.lignesPieceClient l left join fetch l.produit where c.id = :id";
+		Query query = em.createQuery(rawQuery);
+		query.setParameter("id", id);
+		List<CommandeClient> resultats = query.getResultList();
+		if (resultats.size() > 0)
+		{
+			resultat = resultats.get(0);
+		}
+		return resultat;
 	}
 
 	@Override

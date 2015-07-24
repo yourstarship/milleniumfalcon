@@ -53,7 +53,7 @@ public class CommandeClientServiceImpl implements ICommandeClientService
 			iDaoLignePieceClient.mettreAjourLignePieceClient(lignePieceClient);
 		} else if (lignePieceClient.getQuantite() == 1)
 		{
-			this.supprimerLigne(commandeClient, lignePieceClient);
+			this.supprimerLignePieceClient(commandeClient, lignePieceClient);
 		}
 		return result;
 	}
@@ -67,15 +67,11 @@ public class CommandeClientServiceImpl implements ICommandeClientService
 	}
 
 	@Override
-	public boolean supprimerLigne(CommandeClient commandeClient, LignePieceClient lignePieceClient)
+	public boolean supprimerLignePieceClient(CommandeClient commandeClient, LignePieceClient lignePieceClient)
 	{
 		boolean result = false;
 		commandeClient.getLignesPieceClient().remove(lignePieceClient);
-
-		iDaoCommandeClient.mettreAjourCommandeClient(commandeClient);
-		/**
-		 * TODO :Fil vérifier la suppression de la ligne !!
-		 */
+		iDaoLignePieceClient.supprimerLignePieceClient(lignePieceClient);
 		return result;
 	}
 
@@ -84,16 +80,19 @@ public class CommandeClientServiceImpl implements ICommandeClientService
 	{
 		boolean result = false;
 		Set<LignePieceClient> lesLignesDuPanier = commandeClient.getLignesPieceClient();
-		for (LignePieceClient lignePieceClient : lesLignesDuPanier)
+		if (lesLignesDuPanier.size() > 0)
 		{
-			iDaoLignePieceClient.supprimerLignePieceClient(lignePieceClient);
+			for (LignePieceClient lignePieceClient : lesLignesDuPanier)
+			{
+				iDaoLignePieceClient.supprimerLignePieceClient(lignePieceClient);
+			}
+			lesLignesDuPanier.clear();
 		}
-		lesLignesDuPanier.clear();
 
 		/**
 		 * TODO :Fil ne sert à rien
 		 */
-		iDaoCommandeClient.mettreAjourCommandeClient(commandeClient);
+		//iDaoCommandeClient.mettreAjourCommandeClient(commandeClient);
 		/**
 		 * TODO :Fil vérifier que les lignes ont été supprimées de la base
 		 */
@@ -168,7 +167,7 @@ public class CommandeClientServiceImpl implements ICommandeClientService
 			{
 				if (commandeClient.getDatePaiementAccepte() == null)
 				{
-					panier = commandeClient;
+					panier = iDaoCommandeClient.rechercherCommandeParIdAvecSesLignesEtSesProduits(commandeClient.getId());
 				}
 			}
 		}
@@ -199,6 +198,12 @@ public class CommandeClientServiceImpl implements ICommandeClientService
 	public CommandeClient rechercherParId(int id)
 	{
 		return iDaoCommandeClient.rechercherParId(id);
+	}
+
+	@Override
+	public CommandeClient rechercherCommandeParIdAvecSesLignesEtSesProduits(int id)
+	{
+		return iDaoCommandeClient.rechercherCommandeParIdAvecSesLignesEtSesProduits(id);
 	}
 
 }

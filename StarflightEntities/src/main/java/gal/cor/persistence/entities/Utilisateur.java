@@ -9,17 +9,14 @@ import javax.persistence.Entity;
 public abstract class Utilisateur extends Personne implements Serializable
 {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private String identifiant;
 	private String motDePasse;
 	private Date dateOuverture;
 
-	public Utilisateur(Integer id, String nom, String prenom, Date dateDeNaissance, String identifiant, String motDePasse, Date dateOuverture)
+	public Utilisateur(Integer id, String nom, String prenom, Date dateDeNaissance, String telephone, String email, String identifiant, String motDePasse, Date dateOuverture)
 	{
-		super(id, nom, prenom, dateDeNaissance);
+		super(id, nom, prenom, dateDeNaissance, telephone, email);
 		this.identifiant = identifiant;
 		this.motDePasse = motDePasse;
 		this.dateOuverture = dateOuverture;

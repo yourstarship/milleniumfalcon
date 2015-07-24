@@ -2,6 +2,7 @@ package gal.cor.web.managedbean;
 
 import gal.cor.persistence.entities.Client;
 import gal.cor.persistence.entities.CommandeClient;
+import gal.cor.persistence.entities.LignePieceClient;
 import gal.cor.persistence.entities.Produit;
 import gal.cor.services.api.ICommandeClientService;
 
@@ -24,7 +25,7 @@ public class TestPanierMB
 
 	Logger logger = Logger.getLogger(this.getClass());
 
-	public String ajouterUnProduitChoisi(Client client, Produit produit)
+	public String ajouterUnProduitChoisi()//TODO	:Fil, ajouter args Client client, Produit produit
 	{
 		/**
 		 * TODO :Fil enlever zone de test
@@ -44,7 +45,7 @@ public class TestPanierMB
 		{
 
 		}
-		Client unClientSansCommande = new Client(null, "John", "Edward", dateDeNaissance, "login", "password", dateOuverture, dernierAcces, false, 0d, null, null);
+		Client unClientSansCommande = new Client(null, "John", "Edward", dateDeNaissance, "01 45 26 89 25", "a.a@com", "login", "password", dateOuverture, dernierAcces, false, 0d, null, null);
 		/**
 		 * >>>>>>>>>>>>> Fin code pour test
 		 */
@@ -55,15 +56,16 @@ public class TestPanierMB
 		return "";
 	}
 
-	public String viderPanier(CommandeClient commandeClient)
+	public String viderPanier()//TODO	:Fil +Client client
 	{
+
 		/**
 		 * TODO :Fil, supprimer code pour test
 		 */
 		/**
 		 * Début code de test
 		 */
-		CommandeClient commande = iCommandeClientService.rechercherParId(105);
+		CommandeClient commande = iCommandeClientService.rechercherCommandeParIdAvecSesLignesEtSesProduits(131);
 		/**
 		 * Fin code de test
 		 */
@@ -74,5 +76,50 @@ public class TestPanierMB
 	public CommandeClient panierClient(Client client)
 	{
 		return iCommandeClientService.panierClient(client);
+	}
+
+	public boolean incrementeQuantiteLigne()//TODO	:Fil ajouter args : LignePieceClient lignePieceClient
+	{
+		/**
+		 * TODO :Fil, supprimer code pour test
+		 */
+		/**
+		 * Début code de test
+		 */
+		CommandeClient commande = iCommandeClientService.rechercherCommandeParIdAvecSesLignesEtSesProduits(143);
+		//TODO	:Fil : penser à enlever l'initialisation
+		LignePieceClient lignePieceClient = (LignePieceClient) commande.getLignesPieceClient().toArray()[0];
+		/**
+		 * Fin code de test
+		 */
+		boolean result = false;
+		iCommandeClientService.incrementeQuantiteLigne(lignePieceClient);
+		return result;
+	}
+
+	public boolean decrementeQuantiteLigne() //TODO	:Fil	: ajouter args : CommandeClient commandeClient, LignePieceClient lignePieceClient
+	{
+		/**
+		 * TODO :Fil, supprimer code pour test
+		 */
+		/**
+		 * Début code de test
+		 */
+		CommandeClient commandeClient = iCommandeClientService.rechercherCommandeParIdAvecSesLignesEtSesProduits(143);
+		//TODO	:Fil : penser à enlever l'initialisation
+		LignePieceClient lignePieceClient = (LignePieceClient) commandeClient.getLignesPieceClient().toArray()[0];
+		/**
+		 * Fin code de test
+		 */
+		boolean result = false;
+		iCommandeClientService.decrementeQuantiteLigne(commandeClient, lignePieceClient);
+		return result;
+	}
+
+	public boolean supprimerLignePieceClient(CommandeClient commandeClient, LignePieceClient lignePieceClient)
+	{
+		boolean result = false;
+		iCommandeClientService.supprimerLignePieceClient(commandeClient, lignePieceClient);
+		return result;
 	}
 }
