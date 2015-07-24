@@ -4,11 +4,12 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+import gal.cor.persistence.entities.CommandeClient;
 import gal.cor.persistence.entities.LignePieceClient;
 
 public interface IDaoLignePieceClient
 {
-	void creerLignePieceClient(LignePieceClient lignePieceClient);
+	public LignePieceClient creerLignePieceClient(LignePieceClient lignePieceClient);
 
 	void supprimerLignePieceClient(LignePieceClient t);
 
@@ -16,7 +17,7 @@ public interface IDaoLignePieceClient
 
 	LignePieceClient rechercherParId(LignePieceClient t);
 
-	//Requetes personnalis�es
+	//Requetes personnalisées
 	List<LignePieceClient> rechercherParRequeteNommee(String requeteNommee);
 
 	List<LignePieceClient> rechercherParRequeteNommee(String requeteNommee, Map<String, Object> parametres, int nbreMaxElements);
@@ -26,4 +27,5 @@ public interface IDaoLignePieceClient
 	List<LignePieceClient> rechercherParRequeteNommee(String requeteNommee, int nbreMaxElements);
 
 	Collection<LignePieceClient> obtenirTousLignePieceClient();
+
 }

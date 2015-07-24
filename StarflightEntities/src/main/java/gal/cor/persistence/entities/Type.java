@@ -1,6 +1,7 @@
 package gal.cor.persistence.entities;
 
 import java.io.Serializable;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -22,7 +23,7 @@ public class Type implements Serializable
 	private String nom;
 
 	@OneToMany(mappedBy = "type")
-	private Set<Produit> produits;
+	private Set<Produit> produits = new LinkedHashSet<>();
 
 	public Type(Integer id, String nom, Set<Produit> produits)
 	{

@@ -1,19 +1,25 @@
 package gal.cor.persistence.dao.impl;
 
 import gal.cor.persistence.dao.apis.IDaoLignePieceClient;
+import gal.cor.persistence.entities.CommandeClient;
 import gal.cor.persistence.entities.LignePieceClient;
 import gal.cor.persistence.entities.Produit;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+import javax.ejb.Remote;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.apache.log4j.Logger;
 
-public class DaoLignePieceClientImpl implements IDaoLignePieceClient
+@Remote
+@Stateless
+public class DaoLignePieceClientImpl implements IDaoLignePieceClient, Serializable
 {
 
 	Logger logger = Logger.getLogger(DaoLignePieceClientImpl.class);
@@ -25,9 +31,11 @@ public class DaoLignePieceClientImpl implements IDaoLignePieceClient
 	private double quantitee;
 
 	@Override
-	public void creerLignePieceClient(LignePieceClient lignePieceClient)
+	public LignePieceClient creerLignePieceClient(LignePieceClient lignePieceClient)
 	{
 		em.persist(lignePieceClient);
+		em.flush();
+		return lignePieceClient;
 	}
 
 	@Override
@@ -38,10 +46,9 @@ public class DaoLignePieceClientImpl implements IDaoLignePieceClient
 	}
 
 	@Override
-	public void supprimerLignePieceClient(LignePieceClient t)
+	public void supprimerLignePieceClient(LignePieceClient lignePieceClient)
 	{
-		// TODO Auto-generated method stub
-
+		em.remove(lignePieceClient);
 	}
 
 	@Override

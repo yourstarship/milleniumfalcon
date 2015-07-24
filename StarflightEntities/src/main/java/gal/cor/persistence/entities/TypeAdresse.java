@@ -1,6 +1,7 @@
 package gal.cor.persistence.entities;
 
 import java.io.Serializable;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -22,7 +23,7 @@ public class TypeAdresse implements Serializable
 	private String libelle;
 
 	@OneToMany(mappedBy = "typeAdresse")
-	private Set<Adresse> adressesDeCeType;
+	private Set<Adresse> adressesDeCeType = new LinkedHashSet<>();
 
 	public TypeAdresse()
 	{

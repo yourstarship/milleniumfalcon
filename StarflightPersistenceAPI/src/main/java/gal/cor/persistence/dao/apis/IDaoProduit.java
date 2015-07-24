@@ -6,14 +6,18 @@ import java.util.Map;
 
 import gal.cor.persistence.entities.Produit;
 
-
-public interface IDaoProduit {
-	void creerProduit(Produit t);
+public interface IDaoProduit
+{
+	Produit creerProduit(Produit produit);
 
 	Produit mettreAjourProduit(Produit t);
+
 	Produit rechercherParId(Produit t);
+
 	List<Produit> rechercherParCategorie(Integer idCategorie);
+
 	List<Produit> obtenirTousProduit();
+
 	List<Produit> rechercherProduitParCategorieEtType(Integer idCategorie, Integer idType);
-	
+
 }

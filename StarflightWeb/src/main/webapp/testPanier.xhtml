@@ -6,10 +6,12 @@
 
 <h:head></h:head>
 <body>
-
 	<h:form>
-		<h:commandButton action="#{cubemb.saveA()}" value="Save Cube" />
+		<h:commandButton value="Ajout produit"
+			action="#{testPanierMB.ajouterUnProduitChoisi()}" />
+		<br />
+		<h:commandButton value="Vider panier"
+			action="#{testPanierMB.viderPanier()}" />
 	</h:form>
-
 </body>
 </html>

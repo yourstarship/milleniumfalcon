@@ -1,6 +1,7 @@
 package gal.cor.persistence.entities;
 
 import java.io.Serializable;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -23,7 +24,7 @@ public class Systeme implements Serializable
 	private String nom;
 
 	@OneToMany(mappedBy = "systeme")
-	private Set<Planete> planetes;
+	private Set<Planete> planetes = new LinkedHashSet<>();
 
 	public Systeme(Integer id, String nom)
 	{

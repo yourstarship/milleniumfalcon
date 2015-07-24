@@ -1,6 +1,7 @@
 package gal.cor.persistence.entities;
 
 import java.io.Serializable;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -26,13 +27,13 @@ public class Fournisseur implements Serializable
 	private String telephone;
 
 	@OneToMany(mappedBy = "fournisseur")
-	private Set<CommandeFournisseur> commandesFournisseurs;
+	private Set<CommandeFournisseur> commandesFournisseurs = new LinkedHashSet<>();
 
 	@OneToMany(mappedBy = "employeur")
-	private Set<Employe> employes;
+	private Set<Employe> employes = new LinkedHashSet<>();
 
 	@OneToMany(mappedBy = "constructeur")
-	private Set<Produit> produits;
+	private Set<Produit> produits = new LinkedHashSet<>();
 
 	public Fournisseur(Integer id, String raisonSociale, String codeGalactique, String www, String mail, String telephone)
 	{

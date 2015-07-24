@@ -2,6 +2,7 @@ package gal.cor.persistence.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -25,7 +26,7 @@ public class FactureFournisseur implements Serializable
 	private double remise;
 
 	@OneToMany(mappedBy = "factureFournisseur")
-	private Set<CommandeFournisseur> CommandeFournisseurs;
+	private Set<CommandeFournisseur> CommandeFournisseurs = new LinkedHashSet<>();
 
 	public Set<CommandeFournisseur> getCommandeFournisseurs()
 	{

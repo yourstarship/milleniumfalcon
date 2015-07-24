@@ -81,7 +81,7 @@
 				<div class="gauche">
 					<img src="#{produit.photo}" />
 					<p>#{produit.nom}</p>
-					<p>pro#{produit.prixAchatHT}</p>
+					<p>prix : #{produit.prixAchatHT} Credits</p>
 					<h:commandButton action="#{accueilManagedBean.ajoutProduitAuPanier()}" value="Ajouter" class="buttListeAccueil"/>
 					<h:commandButton action="#{accueilManagedBean.accesDetailProduit(produit)}" value="Détailler" class="buttListeAccueil"/>
 				</div>

@@ -2,6 +2,7 @@ package gal.cor.persistence.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -33,7 +34,7 @@ public class Promotion implements Serializable
 	@JoinTable(name = "Produit_Promotion", joinColumns =
 	{ @JoinColumn(name = "idPromotion") }, inverseJoinColumns =
 	{ @JoinColumn(name = "idProduit") })
-	private Set<Produit> produits;
+	private Set<Produit> produits = new LinkedHashSet<>();
 
 	public Promotion(Integer id, String nom, Double taux, Date dateDebut, Date dateFin, Set<Produit> produits)
 	{

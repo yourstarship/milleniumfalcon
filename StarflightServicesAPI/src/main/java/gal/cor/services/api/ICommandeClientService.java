@@ -10,6 +10,16 @@ public interface ICommandeClientService
 
 	public boolean ajouterProduitAuPanier(Client client, Produit produit);
 
-	CommandeClient panierClient(Client client);
+	public CommandeClient panierClient(Client client);
+
+	public boolean incrementeQuantiteLigne(LignePieceClient lignePieceClient);
+
+	public boolean decrementeQuantiteLigne(CommandeClient commandeClient, LignePieceClient lignePieceClient);
+
+	public boolean viderPanier(CommandeClient commandeClient);
+
+	public boolean supprimerLigne(CommandeClient commandeClient, LignePieceClient lignePieceClient);
+	
+	public CommandeClient rechercherParId(int id);
 
 }

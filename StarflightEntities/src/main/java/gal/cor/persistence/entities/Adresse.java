@@ -1,6 +1,7 @@
 package gal.cor.persistence.entities;
 
 import java.io.Serializable;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -45,11 +46,10 @@ public class Adresse implements Serializable
 	@JoinTable(name = "Adresse_Client", joinColumns =
 	{ @JoinColumn(name = "idAdresse") }, inverseJoinColumns =
 	{ @JoinColumn(name = "idClient") })
-	private Set<Client> clientsACetteAdresse;
+	private Set<Client> clientsACetteAdresse = new LinkedHashSet<>();
 
-	
 	@ManyToOne
-	@JoinColumn(name="idTypeAdresse")
+	@JoinColumn(name = "idTypeAdresse")
 	private TypeAdresse typeAdresse;
 
 	public Adresse(Integer id, Integer numeroVoie, String complementNumeroVoie, String nomVoie, String complementAdresse, String codePostal, String ville, double latitude, double longitude, double altitude, Planete planete)

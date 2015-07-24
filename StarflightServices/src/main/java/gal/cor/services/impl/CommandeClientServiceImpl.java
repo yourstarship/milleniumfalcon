@@ -1,7 +1,9 @@
 package gal.cor.services.impl;
 
+import gal.cor.persistence.dao.apis.IDaoClient;
 import gal.cor.persistence.dao.apis.IDaoCommandeClient;
 import gal.cor.persistence.dao.apis.IDaoLignePieceClient;
+import gal.cor.persistence.dao.apis.IDaoProduit;
 import gal.cor.persistence.entities.Client;
 import gal.cor.persistence.entities.CommandeClient;
 import gal.cor.persistence.entities.LignePieceClient;
@@ -12,24 +14,103 @@ import java.util.Calendar;
 import java.util.Set;
 
 import javax.ejb.EJB;
+import javax.ejb.Remote;
+import javax.ejb.Stateless;
 
 import org.apache.log4j.Logger;
 
+@Stateless
+@Remote(ICommandeClientService.class)
 public class CommandeClientServiceImpl implements ICommandeClientService
 {
 	@EJB
 	IDaoCommandeClient iDaoCommandeClient;
 	@EJB
 	IDaoLignePieceClient iDaoLignePieceClient;
+	@EJB
+	IDaoClient iDaoClient;
+	@EJB
+	IDaoProduit iDaoProduit;
 
 	Logger logger = Logger.getLogger(CommandeClientServiceImpl.class);
+
+	@Override
+	public boolean incrementeQuantiteLigne(LignePieceClient lignePieceClient)
+	{
+		boolean result = false;
+		lignePieceClient.setQuantite(lignePieceClient.getQuantite() + 1);
+		iDaoLignePieceClient.mettreAjourLignePieceClient(lignePieceClient);
+		return result;
+	}
+
+	@Override
+	public boolean decrementeQuantiteLigne(CommandeClient commandeClient, LignePieceClient lignePieceClient)
+	{
+		boolean result = false;
+		if (lignePieceClient.getQuantite() > 1)
+		{
+			lignePieceClient.setQuantite(lignePieceClient.getQuantite() - 1);
+			iDaoLignePieceClient.mettreAjourLignePieceClient(lignePieceClient);
+		} else if (lignePieceClient.getQuantite() == 1)
+		{
+			this.supprimerLigne(commandeClient, lignePieceClient);
+		}
+		return result;
+	}
+
+	public boolean miseAJourQuantiteLigne(LignePieceClient lignePieceClient, int nouvelleQuantite)
+	{
+		boolean result = false;
+		lignePieceClient.setQuantite(nouvelleQuantite);
+		iDaoLignePieceClient.mettreAjourLignePieceClient(lignePieceClient);
+		return result;
+	}
+
+	@Override
+	public boolean supprimerLigne(CommandeClient commandeClient, LignePieceClient lignePieceClient)
+	{
+		boolean result = false;
+		commandeClient.getLignesPieceClient().remove(lignePieceClient);
+
+		iDaoCommandeClient.mettreAjourCommandeClient(commandeClient);
+		/**
+		 * TODO :Fil vérifier la suppression de la ligne !!
+		 */
+		return result;
+	}
+
+	@Override
+	public boolean viderPanier(CommandeClient commandeClient)
+	{
+		boolean result = false;
+		Set<LignePieceClient> lesLignesDuPanier = commandeClient.getLignesPieceClient();
+		for (LignePieceClient lignePieceClient : lesLignesDuPanier)
+		{
+			iDaoLignePieceClient.supprimerLignePieceClient(lignePieceClient);
+		}
+		lesLignesDuPanier.clear();
+
+		/**
+		 * TODO :Fil ne sert à rien
+		 */
+		iDaoCommandeClient.mettreAjourCommandeClient(commandeClient);
+		/**
+		 * TODO :Fil vérifier que les lignes ont été supprimées de la base
+		 */
+		return result;
+	}
 
 	@Override
 	public boolean ajouterProduitAuPanier(Client client, Produit produit)
 	{
 		boolean resultat = false;
+
+		/**
+		 * TODO :Fil supprimer cette ligne car le client existera deja
+		 */
+		client = iDaoClient.creerClient(client);
 		CommandeClient panierDuClient = this.panierClient(client);
-		LignePieceClient ligneDeCeProduitDansLePanier = ligneDeCeProduitDansCetteCommande(panierDuClient, produit);
+		LignePieceClient ligneDeCeProduitDansLePanier = null;
 
 		try
 		{
@@ -37,6 +118,10 @@ public class CommandeClientServiceImpl implements ICommandeClientService
 			if (panierDuClient == null)
 			{
 				panierDuClient = new CommandeClient(null, 0d, Calendar.getInstance().getTime(), null, null, null, null, null);
+				panierDuClient.setClient(client);
+			} else
+			{
+				ligneDeCeProduitDansLePanier = ligneDeCeProduitDansCetteCommande(panierDuClient, produit);
 			}
 			//si ligne de ce produit existe alors on incrémente sa quantité
 			if (ligneDeCeProduitDansLePanier != null)
@@ -49,14 +134,23 @@ public class CommandeClientServiceImpl implements ICommandeClientService
 			{
 				LignePieceClient lignePieceClient = new LignePieceClient(null, 1, 0d, 0d, produit, panierDuClient, null, null);
 				panierDuClient.getLignesPieceClient().add(lignePieceClient);
+				//on sauve la commande(le panier) avec son association au client
+				panierDuClient = iDaoCommandeClient.creerCommandeClient(panierDuClient);
+				lignePieceClient.setCommandeClient(panierDuClient);
+				/**
+				 * TODO :Fil supprimer cette ligne car le produit existera déjà
+				 * dans la base
+				 */
+				produit = iDaoProduit.creerProduit(produit);
+				lignePieceClient.setProduit(produit);
+				//on sauve la ligne avec sa clef étrangère sur la commande
 				iDaoLignePieceClient.creerLignePieceClient(lignePieceClient);
 			}
-			//on sauve la commande(le panier) avec son association au client
-			iDaoCommandeClient.creerCommandeClient(panierDuClient);
-
+			resultat = true;
 		} catch (Exception e)
 		{
-			logger.error("Une erreur est survenue pendant l'ajout du produit au panier");
+			logger.error(e.getMessage());
+			e.printStackTrace();
 		}
 		return resultat;
 	}
@@ -84,7 +178,6 @@ public class CommandeClientServiceImpl implements ICommandeClientService
 	private LignePieceClient ligneDeCeProduitDansCetteCommande(CommandeClient commandeClient, Produit produit)
 	{
 		LignePieceClient result = null;
-		//TO DO
 		//si pas de ligne ==> false
 		//sinon
 		Set<LignePieceClient> lignesPieceClient = commandeClient.getLignesPieceClient();
@@ -101,6 +194,11 @@ public class CommandeClientServiceImpl implements ICommandeClientService
 			}
 		}
 		return result;
+	}
+
+	public CommandeClient rechercherParId(int id)
+	{
+		return iDaoCommandeClient.rechercherParId(id);
 	}
 
 }

@@ -1,26 +1,35 @@
 package gal.cor.persistence.dao.impl;
 
 import gal.cor.persistence.dao.apis.IDaoCommandeClient;
+import gal.cor.persistence.entities.Client;
 import gal.cor.persistence.entities.CommandeClient;
 import gal.cor.persistence.entities.LignePieceClient;
+
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+
+import javax.ejb.Remote;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-public class DaoCommandeClientImpl implements IDaoCommandeClient
+import org.apache.log4j.Logger;
+
+@Remote
+@Stateless
+public class DaoCommandeClientImpl implements IDaoCommandeClient, Serializable
 {
-	@PersistenceContext(unitName="YourStarshipPersistence")
+	@PersistenceContext(unitName = "YourStarshipPersistence")
 	EntityManager em;
-	
+
 	private List<LignePieceClient> lignesPanier;
 
 	public double montantTotalHT(CommandeClient commandeClient)
 	{
 		/**
 		 * TODO
-		 * 
 		 */
 		return 0d;
 	}
@@ -33,14 +42,19 @@ public class DaoCommandeClientImpl implements IDaoCommandeClient
 	public void viderPanier()
 	{
 		lignesPanier.clear();
-		//TODO Fil
+		/**
+		 * TODO	:Fil
+		 */
 		//persister les modifs
 	}
-
+	Logger logger = Logger.getLogger(getClass());
 	@Override
-	public void creerCommandeClient(CommandeClient commandeClient)
+	public CommandeClient creerCommandeClient(CommandeClient commandeClient)
 	{
+		//commandeClient.setClient(em.find(Client.class, commandeClient.getClient().getId()));
 		em.persist(commandeClient);
+		em.flush();
+		return commandeClient;
 	}
 
 	@Override
