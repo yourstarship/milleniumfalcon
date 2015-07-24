@@ -2,6 +2,7 @@ package gal.cor.persistence.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -15,6 +16,11 @@ import javax.persistence.OneToMany;
 @Entity
 public class CommandeClient implements Serializable
 {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,9 +37,9 @@ public class CommandeClient implements Serializable
 	@ManyToOne
 	@JoinColumn(name = "idcarte")
 	private Carte carte;
-	
+
 	@ManyToOne
-	@JoinColumn(name="idclient")
+	@JoinColumn(name = "idclient")
 	private Client client;
 
 	@ManyToOne
@@ -41,7 +47,11 @@ public class CommandeClient implements Serializable
 	private FactureClient factureClient;
 
 	@OneToMany(mappedBy = "commandeClient")
-	private Set<LignePieceClient> lignesPieceClient;
+	private Set<LignePieceClient> lignesPieceClient = new LinkedHashSet<>();
+
+	@ManyToOne
+	@JoinColumn(name = "idtva")
+	private TVA tva;
 
 	public CommandeClient(Integer id, Double remise, Date dateCreation, Date dateAnnulation, Date dateDerniereTentativePaiement, Date datePaiementAccepte, Date dateSoldee, Date dateEnvoi, Carte carte, Client client, FactureClient factureClient)
 	{
@@ -205,6 +215,21 @@ public class CommandeClient implements Serializable
 	public void setLignesPieceClient(Set<LignePieceClient> lignesPieceClient)
 	{
 		this.lignesPieceClient = lignesPieceClient;
+	}
+
+	public TVA getTva()
+	{
+		return tva;
+	}
+
+	public void setTva(TVA tva)
+	{
+		this.tva = tva;
+	}
+
+	public static long getSerialversionuid()
+	{
+		return serialVersionUID;
 	}
 
 	@Override

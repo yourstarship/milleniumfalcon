@@ -2,6 +2,7 @@ package gal.cor.persistence.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -15,6 +16,10 @@ import javax.persistence.OneToMany;
 @Entity
 public class Carte implements Serializable
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
@@ -31,7 +36,7 @@ public class Carte implements Serializable
 	private Client client;
 
 	@OneToMany(mappedBy = "carte")
-	private Set<CommandeClient> commandesPayeesAvecCetteCarte;
+	private Set<CommandeClient> commandesPayeesAvecCetteCarte = new LinkedHashSet<>();
 
 	public Carte(Integer id, Integer numero, Date dateExpiration, Integer cryptogramme)
 	{

@@ -16,3 +16,4 @@ pom.properties
 application.xml
 */target/
 Configuration JBoss
+*.orig

@@ -8,7 +8,6 @@
 		<version>1</version>
 	</parent>
 
-	<groupId>gal.cor</groupId>
 	<artifactId>StarflightServices</artifactId>
 	<version>1.0</version>
 
@@ -52,8 +51,6 @@
 	<build>
 		<plugins>
 
-			
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-ejb-plugin</artifactId>
@@ -62,6 +59,7 @@
 					<ejbVersion>3.0</ejbVersion>
 				</configuration>
 			</plugin>
+
 		</plugins>
 	</build>
 

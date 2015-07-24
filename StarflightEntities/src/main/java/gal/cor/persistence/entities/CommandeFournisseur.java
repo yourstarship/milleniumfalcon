@@ -2,8 +2,8 @@ package gal.cor.persistence.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.LinkedHashSet;
 import java.util.Set;
-import java.util.jar.Attributes.Name;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,6 +16,10 @@ import javax.persistence.OneToMany;
 @Entity
 public class CommandeFournisseur implements Serializable
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
@@ -32,7 +36,7 @@ public class CommandeFournisseur implements Serializable
 	private Fournisseur fournisseur;
 
 	@OneToMany(mappedBy = "commandeFournisseur")
-	private Set<LignePieceFournisseur> lignesCommandeFournisseur;
+	private Set<LignePieceFournisseur> lignesCommandeFournisseur = new LinkedHashSet<>();
 
 	public CommandeFournisseur(Integer id, Date dateCreation, Date dateSoldee, Double remise)
 	{

@@ -1,6 +1,7 @@
 package gal.cor.persistence.entities;
 
 import java.io.Serializable;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -12,13 +13,17 @@ import javax.persistence.OneToMany;
 @Entity
 public class TypeCarte implements Serializable
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	private String nom;
 
 	@OneToMany(mappedBy = "typeCarte")
-	private Set<Carte> cartesDeCeType;
+	private Set<Carte> cartesDeCeType = new LinkedHashSet<>();
 
 	public TypeCarte(Integer id, String nom)
 	{

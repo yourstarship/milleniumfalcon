@@ -2,6 +2,7 @@ package gal.cor.persistence.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -16,6 +17,10 @@ import javax.persistence.OneToMany;
 @DiscriminatorValue(value = "client")
 public class Client extends Utilisateur implements Serializable
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Date dernierAcces;
 	private Boolean aSurveiller;
 	private Double remise;
@@ -27,13 +32,16 @@ public class Client extends Utilisateur implements Serializable
 	@JoinTable(name = "favoris", joinColumns =
 	{ @JoinColumn(name = "idClient") }, inverseJoinColumns =
 	{ @JoinColumn(name = "idProduit") })
-	private Set<Produit> produitsFavoris;
+	private Set<Produit> produitsFavoris = new LinkedHashSet<>();
 
 	@ManyToMany(mappedBy = "clientsACetteAdresse")
-	private Set<Adresse> adresses;
+	private Set<Adresse> adresses = new LinkedHashSet<>();
 
 	@OneToMany(mappedBy = "client")
-	private Set<Carte> cartes;
+	private Set<Carte> cartes = new LinkedHashSet<>();
+
+	@OneToMany(mappedBy = "client")
+	private Set<CommandeClient> commandesClient = new LinkedHashSet<>();
 
 	public Client(Integer id, String nom, String prenom, Date dateDeNaissance, String identifiant, String motDePasse, Date dateOuverture, Date dernierAcces, Boolean aSurveiller, Double remise, Date dateDesactivation, Date dateActivation)
 	{
@@ -128,6 +136,21 @@ public class Client extends Utilisateur implements Serializable
 	public void setCartes(Set<Carte> cartes)
 	{
 		this.cartes = cartes;
+	}
+
+	public Set<CommandeClient> getCommandesClient()
+	{
+		return commandesClient;
+	}
+
+	public void setCommandesClient(Set<CommandeClient> commandesClient)
+	{
+		this.commandesClient = commandesClient;
+	}
+
+	public static long getSerialversionuid()
+	{
+		return serialVersionUID;
 	}
 
 	@Override

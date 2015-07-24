@@ -23,8 +23,10 @@ public class DaoProduitImpl implements IDaoProduit {
 	private EntityManager em;
 
 	@Override
-	public void creerProduit(Produit t) {
-		em.persist(t);
+	public Produit creerProduit(Produit produit) {
+		em.persist(produit);
+		em.flush();
+		return produit;
 
 	}
 

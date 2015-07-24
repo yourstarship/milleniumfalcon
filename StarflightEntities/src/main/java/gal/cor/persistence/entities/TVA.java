@@ -1,19 +1,23 @@
 package gal.cor.persistence.entities;
 
 import java.io.Serializable;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
 public class TVA implements Serializable
 {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -21,7 +25,7 @@ public class TVA implements Serializable
 	private String nom;
 
 	@OneToMany(mappedBy = "tva")
-	private Set<Produit> produits;
+	private Set<Produit> produits = new LinkedHashSet<>();
 
 	public Set<Produit> getProduits()
 	{

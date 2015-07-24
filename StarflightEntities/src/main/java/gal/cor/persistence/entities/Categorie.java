@@ -1,6 +1,7 @@
 package gal.cor.persistence.entities;
 
 import java.io.Serializable;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -13,13 +14,17 @@ import javax.persistence.OneToMany;
 public class Categorie implements Serializable
 {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	private String nom;
 
 	@OneToMany(mappedBy = "categorie")
-	private Set<Produit>produits;
+	private Set<Produit> produits = new LinkedHashSet<>();
 
 	public Categorie(Integer id, String nom, Set<Produit> produits)
 	{

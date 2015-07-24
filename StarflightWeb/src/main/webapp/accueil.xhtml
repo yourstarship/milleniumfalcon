@@ -36,7 +36,7 @@
 			<h:commandButton value="recherche" action="#{accueilManagedBean.afficherListeProduitParRecherche(accueilManagedBean.nomRecherche)}"/>
 			</div>
 			<ul id="menuAccordeon">
-				<li><h:commandLink value="Véhicule aquatique" action="#{accueilManagedBean.afficherLesSelections(testManagedBean.nomCategorie)}" />
+				<li><h:commandLink value="Véhicule aquatique" action="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie)}" />
 					<ul>
 						<li><h:commandLink value="Navire de surface" action="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie,accueilManagedBean.typeNavireDeSuface)}"/></li>
 						<li><h:commandLink value="Submersible" action="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie,accueilManagedBean.typeSubmersible)}"/></li>

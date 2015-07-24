@@ -6,7 +6,7 @@
 
 		<jta-data-source>java:jboss/datasources/YourStarshipDataSource</jta-data-source>
 
-		<class>gal.cor.persistence.entities.Administrateur</class>
+		<!-- <class>gal.cor.persistence.entities.Administrateur</class>
 		<class>gal.cor.persistence.entities.Adresse</class>
 		<class>gal.cor.persistence.entities.AvisProduit</class>
 		<class>gal.cor.persistence.entities.AvoirClient</class>
@@ -34,10 +34,10 @@
 		<class>gal.cor.persistence.entities.Type</class>
 		<class>gal.cor.persistence.entities.TypeAdresse</class>
 		<class>gal.cor.persistence.entities.TypeCarte</class>
-		<class>gal.cor.persistence.entities.Utilisateur</class>
+		<class>gal.cor.persistence.entities.Utilisateur</class> -->
 
 		<properties>
-			<property name="hibernate.hbm2ddl.auto" value="update" />
+<!-- 			<property name="hibernate.hbm2ddl.auto" value="update" /> -->
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 			<property name="hibernate.show_sql" value="true" />
 		</properties>

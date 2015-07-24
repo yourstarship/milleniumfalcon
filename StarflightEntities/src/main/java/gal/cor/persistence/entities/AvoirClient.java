@@ -2,6 +2,7 @@ package gal.cor.persistence.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -11,6 +12,11 @@ import javax.persistence.OneToMany;
 @Entity
 public class AvoirClient implements Serializable
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	private Integer id;
 
@@ -20,10 +26,10 @@ public class AvoirClient implements Serializable
 	private Date dateEnvoi;
 
 	@OneToMany(mappedBy = "avoirClient")
-	private Set<FactureClient> facturesClient;
+	private Set<FactureClient> facturesClient = new LinkedHashSet<>();
 
 	@OneToMany(mappedBy = "avoirClient")
-	private Set<LignePieceClient> lignesPieceClient;
+	private Set<LignePieceClient> lignesPieceClient = new LinkedHashSet<>();
 
 	public AvoirClient(Integer id, Double remise, Date dateCreation, Date dateValidation, Date dateEnvoi)
 	{

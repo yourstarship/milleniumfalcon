@@ -44,11 +44,9 @@
 		</dependency>
 
 	</dependencies>
+	
 	<build>
 		<finalName>starflight</finalName>
 	</build>
-
-
-
 
 </project>

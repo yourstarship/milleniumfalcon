@@ -9,7 +9,7 @@ import gal.cor.persistence.entities.Produit;
 
 
 public interface IDaoProduit {
-	void creerProduit(Produit t);
+		Produit  creerProduit(Produit produit);
 
 	Produit mettreAjourProduit(Produit t);
 	Produit rechercherParId(Produit t);

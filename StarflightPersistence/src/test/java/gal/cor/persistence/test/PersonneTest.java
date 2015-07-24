@@ -1,12 +1,7 @@
 package gal.cor.persistence.test;
 
-import static org.junit.Assert.*;
-
 import java.util.Properties;
 
-import gal.cor.persistence.dao.apis.IDaoPersonne;
-
-import javax.ejb.embeddable.EJBContainer;
 import javax.naming.Context;
 import javax.naming.NamingException;
 
@@ -55,17 +50,19 @@ public class PersonneTest {
 	public void testPersonne() {
 		log.info("Execution du test");
 		//fail("Not yet implemented");
-		/*try {
-			context = EJBContainer.createEJBContainer().getContext();
+		/*
+		try {
+			EJBContainer ec = EJBContainer.createEJBContainer(); 
+			context = ec.getContext();
 			// JNDI
 			// java:global[/application name]/module name/enterprise bean name[/interface name]
 			// crud : create,read,update,delete
 			IDaoPersonne crudServiceBean = (IDaoPersonne) context.lookup("java:global/StarflightPersistence/" + IDaoPersonne.class.getSimpleName()); 
 			assertNull(crudServiceBean);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}*/
+		}
+		*/
 		
 	}
 }
