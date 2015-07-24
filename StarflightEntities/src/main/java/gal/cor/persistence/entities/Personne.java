@@ -22,7 +22,7 @@ public abstract class Personne implements Serializable
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1809483080535852882L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -33,6 +33,7 @@ public abstract class Personne implements Serializable
 	private Date dateDeNaissance;
 	private int telephone;
 	private String email;
+	//private String type;
 
 	@ManyToOne
 	@JoinColumn(name = "idAdresse")

@@ -1,22 +1,22 @@
 package gal.cor.web.managedbean;
 
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
 
-@ManagedBean (name="headerManagedBean")
+import org.apache.log4j.Logger;
+
+//Bean controller
+
+@ManagedBean(name="headerManagedBean")
+@SessionScoped
 public class HeaderManagedBean {
+
+	private Logger log = Logger.getLogger(HeaderManagedBean.class);
 	
-	/****************************/
-	/***** [ D�clarations ] *****/
-	/****************************/
-	
-	private String login;
-	private String password;
-	
-	/************************/
-	/***** [ M�thodes ] *****/
-	/************************/
-	
-	/***** [ Fonctions ] *****/
+	@ManagedProperty(value="#{informationsLogin}")
+	private InformationsLogin infosLogin;
 	
 	public String retourAccueil(){
 		return ("accueil.xhtml");
@@ -26,9 +26,11 @@ public class HeaderManagedBean {
 		return ("formulaireInscription.xhtml");
 	}
 	
-	public String accesCompteUtilisateur(){
-		System.out.println("j'entre");
-		if(login.equals("admin") && password.equals("azerty"))
+	public String validerLogin(){
+		
+		log.info("HeaderManagerBean.validerLogin : Tentative de validation de la connexion de l'utilisateur : " + infosLogin.getLogin());
+		
+		if(infosLogin.getLogin().equals("admin") && infosLogin.getMotDePasse().equals("azerty"))
 		{
 			return ("compteAdministrateur.xhtml");
 		}
@@ -38,17 +40,4 @@ public class HeaderManagedBean {
 		}
 	}
 
-	/***** [ Getter & Setter ] *****/
-	public String getLogin() {
-		return login;
-	}
-	public void setLogin(String login) {
-		this.login = login;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
 }

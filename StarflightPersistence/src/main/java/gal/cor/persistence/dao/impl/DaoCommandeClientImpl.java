@@ -43,11 +43,13 @@ public class DaoCommandeClientImpl implements IDaoCommandeClient, Serializable
 	{
 		lignesPanier.clear();
 		/**
-		 * TODO	:Fil
+		 * TODO :Fil
 		 */
 		//persister les modifs
 	}
+
 	Logger logger = Logger.getLogger(getClass());
+
 	@Override
 	public CommandeClient creerCommandeClient(CommandeClient commandeClient)
 	{
@@ -72,7 +74,7 @@ public class DaoCommandeClientImpl implements IDaoCommandeClient, Serializable
 	}
 
 	@Override
-	public CommandeClient rechercherParId(CommandeClient t)
+	public CommandeClient rechercherParId(int id)
 	{
 		// TODO Auto-generated method stub
 		return null;
