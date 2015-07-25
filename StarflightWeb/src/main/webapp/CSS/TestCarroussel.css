@@ -1,0 +1,190 @@
+
+#myCarousel
+{
+	width: 245px;
+	border : 3px;
+	border : solid;
+	border-color: rgba(150, 200, 255, 0.3);
+	border-radius:10px;
+	margin-bottom:10px;
+	height : 155px;
+	float:right;
+	margin-right: 1%;
+}
+
+.carousel {
+    position: relative;
+}
+
+ #titrePromoC
+{
+	color: #E9B91D;
+	position: absolute;
+	transform: rotate(45deg);
+	padding-top: 50%;
+	margin-left: 13%;
+	font-weight: bold;
+	font-family: Lucida Sans;
+	text-decoration: blink;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: -10px !important; 
+    left: 50%;
+    z-index: 15 !important;
+    width: 60%;
+    padding-left: 0px;
+    margin-left: -30%;
+    text-align: center;
+    list-style: outside none none !important;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    width: 8px !important;
+    height: 8px !important;
+    margin: 0px !important;
+    text-indent: -999px !important;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #FFF;
+    border-radius: 8px !important;
+}
+
+.carousel-indicators {
+    text-align: center;
+    list-style: outside none none;
+}
+
+}
+ol, ul {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-inner > .item {
+    position: relative;
+    display: none;
+    transition: left 0.6s ease-in-out 0s;
+}
+
+.item
+{
+	color:red;
+	font-weight: bold;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img 
+{
+   height: 100% !important;
+   margin: auto;
+}
+
+.carousel-inner > .item > a > img, 
+.carousel-inner > .item > img, .img-responsive, 
+.thumbnail a > img, .thumbnail > img {
+    display: block;
+    max-width: 100% !important;
+    height: 150px !important;
+}
+  
+.reducNumber
+{
+	color: #FF2828;
+	position: absolute;
+	padding-top: 5%;
+	margin-left: 70%;
+	font-weight: bold;
+	font-family: Lucida Sans;
+	text-decoration: blink;
+	font-size: 1.9em;
+	transform: rotate(15deg);
+}
+
+/*********************/
+/* .carousel-control */
+/*********************/
+.carousel-control {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 15%;
+    font-size: 20px;
+    color: #FFF;
+    text-align: center;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
+    opacity: 0.5;
+}
+
+.carousel-control.left {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0px, transparent 100%);
+    background-repeat: repeat-x;
+}
+
+.carousel-control.right {
+    right: 0px;
+    left: auto;
+    background-image: linear-gradient(to right, transparent 0px, rgba(0, 0, 0, 0.5) 100%);
+    background-repeat: repeat-x;
+}
+
+.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+    margin-left: -15px;
+}
+
+.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev {
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    font-size: 25px !important;
+}
+
+.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+    left: 50%;
+    margin-left: -10px;
+}
+
+.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: inline-block;
+    margin-top: -10px;
+}
+
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: "Glyphicons Halflings";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.carousel-control {
+    font-size: 20px;
+    color: #FFF;
+    text-align: center;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0px, 0px, 0px, 0px);
+    border: 0px none;
+}

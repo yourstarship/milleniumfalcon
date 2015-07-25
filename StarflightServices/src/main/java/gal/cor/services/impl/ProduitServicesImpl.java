@@ -65,8 +65,8 @@ public class ProduitServicesImpl implements IProduitServices {
 
 	@Override
 	public List<Produit> obtenirTousProduitParNom(String nom) {
-		
-		return (List<Produit>) proxyProduit.obtenirTousProduitParNom(nom);
+		// TODO Auto-generated method stub
+		return proxyProduit.obtenirTousProduitParNom(nom);
 	}
 
 	

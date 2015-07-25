@@ -35,7 +35,7 @@
 
 			
 				<div id="titrePageDetailProduit">
-					<span>Présentation Détaillées du </span><span>#{detailProduitMBean.accueilManagedBean.produit.nom} </span>
+					<span>Présentation Détaillées du </span><span>#{detailProduitMBean.produit.nom} </span>
 				</div>
 				<div id="ficheDetail">
 
@@ -43,21 +43,21 @@
 						<div id="alignementNiveau1">
 							<div id="nomProdEtRef">
 							<span class="miniTitreNiveaux">Produit : </span> 
-								<h:outputText value="#{detailProduitMBean.accueilManagedBean.produit.nom}" /> <br />
+								<h:outputText value="#{detailProduitMBean.produit.nom}" /> <br />
 									<br /> <span class="miniTitreNiveaux">Référence : </span> 
-									<h:outputText value="#{detailProduitMBean.accueilManagedBean.produit.id}" /> <br /> <br />
+									<h:outputText value="#{detailProduitMBean.produit.id}" /> <br /> <br />
 									<span class="miniTitreNiveaux">Catégorie : </span> 
-									<h:outputText value="#{detailProduitMBean.accueilManagedBean.produit.categorie.nom}" /> <br /> <br />
+									<h:outputText value="#{detailProduitMBean.produit.categorie.nom}" /> <br /> <br />
 									<span class="miniTitreNiveaux">Type : </span> 
-									<h:outputText value="#{detailProduitMBean.accueilManagedBean.produit.type.nom}" />
+									<h:outputText value="#{detailProduitMBean.produit.type.nom}" />
 							</div>
 							<div id="imgFicheDetail">
-								<img src="#{detailProduitMBean.accueilManagedBean.produit.photo}" />
+								<img src="#{detailProduitMBean.produit.photo}" />
 							</div>
 							<div id="descDroite">
 								<span class="miniTitreNiveaux">Description</span>
 								<p>
-									#{detailProduitMBean.accueilManagedBean.produit.description}
+									#{detailProduitMBean.produit.description}
 								</p>
 							</div>
 							<div id="prixAjoutPanier">
@@ -87,10 +87,10 @@
 									<td class="tailleColonneCaracFicheDetaille">Couleur</td>
 								</tr>
 								<tr>
-									<td class="tailleColonneCaracFicheDetaille">#{detailProduitMBean.accueilManagedBean.produit.nombreEquipage}</td>
-									<td class="tailleColonneCaracFicheDetaille">#{detailProduitMBean.accueilManagedBean.produit.nombrePassagersMax}</td>
-									<td class="tailleColonneCaracFicheDetaille">#{detailProduitMBean.accueilManagedBean.produit.vitesse} Km/h</td>
-									<td class="tailleColonneCaracFicheDetaille">#{detailProduitMBean.accueilManagedBean.produit.couleur.nom}</td>
+									<td class="tailleColonneCaracFicheDetaille">#{detailProduitMBean.produit.nombreEquipage}</td>
+									<td class="tailleColonneCaracFicheDetaille">#{detailProduitMBean.produit.nombrePassagersMax}</td>
+									<td class="tailleColonneCaracFicheDetaille">#{detailProduitMBean.produit.vitesse} Km/h</td>
+									<td class="tailleColonneCaracFicheDetaille">#{detailProduitMBean.produit.couleur.nom}</td>
 								</tr>
 								<tr>
 									<td>Longueur</td>
@@ -98,9 +98,9 @@
 									<td>poids</td>
 								</tr>
 								<tr>
-									<td>#{detailProduitMBean.accueilManagedBean.produit.longueur} m</td>
-									<td>#{detailProduitMBean.accueilManagedBean.produit.largeur} m</td>
-									<td>#{detailProduitMBean.accueilManagedBean.produit.poids} kg</td>
+									<td>#{detailProduitMBean.produit.longueur} m</td>
+									<td>#{detailProduitMBean.produit.largeur} m</td>
+									<td>#{detailProduitMBean.produit.poids} kg</td>
 									
 								</tr>
 							</table>

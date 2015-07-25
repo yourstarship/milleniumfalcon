@@ -14,6 +14,7 @@ import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.apache.log4j.Logger;
 
@@ -22,7 +23,7 @@ import org.apache.log4j.Logger;
 public class DaoCommandeClientImpl implements IDaoCommandeClient, Serializable
 {
 	@PersistenceContext(unitName = "YourStarshipPersistence")
-	EntityManager em;
+	private EntityManager em;
 
 	private List<LignePieceClient> lignesPanier;
 
@@ -76,8 +77,16 @@ public class DaoCommandeClientImpl implements IDaoCommandeClient, Serializable
 	@Override
 	public CommandeClient rechercherParId(int id)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		String request= "SELECT c FROM CommandeClient c INNER JOIN FETCH c.lignesPieceClient WHERE c.id = :param ";
+		Query query = em.createQuery(request);
+		query.setParameter("param", id);
+		List<CommandeClient>liste = query.getResultList();
+		CommandeClient commandeClient= new CommandeClient();
+		if(!liste.isEmpty()){
+			commandeClient = liste.get(0);	
+		}
+		
+		return commandeClient;
 	}
 
 	@Override

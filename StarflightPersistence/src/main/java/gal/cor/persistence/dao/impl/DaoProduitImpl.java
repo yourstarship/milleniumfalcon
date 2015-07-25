@@ -64,7 +64,7 @@ public class DaoProduitImpl implements IDaoProduit {
 		query.setParameter("paramType", idType);
 		List<Produit>liste = new ArrayList<Produit>();
 		liste= query.getResultList();
-		System.out.println(liste);
+		
 		return liste;
 	}
 

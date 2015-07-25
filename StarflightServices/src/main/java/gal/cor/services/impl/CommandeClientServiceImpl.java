@@ -11,6 +11,7 @@ import gal.cor.persistence.entities.Produit;
 import gal.cor.services.api.ICommandeClientService;
 
 import java.util.Calendar;
+import java.util.List;
 import java.util.Set;
 
 import javax.ejb.EJB;
@@ -83,7 +84,7 @@ public class CommandeClientServiceImpl implements ICommandeClientService
 	public boolean viderPanier(CommandeClient commandeClient)
 	{
 		boolean result = false;
-		Set<LignePieceClient> lesLignesDuPanier = commandeClient.getLignesPieceClient();
+		List<LignePieceClient> lesLignesDuPanier = commandeClient.getLignesPieceClient();
 		for (LignePieceClient lignePieceClient : lesLignesDuPanier)
 		{
 			iDaoLignePieceClient.supprimerLignePieceClient(lignePieceClient);
@@ -108,7 +109,6 @@ public class CommandeClientServiceImpl implements ICommandeClientService
 		/**
 		 * TODO :Fil supprimer cette ligne car le client existera deja
 		 */
-		client = iDaoClient.creerClient(client);
 		CommandeClient panierDuClient = this.panierClient(client);
 		LignePieceClient ligneDeCeProduitDansLePanier = null;
 
@@ -180,7 +180,7 @@ public class CommandeClientServiceImpl implements ICommandeClientService
 		LignePieceClient result = null;
 		//si pas de ligne ==> false
 		//sinon
-		Set<LignePieceClient> lignesPieceClient = commandeClient.getLignesPieceClient();
+		List<LignePieceClient> lignesPieceClient = commandeClient.getLignesPieceClient();
 		if (lignesPieceClient.size() > 0)
 		{
 			//	on parcourt toutes les lignes de la commande

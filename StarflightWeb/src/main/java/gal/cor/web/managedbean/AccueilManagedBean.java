@@ -42,7 +42,7 @@ public class AccueilManagedBean {
 	private Integer typeBombardier = 2;
 	private Integer typeIntercepteur=12;
 	
-	private String nomRecherche;
+	private String nomRecherche ;
 	
 	/***** [ Fonctions ] *****/
 
@@ -58,7 +58,7 @@ public class AccueilManagedBean {
 	
 
 	public void afficherLesSelections(Integer idCategorie ){
-		log.info(nomCategorie);
+		
 		listeProduit=proxyProduitServices.rechercherParCategorie(idCategorie);
 	}
 	

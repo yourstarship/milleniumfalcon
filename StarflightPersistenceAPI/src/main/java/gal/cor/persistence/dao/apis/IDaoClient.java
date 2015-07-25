@@ -1,17 +1,16 @@
 package gal.cor.persistence.dao.apis;
 
-import gal.cor.persistence.entities.Client;
-
 import java.util.List;
 
-public interface IDaoClient
-{
-	public Client creerClient(Client t);
+import gal.cor.persistence.entities.Client;
 
-	public Client mettreAjourClient(Client t);
-	public void supprimerClient(Client t);
+public interface IDaoClient {
 
-	public Client rechercherParId(Client t);
+	void creerClient(Client t);
+	void supprimerClient(Client t);
+	Client mettreAjourClient(Client t);
+	Client rechercherParId(Client t);
 	Client rechercherParNomMotDePasse(String nom, String motDePasse);
-	public List<Client> obtenirTousClient();
+	Client rechercherParIdentifiantMotDePasse(String identifiant, String motDePasse);
+	List<Client> obtenirTousClient();
 }

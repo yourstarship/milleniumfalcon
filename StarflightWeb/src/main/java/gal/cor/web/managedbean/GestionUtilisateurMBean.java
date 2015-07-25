@@ -9,53 +9,81 @@ import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
-@ManagedBean
+import org.apache.log4j.Logger;
+
+@ManagedBean(name="gestionUtilisateurMBean")
 @SessionScoped
 public class GestionUtilisateurMBean implements Serializable {
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 4853825174991877791L;
+
+	private Logger log = Logger.getLogger(GestionUtilisateurMBean.class);
 
 	@EJB
 	private IServiceClient serviceClient;
 
 	@ManagedProperty(value="#{informationsLogin}")
 	private InformationsLogin infosLogin;
+	
+	private String pageRetournee = "pageErreur.xhtml";
+	private Client client = new Client();
 
-	private Client client = null;
+	//Méthode appelée lorsque l'utilisateur appuie sur le bouton OK de la connexion
+	public String connecter(){
 
-	public String connecter() throws Exception {
+	
+		log.info( ": Connexion de l'utilisateur : " + infosLogin.getLogin());
 
-		String pageRetournee = "pageErreur.xhtml";
-		
-		if (!estConnecte()) {
-			Client c = serviceClient.clientExiste(infosLogin.getLogin(), infosLogin.getMotDePasse());
-			if (c != null) {
-				//Le client existe
-				this.client = c;
-				FacesContext.getCurrentInstance().addMessage(null,new FacesMessage("Welcome, " + client.getNom()));
-				pageRetournee = "compteUtilisateur.xhtml";
-			} else {
-				//Le Client n'existe pas
-				pageRetournee = "accueil.xhtml";
+		if (infosLogin.getLogin().equals("") || infosLogin.getMotDePasse().equals("")) {
+			
+			log.info(this.getClass() + ": Les infos de login sont vides !!! : " + infosLogin.getLogin());
+			FacesContext.getCurrentInstance().addMessage(null,new FacesMessage("Les informations de login sont incorrectes, "));
+			
+			pageRetournee = "accueil.xhtml";
+			
+		} else {
+
+			if (estConnecte()) {
+				
+				log.info(infosLogin.getLogin());
+				client = serviceClient.clientExiste(infosLogin.getLogin(), infosLogin.getMotDePasse());
+				
+				if (client != null) {
+					//Le client existe
+					log.info(this.getClass() + " Client connecté :" + client.getNom());
+					FacesContext.getCurrentInstance().addMessage(null,new FacesMessage("Welcome, " + client.getNom()));
+					pageRetournee = null;
+				} else {
+					
+					//Le Client n'existe pas
+					log.info(this.getClass() + ": Le Client n'existe pas, retourne à l'accueil : " + infosLogin);
+					pageRetournee = "accueil.xhtml";
+				}
+				
 			}
 		}
-		
+
 		return pageRetournee;
 	}
 
-	public void deconnecter() {
+	public String deconnecter() {
 
-		FacesContext.getCurrentInstance().addMessage(null,
+		 FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+			
 
-				new FacesMessage("Goodbye, " + client.getNom()));
+		return "accueil.xhtml";
+	}
 
-		client = null;
 
+	public String affichePageInscriptionClient() {
+		log.info(this.getClass() + ": Affichage formulaire de création d'un compte.");
+	
+		return "formulaireInscription3.xhtml";
+		
 	}
 
 	public boolean estConnecte() {

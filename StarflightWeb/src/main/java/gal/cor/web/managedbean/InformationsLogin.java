@@ -22,6 +22,14 @@ public class InformationsLogin {
 	public void setMotDePasse(String motDePasse) {
 		this.motDePasse = motDePasse;
 	}
+	public String retourAccueil(){
+		return ("accueil.xhtml");
+	}
+	
+	public String pasDeCompte(){
+		return ("formulaireInscription.xhtml");
+	}
+	
 	
 	
 }

@@ -2,14 +2,10 @@ package gal.cor.persistence.dao.impl;
 
 import gal.cor.persistence.dao.apis.IDaoClient;
 import gal.cor.persistence.entities.Client;
-import gal.cor.persistence.entities.Personne;
 
-import java.io.Serializable;
-import java.util.Collection;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
-import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -18,20 +14,22 @@ import javax.persistence.Query;
 import org.apache.log4j.Logger;
 
 @Stateless
-@Remote
-public class DaoClientImpl implements IDaoClient, Serializable
-{
-	private  Logger log = Logger.getLogger(getClass());
+public class DaoClientImpl implements IDaoClient {
 
-	@PersistenceContext(unitName = "YourStarshipPersistence")
-	EntityManager em;
-
+	Logger log = Logger.getLogger(DaoClientImpl.class);
+	
+	@PersistenceContext(name="YourStarshipPersistence")
+	private EntityManager em;
+	
 	@Override
-	public Client creerClient(Client client)
-	{
-		em.persist(client);
-		em.flush();
-		return client;
+	public void creerClient(Client t) {
+		if (t.getAdresse() != null) {
+			em.persist(t.getAdresse());
+			em.flush();
+		}
+
+			
+		em.persist(t);
 	}
 
 	@Override
@@ -40,34 +38,28 @@ public class DaoClientImpl implements IDaoClient, Serializable
 	}
 
 	@Override
-	public Client mettreAjourClient(Client client)
-	{
-		em.merge(client);
-		return client;
+	public Client mettreAjourClient(Client t) {
+		return em.merge(t);
 	}
 
 	@Override
-	public Client rechercherParId(Client client)
-	{
-		return em.find(Client.class, client.getId());
+	public Client rechercherParId(Client t) {
+		return em.find(Client.class, t.getId());
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public Client rechercherParNomMotDePasse(String nom, String motDePasse) {
 		Client client = null;
-		String request= "SELECT p FROM Client p WHERE p.nom = :param1 AND p.motDePasse = :param2";
+		String request= "SELECT p FROM Client p WHERE UPPER(p.nom) = :param1 AND p.motDePasse = :param2";
 		Query query = em.createQuery(request);
 		query.setParameter("param1", nom.toUpperCase());
 		query.setParameter("param2", motDePasse);
 		List<Client> liste = new ArrayList<Client>();		
 		liste = (List<Client>)query.getResultList();
-		if (liste.size() == 1) {
+		if (!liste.isEmpty()) {
 			client = liste.get(0);
 			log.info("Client.rechercherParNomMotDePasse la requete retourne le client : " + client);
-		} else if (liste.size() > 1) {
-			client = liste.get(0);
-			log.warn("Client.rechercherParNomMotDePasse la requete retourne plus d'un client, on utilise : " + client);
 		}
 		return client;
 	}
@@ -86,4 +78,20 @@ public class DaoClientImpl implements IDaoClient, Serializable
 		return liste;
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public Client rechercherParIdentifiantMotDePasse(String identifiant, String motDePasse) {
+		Client client = new Client();;
+		String request= "SELECT p FROM Client p WHERE UPPER(p.identifiant) = :param1 AND p.motDePasse = :param2";
+		Query query = em.createQuery(request);
+		query.setParameter("param1", identifiant.toUpperCase());
+		query.setParameter("param2", motDePasse);
+		List<Client> liste = new ArrayList<Client>();		
+		liste = (List<Client>)query.getResultList();
+		if (!liste.isEmpty()) {
+			client = liste.get(0);
+			log.info("Client.rechercherParIdentifiantMotDePasse la requete retourne le client : " + client);
+		} 
+		return client;
+	}
 }

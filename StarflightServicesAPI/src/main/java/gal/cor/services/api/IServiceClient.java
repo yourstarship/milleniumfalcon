@@ -8,5 +8,6 @@ public interface IServiceClient {
 
 	public List<Client> listerClient() throws Exception;
 	public Client clientExiste(String nom, String motDePasse);
+	public Client creer(Client client);
 	
 }
