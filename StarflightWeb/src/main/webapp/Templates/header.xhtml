@@ -17,10 +17,9 @@
 		<div id="titreLogo">
 				<img src="image/logoXWingVR.png" />
 		</div>
-			<h:commandLink class="titreHeaderSite" value="Your Starship" action="#{headerManagedBean.retourAccueil()}" />
+			<h:commandLink class="titreHeaderSite" value="Your Starship" action="#{informationsLogin.retourAccueil()}" />
 	</div>
-	</h:form>
-	<h:form>
+	
 	<div id="loginIn">
 		<div>
 			<h:inputText value="#{informationsLogin.login}" />
@@ -29,22 +28,23 @@
 			<h:inputSecret value="#{informationsLogin.motDePasse}" />
 		</div>
 		<div>
-				<input type="button" value="OK" id="buttloginIn" />
-				<h:commandButton action="#{headerManagedBean.pasDeCompte()}" value="Inscription" />
+				
+				<h:commandButton action="#{gestionUtilisateurMBean.connecter()}" value="OK" id="buttloginIn" />
+				<h:commandButton action="#{gestionUtilisateurMBean.connecter()}" value="Inscription" />
 		</div>
 	</div>
 	<div id="loginOut">
 		<div>
 			<span>Bonjour : </span>
-			<h:outputText value="{inséré le login}" />
+			<h:outputText value="{#{gestionUtilisateurMBean.client.nom}}" />
 		</div>
 		<br />
 		<div>
-			<input type="button" value="Déconnexion" id="buttloginOut" />
+			<h:commandButton action="#{gestionUtilisateurMBean.deconnecter()}" value="Déconnexion" id="buttloginOut" />
 			<div id="accesGestionDuCompte">
-					<h:commandLink value="Gérer" action="#{headerManagedBean.accesCompteUtilisateur()}" class="titreAccesCompteAccueil"/>
+					<h:commandLink value="Gérer" action="#{informationsLogin.login}" class="titreAccesCompteAccueil"/>
 					<div id="iconeAccessCompteClient"></div>
-					<br /> <h:commandLink value="votre Compte" action="#{headerManagedBean.accesCompteUtilisateur()}" class="titreAccesCompteAccueil"/>
+					<br /> <h:commandLink value="votre Compte" action="#{informationsLogin.retourAccueil()}" class="titreAccesCompteAccueil"/>
 			</div>
 		</div>
 	</div>

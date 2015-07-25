@@ -29,7 +29,7 @@ public interface ICommandeClientService
 	//testée
 	public boolean supprimerLignePieceClient(CommandeClient commandeClient, LignePieceClient lignePieceClient);
 
-	//public CommandeClient rechercherParId(int id);
+	public CommandeClient rechercherParId(int id);
 
 	//testée
 	public CommandeClient rechercherCommandeParIdAvecSesLignesEtSesProduits(int id);

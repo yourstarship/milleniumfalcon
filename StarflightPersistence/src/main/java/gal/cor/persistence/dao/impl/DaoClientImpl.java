@@ -25,11 +25,14 @@ public class DaoClientImpl implements IDaoClient, Serializable
 	Logger log = Logger.getLogger(this.getClass());
 
 	@PersistenceContext(unitName = "YourStarshipPersistence")
-	EntityManager em;
+	private EntityManager em;
 
 	@Override
 	public Client creerClient(Client client)
 	{
+		if (client.getAdresse() != null) {
+			em.persist(client.getAdresse());
+		}
 		em.persist(client);
 		em.flush();
 		return client;
@@ -59,20 +62,15 @@ public class DaoClientImpl implements IDaoClient, Serializable
 	public Client rechercherParNomMotDePasse(String nom, String motDePasse)
 	{
 		Client client = null;
-		String request = "SELECT p FROM Client p WHERE p.nom = :param1 AND p.motDePasse = :param2";
+		String request= "SELECT p FROM Client p WHERE UPPER(p.nom) = :param1 AND p.motDePasse = :param2";
 		Query query = em.createQuery(request);
 		query.setParameter("param1", nom.toUpperCase());
 		query.setParameter("param2", motDePasse);
 		List<Client> liste = new ArrayList<Client>();
 		liste = (List<Client>) query.getResultList();
-		if (liste.size() == 1)
-		{
+		if (!liste.isEmpty()) {
 			client = liste.get(0);
 			log.info("Client.rechercherParNomMotDePasse la requete retourne le client : " + client);
-		} else if (liste.size() > 1)
-		{
-			client = liste.get(0);
-			log.warn("Client.rechercherParNomMotDePasse la requete retourne plus d'un client, on utilise : " + client);
 		}
 		return client;
 	}
@@ -118,4 +116,20 @@ public class DaoClientImpl implements IDaoClient, Serializable
 		return client;
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public Client rechercherParIdentifiantMotDePasse(String identifiant, String motDePasse) {
+		Client client = new Client();;
+		String request= "SELECT p FROM Client p WHERE UPPER(p.identifiant) = :param1 AND p.motDePasse = :param2";
+		Query query = em.createQuery(request);
+		query.setParameter("param1", identifiant.toUpperCase());
+		query.setParameter("param2", motDePasse);
+		List<Client> liste = new ArrayList<Client>();		
+		liste = (List<Client>)query.getResultList();
+		if (!liste.isEmpty()) {
+			client = liste.get(0);
+			log.info("Client.rechercherParIdentifiantMotDePasse la requete retourne le client : " + client);
+		} 
+		return client;
+	}
 }

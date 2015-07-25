@@ -17,10 +17,10 @@ public class ProduitServicesImpl implements IProduitServices {
 	
 	@EJB
 	private IDaoProduit proxyProduit;
-	
+
 	@Override
 	public void creerProduit(Produit t) {
-		// TODO Auto-generated method stub	
+		// TODO Auto-generated method stub
 		
 	}
 
@@ -57,7 +57,19 @@ public class ProduitServicesImpl implements IProduitServices {
 		return proxyProduit.rechercherParCategorie(idCategorie);
 	}
 
+	@Override
+	public List<Produit> ListeDesTroisMeilleursPromo() {
+		
+		return proxyProduit.ListeDesTroisMeilleursPromo();
+	}
 
+	@Override
+	public List<Produit> obtenirTousProduitParNom(String nom) {
+		// TODO Auto-generated method stub
+		return proxyProduit.obtenirTousProduitParNom(nom);
+	}
+
+	
 	
 	
 

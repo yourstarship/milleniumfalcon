@@ -28,11 +28,9 @@ import org.apache.log4j.Logger;
 public class DaoCommandeClientImpl implements IDaoCommandeClient, Serializable
 {
 	@PersistenceContext(unitName = "YourStarshipPersistence")
-	EntityManager em;
+	private EntityManager em;
 
 	Logger logger = Logger.getLogger(getClass());
-
-	private List<LignePieceClient> lignesPanier;
 
 	@Override
 	public CommandeClient creerCommandeClient(CommandeClient commandeClient)
@@ -60,7 +58,16 @@ public class DaoCommandeClientImpl implements IDaoCommandeClient, Serializable
 	@Override
 	public CommandeClient rechercherParId(int id)
 	{
-		return em.find(CommandeClient.class, id);
+		String request = "SELECT c FROM CommandeClient c INNER JOIN FETCH c.lignesPieceClient WHERE c.id = :param ";
+		Query query = em.createQuery(request);
+		query.setParameter("param", id);
+		List<CommandeClient> liste = query.getResultList();
+		CommandeClient commandeClient = new CommandeClient();
+		if (!liste.isEmpty())
+		{
+			commandeClient = liste.get(0);
+		}
+		return commandeClient;
 	}
 
 	@Override
@@ -128,7 +135,5 @@ public class DaoCommandeClientImpl implements IDaoCommandeClient, Serializable
 		}
 		return tva;
 	}
-
-
 
 }

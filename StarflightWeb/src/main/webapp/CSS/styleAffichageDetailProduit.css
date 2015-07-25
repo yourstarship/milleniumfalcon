@@ -82,6 +82,13 @@
 	width: 20%;
  }
  
+ #imgFicheDetail img
+ {
+ 	width: 100%;
+	height: 100%;
+ 
+ }
+ 
  #descDroite
  {
  	float:left;

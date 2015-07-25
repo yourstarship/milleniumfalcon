@@ -13,33 +13,48 @@
 
 	</ui:define>
 	<h:form>
+<<<<<<< HEAD
 		<div>
 			<div id="titreLogo">
 				<img src="image/logoXWingVR.png" />
 			</div>
 			<h:commandLink class="titreHeaderSite" value="Your Starship" action="#{headerManagedBean.retourAccueil()}" />
+=======
+	<div>
+		<div id="titreLogo">
+				<img src="image/logoXWingVR.png" />
 		</div>
+			<h:commandLink class="titreHeaderSite" value="Your Starship" action="#{headerManagedBean.retourAccueil()}" />
+	</div>
 	</h:form>
 	<h:form>
+	<div id="loginIn">
+		<div>
+			<h:inputText value="#{informationsLogin.login}" />
+		</div>
+		<div>
+			<h:inputSecret value="#{informationsLogin.motDePasse}" />
+		</div>
+		<div>
+				<input type="button" value="OK" id="buttloginIn" />
+				<h:commandButton action="#{headerManagedBean.pasDeCompte()}" value="Inscription" />
+>>>>>>> origin/master
+		</div>
+	
+	
 		<div id="loginIn">
 			<div>
-<<<<<<< HEAD
-			<h:inputText value="#{informationsLogin.login}" />
-			</div>
-			<div>
-			<h:inputSecret value="#{informationsLogin.motDePasse}" />
-=======
 			<h:inputText value="#{headerManagedBean.login}" />
 			</div>
 			<div>
 			<h:inputSecret value="#{headerManagedBean.password}" />
->>>>>>> origin
 			</div>
 			<div>
 				<input type="button" value="OK" id="buttloginIn" />
 				<h:commandButton action="#{headerManagedBean.pasDeCompte()}" value="Inscription" />
 			</div>
 		</div>
+<<<<<<< HEAD
 		<div id="loginOut">
 			<div>
 				<span>Bonjour : </span>
@@ -55,6 +70,18 @@
 				</div>
 			</div>
 		</div>
+=======
+		<br />
+		<div>
+			<input type="button" value="Déconnexion" id="buttloginOut" />
+			<div id="accesGestionDuCompte">
+					<h:commandLink value="Gérer" action="#{headerManagedBean.accesCompteUtilisateur()}" class="titreAccesCompteAccueil"/>
+					<div id="iconeAccessCompteClient"></div>
+					<br /> <h:commandLink value="votre Compte" action="#{headerManagedBean.accesCompteUtilisateur()}" class="titreAccesCompteAccueil"/>
+			</div>
+		</div>
+	</div>
+>>>>>>> origin/master
 	</h:form>
 	<script>		
 		$('#buttloginIn').click(function () {	 

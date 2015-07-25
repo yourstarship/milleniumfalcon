@@ -1,8 +1,10 @@
 package gal.cor.persistence.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -47,7 +49,7 @@ public class CommandeClient implements Serializable
 	private FactureClient factureClient;
 
 	@OneToMany(mappedBy = "commandeClient")
-	private Set<LignePieceClient> lignesPieceClient = new LinkedHashSet<>();
+	private Set<LignePieceClient> lignesPieceClient = new LinkedHashSet<LignePieceClient>();
 
 	@ManyToOne
 	@JoinColumn(name = "idtva")

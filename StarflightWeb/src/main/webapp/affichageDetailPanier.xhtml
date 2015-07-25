@@ -20,17 +20,7 @@
 			<!-- Espace Promotions -->
 			<div id="contenuDetailPanier">
 				<div class="Promo">
-					<span id="titrePromo" style="visibility: visible">PROMOTIONS</span>
-					<div id="imgPromo1" class="alignePromo">
-						<span id="reducPromo" style="visibility: visible">-5%</span> <img
-							src="image/e04b1581.jpg" />
-					</div>
-					<div id="imgPromo2" class="alignePromo">
-						<img src="image/Promos/29 - AT-ST.jpg" />
-					</div>
-					<div id="imgPromo3" class="alignePromo">
-						<img src="image/Promos/63 - T47 A-Wing.jpg" />
-					</div>
+
 				</div>
 
 					<div id="titrePageDetailPanier">
@@ -40,18 +30,21 @@
 
 						<div class="detailProdPanier">
 							<div id="alignementNiveau1">
+							<ui:repeat var="produit" value="#{detailPanierMBean.produit}">
 								<div id="nomProdEtRef">
+								
 									<span class="miniTitreNiveaux">Produit : </span> 
-									<h:outputText value="Vaisseau PiouPiou" /> <br />
+									     #{produit.nom} <br />
 									<br /> <span class="miniTitreNiveaux">Référence : </span> 
-									<h:outputText value="Vaisseau PiouPiou" /> <br /> <br />
+									 #{produit.id}<br /> <br />
 									<span class="miniTitreNiveaux">Catégorie : </span> 
-									<h:outputText value="Vaisseau PiouPiou" /> <br /> <br />
+									 #{produit.categorie.nom} <br /> <br />
 									<span class="miniTitreNiveaux">Type : </span> 
-									<h:outputText value="Vaisseau PiouPiou" />
+									 #{produit.type.nom}
+									
 								</div>
 								<div id="imgFicheDetail">
-									<img src="image/e04b1581.jpg" />
+									<img src="#{produit.photo}" />
 								</div>
 								<div id="orgaDetailPanier">
 									<span class="miniTitreNiveaux">Organisation</span> <br />
@@ -59,114 +52,19 @@
 									<h:inputText value="2" class="qteProdDetailPanier" />
 									<br />
 									<br /> <span>Prix unitaire : </span>
-									<h:outputText value="2 450 000" />
+									#{produit.prixAchatHT}
 									<span> Crédits</span> <br /> <br />
-									<h:commandButton action="#{detailPanierMBean.accesDetailProduit()}" value="Détailler" class="buttDetailProduitDetailPanier"/>
+									<h:commandButton action="#{detailPanierMBean.accesDetailProduit(produit)}" value="Détailler" class="buttDetailProduitDetailPanier"/>
 								</div>
 								<div id="prixAjoutPanier">
 									<span class="miniTitreNiveaux">Coût Total : </span> <br /> <br />
 									<h:outputText value="4 900 000" class="miniTitreNiveaux" />
 									<span class="miniTitreNiveaux"> Crédits</span> <br />
 								</div>
+								</ui:repeat>
 							</div>
 						</div>
 
-						<div class="detailProdPanier">
-							<div id="alignementNiveau1">
-								<div id="nomProdEtRef">
-									<span class="miniTitreNiveaux">Produit : </span> 
-									<h:outputText value="Vaisseau PiouPiou" /> <br />
-									<br /> <span class="miniTitreNiveaux">Référence : </span> 
-									<h:outputText value="Vaisseau PiouPiou" /> <br /> <br />
-									<span class="miniTitreNiveaux">Catégorie : </span> 
-									<h:outputText value="Vaisseau PiouPiou" /> <br /> <br />
-									<span class="miniTitreNiveaux">Type : </span> 
-									<h:outputText value="Vaisseau PiouPiou" />
-								</div>
-								<div id="imgFicheDetail">
-									<img src="image/e04b1581.jpg" />
-								</div>
-								<div id="orgaDetailPanier">
-									<span class="miniTitreNiveaux">Organisation</span> <br />
-									<br /> <span>Ajouter une quantité : </span>
-									<h:inputText value="2" class="qteProdDetailPanier" />
-									<br />
-									<br /> <span>Prix unitaire : </span>
-									<h:outputText value="2 450 000" />
-									<span> Crédits</span> <br /> <br /> 
-									<h:commandButton action="#{detailPanierMBean.accesDetailProduit()}" value="Détailler" class="buttDetailProduitDetailPanier"/>
-								</div>
-								<div id="prixAjoutPanier">
-									<span class="miniTitreNiveaux">Coût Total : </span> <br /> <br />
-									<h:outputText value="4 900 000" class="miniTitreNiveaux" />
-									<span class="miniTitreNiveaux"> Crédits</span> <br />
-								</div>
-							</div>
-						</div>
-						<div class="detailProdPanier">
-							<div id="alignementNiveau1">
-								<div id="nomProdEtRef">
-									<span class="miniTitreNiveaux">Produit : </span> 
-									<h:outputText value="Vaisseau PiouPiou" /> <br />
-									<br /> <span class="miniTitreNiveaux">Référence : </span> 
-									<h:outputText value="Vaisseau PiouPiou" /> <br /> <br />
-									<span class="miniTitreNiveaux">Catégorie : </span> 
-									<h:outputText value="Vaisseau PiouPiou" /> <br /> <br />
-									<span class="miniTitreNiveaux">Type : </span> 
-									<h:outputText value="Vaisseau PiouPiou" />
-								</div>
-								<div id="imgFicheDetail">
-									<img src="image/e04b1581.jpg" />
-								</div>
-								<div id="orgaDetailPanier">
-									<span class="miniTitreNiveaux">Organisation</span> <br />
-									<br /> <span>Ajouter une quantité : </span>
-									<h:inputText value="2" class="qteProdDetailPanier" />
-									<br />
-									<br /> <span>Prix unitaire : </span>
-									<h:outputText value="2 450 000" />
-									<span> Crédits</span> <br /> <br /> 
-									<h:commandButton action="#{detailPanierMBean.accesDetailProduit()}" value="Détailler" class="buttDetailProduitDetailPanier"/>
-								</div>
-								<div id="prixAjoutPanier">
-									<span class="miniTitreNiveaux">Coût Total : </span> <br /> <br />
-									<h:outputText value="4 900 000" class="miniTitreNiveaux" />
-									<span class="miniTitreNiveaux"> Crédits</span> <br />
-								</div>
-							</div>
-						</div>
-						<div class="detailProdPanier">
-							<div id="alignementNiveau1">
-								<div id="nomProdEtRef">
-						<span class="miniTitreNiveaux">Produit : </span> 
-									<h:outputText value="Vaisseau PiouPiou" /> <br />
-									<br /> <span class="miniTitreNiveaux">Référence : </span> 
-									<h:outputText value="Vaisseau PiouPiou" /> <br /> <br />
-									<span class="miniTitreNiveaux">Catégorie : </span> 
-									<h:outputText value="Vaisseau PiouPiou" /> <br /> <br />
-									<span class="miniTitreNiveaux">Type : </span> 
-									<h:outputText value="Vaisseau PiouPiou" />
-								</div>
-								<div id="imgFicheDetail">
-									<img src="image/e04b1581.jpg" />
-								</div>
-								<div id="orgaDetailPanier">
-									<span class="miniTitreNiveaux">Organisation</span> <br />
-									<br /> <span>Ajouter une quantité : </span>
-									<h:inputText value="2" class="qteProdDetailPanier" />
-									<br />
-									<br /> <span>Prix unitaire : </span>
-									<h:outputText value="2 450 000" />
-									<span> Crédits</span> <br /> <br /> 
-									<h:commandButton action="#{detailPanierMBean.accesDetailProduit()}" value="Détailler" class="buttDetailProduitDetailPanier"/>
-								</div>
-								<div id="prixAjoutPanier">
-									<span class="miniTitreNiveaux">Coût Total : </span> <br /> <br />
-									<h:outputText value="4 900 000" class="miniTitreNiveaux" />
-									<span class="miniTitreNiveaux"> Crédits</span> <br />
-								</div>
-							</div>
-						</div>
 					</div>
 
 				<!-- Panier lateral droit -->

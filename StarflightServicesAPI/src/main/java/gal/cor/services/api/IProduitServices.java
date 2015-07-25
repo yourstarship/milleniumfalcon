@@ -16,6 +16,10 @@ public interface IProduitServices {
 	List<Produit> rechercherParCategorie(Integer idCategorie);
 	List<Produit> obtenirTousProduitServices();
 	List<Produit> rechercherProduitParCategorieEtType(Integer idCategorie, Integer idType);
+	List<Produit> ListeDesTroisMeilleursPromo();
+	
+	/***** [ Test Méthode Louis ] *****/
+	List<Produit> obtenirTousProduitParNom(String nom); 
 	
 
 }
