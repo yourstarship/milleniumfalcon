@@ -2,6 +2,8 @@ package gal.cor.persistence.dao.impl;
 
 import gal.cor.persistence.dao.apis.IDaoClient;
 import gal.cor.persistence.entities.Client;
+import gal.cor.persistence.entities.CommandeClient;
+import gal.cor.persistence.entities.Produit;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -47,9 +49,9 @@ public class DaoClientImpl implements IDaoClient, Serializable
 	}
 
 	@Override
-	public Client rechercherParId(Client client)
+	public Client rechercherParId(int id)
 	{
-		return em.find(Client.class, client.getId());
+		return em.find(Client.class, id);
 	}
 
 	@SuppressWarnings("unchecked")
@@ -87,8 +89,33 @@ public class DaoClientImpl implements IDaoClient, Serializable
 		{
 			log.info("Client.obtenirTousClient la requete retourne la liste client : " + c);
 		}
-
 		return liste;
+	}
+
+	@Override
+	public List<CommandeClient> commandesParIdClient(int id)
+	{
+		List<CommandeClient> commandesParClient = new ArrayList<>();
+		String rawQuery = "select c from Client c left join fetch c.commandesClient cC left join fetch cC.lignesPieceClient lPC left join fetch lPC.produit where c.id=:id";
+		Query query = em.createQuery(rawQuery);
+		query.setParameter("id", id);
+		commandesParClient = query.getResultList();
+		return commandesParClient;
+	}
+
+	@Override
+	public Client clientParIdClientAvecSesCommandes(int id)
+	{
+		Client client = null;
+		String rawQuery = "select c from Client c left join fetch c.commandesClient where c.id=:id";
+		Query query = em.createQuery(rawQuery);
+		query.setParameter("id", id);
+		List<Client> clients = query.getResultList();
+		if (!clients.isEmpty())
+		{
+			client = clients.get(0);
+		}
+		return client;
 	}
 
 }

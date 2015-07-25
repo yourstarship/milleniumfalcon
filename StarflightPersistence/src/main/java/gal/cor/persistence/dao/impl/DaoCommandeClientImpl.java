@@ -1,14 +1,19 @@
 package gal.cor.persistence.dao.impl;
 
+import gal.cor.persistence.constantes.ConstantLoader;
 import gal.cor.persistence.dao.apis.IDaoCommandeClient;
 import gal.cor.persistence.entities.Client;
 import gal.cor.persistence.entities.CommandeClient;
 import gal.cor.persistence.entities.LignePieceClient;
+import gal.cor.persistence.entities.TVA;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
@@ -25,31 +30,9 @@ public class DaoCommandeClientImpl implements IDaoCommandeClient, Serializable
 	@PersistenceContext(unitName = "YourStarshipPersistence")
 	EntityManager em;
 
-	private List<LignePieceClient> lignesPanier;
-
-	public double montantTotalHT(CommandeClient commandeClient)
-	{
-		/**
-		 * TODO
-		 */
-		return 0d;
-	}
-
-	public double montantTotalTTC(CommandeClient commandeClient)
-	{
-		return this.montantTotalHT(commandeClient) * (1 + commandeClient.getTva().getTaux() / 100);
-	}
-
-	public void viderPanier()
-	{
-		lignesPanier.clear();
-		/**
-		 * TODO :Fil
-		 */
-		//persister les modifs
-	}
-
 	Logger logger = Logger.getLogger(getClass());
+
+	private List<LignePieceClient> lignesPanier;
 
 	@Override
 	public CommandeClient creerCommandeClient(CommandeClient commandeClient)
@@ -129,5 +112,23 @@ public class DaoCommandeClientImpl implements IDaoCommandeClient, Serializable
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public TVA tauxTVACommande()
+	{
+		TVA tva = null;
+		String nom_minuscules_taux_tva_commandes = ConstantLoader.load("nom_minuscules_taux_tva_commandes", "TvaCommandes.properties");
+		String rawQuery = "from TVA tva where lower(tva.nom)=:tvaName";
+		Query query = em.createQuery(rawQuery);
+		query.setParameter("tvaName", nom_minuscules_taux_tva_commandes);
+		List<TVA> tvas = query.getResultList();
+		if (tvas.size() > 0)
+		{
+			tva = tvas.get(0);
+		}
+		return tva;
+	}
+
+
 
 }
