@@ -1,23 +1,21 @@
 package gal.cor.web.managedbean;
 
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
-
 import gal.cor.persistence.entities.CommandeClient;
 import gal.cor.persistence.entities.LignePieceClient;
 import gal.cor.persistence.entities.Produit;
 import gal.cor.services.api.ICommandeClientService;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
 
 @ManagedBean(name = "detailPanierMBean")
-@SessionScoped
+@RequestScoped
 public class AffichageDetailPanierManagedBean
 {
 
@@ -27,24 +25,22 @@ public class AffichageDetailPanierManagedBean
 	@ManagedProperty(value = "#{gestionUtilisateurMBean}")
 	private GestionUtilisateurMBean gestionUtilisateurMBean;
 
+	@ManagedProperty(value = "#{testPanierMB}")
+	private TestPanierMB testPanierMB;
+
 	@EJB
 	private ICommandeClientService proxyCommandeClient;
 
-	private CommandeClient commandeClient;
-	private List<LignePieceClient> listeLigneCommandes = new ArrayList<>();
-	private Produit produit;
+	private CommandeClient panier;
+	private List<LignePieceClient> lignesPanier = new ArrayList<>();
+
+	//	private Produit produit;
 
 	@PostConstruct
 	public void AfficherUneCommande()
 	{
-
-		commandeClient = proxyCommandeClient.rechercherParId(gestionUtilisateurMBean.getClient().getId());
-		listeLigneCommandes.addAll(commandeClient.getLignesPieceClient());
-		for (LignePieceClient lign : listeLigneCommandes)
-		{
-			produit = lign.getProduit();
-		}
-
+		panier = testPanierMB.getPanier();
+		lignesPanier.addAll(panier.getLignesPieceClient());
 	}
 
 	public String accesDetailProduit(Produit produit)
@@ -60,22 +56,32 @@ public class AffichageDetailPanierManagedBean
 
 	public CommandeClient getCommandeClient()
 	{
-		return commandeClient;
+		return panier;
 	}
 
 	public void setCommandeClient(CommandeClient commandeClient)
 	{
-		this.commandeClient = commandeClient;
+		this.panier = commandeClient;
 	}
 
-	public List<LignePieceClient> getListeLigneCommandes()
+	public CommandeClient getPanier()
 	{
-		return listeLigneCommandes;
+		return panier;
 	}
 
-	public void setListeLigneCommandes(List<LignePieceClient> listeLigneCommandes)
+	public void setPanier(CommandeClient panier)
 	{
-		this.listeLigneCommandes = listeLigneCommandes;
+		this.panier = panier;
+	}
+
+	public List<LignePieceClient> getLignesPanier()
+	{
+		return lignesPanier;
+	}
+
+	public void setLignesPanier(List<LignePieceClient> lignesPanier)
+	{
+		this.lignesPanier = lignesPanier;
 	}
 
 	public ICommandeClientService getProxyCommandeClient()
@@ -93,16 +99,6 @@ public class AffichageDetailPanierManagedBean
 		this.beanDetail = beanDetail;
 	}
 
-	public Produit getProduit()
-	{
-		return produit;
-	}
-
-	public void setProduit(Produit produit)
-	{
-		this.produit = produit;
-	}
-
 	public AffichageDetailProduitManagedBean getBeanDetail()
 	{
 		return beanDetail;
@@ -116,6 +112,16 @@ public class AffichageDetailPanierManagedBean
 	public void setGestionUtilisateurMBean(GestionUtilisateurMBean gestionUtilisateurMBean)
 	{
 		this.gestionUtilisateurMBean = gestionUtilisateurMBean;
+	}
+
+	public TestPanierMB getTestPanierMB()
+	{
+		return testPanierMB;
+	}
+
+	public void setTestPanierMB(TestPanierMB testPanierMB)
+	{
+		this.testPanierMB = testPanierMB;
 	}
 
 }

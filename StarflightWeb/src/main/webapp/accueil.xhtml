@@ -11,9 +11,9 @@
 	<ui:define name="scripts">
 		<script type='text/javascript'
 			src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
-			
-			<!-- Infos du Carroussel -->
-			<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Infos du Carroussel -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 			<link rel="stylesheet"
 				href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 				<script
@@ -22,150 +22,192 @@
 					src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 			</link>
 		</meta>
-			
+
 	</ui:define>
 
 	<ui:define name="content">
-	<h:form>
-		<!-- ICI Le Contenu  -->
-		<!-- Espace Promotions -->
-		<div id="contenuAccueil">
-		 	<ui:repeat var="produitPromotion" value="#{accueilManagedBean.listPromotion}">
-			</ui:repeat> 
-			<div id="myCarousel" class="carousel slide" data-ride="carousel">
-				<span id="titrePromoC" style="visibility: visible">PROMOTIONS</span>
-				<!-- Indicators -->
-				<ol class="carousel-indicators">
-					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					<li data-target="#myCarousel" data-slide-to="1"></li>
-					<li data-target="#myCarousel" data-slide-to="2"></li>
-					
-				</ol>
-
-				
-				<div class="carousel-inner" role="listbox">
-					<div class="item active">
-						<span class="reducNumber" style="visibility: visible"></span> <img
-							src="#{accueilManagedBean.listPromotion.get(0).photo}" />
-
-					</div>
-
-					<div class="item">
-						<span class="reducNumber" style="visibility: visible"></span>
-						<img src="#{accueilManagedBean.listPromotion.get(1).photo}" />
-
-					</div>
-
-					<div class="item">
-						<span class="reducNumber" style="visibility: visible"></span>
-						<img src="#{accueilManagedBean.listPromotion.get(2).photo}" />
-
-					</div>
-
-				
-				</div>
-
-
-				<!-- Left and right controls -->
-				<a class="left carousel-control" href="#myCarousel" role="button"
-					data-slide="prev"> <span
-					class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a> <a class="right carousel-control" href="#myCarousel" role="button"
-					data-slide="next"> <span
-					class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
-			</div>
-
-			<!-- Menu Deroulant Gauche -->
-			<nav>
-			<div class="recherche">
-				Recherche : <h:inputText value="#{accueilManagedBean.nomRecherche}" />
-			<h:commandButton value="recherche" action="#{accueilManagedBean.afficherListeProduitParRecherche(accueilManagedBean.nomRecherche)}"/>
-			</div>
-			<ul id="menuAccordeon">
-				<li><h:commandLink value="Véhicule aquatique" action="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie)}" />
-					<ul>
-						<li><h:commandLink value="Navire de surface" action="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie,accueilManagedBean.typeNavireDeSuface)}"/></li>
-						<li><h:commandLink value="Submersible" action="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie,accueilManagedBean.typeSubmersible)}"/></li>
-						
-					</ul>
-					</li>
-				<li><h:commandLink value="Véhicule terrestre" action="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie1)}" />
-					<ul>
-					
-						<li><h:commandLink value="Reconnaissance" action="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie1,accueilManagedBean.typeReconnaissance)}"/></li>
-						<li><h:commandLink value="Tank" action="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie1,accueilManagedBean.typeTank)}"/></li>
-						<li><h:commandLink value="Transport" action="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie1,accueilManagedBean.typeTransport)}" /></li>
-						
-					</ul></li>
-				<li><h:commandLink value="Véhicules à répulseurs" action="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie2)}" />
-					<ul>
-						<li><h:commandLink value="Speeder" action="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie2,accueilManagedBean.typeSpeeder)}" /></li>
-					</ul></li>
-				<li><h:commandLink value="Vaisseaux légers" action="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie4)}" />
-					</li>
-					<li>
-						<h:commandLink value="Vaisseaux moyens" action="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie5)}" />
-					</li>
-					<li>
-						<h:commandLink value="Vaisseaux lourds" action="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie6)}" />
-					</li>
-					<li>
-						<h:commandLink value="Station Spatiale" action="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie7)}" />
-					</li>
-					<li>
-						<h:commandLink value="Chasseurs" action="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie3)}" />
-						<ul>
-						<li><h:commandLink value="Bombardier" action="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie3,accueilManagedBean.typeBombardier)}" /></li>
-						<li><h:commandLink value="Chasseur" action="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie3,accueilManagedBean.typeChasseur)}"/></li>
-						<li><h:commandLink value="Intercepteur" action="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie3,accueilManagedBean.typeIntercepteur)}" /></li>
-						</ul>
-					</li>
-			</ul>
-			</nav>
-
-			<!-- Espace d'Affichage Central -->
-			<div class="Liste">
-			<ui:repeat var="produit" value="#{accueilManagedBean.listeProduit}">
-				<div class="gauche">
-				<div class="imglisteAccueil"><img src="#{produit.photo}"/></div>
-					
-					<h:outputText value="#{produit.nom}" /> <br />
-					<h:outputText value="#{produit.prixAchatHT}" /><span>  Crédits</span>
-					<br />
-					<h:commandButton action="#{accueilManagedBean.accesDetailPanier()}" value="Ajouter" class="buttListeAccueil"/>
-					<h:commandButton action="#{accueilManagedBean.accesDetailProduit(produit)}" value="Détailler" class="buttListeAccueil"/>
-				</div>
+		<h:form>
+			<!-- ICI Le Contenu  -->
+			<!-- Espace Promotions -->
+			<div id="contenuAccueil">
+				<ui:repeat var="produitPromotion"
+					value="#{accueilManagedBean.listPromotion}">
 				</ui:repeat>
-			</div>
+				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+					<span id="titrePromoC" style="visibility: visible">PROMOTIONS</span>
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li>
 
-			<!-- Panier lateral droit -->
-			<div id="panierAccueil">
-				<div id="hauteurPanierAccueil">
-					<div id="titrePanier">
-						<a href="">Panier</a>
-						<div id="iconePanier"></div>
+					</ol>
+
+
+					<div class="carousel-inner" role="listbox">
+						<div class="item active">
+							<span class="reducNumber" style="visibility: visible"></span> <img
+								src="#{accueilManagedBean.listPromotion.get(0).photo}" />
+
+						</div>
+
+						<div class="item">
+							<span class="reducNumber" style="visibility: visible"></span> <img
+								src="#{accueilManagedBean.listPromotion.get(1).photo}" />
+
+						</div>
+
+						<div class="item">
+							<span class="reducNumber" style="visibility: visible"></span> <img
+								src="#{accueilManagedBean.listPromotion.get(2).photo}" />
+
+						</div>
+
+
 					</div>
-					<div id="listePanierAccueil">
-						<ul>
-							<li>v1 <h:commandLink value="annuler1" action="#{compteUtilisateurMBean}" /></li>
-							<li>v2 <h:commandLink value="annuler2" action="#{compteUtilisateurMBean}" /></li>
-							<li>v4 <h:commandLink value="annuler3" action="#{compteUtilisateurMBean}" /></li>
-							<li>v8 <h:commandLink value="annuler4" action="#{compteUtilisateurMBean}" /></li>
-						</ul>
-					</div>
+
+
+					<!-- Left and right controls -->
+					<a class="left carousel-control" href="#myCarousel" role="button"
+						data-slide="prev"> <span
+						class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a> <a class="right carousel-control" href="#myCarousel" role="button"
+						data-slide="next"> <span
+						class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
 				</div>
-				<div id="totalPanierAccueil">Total : 125€</div>
-				<div>
-					<br />
-						<h:commandButton action="#{accueilManagedBean.accesDetailPanier()}" value="Detail du Panier" class="detailPanierAccueil" />
-						 <br /> <br /> 
-						 <h:commandButton action="#{accueilManagedBean.validerLaCommande()}" value="Effectuer votre Commande" class="lancerCommandeAccueil"/>
+
+				<!-- Menu Deroulant Gauche -->
+				<nav>
+				<div class="recherche">
+					Recherche :
+					<h:inputText value="#{accueilManagedBean.nomRecherche}" />
+					<h:commandButton value="recherche"
+						action="#{accueilManagedBean.afficherListeProduitParRecherche(accueilManagedBean.nomRecherche)}" />
+				</div>
+				<ul id="menuAccordeon">
+					<li><h:commandLink value="Véhicule aquatique"
+							action="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie)}" />
+						<ul>
+							<li><h:commandLink value="Navire de surface"
+									action="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie,accueilManagedBean.typeNavireDeSuface)}" /></li>
+							<li><h:commandLink value="Submersible"
+									action="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie,accueilManagedBean.typeSubmersible)}" /></li>
+
+						</ul></li>
+					<li><h:commandLink value="Véhicule terrestre"
+							action="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie1)}" />
+						<ul>
+
+							<li><h:commandLink value="Reconnaissance"
+									action="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie1,accueilManagedBean.typeReconnaissance)}" /></li>
+							<li><h:commandLink value="Tank"
+									action="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie1,accueilManagedBean.typeTank)}" /></li>
+							<li><h:commandLink value="Transport"
+									action="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie1,accueilManagedBean.typeTransport)}" /></li>
+
+						</ul></li>
+					<li><h:commandLink value="Véhicules à répulseurs"
+							action="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie2)}" />
+						<ul>
+							<li><h:commandLink value="Speeder"
+									action="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie2,accueilManagedBean.typeSpeeder)}" /></li>
+						</ul></li>
+					<li><h:commandLink value="Vaisseaux légers"
+							action="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie4)}" />
+					</li>
+					<li><h:commandLink value="Vaisseaux moyens"
+							action="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie5)}" />
+					</li>
+					<li><h:commandLink value="Vaisseaux lourds"
+							action="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie6)}" />
+					</li>
+					<li><h:commandLink value="Station Spatiale"
+							action="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie7)}" />
+					</li>
+					<li><h:commandLink value="Chasseurs"
+							action="#{accueilManagedBean.afficherLesSelections(accueilManagedBean.nomCategorie3)}" />
+						<ul>
+							<li><h:commandLink value="Bombardier"
+									action="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie3,accueilManagedBean.typeBombardier)}" /></li>
+							<li><h:commandLink value="Chasseur"
+									action="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie3,accueilManagedBean.typeChasseur)}" /></li>
+							<li><h:commandLink value="Intercepteur"
+									action="#{accueilManagedBean.afficherSousCategorie(accueilManagedBean.nomCategorie3,accueilManagedBean.typeIntercepteur)}" /></li>
+						</ul></li>
+				</ul>
+				</nav>
+
+				<!-- Espace d'Affichage Central -->
+				<div class="Liste">
+					<ui:repeat var="produit" value="#{accueilManagedBean.listeProduit}">
+						<div class="gauche">
+							<div class="imglisteAccueil">
+								<img src="#{produit.photo}" />
+							</div>
+
+							<h:outputText value="#{produit.nom}" />
+							<br />
+							<h:outputText value="#{testPanierMB.montantTTCProduit(produit)}" />
+							<span> Crédits</span> <br />
+							<h:commandButton
+								action="#{testPanierMB.ajouterUnProduitChoisi(produit)}"
+								value="Ajouter" class="buttListeAccueil" />
+							<h:commandButton
+								action="#{accueilManagedBean.accesDetailProduit(produit)}"
+								value="Détailler" class="buttListeAccueil" />
+						</div>
+					</ui:repeat>
+				</div>
+
+				<!-- Panier lateral droit -->
+				<div id="panierAccueil">
+					<div id="hauteurPanierAccueil">
+						<div id="titrePanier">
+							<a href="">Panier</a>
+							<div id="iconePanier"></div>
+						</div>
+						<div id="listePanierAccueil">
+
+							<ui:repeat var="ligne" value="#{testPanierMB.lignesPanier}">
+								<div>
+									<h:outputText value="#{ligne.produit.nom}" />
+									:<br />
+									<h:outputText
+										value="#{testPanierMB.montantTTCProduit(ligne.produit)}" />
+									<span> x </span>
+									<h:outputText value="#{ligne.quantite}" />
+									<span> = </span>
+									<h:outputText
+										value="#{testPanierMB.montantTotalTTCLigne(ligne)}" />
+									<h:commandLink
+										action="#{testPanierMB.supprimerLignePieceClient(ligne)}"
+										value="">
+										<img src="image/delete.png" width="10px" height="10px" />
+									</h:commandLink>
+								</div>
+							</ui:repeat>
+						</div>
+					</div>
+					<div id="totalPanierAccueil">
+						Total :
+						<h:outputText value="#{testPanierMB.montantTotalTTCPanier()}" />
+						€
+					</div>
+					<div>
+						<br />
+						<h:commandButton
+							action="#{accueilManagedBean.accesDetailPanier()}"
+							value="Detail du Panier" class="detailPanierAccueil" />
+						<br /> <br />
+						<h:commandButton
+							action="#{accueilManagedBean.validerLaCommande()}"
+							value="Effectuer votre Commande" class="lancerCommandeAccueil" />
+					</div>
 				</div>
 			</div>
-		</div>
 		</h:form>
 		<script>
 function blink(ob)

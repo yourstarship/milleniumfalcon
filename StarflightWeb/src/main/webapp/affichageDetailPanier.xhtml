@@ -19,53 +19,54 @@
 			<!-- ICI Le Contenu  -->
 			<!-- Espace Promotions -->
 			<div id="contenuDetailPanier">
-				<div class="Promo">
+				<div class="Promo"></div>
 
+				<div id="titrePageDetailPanier">
+					<span>Contenu Détaillé de Votre Panier </span>
 				</div>
+				<div id="ficheDetailPanier">
 
-					<div id="titrePageDetailPanier">
-						<span>Contenu Détaillé de Votre Panier </span>
-					</div>
-					<div id="ficheDetailPanier">
-
-						<div class="detailProdPanier">
-							<div id="alignementNiveau1">
-							<ui:repeat var="produit" value="#{detailPanierMBean.produit}">
+					<div class="detailProdPanier">
+						<div id="alignementNiveau1">
+							<ui:repeat var="ligne" value="#{detailPanierMBean.lignesPanier}">
 								<div id="nomProdEtRef">
-								
-									<span class="miniTitreNiveaux">Produit : </span> 
-									     #{produit.nom} <br />
-									<br /> <span class="miniTitreNiveaux">Référence : </span> 
-									 #{produit.id}<br /> <br />
-									<span class="miniTitreNiveaux">Catégorie : </span> 
-									 #{produit.categorie.nom} <br /> <br />
-									<span class="miniTitreNiveaux">Type : </span> 
-									 #{produit.type.nom}
-									
+
+									<span class="miniTitreNiveaux">Produit : </span>
+									#{ligne.produit.nom} <br /> <br /> <span
+										class="miniTitreNiveaux">Référence : </span>
+									#{ligne.produit.id}<br /> <br /> <span
+										class="miniTitreNiveaux">Catégorie : </span>
+									#{ligne.produit.categorie.nom} <br /> <br /> <span
+										class="miniTitreNiveaux">Type : </span>
+									#{ligne.produit.type.nom}
+
 								</div>
 								<div id="imgFicheDetail">
-									<img src="#{produit.photo}" />
+									<img src="#{ligne.produit.photo}" />
 								</div>
 								<div id="orgaDetailPanier">
-									<span class="miniTitreNiveaux">Organisation</span> <br />
-									<br /> <span>Ajouter une quantité : </span>
-									<h:inputText value="2" class="qteProdDetailPanier" />
-									<br />
-									<br /> <span>Prix unitaire : </span>
-									#{produit.prixAchatHT}
-									<span> Crédits</span> <br /> <br />
-									<h:commandButton action="#{detailPanierMBean.accesDetailProduit(produit)}" value="Détailler" class="buttDetailProduitDetailPanier"/>
+									<span class="miniTitreNiveaux">Organisation</span> <br /> <br />
+									<span>Ajouter une quantité : </span>
+									<h:inputText value="" class="qteProdDetailPanier" />
+									<br /> <br /> <span>Prix unitaire : </span>
+									#{testPanierMB.montantTTCProduit(ligne.produit)} <span>
+										Crédits</span> <br /> <br />
+									<h:commandButton
+										action="#{detailPanierMBean.accesDetailProduit(ligne.produit)}"
+										value="Détailler" class="buttDetailProduitDetailPanier" />
 								</div>
 								<div id="prixAjoutPanier">
 									<span class="miniTitreNiveaux">Coût Total : </span> <br /> <br />
-									<h:outputText value="4 900 000" class="miniTitreNiveaux" />
+									<h:outputText
+										value="#{testPanierMB.montantTotalTTCLigne(ligne)}"
+										class="miniTitreNiveaux" />
 									<span class="miniTitreNiveaux"> Crédits</span> <br />
 								</div>
-								</ui:repeat>
-							</div>
+							</ui:repeat>
 						</div>
-
 					</div>
+
+				</div>
 
 				<!-- Panier lateral droit -->
 				<div id="panierDetailProduit">
@@ -76,17 +77,23 @@
 						</div>
 						<div id="listePanierDetailProduit">
 							<ul>
-								<li>v1 <h:commandLink value="annuler1" action="#{compteUtilisateurMBean}" /></li>
-								<li>v2 <h:commandLink value="annuler2" action="#{compteUtilisateurMBean}" /></li>
-								<li>v4 <h:commandLink value="annuler3" action="#{compteUtilisateurMBean}" /></li>
-								<li>v8 <h:commandLink value="annuler4" action="#{compteUtilisateurMBean}" /></li>
+								<li>v1 <h:commandLink value="annuler1"
+										action="#{compteUtilisateurMBean}" /></li>
+								<li>v2 <h:commandLink value="annuler2"
+										action="#{compteUtilisateurMBean}" /></li>
+								<li>v4 <h:commandLink value="annuler3"
+										action="#{compteUtilisateurMBean}" /></li>
+								<li>v8 <h:commandLink value="annuler4"
+										action="#{compteUtilisateurMBean}" /></li>
 							</ul>
 						</div>
 					</div>
 					<div id="totalPanierDetailProduit">Total : 125€</div>
 					<div>
 						<br /> <br /> <br />
-						<h:commandButton action="#{detailPanierMBean.validerLaCommande()}" value="Effectuer votre Commande" class="lancerCommandeDetailProduit"/>
+						<h:commandButton action="#{detailPanierMBean.validerLaCommande()}"
+							value="Effectuer votre Commande"
+							class="lancerCommandeDetailProduit" />
 					</div>
 				</div>
 			</div>

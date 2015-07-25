@@ -12,7 +12,7 @@ public interface ICommandeClientService
 {
 
 	//testée
-	public boolean ajouterProduitAuPanier(Client client, Produit produit);
+	public CommandeClient ajouterProduitAuPanier(Client client, Produit produit, CommandeClient panier);
 
 	//testée
 	public CommandeClient panierClient(Client client);
@@ -21,13 +21,13 @@ public interface ICommandeClientService
 	public boolean incrementeQuantiteLigne(LignePieceClient lignePieceClient);
 
 	//testée
-	public boolean decrementeQuantiteLigne(CommandeClient commandeClient, LignePieceClient lignePieceClient);
+	public boolean decrementeQuantiteLigne(Client client, CommandeClient commandeClient, LignePieceClient lignePieceClient);
 
 	//testée
 	public boolean viderPanier(CommandeClient commandeClient);
 
 	//testée
-	public boolean supprimerLignePieceClient(CommandeClient commandeClient, LignePieceClient lignePieceClient);
+	public boolean supprimerLignePieceClient(Client client, CommandeClient commandeClient, LignePieceClient lignePieceClient);
 
 	public CommandeClient rechercherParId(int id);
 
@@ -45,5 +45,9 @@ public interface ICommandeClientService
 
 	//montant total TTC commande
 	public double montantTotalTTCCommande(CommandeClient commandeClient);
+
+	public double montantTotalTTCLigne(LignePieceClient lignePieceClient);
+
+	public double montantTTCProduit(Produit produit);
 
 }

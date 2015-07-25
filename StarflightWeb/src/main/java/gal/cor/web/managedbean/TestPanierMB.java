@@ -9,18 +9,19 @@ import gal.cor.services.api.ICommandeClientService;
 import gal.cor.services.api.IServiceClient;
 
 import java.text.DecimalFormat;
-import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
 import org.apache.log4j.Logger;
 
-@ManagedBean
+@ManagedBean(name = "testPanierMB")
 @SessionScoped
 public class TestPanierMB
 {
@@ -29,36 +30,49 @@ public class TestPanierMB
 	@EJB
 	IServiceClient iClientService;
 
-	Logger logger = Logger.getLogger(this.getClass());
+	@ManagedProperty(value = "#{gestionUtilisateurMBean}")
+	private GestionUtilisateurMBean gestionUtilisateurMBean;
 
-	public String ajouterUnProduitChoisi()//TODO	:Fil, ajouter args Client client, Produit produit
+	private Logger logger = Logger.getLogger(this.getClass());
+	private DecimalFormat dF = new DecimalFormat("### ### ### ### ### ##0.00");
+
+	private CommandeClient panier;
+	List<LignePieceClient> lignesPanier = new ArrayList<>();
+
+	@PostConstruct
+	public void init()
 	{
-		/**
-		 * TODO :Fil enlever zone de test
-		 */
-		/**
-		 * <<<<<<<<<<<<< Début code pour test
-		 */
-		Produit unProduit = new Produit(null, "nomProduit", "description", "chemin photo", 10.0, 20.0, 100, Calendar.getInstance().getTime(), false, 10, null, null, 360, 1000, 5, 3, 1, 2, 2);
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
-		Date dateDeNaissance = null, dateOuverture = null, dernierAcces = null;
-		try
+		//si le client est connecté
+		if (gestionUtilisateurMBean.getClient() != null)
 		{
-			dateDeNaissance = sdf.parse("12/01/1980");
-			dateOuverture = (sdf).parse("12/01/1990");
-			dernierAcces = (sdf).parse("12/01/1990");
-		} catch (Exception e)
+			//on cherche son panier
+			panier = this.panierClient(gestionUtilisateurMBean.getClient());
+			//on le crée s'il n'en a pas
+			if (panier == null)
+			{
+				panier = new CommandeClient();
+				panier.setDateCreation(Calendar.getInstance().getTime());
+			}
+			lignesPanier.addAll(panier.getLignesPieceClient());
+		} else
+		//sinon on crée un panier pour l'utilisateur non connecté
 		{
-
+			panier = new CommandeClient();
+			panier.setDateCreation(Calendar.getInstance().getTime());
+			lignesPanier.addAll(panier.getLignesPieceClient());
 		}
-		Client unClientSansCommande = new Client(null, "John", "Edward", dateDeNaissance, "01 45 26 89 25", "a.a@com", "login", "password", dateOuverture, dernierAcces, false, 0d, null, null);
-		/**
-		 * >>>>>>>>>>>>> Fin code pour test
-		 */
-		/**
-		 * TODO :Fil, brancher les paramètres plutôt que les objets de test
-		 */
-		iCommandeClientService.ajouterProduitAuPanier(unClientSansCommande, unProduit);
+	}
+
+	public void rechargeLignes()
+	{
+		lignesPanier.clear();
+		lignesPanier.addAll(panier.getLignesPieceClient());
+	}
+
+	public String ajouterUnProduitChoisi(Produit produit)
+	{
+		this.panier = iCommandeClientService.ajouterProduitAuPanier(gestionUtilisateurMBean.getClient(), produit, panier);
+		this.rechargeLignes();
 		return "";
 	}
 
@@ -76,6 +90,7 @@ public class TestPanierMB
 		 * Fin code de test
 		 */
 		iCommandeClientService.viderPanier(commande);
+		this.rechargeLignes();
 		return "";
 	}
 
@@ -106,6 +121,7 @@ public class TestPanierMB
 		 */
 		boolean result = false;
 		iCommandeClientService.incrementeQuantiteLigne(lignePieceClient);
+		this.rechargeLignes();
 		return result;
 	}
 
@@ -124,14 +140,16 @@ public class TestPanierMB
 		 * Fin code de test
 		 */
 		boolean result = false;
-		iCommandeClientService.decrementeQuantiteLigne(commandeClient, lignePieceClient);
+		iCommandeClientService.decrementeQuantiteLigne(gestionUtilisateurMBean.getClient(), commandeClient, lignePieceClient);
+		this.rechargeLignes();
 		return result;
 	}
 
-	public boolean supprimerLignePieceClient(CommandeClient commandeClient, LignePieceClient lignePieceClient)
+	public boolean supprimerLignePieceClient(LignePieceClient lignePieceClient)
 	{
 		boolean result = false;
-		iCommandeClientService.supprimerLignePieceClient(commandeClient, lignePieceClient);
+		iCommandeClientService.supprimerLignePieceClient(gestionUtilisateurMBean.getClient(), panier, lignePieceClient);
+		this.rechargeLignes();
 		return result;
 	}
 
@@ -204,21 +222,9 @@ public class TestPanierMB
 	//montant total TTC panier
 	public String montantTotalTTCPanier()
 	{
-		//récupère le client dans la session
-		Client client = null;//TODO	:Fil - récupérer le client en session
-		/**
-		 * TODO :Fil - supprimer zone test - début zone test
-		 */
-		client = iClientService.clientParIdAvecSesCommandes(134);
-		/**
-		 * 
-		 */
-		//récupère le panier complet du client
-		CommandeClient panier = panierClient(client);
 		//la commande doit contenir ses lignes et les lignes doivent contenir leurs produits
 		double montantTotalTTCPanier = iCommandeClientService.montantTotalTTCCommande(panier);
 		//		montantTotalTTCPanier = Math.round(montantTotalTTCPanier * 100) / 100;
-		DecimalFormat dF = new DecimalFormat("### ### ### ### ### ##0.00");
 		return dF.format(montantTotalTTCPanier);
 	}
 
@@ -226,6 +232,76 @@ public class TestPanierMB
 	public TVA tauxTVACommande()
 	{
 		return iCommandeClientService.tauxTVACommande();
+	}
+
+	public String montantTotalTTCLigne(LignePieceClient lignePieceClient)
+	{
+		return dF.format(iCommandeClientService.montantTotalTTCLigne(lignePieceClient));
+	}
+
+	public String montantTTCProduit(Produit produit)
+	{
+		return dF.format(iCommandeClientService.montantTTCProduit(produit));
+	}
+
+	public CommandeClient getPanier()
+	{
+		return panier;
+	}
+
+	public void setPanier(CommandeClient panier)
+	{
+		this.panier = panier;
+	}
+
+	public ICommandeClientService getiCommandeClientService()
+	{
+		return iCommandeClientService;
+	}
+
+	public void setiCommandeClientService(ICommandeClientService iCommandeClientService)
+	{
+		this.iCommandeClientService = iCommandeClientService;
+	}
+
+	public IServiceClient getiClientService()
+	{
+		return iClientService;
+	}
+
+	public void setiClientService(IServiceClient iClientService)
+	{
+		this.iClientService = iClientService;
+	}
+
+	public GestionUtilisateurMBean getGestionUtilisateurMBean()
+	{
+		return gestionUtilisateurMBean;
+	}
+
+	public void setGestionUtilisateurMBean(GestionUtilisateurMBean gestionUtilisateurMBean)
+	{
+		this.gestionUtilisateurMBean = gestionUtilisateurMBean;
+	}
+
+	public Logger getLogger()
+	{
+		return logger;
+	}
+
+	public void setLogger(Logger logger)
+	{
+		this.logger = logger;
+	}
+
+	public List<LignePieceClient> getLignesPanier()
+	{
+		return lignesPanier;
+	}
+
+	public void setLignesPanier(List<LignePieceClient> lignesPanier)
+	{
+		this.lignesPanier = lignesPanier;
 	}
 
 }
