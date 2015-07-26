@@ -30,7 +30,7 @@ public class GestionUtilisateurMBean implements Serializable {
 	private InformationsLogin infosLogin;
 	
 	private String pageRetournee = "pageErreur.xhtml";
-	private Client client = new Client();
+	private Client client = null;
 
 	//Méthode appelée lorsque l'utilisateur appuie sur le bouton OK de la connexion
 	public String connecter(){
@@ -47,7 +47,7 @@ public class GestionUtilisateurMBean implements Serializable {
 			
 		} else {
 
-			if (estConnecte()) {
+			if (!estConnecte()) {
 				
 				log.info(infosLogin.getLogin());
 				client = serviceClient.clientExiste(infosLogin.getLogin(), infosLogin.getMotDePasse());
@@ -56,7 +56,7 @@ public class GestionUtilisateurMBean implements Serializable {
 					//Le client existe
 					log.info(this.getClass() + " Client connecté :" + client.getNom());
 					FacesContext.getCurrentInstance().addMessage(null,new FacesMessage("Welcome, " + client.getNom()));
-					pageRetournee = null;
+					pageRetournee = "";
 				} else {
 					
 					//Le Client n'existe pas

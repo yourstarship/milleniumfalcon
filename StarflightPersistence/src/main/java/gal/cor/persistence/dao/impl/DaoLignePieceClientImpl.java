@@ -48,7 +48,7 @@ public class DaoLignePieceClientImpl implements IDaoLignePieceClient, Serializab
 	@Override
 	public void supprimerLignePieceClient(LignePieceClient lignePieceClient)
 	{
-		em.remove(lignePieceClient);
+		em.remove(em.find(LignePieceClient.class, lignePieceClient.getId()));
 	}
 
 	@Override

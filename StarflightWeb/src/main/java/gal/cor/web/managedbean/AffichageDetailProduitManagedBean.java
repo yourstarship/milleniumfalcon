@@ -7,51 +7,66 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 
-@ManagedBean (name="detailProduitMBean")
+@ManagedBean(name = "detailProduitMBean")
 @RequestScoped
-public class AffichageDetailProduitManagedBean {
-	
-	
-	
-	@ManagedProperty(value="#{accueilManagedBean}")
+public class AffichageDetailProduitManagedBean
+{
+
+	@ManagedProperty(value = "#{accueilManagedBean}")
 	private AccueilManagedBean accueilManagedBean;
-	
+
+	@ManagedProperty(value = "#{testPanierMB}")
+	private TestPanierMB testPanierMB;
+
 	private Produit produit;
 
-	public void ajoutProduitAuPanier(){
-		
+	public void ajoutProduitAuPanier()
+	{
+
 	}
-	
+
 	/***** [ Fonctions ] *****/
-	
-	public String accesDetailPanier(){
+
+	public String accesDetailPanier()
+	{
 		return ("affichageDetailPanier.xhtml");
 	}
-	
-	public String validerLaCommande(){
+
+	public String validerLaCommande()
+	{
 		return ("compteUtilisateur.xhtml");
 	}
 
-	public AccueilManagedBean getAccueilManagedBean() {
+	public AccueilManagedBean getAccueilManagedBean()
+	{
 		return accueilManagedBean;
 	}
 
-	public void setAccueilManagedBean(AccueilManagedBean accueilManagedBean) {
+	public void setAccueilManagedBean(AccueilManagedBean accueilManagedBean)
+	{
 		produit = accueilManagedBean.getProduit();
 		this.accueilManagedBean = accueilManagedBean;
 	}
 
-	public Produit getProduit() {
-		
+	public Produit getProduit()
+	{
+
 		return produit;
 	}
 
-	public void setProduit(Produit produit) {
+	public void setProduit(Produit produit)
+	{
 		this.produit = produit;
 	}
 
+	public TestPanierMB getTestPanierMB()
+	{
+		return testPanierMB;
+	}
 
-	
-	
-	
+	public void setTestPanierMB(TestPanierMB testPanierMB)
+	{
+		this.testPanierMB = testPanierMB;
+	}
+
 }

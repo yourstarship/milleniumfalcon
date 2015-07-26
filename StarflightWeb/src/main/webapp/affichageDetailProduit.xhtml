@@ -193,15 +193,31 @@
 						<div id="iconePanier"></div>
 					</div>
 					<div id="listePanierDetailProduit">
-					<ul>
-							<li>v1 <h:commandLink value="annuler1" action="#{compteUtilisateurMBean}" /></li>
-							<li>v2 <h:commandLink value="annuler2" action="#{compteUtilisateurMBean}" /></li>
-							<li>v4 <h:commandLink value="annuler3" action="#{compteUtilisateurMBean}" /></li>
-							<li>v8 <h:commandLink value="annuler4" action="#{compteUtilisateurMBean}" /></li>
-					</ul>
+							<ui:repeat var="ligne" value="#{testPanierMB.lignesPanier}">
+								<div>
+									<h:outputText value="#{ligne.produit.nom}" />
+									:<br />
+									<h:outputText
+										value="#{testPanierMB.montantTTCProduit(ligne.produit)}" />
+									<span> x </span>
+									<h:outputText value="#{ligne.quantite}" />
+									<span> = </span>
+									<h:outputText
+										value="#{testPanierMB.montantTotalTTCLigne(ligne)}" />
+									<h:commandLink
+										action="#{testPanierMB.supprimerLignePieceClient(ligne)}"
+										value="">
+										<img src="image/delete.png" width="10px" height="10px" />
+									</h:commandLink>
+								</div>
+							</ui:repeat>
 				</div>
 				</div>
-				<div id="totalPanierDetailProduit">Total : 125€</div>
+					<div id="totalPanierDetailProduit">
+						Total :
+						<h:outputText value="#{testPanierMB.montantTotalTTCPanier()}" />
+						€
+					</div>
 				<div>
 					<br />
 					<h:commandButton action="#{detailProduitMBean.accesDetailPanier()}" value="Detail du Panier" class="detailPanierDetailProduit" />

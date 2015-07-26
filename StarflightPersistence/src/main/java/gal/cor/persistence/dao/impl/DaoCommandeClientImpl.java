@@ -1,15 +1,20 @@
 package gal.cor.persistence.dao.impl;
 
+import gal.cor.persistence.constantes.ConstantLoader;
 import gal.cor.persistence.dao.apis.IDaoCommandeClient;
 import gal.cor.persistence.entities.Client;
 import gal.cor.persistence.entities.CommandeClient;
 import gal.cor.persistence.entities.LignePieceClient;
+import gal.cor.persistence.entities.TVA;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
@@ -25,30 +30,6 @@ public class DaoCommandeClientImpl implements IDaoCommandeClient, Serializable
 {
 	@PersistenceContext(unitName = "YourStarshipPersistence")
 	private EntityManager em;
-
-	private List<LignePieceClient> lignesPanier;
-
-	public double montantTotalHT(CommandeClient commandeClient)
-	{
-		/**
-		 * TODO
-		 */
-		return 0d;
-	}
-
-	public double montantTotalTTC(CommandeClient commandeClient)
-	{
-		return this.montantTotalHT(commandeClient) * (1 + commandeClient.getTva().getTaux() / 100);
-	}
-
-	public void viderPanier()
-	{
-		lignesPanier.clear();
-		/**
-		 * TODO :Fil
-		 */
-		//persister les modifs
-	}
 
 	Logger logger = Logger.getLogger(getClass());
 
@@ -78,18 +59,48 @@ public class DaoCommandeClientImpl implements IDaoCommandeClient, Serializable
 	@Override
 	public CommandeClient rechercherParId(int id)
 	{
-		String request= "SELECT c FROM CommandeClient c INNER JOIN FETCH c.lignesPieceClient WHERE c.id = :param ";
+		String request = "SELECT c FROM CommandeClient c INNER JOIN FETCH c.lignesPieceClient WHERE c.id = :param ";
 		Query query = em.createQuery(request);
 		query.setParameter("param", id);
-		List<CommandeClient>liste = query.getResultList();
-		CommandeClient commandeClient= new CommandeClient();
-		if(!liste.isEmpty()){
-			commandeClient = liste.get(0);	
+		List<CommandeClient> liste = query.getResultList();
+		CommandeClient commandeClient = new CommandeClient();
+		if (!liste.isEmpty())
+		{
+			commandeClient = liste.get(0);
 		}
-		
 		return commandeClient;
 	}
 
+	@Override
+	public CommandeClient rechercherCommandeParIdAvecSesLignesEtSesProduits(int id)
+	{
+		CommandeClient resultat = null;
+		String rawQuery = "from CommandeClient c left join fetch c.lignesPieceClient l left join fetch l.produit where c.id = :id";
+		Query query = em.createQuery(rawQuery);
+		query.setParameter("id", id);
+		List<CommandeClient> resultats = query.getResultList();
+		if (resultats.size() > 0)
+		{
+			resultat = resultats.get(0);
+		}
+		return resultat;
+	}
+
+	@Override
+	public TVA tauxTVACommande()
+	{
+		TVA tva = null;
+		String nom_minuscules_taux_tva_commandes = ConstantLoader.load("nom_minuscules_taux_tva_commandes", "TvaCommandes.properties");
+		String rawQuery = "from TVA tva where lower(tva.nom)=:tvaName";
+		Query query = em.createQuery(rawQuery);
+		query.setParameter("tvaName", nom_minuscules_taux_tva_commandes);
+		List<TVA> tvas = query.getResultList();
+		if (tvas.size() > 0)
+		{
+			tva = tvas.get(0);
+		}
+		return tva;
+	}
 	@Override
 	public List<CommandeClient> recupeCommandesParClient(Integer idClient) {
 		String request ="SELECT c FROM CommandeClient c WHERE c.client.id = :param";
@@ -97,10 +108,6 @@ public class DaoCommandeClientImpl implements IDaoCommandeClient, Serializable
 		query.setParameter("param", idClient);
 		List<CommandeClient>liste = new ArrayList<CommandeClient>();
 		liste=query.getResultList();
-		
 		return liste;
 	}
-
-	
-	
 }

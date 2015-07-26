@@ -49,7 +49,7 @@ public class CommandeClient implements Serializable
 	private FactureClient factureClient;
 
 	@OneToMany(mappedBy = "commandeClient")
-	private List<LignePieceClient> lignesPieceClient = new ArrayList<LignePieceClient>();
+	private Set<LignePieceClient> lignesPieceClient = new LinkedHashSet<LignePieceClient>();
 
 	@ManyToOne
 	@JoinColumn(name = "idtva")
@@ -208,16 +208,16 @@ public class CommandeClient implements Serializable
 	{
 		this.factureClient = factureClient;
 	}
-	
-	public List<LignePieceClient> getLignesPieceClient() {
+
+	public Set<LignePieceClient> getLignesPieceClient()
+	{
 		return lignesPieceClient;
 	}
 
-	public void setLignesPieceClient(List<LignePieceClient> lignesPieceClient) {
+	public void setLignesPieceClient(Set<LignePieceClient> lignesPieceClient)
+	{
 		this.lignesPieceClient = lignesPieceClient;
 	}
-
-
 
 	public TVA getTva()
 	{

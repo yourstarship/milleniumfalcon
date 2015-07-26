@@ -8,6 +8,7 @@ import gal.cor.persistence.entities.Client;
 import gal.cor.persistence.entities.CommandeClient;
 import gal.cor.persistence.entities.LignePieceClient;
 import gal.cor.persistence.entities.Produit;
+import gal.cor.persistence.entities.TVA;
 import gal.cor.services.api.ICommandeClientService;
 
 import java.util.Calendar;
@@ -36,123 +37,116 @@ public class CommandeClientServiceImpl implements ICommandeClientService
 	Logger logger = Logger.getLogger(CommandeClientServiceImpl.class);
 
 	@Override
-	public boolean incrementeQuantiteLigne(LignePieceClient lignePieceClient)
+	public CommandeClient incrementeQuantiteLigne(Client client, LignePieceClient lignePieceClient)
 	{
 		boolean result = false;
 		lignePieceClient.setQuantite(lignePieceClient.getQuantite() + 1);
-		iDaoLignePieceClient.mettreAjourLignePieceClient(lignePieceClient);
-		return result;
+		if (client != null)
+		{
+			iDaoLignePieceClient.mettreAjourLignePieceClient(lignePieceClient);
+		}
+		return lignePieceClient.getCommandeClient();
 	}
 
 	@Override
-	public boolean decrementeQuantiteLigne(CommandeClient commandeClient, LignePieceClient lignePieceClient)
+	public CommandeClient decrementeQuantiteLigne(Client client, LignePieceClient lignePieceClient)
 	{
-		boolean result = false;
 		if (lignePieceClient.getQuantite() > 1)
 		{
 			lignePieceClient.setQuantite(lignePieceClient.getQuantite() - 1);
-			iDaoLignePieceClient.mettreAjourLignePieceClient(lignePieceClient);
+			if (client != null)
+			{
+				iDaoLignePieceClient.mettreAjourLignePieceClient(lignePieceClient);
+			}
 		} else if (lignePieceClient.getQuantite() == 1)
 		{
-			this.supprimerLigne(commandeClient, lignePieceClient);
+			lignePieceClient.setQuantite(lignePieceClient.getQuantite() - 1);
+			this.supprimerLignePieceClient(client, lignePieceClient);
 		}
-		return result;
+		return lignePieceClient.getCommandeClient();
 	}
 
-	public boolean miseAJourQuantiteLigne(LignePieceClient lignePieceClient, int nouvelleQuantite)
+	@Override
+	public CommandeClient miseAJourQuantiteLigne(Client client, LignePieceClient lignePieceClient, int nouvelleQuantite)
 	{
-		boolean result = false;
 		lignePieceClient.setQuantite(nouvelleQuantite);
-		iDaoLignePieceClient.mettreAjourLignePieceClient(lignePieceClient);
-		return result;
+		if (client != null)
+		{
+			iDaoLignePieceClient.mettreAjourLignePieceClient(lignePieceClient);
+		}
+		return lignePieceClient.getCommandeClient();
 	}
 
 	@Override
-	public boolean supprimerLigne(CommandeClient commandeClient, LignePieceClient lignePieceClient)
+	public CommandeClient supprimerLignePieceClient(Client client, LignePieceClient lignePieceClient)
 	{
-		boolean result = false;
-		commandeClient.getLignesPieceClient().remove(lignePieceClient);
-
-		iDaoCommandeClient.mettreAjourCommandeClient(commandeClient);
-		/**
-		 * TODO :Fil vérifier la suppression de la ligne !!
-		 */
-		return result;
-	}
-
-	@Override
-	public boolean viderPanier(CommandeClient commandeClient)
-	{
-		boolean result = false;
-		List<LignePieceClient> lesLignesDuPanier = commandeClient.getLignesPieceClient();
-		for (LignePieceClient lignePieceClient : lesLignesDuPanier)
+		lignePieceClient.getCommandeClient().getLignesPieceClient().remove(lignePieceClient);
+		if (client != null)
 		{
 			iDaoLignePieceClient.supprimerLignePieceClient(lignePieceClient);
 		}
-		lesLignesDuPanier.clear();
-
-		/**
-		 * TODO :Fil ne sert à rien
-		 */
-		iDaoCommandeClient.mettreAjourCommandeClient(commandeClient);
-		/**
-		 * TODO :Fil vérifier que les lignes ont été supprimées de la base
-		 */
-		return result;
+		return lignePieceClient.getCommandeClient();
 	}
 
 	@Override
-	public boolean ajouterProduitAuPanier(Client client, Produit produit)
+	public CommandeClient viderPanier(CommandeClient commandeClient)
 	{
-		boolean resultat = false;
+		Set<LignePieceClient> lesLignesDuPanier = commandeClient.getLignesPieceClient();
+		if (lesLignesDuPanier.size() > 0)
+		{
+			for (LignePieceClient lignePieceClient : lesLignesDuPanier)
+			{
+				iDaoLignePieceClient.supprimerLignePieceClient(lignePieceClient);
+			}
+			lesLignesDuPanier.clear();
+		}
+		return commandeClient;
+	}
 
-		/**
-		 * TODO :Fil supprimer cette ligne car le client existera deja
-		 */
-		CommandeClient panierDuClient = this.panierClient(client);
+	@Override
+	public CommandeClient ajouterProduitAuPanier(Client client, Produit produit, CommandeClient panier)
+	{
 		LignePieceClient ligneDeCeProduitDansLePanier = null;
-
 		try
 		{
-			//si le client n'a pas encore de panier on en crée un
-			if (panierDuClient == null)
-			{
-				panierDuClient = new CommandeClient(null, 0d, Calendar.getInstance().getTime(), null, null, null, null, null);
-				panierDuClient.setClient(client);
-			} else
-			{
-				ligneDeCeProduitDansLePanier = ligneDeCeProduitDansCetteCommande(panierDuClient, produit);
-			}
-			//si ligne de ce produit existe alors on incrémente sa quantité
+
+			ligneDeCeProduitDansLePanier = ligneDeCeProduitDansCetteCommande(panier, produit);
+
+			// si ligne de ce produit existe alors on incrémente sa quantité
 			if (ligneDeCeProduitDansLePanier != null)
 			{
 				ligneDeCeProduitDansLePanier.setQuantite(ligneDeCeProduitDansLePanier.getQuantite() + 1);
-				iDaoLignePieceClient.mettreAjourLignePieceClient(ligneDeCeProduitDansLePanier);
+				if (client != null)
+				{
+					iDaoLignePieceClient.mettreAjourLignePieceClient(ligneDeCeProduitDansLePanier);
+				}
 			}
-			//sinon on ajoute au panier une ligne avec ce produit
+			// sinon on ajoute au panier une ligne avec ce produit
 			else
 			{
-				LignePieceClient lignePieceClient = new LignePieceClient(null, 1, 0d, 0d, produit, panierDuClient, null, null);
-				panierDuClient.getLignesPieceClient().add(lignePieceClient);
-				//on sauve la commande(le panier) avec son association au client
-				panierDuClient = iDaoCommandeClient.creerCommandeClient(panierDuClient);
-				lignePieceClient.setCommandeClient(panierDuClient);
-				/**
-				 * TODO :Fil supprimer cette ligne car le produit existera déjà
-				 * dans la base
-				 */
-				produit = iDaoProduit.creerProduit(produit);
+				LignePieceClient lignePieceClient = new LignePieceClient(null, 1, 0d, 0d, produit, panier, null, null);
+				panier.getLignesPieceClient().add(lignePieceClient);
+				// on sauve la commande(le panier) avec son association au
+				// client
+				if (client != null)
+				{
+					panier = iDaoCommandeClient.creerCommandeClient(panier);
+				}
+				lignePieceClient.setCommandeClient(panier);
 				lignePieceClient.setProduit(produit);
-				//on sauve la ligne avec sa clef étrangère sur la commande
-				iDaoLignePieceClient.creerLignePieceClient(lignePieceClient);
+				// on sauve la ligne avec sa clef étrangère sur la commande
+				if (client != null)
+				{
+					iDaoLignePieceClient.creerLignePieceClient(lignePieceClient);
+				}
 			}
-			resultat = true;
+			//			resultat = true;
 		} catch (Exception e)
 		{
 			logger.error(e.getMessage());
 			e.printStackTrace();
 		}
-		return resultat;
+		return panier;
 	}
 
 	@Override
@@ -168,7 +162,7 @@ public class CommandeClientServiceImpl implements ICommandeClientService
 			{
 				if (commandeClient.getDatePaiementAccepte() == null)
 				{
-					panier = commandeClient;
+					panier = iDaoCommandeClient.rechercherCommandeParIdAvecSesLignesEtSesProduits(commandeClient.getId());
 				}
 			}
 		}
@@ -178,15 +172,15 @@ public class CommandeClientServiceImpl implements ICommandeClientService
 	private LignePieceClient ligneDeCeProduitDansCetteCommande(CommandeClient commandeClient, Produit produit)
 	{
 		LignePieceClient result = null;
-		//si pas de ligne ==> false
-		//sinon
-		List<LignePieceClient> lignesPieceClient = commandeClient.getLignesPieceClient();
+		// si pas de ligne ==> false
+		// sinon
+		Set<LignePieceClient> lignesPieceClient = commandeClient.getLignesPieceClient();
 		if (lignesPieceClient.size() > 0)
 		{
-			//	on parcourt toutes les lignes de la commande
+			// on parcourt toutes les lignes de la commande
 			for (LignePieceClient lignePieceClient : lignesPieceClient)
 			{
-				//	si on en trouve une dont le produit est celui passé ==> true
+				// si on en trouve une dont le produit est celui passé ==> true
 				if (lignePieceClient.getProduit().getId() == produit.getId())
 				{
 					result = lignePieceClient;
@@ -202,9 +196,73 @@ public class CommandeClientServiceImpl implements ICommandeClientService
 	}
 
 	@Override
-	public List<CommandeClient> recupeCommandesParClient(Integer idClient) {
-		
-		return iDaoCommandeClient.recupeCommandesParClient(idClient);
+	public CommandeClient rechercherCommandeParIdAvecSesLignesEtSesProduits(int id)
+	{
+		return iDaoCommandeClient.rechercherCommandeParIdAvecSesLignesEtSesProduits(id);
+	}
+
+	@Override
+	public List<CommandeClient> commandesParIdClient(int id)
+	{
+		return iDaoClient.commandesParIdClient(id);
+	}
+
+	@Override
+	public double montantTotalHTCommande(CommandeClient commandeClient)
+	{
+		double montantTotalHTCommande = 0;
+		for (LignePieceClient lignePieceClient : commandeClient.getLignesPieceClient())
+		{
+			montantTotalHTCommande += montantTotalHTLigne(lignePieceClient);
+		}
+		return montantTotalHTCommande;
+	}
+
+	@Override
+	public double montantTotalTTCCommande(CommandeClient commandeClient)
+	{
+		double montantTotalTTCommande = 0;
+		double facteurRemise = 1;
+		Set<LignePieceClient> lignesPieceClient = commandeClient.getLignesPieceClient();
+		if (!lignesPieceClient.isEmpty())
+		{
+			for (LignePieceClient lignePieceClient : lignesPieceClient)
+			{
+				montantTotalTTCommande += montantTotalTTCLigne(lignePieceClient);
+			}
+			if (commandeClient.getClient() != null)
+			{
+				facteurRemise = (1 - commandeClient.getClient().getRemise() / 100);
+			}
+			montantTotalTTCommande = montantTotalTTCommande * facteurRemise;
+		} else
+		{
+			montantTotalTTCommande = 0;
+		}
+		return montantTotalTTCommande;
+	}
+
+	@Override
+	public double montantTotalTTCLigne(LignePieceClient lignePieceClient)
+	{
+		return montantTTCProduit(lignePieceClient.getProduit()) * lignePieceClient.getQuantite();
+	}
+
+	private double montantTotalHTLigne(LignePieceClient lignePieceClient)
+	{
+		return lignePieceClient.getProduit().getPrixVenteHT() * lignePieceClient.getQuantite();
+	}
+
+	@Override
+	public TVA tauxTVACommande()
+	{
+		return iDaoCommandeClient.tauxTVACommande();
+	}
+
+	@Override
+	public double montantTTCProduit(Produit produit)
+	{
+		return produit.getPrixVenteHT() * (1 + produit.getTva().getTaux() / 100);
 	}
 
 }

@@ -15,14 +15,15 @@ public class Administrateur extends Utilisateur implements Serializable
 	 */
 	private static final long serialVersionUID = 5041028374523577174L;
 
-	public Administrateur(Integer id, String nom, String prenom, Date dateDeNaissance, Integer idUtilisateur, String identifiant, String motDePasse, Date dateOuverture)
+	public Administrateur(Integer id, String nom, String prenom, Date dateDeNaissance, String telephone, String email, String identifiant, String motDePasse, Date dateOuverture)
 	{
-		super(id, nom, prenom, dateDeNaissance, identifiant, motDePasse, dateOuverture);
-
+		super(id, nom, prenom, dateDeNaissance, telephone, email, identifiant, motDePasse, dateOuverture);
+		// TODO Auto-generated constructor stub
 	}
-	
+
 	public Administrateur()
-	{}
+	{
+	}
 
 	@Override
 	public String toString()

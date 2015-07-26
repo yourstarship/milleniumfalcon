@@ -6,24 +6,52 @@ import gal.cor.persistence.entities.Client;
 import gal.cor.persistence.entities.CommandeClient;
 import gal.cor.persistence.entities.LignePieceClient;
 import gal.cor.persistence.entities.Produit;
+import gal.cor.persistence.entities.TVA;
 
 public interface ICommandeClientService
 {
 
-	public boolean ajouterProduitAuPanier(Client client, Produit produit);
+	//testée
+	public CommandeClient ajouterProduitAuPanier(Client client, Produit produit, CommandeClient panier);
 
+	//testée
 	public CommandeClient panierClient(Client client);
 
-	public boolean incrementeQuantiteLigne(LignePieceClient lignePieceClient);
+	//testée
+	public CommandeClient incrementeQuantiteLigne(Client client, LignePieceClient lignePieceClient);
 
-	public boolean decrementeQuantiteLigne(CommandeClient commandeClient, LignePieceClient lignePieceClient);
+	//testée
+	public CommandeClient decrementeQuantiteLigne(Client client, LignePieceClient lignePieceClient);
 
-	public boolean viderPanier(CommandeClient commandeClient);
+	//testée
+	public CommandeClient viderPanier(CommandeClient commandeClient);
 
-	public boolean supprimerLigne(CommandeClient commandeClient, LignePieceClient lignePieceClient);
-	
+	//testée
+	public CommandeClient supprimerLignePieceClient(Client client, LignePieceClient lignePieceClient);
+
 	public CommandeClient rechercherParId(int id);
 	
 	List<CommandeClient> recupeCommandesParClient(Integer idClient);
+
+	//testée
+	public CommandeClient rechercherCommandeParIdAvecSesLignesEtSesProduits(int id);
+
+	//historique des commandes
+	public List<CommandeClient> commandesParIdClient(int id);
+
+	//montant total HT commande
+	public double montantTotalHTCommande(CommandeClient commandeClient);
+
+	//tva commande
+	public TVA tauxTVACommande();
+
+	//montant total TTC commande
+	public double montantTotalTTCCommande(CommandeClient commandeClient);
+
+	public double montantTotalTTCLigne(LignePieceClient lignePieceClient);
+
+	public double montantTTCProduit(Produit produit);
+
+	public CommandeClient miseAJourQuantiteLigne(Client client, LignePieceClient lignePieceClient, int nouvelleQuantite);
 
 }
