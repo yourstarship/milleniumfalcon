@@ -153,7 +153,10 @@ public class Produit implements Serializable
 
 	public Double getPrixVenteHT()
 	{
-		return prixVenteHT;
+		
+		Double prix;
+		prix = this.prixAchatHT*(1+this.marge/100)*(1+this.getTva().getTaux()/100);
+		return prix;
 	}
 
 	public void setPrixVenteHT(Double prixVenteHT)

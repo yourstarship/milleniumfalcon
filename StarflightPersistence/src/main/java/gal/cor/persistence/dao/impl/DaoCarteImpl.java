@@ -3,11 +3,23 @@ package gal.cor.persistence.dao.impl;
 import gal.cor.persistence.dao.apis.IDaoCarte;
 import gal.cor.persistence.entities.Carte;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+import javax.ejb.Remote;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
+@Stateless
+@Remote(IDaoCarte.class)
 public class DaoCarteImpl  implements IDaoCarte {
+	
+	@PersistenceContext
+	private EntityManager em;
 
 	@Override
 	public void creerCarte(Carte t) {
@@ -16,9 +28,9 @@ public class DaoCarteImpl  implements IDaoCarte {
 	}
 
 	@Override
-	public Carte rechercherParId(Carte t) {
-		// TODO Auto-generated method stub
-		return null;
+	public Carte rechercherParId(Integer idCarte) {
+		
+		return em.find(Carte.class, idCarte);
 	}
 
 	@Override
@@ -53,6 +65,20 @@ public class DaoCarteImpl  implements IDaoCarte {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public List<Carte> RechercheCartesParIdClient(Integer idClient) {
+		
+		List<Carte>liste = new ArrayList<Carte>();
+		String request="SELECT c FROM Carte c WHERE c.client.id = :param";
+		
+		Query query = em .createQuery(request);
+		query.setParameter("param", idClient);
+		liste=query.getResultList();
+		
+		return liste;
+	}
+
 
 
 

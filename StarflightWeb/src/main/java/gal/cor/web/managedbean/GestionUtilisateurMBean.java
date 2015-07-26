@@ -82,7 +82,7 @@ public class GestionUtilisateurMBean implements Serializable {
 	public String affichePageInscriptionClient() {
 		log.info(this.getClass() + ": Affichage formulaire de création d'un compte.");
 	
-		return "formulaireInscription3.xhtml";
+		return "compteUtilisateur.xhtml";
 		
 	}
 

@@ -23,7 +23,7 @@ public class Carte implements Serializable
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	private Integer numero;
+	private String numero;
 	private Date dateExpiration;
 	private Integer cryptogramme;
 
@@ -38,7 +38,7 @@ public class Carte implements Serializable
 	@OneToMany(mappedBy = "carte")
 	private Set<CommandeClient> commandesPayeesAvecCetteCarte = new LinkedHashSet<>();
 
-	public Carte(Integer id, Integer numero, Date dateExpiration, Integer cryptogramme)
+	public Carte(Integer id, String numero, Date dateExpiration, Integer cryptogramme)
 	{
 		super();
 		this.id = id;
@@ -62,12 +62,12 @@ public class Carte implements Serializable
 		this.id = id;
 	}
 
-	public Integer getNumero()
+	public String getNumero()
 	{
 		return numero;
 	}
 
-	public void setNumero(Integer numero)
+	public void setNumero(String numero)
 	{
 		this.numero = numero;
 	}

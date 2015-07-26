@@ -1,5 +1,7 @@
 package gal.cor.services.api;
 
+import java.util.List;
+
 import gal.cor.persistence.entities.Client;
 import gal.cor.persistence.entities.CommandeClient;
 import gal.cor.persistence.entities.LignePieceClient;
@@ -21,5 +23,7 @@ public interface ICommandeClientService
 	public boolean supprimerLigne(CommandeClient commandeClient, LignePieceClient lignePieceClient);
 	
 	public CommandeClient rechercherParId(int id);
+	
+	List<CommandeClient> recupeCommandesParClient(Integer idClient);
 
 }

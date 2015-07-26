@@ -43,8 +43,20 @@ public class DaoClientImpl implements IDaoClient {
 	}
 
 	@Override
-	public Client rechercherParId(Client t) {
-		return em.find(Client.class, t.getId());
+	public Client rechercherClientParId(Integer idClient) {
+		String request = "SELECT c FROM Client c  WHERE c.id = :param";
+		Query query = em.createQuery(request);
+		query.setParameter("param", idClient);
+		List<Client>liste= new ArrayList<Client>();
+		Client clie = new Client();
+		liste= query.getResultList();
+		if(!liste.isEmpty()){
+			clie=liste.get(0);
+			
+		
+		}
+
+		return clie;
 	}
 
 	@SuppressWarnings("unchecked")
@@ -94,4 +106,6 @@ public class DaoClientImpl implements IDaoClient {
 		} 
 		return client;
 	}
+
+
 }

@@ -6,6 +6,7 @@ import gal.cor.persistence.entities.CommandeClient;
 import gal.cor.persistence.entities.LignePieceClient;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -90,38 +91,16 @@ public class DaoCommandeClientImpl implements IDaoCommandeClient, Serializable
 	}
 
 	@Override
-	public List<CommandeClient> rechercherParRequeteNommee(String requeteNommee)
-	{
-		// TODO Auto-generated method stub
-		return null;
+	public List<CommandeClient> recupeCommandesParClient(Integer idClient) {
+		String request ="SELECT c FROM CommandeClient c WHERE c.client.id = :param";
+		Query query = em.createQuery(request);
+		query.setParameter("param", idClient);
+		List<CommandeClient>liste = new ArrayList<CommandeClient>();
+		liste=query.getResultList();
+		
+		return liste;
 	}
 
-	@Override
-	public List<CommandeClient> rechercherParRequeteNommee(String requeteNommee, int nbreMaxElements)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Collection<CommandeClient> obtenirTousCommandeClient()
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<CommandeClient> rechercherParRequeteNommee(String requeteNommee, Map<String, Object> parametres, int nbreMaxElements)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<CommandeClient> rechercherParRequeteNommee(String requeteNommee, Map<String, Object> parametres)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
+	
 }

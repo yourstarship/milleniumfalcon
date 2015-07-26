@@ -9,7 +9,9 @@ import gal.cor.persistence.entities.Carte;
 
 public interface IDaoCarte  {
 	void creerCarte(Carte t);
-	Carte rechercherParId(Carte t);
+	
+	Carte rechercherParId(Integer idCarte);
+	List<Carte> RechercheCartesParIdClient(Integer idClient);
 
 	//Requetes personnalis�es
 	List<Carte> rechercherParRequeteNommee(String requeteNommee);

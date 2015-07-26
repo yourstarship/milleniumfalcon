@@ -27,10 +27,10 @@
 		<div>
 			<h:inputSecret value="#{informationsLogin.motDePasse}" />
 		</div>
-		<div>
+		<div id="buttloginIn">
 				
-				<h:commandButton action="#{gestionUtilisateurMBean.connecter()}" value="OK" id="buttloginIn" />
-				<h:commandButton action="#{gestionUtilisateurMBean.connecter()}" value="Inscription" />
+				<h:commandButton action="#{gestionUtilisateurMBean.connecter()}" value="OK"  />
+				<h:commandButton action="#{gestionUtilisateurMBean.affichePageInscriptionClient()}" value="Inscription" />
 		</div>
 	</div>
 	<div id="loginOut">
@@ -39,8 +39,8 @@
 			<h:outputText value="{#{gestionUtilisateurMBean.client.nom}}" />
 		</div>
 		<br />
-		<div>
-			<h:commandButton action="#{gestionUtilisateurMBean.deconnecter()}" value="Déconnexion" id="buttloginOut" />
+		<div id="buttloginOut">
+			<h:commandButton action="#{gestionUtilisateurMBean.deconnecter()}" value="Déconnexion"  />
 			<div id="accesGestionDuCompte">
 					<h:commandLink value="Gérer" action="#{informationsLogin.login}" class="titreAccesCompteAccueil"/>
 					<div id="iconeAccessCompteClient"></div>
@@ -50,7 +50,7 @@
 	</div>
 	</h:form>
 	<script>		
-		$('#buttloginIn').click(function () {	 
+		$('buttloginIn').click(function () {	 
         	$('#loginIn').toggle();
          	$('#loginOut').toggle();
          	$('#fieldCommentaire').toggle();

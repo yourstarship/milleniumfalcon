@@ -201,4 +201,10 @@ public class CommandeClientServiceImpl implements ICommandeClientService
 		return iDaoCommandeClient.rechercherParId(id);
 	}
 
+	@Override
+	public List<CommandeClient> recupeCommandesParClient(Integer idClient) {
+		
+		return iDaoCommandeClient.recupeCommandesParClient(idClient);
+	}
+
 }

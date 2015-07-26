@@ -4,10 +4,11 @@ import gal.cor.persistence.entities.Produit;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 
 @ManagedBean (name="detailProduitMBean")
-@SessionScoped
+@RequestScoped
 public class AffichageDetailProduitManagedBean {
 	
 	

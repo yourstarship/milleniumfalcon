@@ -133,7 +133,7 @@
 				<div class="imglisteAccueil"><img src="#{produit.photo}"/></div>
 					
 					<h:outputText value="#{produit.nom}" /> <br />
-					<h:outputText value="#{produit.prixAchatHT}" /><span>  Crédits</span>
+					<h:outputText value="#{produit.prixVenteHT}" /><span> K credits</span>
 					<br />
 					<h:commandButton action="#{accueilManagedBean.accesDetailPanier()}" value="Ajouter" class="buttListeAccueil"/>
 					<h:commandButton action="#{accueilManagedBean.accesDetailProduit(produit)}" value="Détailler" class="buttListeAccueil"/>

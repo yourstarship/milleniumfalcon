@@ -16,14 +16,5 @@ public interface IDaoCommandeClient
 
 	CommandeClient rechercherParId(int id);
 
-	//Requetes personnalis�es
-	List<CommandeClient> rechercherParRequeteNommee(String requeteNommee);
-
-	List<CommandeClient> rechercherParRequeteNommee(String requeteNommee, Map<String, Object> parametres, int nbreMaxElements);
-
-	List<CommandeClient> rechercherParRequeteNommee(String requeteNommee, Map<String, Object> parametres);
-
-	List<CommandeClient> rechercherParRequeteNommee(String requeteNommee, int nbreMaxElements);
-
-	Collection<CommandeClient> obtenirTousCommandeClient();
+	List<CommandeClient> recupeCommandesParClient(Integer idClient);
 }

@@ -12,10 +12,11 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 
 @ManagedBean (name="detailPanierMBean")
-@SessionScoped
+@RequestScoped
 public class AffichageDetailPanierManagedBean {
 	
 	@ManagedProperty(value="#{detailProduitMBean}")
@@ -30,6 +31,7 @@ public class AffichageDetailPanierManagedBean {
 	private CommandeClient commandeClient;
 	private List<LignePieceClient>listeLigneCommandes= new ArrayList<LignePieceClient>();
 	private Produit produit;
+	private List<Produit>produits= new ArrayList<Produit>();
 	
 	
 	
@@ -38,9 +40,11 @@ public class AffichageDetailPanierManagedBean {
 	{
 		
 		commandeClient=	proxyCommandeClient.rechercherParId(gestionUtilisateurMBean.getClient().getId());
-		listeLigneCommandes= (List<LignePieceClient>) commandeClient.getLignesPieceClient();
+		listeLigneCommandes=  commandeClient.getLignesPieceClient();
 		for (LignePieceClient lign : listeLigneCommandes) {
 			produit =lign.getProduit();
+			produits.add(produit);
+			
 		}
 		
 		
@@ -124,6 +128,18 @@ public class AffichageDetailPanierManagedBean {
 	public void setGestionUtilisateurMBean(
 			GestionUtilisateurMBean gestionUtilisateurMBean) {
 		this.gestionUtilisateurMBean = gestionUtilisateurMBean;
+	}
+
+
+
+	public List<Produit> getProduits() {
+		return produits;
+	}
+
+
+
+	public void setProduits(List<Produit> produits) {
+		this.produits = produits;
 	}
 	
 	
