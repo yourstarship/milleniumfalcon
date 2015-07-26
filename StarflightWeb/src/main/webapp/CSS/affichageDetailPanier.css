@@ -204,6 +204,11 @@
 	overflow: auto;	
 }
 
+#listePanierDetailProduit a
+{
+	color: #BDE3DE;	
+}
+
 #totalPanierDetailProduit
 {
 	font-weight: bold;

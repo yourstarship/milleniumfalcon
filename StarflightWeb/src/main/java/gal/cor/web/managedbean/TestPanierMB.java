@@ -23,7 +23,8 @@ import org.apache.log4j.Logger;
 
 @ManagedBean(name = "testPanierMB")
 @SessionScoped
-public class TestPanierMB {
+public class TestPanierMB
+{
 	@EJB
 	ICommandeClientService iCommandeClientService;
 	@EJB
@@ -40,13 +41,16 @@ public class TestPanierMB {
 	// List<LignePieceClient> lignesPanier = new ArrayList<>();
 
 	@PostConstruct
-	public void init() {
+	public void init()
+	{
 		// si le client est connecté
-		if (gestionUtilisateurMBean.getClient() != null) {
+		if (gestionUtilisateurMBean.getClient() != null)
+		{
 			// on cherche son panier
 			panier = this.panierClient(gestionUtilisateurMBean.getClient());
 			// on le crée s'il n'en a pas
-			if (panier == null) {
+			if (panier == null)
+			{
 				panier = new CommandeClient();
 				panier.setDateCreation(Calendar.getInstance().getTime());
 			}
@@ -66,28 +70,15 @@ public class TestPanierMB {
 	// lignesPanier.addAll(panier.getLignesPieceClient());
 	// }
 
-	public void ajouterUnProduitChoisi(Produit produit) {
-		this.panier = iCommandeClientService.ajouterProduitAuPanier(
-				gestionUtilisateurMBean.getClient(), produit, panier);
+	public void ajouterUnProduitChoisi(Produit produit)
+	{
+		this.panier = iCommandeClientService.ajouterProduitAuPanier(gestionUtilisateurMBean.getClient(), produit, panier);
 		// this.rechargeLignes();
 	}
 
 	public void viderPanier()// TODO :Fil +Client client
 	{
-
-		/**
-		 * TODO :Fil, supprimer code pour test
-		 */
-		/**
-		 * Début code de test
-		 */
-		CommandeClient commande = iCommandeClientService
-				.rechercherCommandeParIdAvecSesLignesEtSesProduits(131);
-		/**
-		 * Fin code de test
-		 */
-		this.panier = iCommandeClientService.viderPanier(commande);
-		// this.rechargeLignes();
+		this.panier = iCommandeClientService.viderPanier(gestionUtilisateurMBean.getClient(), this.panier);
 	}
 
 	/**
@@ -96,68 +87,31 @@ public class TestPanierMB {
 	 * @param client
 	 * @return le panier de type CommandeClient
 	 */
-	public CommandeClient panierClient(Client client) {
+	public CommandeClient panierClient(Client client)
+	{
 		return iCommandeClientService.panierClient(client);
 	}
 
-	public void incrementeQuantiteLigne()// TODO :Fil ajouter args :
-											// LignePieceClient lignePieceClient
+	public void incrementeQuantiteLigne(LignePieceClient lignePieceClient)
 	{
-		/**
-		 * TODO :Fil, supprimer code pour test
-		 */
-		/**
-		 * Début code de test
-		 */
-		CommandeClient commande = iCommandeClientService
-				.rechercherCommandeParIdAvecSesLignesEtSesProduits(34);
-		// TODO :Fil : penser à enlever l'initialisation
-		LignePieceClient lignePieceClient = (LignePieceClient) commande
-				.getLignesPieceClient().toArray()[0];
-		/**
-		 * Fin code de test
-		 */
-
-		this.panier = iCommandeClientService.incrementeQuantiteLigne(
-				gestionUtilisateurMBean.getClient(), lignePieceClient);
-		// this.rechargeLignes();
+		this.panier = iCommandeClientService.incrementeQuantiteLigne(gestionUtilisateurMBean.getClient(), lignePieceClient);
 	}
 
-	public void decrementeQuantiteLigne() // TODO :Fil : ajouter args :
-											// CommandeClient commandeClient,
-											// LignePieceClient lignePieceClient
+	public void decrementeQuantiteLigne(LignePieceClient lignePieceClient)
 	{
-		/**
-		 * TODO :Fil, supprimer code pour test
-		 */
-		/**
-		 * Début code de test
-		 */
-		CommandeClient commandeClient = iCommandeClientService
-				.rechercherCommandeParIdAvecSesLignesEtSesProduits(34);
-		// TODO :Fil : penser à enlever l'initialisation
-		LignePieceClient lignePieceClient = (LignePieceClient) commandeClient
-				.getLignesPieceClient().toArray()[0];
-		/**
-		 * Fin code de test
-		 */
-		this.panier = iCommandeClientService.decrementeQuantiteLigne(
-				gestionUtilisateurMBean.getClient(), lignePieceClient);
-		// this.rechargeLignes();
+		this.panier = iCommandeClientService.decrementeQuantiteLigne(gestionUtilisateurMBean.getClient(), lignePieceClient);
 	}
 
-	public void supprimerLignePieceClient(LignePieceClient lignePieceClient) {
-		this.panier = iCommandeClientService.supprimerLignePieceClient(
-				gestionUtilisateurMBean.getClient(), lignePieceClient);
+	public void supprimerLignePieceClient(LignePieceClient lignePieceClient)
+	{
+		this.panier = iCommandeClientService.supprimerLignePieceClient(gestionUtilisateurMBean.getClient(), lignePieceClient);
 		// this.rechargeLignes();
 
 	}
 
-	public void miseAJourQuantiteLigne(LignePieceClient lignePieceClient,
-			int nouvelleQuantite) {
-		this.panier = iCommandeClientService.miseAJourQuantiteLigne(
-				gestionUtilisateurMBean.getClient(), lignePieceClient,
-				nouvelleQuantite);
+	public void miseAJourQuantiteLigne(LignePieceClient lignePieceClient, int nouvelleQuantite)
+	{
+		this.panier = iCommandeClientService.miseAJourQuantiteLigne(gestionUtilisateurMBean.getClient(), lignePieceClient, nouvelleQuantite);
 		// this.rechargeLignes();
 	}
 
@@ -171,9 +125,9 @@ public class TestPanierMB {
 		 */
 		Client client = iClientService.clientParId(1);
 		// les commandes sont renvoyées sans leurs lignes
-		List<CommandeClient> historiqueCommandesClient = iCommandeClientService
-				.commandesParIdClient(client.getId());
-		for (CommandeClient commandeClient : historiqueCommandesClient) {
+		List<CommandeClient> historiqueCommandesClient = iCommandeClientService.commandesParIdClient(client.getId());
+		for (CommandeClient commandeClient : historiqueCommandesClient)
+		{
 			logger.info(commandeClient);
 		}
 		/**
@@ -191,8 +145,7 @@ public class TestPanierMB {
 		 * TODO :Fil - début zone pour test à enlever
 		 */
 		Client client = iClientService.clientParId(1);
-		CommandeClient commandeClient = iCommandeClientService
-				.panierClient(client);
+		CommandeClient commandeClient = iCommandeClientService.panierClient(client);
 		/**
 		 * fin zone pour test à enlever
 		 */
@@ -208,8 +161,7 @@ public class TestPanierMB {
 		/**
 		 * TODO :Fil - début zone pour test à enlever
 		 */
-		CommandeClient commandeClient = iCommandeClientService
-				.rechercherCommandeParIdAvecSesLignesEtSesProduits(1);
+		CommandeClient commandeClient = iCommandeClientService.rechercherCommandeParIdAvecSesLignesEtSesProduits(1);
 		/**
 		 * fin zone pour test à enlever
 		 */
@@ -225,8 +177,7 @@ public class TestPanierMB {
 		/**
 		 * TODO :Fil - début zone pour test à enlever
 		 */
-		CommandeClient commandeClient = iCommandeClientService
-				.rechercherCommandeParIdAvecSesLignesEtSesProduits(1);
+		CommandeClient commandeClient = iCommandeClientService.rechercherCommandeParIdAvecSesLignesEtSesProduits(1);
 		/**
 		 * fin zone pour test à enlever
 		 */
@@ -238,69 +189,79 @@ public class TestPanierMB {
 	}
 
 	// montant total TTC panier
-	public String montantTotalTTCPanier() {
+	public String montantTotalTTCPanier()
+	{
 		// la commande doit contenir ses lignes et les lignes doivent contenir
 		// leurs produits
-		double montantTotalTTCPanier = iCommandeClientService
-				.montantTotalTTCCommande(panier);
+		double montantTotalTTCPanier = iCommandeClientService.montantTotalTTCCommande(panier);
 		// montantTotalTTCPanier = Math.round(montantTotalTTCPanier * 100) /
 		// 100;
 		return dF.format(montantTotalTTCPanier);
 	}
 
 	// tva commande
-	public TVA tauxTVACommande() {
+	public TVA tauxTVACommande()
+	{
 		return iCommandeClientService.tauxTVACommande();
 	}
 
-	public String montantTotalTTCLigne(LignePieceClient lignePieceClient) {
-		return dF.format(iCommandeClientService
-				.montantTotalTTCLigne(lignePieceClient));
+	public String montantTotalTTCLigne(LignePieceClient lignePieceClient)
+	{
+		return dF.format(iCommandeClientService.montantTotalTTCLigne(lignePieceClient));
 	}
 
-	public String montantTTCProduit(Produit produit) {
+	public String montantTTCProduit(Produit produit)
+	{
 		return dF.format(iCommandeClientService.montantTTCProduit(produit));
 	}
 
-	public CommandeClient getPanier() {
+	public CommandeClient getPanier()
+	{
 		return panier;
 	}
 
-	public void setPanier(CommandeClient panier) {
+	public void setPanier(CommandeClient panier)
+	{
 		this.panier = panier;
 	}
 
-	public ICommandeClientService getiCommandeClientService() {
+	public ICommandeClientService getiCommandeClientService()
+	{
 		return iCommandeClientService;
 	}
 
-	public void setiCommandeClientService(
-			ICommandeClientService iCommandeClientService) {
+	public void setiCommandeClientService(ICommandeClientService iCommandeClientService)
+	{
 		this.iCommandeClientService = iCommandeClientService;
 	}
 
-	public IServiceClient getiClientService() {
+	public IServiceClient getiClientService()
+	{
 		return iClientService;
 	}
 
-	public void setiClientService(IServiceClient iClientService) {
+	public void setiClientService(IServiceClient iClientService)
+	{
 		this.iClientService = iClientService;
 	}
 
-	public GestionUtilisateurMBean getGestionUtilisateurMBean() {
+	public GestionUtilisateurMBean getGestionUtilisateurMBean()
+	{
 		return gestionUtilisateurMBean;
 	}
 
-	public void setGestionUtilisateurMBean(
-			GestionUtilisateurMBean gestionUtilisateurMBean) {
+	public void setGestionUtilisateurMBean(GestionUtilisateurMBean gestionUtilisateurMBean)
+	{
 		this.gestionUtilisateurMBean = gestionUtilisateurMBean;
 	}
 
-	public Logger getLogger() {
+	public Logger getLogger()
+	{
 		return logger;
 	}
 
-	public void setLogger(Logger logger) {
+	public void setLogger(Logger logger)
+	{
 		this.logger = logger;
 	}
 

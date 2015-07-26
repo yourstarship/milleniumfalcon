@@ -42,21 +42,27 @@
 
 					<div class="carousel-inner" role="listbox">
 						<div class="item active">
-							<span class="reducNumber" style="visibility: visible"></span> <img
-								src="#{accueilManagedBean.listPromotion.get(0).photo}" />
-
+							<span class="reducNumber" style="visibility: visible"></span>
+							<h:commandLink value=""
+								action="#{accueilManagedBean.accesDetailProduit(accueilManagedBean.listPromotion.get(0))}">
+								<img src="#{accueilManagedBean.listPromotion.get(0).photo}" />
+							</h:commandLink>
 						</div>
 
 						<div class="item">
-							<span class="reducNumber" style="visibility: visible"></span> <img
-								src="#{accueilManagedBean.listPromotion.get(1).photo}" />
-
+							<span class="reducNumber" style="visibility: visible"></span>
+							<h:commandLink value=""
+								action="#{accueilManagedBean.accesDetailProduit(accueilManagedBean.listPromotion.get(1))}">
+								<img src="#{accueilManagedBean.listPromotion.get(1).photo}" />
+							</h:commandLink>
 						</div>
 
 						<div class="item">
-							<span class="reducNumber" style="visibility: visible"></span> <img
-								src="#{accueilManagedBean.listPromotion.get(2).photo}" />
-
+							<span class="reducNumber" style="visibility: visible"></span>
+							<h:commandLink value=""
+								action="#{accueilManagedBean.accesDetailProduit(accueilManagedBean.listPromotion.get(2))}">
+								<img src="#{accueilManagedBean.listPromotion.get(2).photo}" />
+							</h:commandLink>
 						</div>
 
 
@@ -113,7 +119,7 @@
 								<h:outputText value="2 450 000" class="miniTitreNiveaux" />
 								<br /> <br /> <br />
 								<h:commandButton
-									action="#{detailProduitMBean.ajoutProduitAuPanier()}"
+									action="#{testPanierMB.ajouterUnProduitChoisi(detailProduitMBean.produit)}"
 									value="Ajouter au Panier" class="buttDetailProdAjoutPanier" />
 							</div>
 						</div>
@@ -203,7 +209,10 @@
 							<ui:repeat var="ligne"
 								value="#{testPanierMB.panier.lignesPieceClient}">
 								<div>
-									<h:outputText value="#{ligne.produit.nom}" />
+									<h:commandLink
+										action="#{accueilManagedBean.accesDetailProduit(ligne.produit)}">
+										<h:outputText value="#{ligne.produit.nom}" />
+									</h:commandLink>
 									:<br />
 									<h:outputText
 										value="#{testPanierMB.montantTTCProduit(ligne.produit)}" />
@@ -225,6 +234,9 @@
 						Total :
 						<h:outputText value="#{testPanierMB.montantTotalTTCPanier()}" />
 						€
+						<h:commandLink action="#{testPanierMB.viderPanier()}" value="">
+							<img src="image/delete.png" width="10px" height="10px" />
+						</h:commandLink>
 					</div>
 					<div>
 						<br />

@@ -105,18 +105,6 @@
 	margin-top: 26.5%;
 }
 
-.d�tail
-{
-width:800px;
-height:800px;
-float:left;
-margin-left:300px;
-
-border: 2px,solid,black;
-border-radius:10px;
-margin-bottom:100px;
-}
-
 .detailNiveau1,.detailNiveau3,.detailNiveau2
 {
 
@@ -424,6 +412,11 @@ padding-bottom:20px;
 {
 	color: #BDE3DE;
 	overflow: auto;	
+}
+
+#listePanierCompteUtilisateur a
+{
+	color: #BDE3DE;	
 }
 
 #totalPanierCompteUtilisateur

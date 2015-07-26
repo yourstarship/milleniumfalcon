@@ -24,13 +24,13 @@ public interface ICommandeClientService
 	public CommandeClient decrementeQuantiteLigne(Client client, LignePieceClient lignePieceClient);
 
 	//testée
-	public CommandeClient viderPanier(CommandeClient commandeClient);
+	public CommandeClient viderPanier(Client client, CommandeClient commandeClient);
 
 	//testée
 	public CommandeClient supprimerLignePieceClient(Client client, LignePieceClient lignePieceClient);
 
 	public CommandeClient rechercherParId(int id);
-	
+
 	List<CommandeClient> recupeCommandesParClient(Integer idClient);
 
 	//testée

@@ -25,181 +25,157 @@ import javax.faces.bean.SessionScoped;
 
 import org.apache.log4j.Logger;
 
-@ManagedBean (name="compteUtilisateurMBean")
+@ManagedBean(name = "compteUtilisateurMBean")
 @SessionScoped
-public class CompteUtilisateurManagedBean {
-	
-	private  static Logger log = Logger.getLogger(CompteUtilisateurManagedBean.class);
-	
-	@ManagedProperty(value="#{gestionUtilisateurMBean}")
+public class CompteUtilisateurManagedBean
+{
+
+	private static Logger log = Logger.getLogger(CompteUtilisateurManagedBean.class);
+
+	@ManagedProperty(value = "#{gestionUtilisateurMBean}")
 	private GestionUtilisateurMBean gestion;
-	
+
+	@ManagedProperty(value = "#{testPanierMB}")
+	private TestPanierMB testPanierMB;
+
 	@EJB
 	private IClientService proxyClientService;
-	
+
 	@EJB
 	private IServiceCarte proxyCarte;
-	
+
 	@EJB
 	private ICommandeClientService proxyCommandeClient;
 
-/*******************ATTRIBUTS***************************************************************************************/
+	/******************* ATTRIBUTS ***************************************************************************************/
 	private Client client = new Client();
 	private Adresse adresse = new Adresse();
-	
-	
-	private List<CommandeClient>commandesClients = new ArrayList<CommandeClient>();
-	private List<Carte>cartes;
-	private List<Adresse>adresses = new ArrayList<Adresse>();
-	
-/*******************METHODES***************************************************************************************/
-	
+
+	private List<CommandeClient> commandesClients = new ArrayList<CommandeClient>();
+	private List<Carte> cartes;
+	private List<Adresse> adresses = new ArrayList<Adresse>();
+
+	/******************* METHODES ***************************************************************************************/
 
 	@PostConstruct
-	public void renseignerUtilisateur(){	
+	public void renseignerUtilisateur()
+	{
 		client = proxyClientService.rechercherParClientId(gestion.getClient().getId());
-		cartes= proxyCarte.RechercheCartesParIdClient(client.getId());	
-		commandesClients=proxyCommandeClient.recupeCommandesParClient(client.getId());
-		
-		
-	
-	
+		cartes = proxyCarte.RechercheCartesParIdClient(client.getId());
+		commandesClients = proxyCommandeClient.recupeCommandesParClient(client.getId());
+
 	}
-		
 
-
-	public String accesDetailPanier(){
+	public String accesDetailPanier()
+	{
 		return ("affichageDetailPanier.xhtml");
 	}
 
-	public String validerLaCommande(){
+	public String validerLaCommande()
+	{
 		return ("compteUtilisateur.xhtml");
 	}
 
-/*******************GETTER/SETTER***************************************************************************************/
+	/******************* GETTER/SETTER ***************************************************************************************/
 
-	public GestionUtilisateurMBean getGestion() {
+	public GestionUtilisateurMBean getGestion()
+	{
 		return gestion;
 	}
 
-
-
-
-	public void setGestion(GestionUtilisateurMBean gestion) {
+	public void setGestion(GestionUtilisateurMBean gestion)
+	{
 		this.gestion = gestion;
 	}
 
-
-
-
-	public IClientService getProxyClientService() {
+	public IClientService getProxyClientService()
+	{
 		return proxyClientService;
 	}
 
-
-
-
-	public void setProxyClientService(IClientService proxyClientService) {
+	public void setProxyClientService(IClientService proxyClientService)
+	{
 		this.proxyClientService = proxyClientService;
 	}
 
-
-
-
-	public IServiceCarte getProxyCarte() {
+	public IServiceCarte getProxyCarte()
+	{
 		return proxyCarte;
 	}
 
-
-
-
-	public void setProxyCarte(IServiceCarte proxyCarte) {
+	public void setProxyCarte(IServiceCarte proxyCarte)
+	{
 		this.proxyCarte = proxyCarte;
 	}
 
-
-
-
-	public Client getClient() {
+	public Client getClient()
+	{
 		return client;
 	}
 
-
-
-
-	public void setClient(Client client) {
+	public void setClient(Client client)
+	{
 		this.client = client;
 	}
 
-
-
-
-	public Adresse getAdresse() {
+	public Adresse getAdresse()
+	{
 		return adresse;
 	}
 
-
-
-
-	public void setAdresse(Adresse adresse) {
+	public void setAdresse(Adresse adresse)
+	{
 		this.adresse = adresse;
 	}
 
-
-
-
-	public List<CommandeClient> getCommandesClients() {
+	public List<CommandeClient> getCommandesClients()
+	{
 		return commandesClients;
 	}
 
-
-
-
-	public void setCommandesClients(List<CommandeClient> commandesClients) {
+	public void setCommandesClients(List<CommandeClient> commandesClients)
+	{
 		this.commandesClients = commandesClients;
 	}
 
-
-
-
-	public List<Carte> getCartes() {
+	public List<Carte> getCartes()
+	{
 		return cartes;
 	}
 
-
-
-
-	public void setCartes(List<Carte> cartes) {
+	public void setCartes(List<Carte> cartes)
+	{
 		this.cartes = cartes;
 	}
 
-
-
-
-	public List<Adresse> getAdresses() {
+	public List<Adresse> getAdresses()
+	{
 		return adresses;
 	}
 
-
-
-
-	public void setAdresses(List<Adresse> adresses) {
+	public void setAdresses(List<Adresse> adresses)
+	{
 		this.adresses = adresses;
 	}
 
-
-
-	public ICommandeClientService getProxyCommandeClient() {
+	public ICommandeClientService getProxyCommandeClient()
+	{
 		return proxyCommandeClient;
 	}
 
-
-
-	public void setProxyCommandeClient(ICommandeClientService proxyCommandeClient) {
+	public void setProxyCommandeClient(ICommandeClientService proxyCommandeClient)
+	{
 		this.proxyCommandeClient = proxyCommandeClient;
 	}
 
-	
-	
+	public TestPanierMB getTestPanierMB()
+	{
+		return testPanierMB;
+	}
+
+	public void setTestPanierMB(TestPanierMB testPanierMB)
+	{
+		this.testPanierMB = testPanierMB;
+	}
 
 }

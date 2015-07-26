@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 
@@ -46,21 +47,29 @@
 
 					<div class="carousel-inner" role="listbox">
 						<div class="item active">
-							<span class="reducNumber" style="visibility: visible"></span> <img
-								src="#{accueilManagedBean.listPromotion.get(0).photo}" />
+
+							<span class="reducNumber" style="visibility: visible"></span>
+							<h:commandLink value=""
+								action="#{accueilManagedBean.accesDetailProduit(accueilManagedBean.listPromotion.get(0))}">
+								<img src="#{accueilManagedBean.listPromotion.get(0).photo}" />
+							</h:commandLink>
 
 						</div>
 
 						<div class="item">
-							<span class="reducNumber" style="visibility: visible"></span> <img
-								src="#{accueilManagedBean.listPromotion.get(1).photo}" />
-
+							<span class="reducNumber" style="visibility: visible"></span>
+							<h:commandLink value=""
+								action="#{accueilManagedBean.accesDetailProduit(accueilManagedBean.listPromotion.get(1))}">
+								<img src="#{accueilManagedBean.listPromotion.get(1).photo}" />
+							</h:commandLink>
 						</div>
 
 						<div class="item">
-							<span class="reducNumber" style="visibility: visible"></span> <img
-								src="#{accueilManagedBean.listPromotion.get(2).photo}" />
-
+							<span class="reducNumber" style="visibility: visible"></span>
+							<h:commandLink value=""
+								action="#{accueilManagedBean.accesDetailProduit(accueilManagedBean.listPromotion.get(2))}">
+								<img src="#{accueilManagedBean.listPromotion.get(2).photo}" />
+							</h:commandLink>
 						</div>
 
 
@@ -165,18 +174,21 @@
 
 				<!-- Panier lateral droit -->
 				<div id="panierAccueil">
-					<h:panelGroup>
+					<h:panelGroup id="ccooco">
 						<div id="hauteurPanierAccueil">
 							<div id="titrePanier">
-								<a href="">Panier</a>
+								<span>Panier</span>
 								<div id="iconePanier"></div>
 							</div>
-							<div id="listePanierAccueil">
+							<div class="listePanierAccueil">
 
 								<ui:repeat var="ligne"
 									value="#{testPanierMB.panier.lignesPieceClient}">
 									<div>
-										<h:outputText value="#{ligne.produit.nom}" />
+										<h:commandLink
+											action="#{accueilManagedBean.accesDetailProduit(ligne.produit)}">
+											<h:outputText value="#{ligne.produit.nom}" />
+										</h:commandLink>
 										:<br />
 										<h:outputText
 											value="#{testPanierMB.montantTTCProduit(ligne.produit)}" />
@@ -195,9 +207,13 @@
 							</div>
 						</div>
 						<div id="totalPanierAccueil">
+
 							Total :
 							<h:outputText value="#{testPanierMB.montantTotalTTCPanier()}" />
 							€
+							<h:commandLink action="#{testPanierMB.viderPanier()}" value="">
+								<img src="image/delete.png" width="10px" height="10px" />
+							</h:commandLink>
 						</div>
 					</h:panelGroup>
 					<div>

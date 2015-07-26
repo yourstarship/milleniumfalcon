@@ -184,6 +184,7 @@ nav
 	font-weight: bold;
 	font-family: Lucida Sans;
 	font-size: 1.1em;
+	color: #E2C926;
 }
 
 #iconePanier
@@ -208,10 +209,16 @@ nav
 	font-size: 1em;
 }
 
-#listePanierAccueil
+.listePanierAccueil
 {
 	color: #BDE3DE;
 	overflow: auto;	
+}
+
+.listePanierAccueil a
+{
+	color: #BDE3DE;	
+	text-decoration : underline;
 }
 
 .detailPanierAccueil

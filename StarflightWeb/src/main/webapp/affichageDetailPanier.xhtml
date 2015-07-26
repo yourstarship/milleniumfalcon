@@ -49,8 +49,20 @@
 								<div class="orgaDetailPanier">
 									<span class="miniTitreNiveaux">Organisation</span> <br /> <br />
 									<span>Ajouter une quantité : </span>
+
+									<h:commandLink
+										action="#{testPanierMB.decrementeQuantiteLigne(ligne)}">
+										<img src="image/left.png" width="15px" height="15px" />
+									</h:commandLink>
+
 									<h:inputText value="#{ligne.quantite}" id="idQte"
 										class="qteProdDetailPanier" binding="#{qte}" />
+
+									<h:commandLink
+										action="#{testPanierMB.incrementeQuantiteLigne(ligne)}">
+										<img src="image/right.png" width="15px" height="15px" />
+									</h:commandLink>
+
 									<h:commandLink
 										action="#{testPanierMB.miseAJourQuantiteLigne(ligne, qte.value)}">
 										<img src="image/refresh.png" width="15px" height="15px" />
@@ -92,7 +104,10 @@
 							<ui:repeat var="ligne"
 								value="#{testPanierMB.panier.lignesPieceClient}">
 								<div>
-									<h:outputText value="#{ligne.produit.nom}" />
+									<h:commandLink
+										action="#{accueilManagedBean.accesDetailProduit(ligne.produit)}">
+										<h:outputText value="#{ligne.produit.nom}" />
+									</h:commandLink>
 									:<br />
 									<h:outputText
 										value="#{testPanierMB.montantTTCProduit(ligne.produit)}" />
@@ -114,6 +129,9 @@
 						Total :
 						<h:outputText value="#{testPanierMB.montantTotalTTCPanier()}" />
 						€
+						<h:commandLink action="#{testPanierMB.viderPanier()}" value="">
+							<img src="image/delete.png" width="10px" height="10px" />
+						</h:commandLink>
 					</div>
 					<div>
 						<br /> <br /> <br />
