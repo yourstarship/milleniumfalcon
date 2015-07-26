@@ -12,8 +12,8 @@
 
 		<script type='text/javascript'
 			src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
-					<!-- Infos du Carroussel -->
-			<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Infos du Carroussel -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 			<link rel="stylesheet"
 				href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 				<script
@@ -25,92 +25,96 @@
 
 	</ui:define>
 	<ui:define name="content">
-	<h:form>
-		<!-- ICI Le Contenu  -->
-		<!-- Espace Promotions -->
-		<div id="contenuDetailProduit">
-			<div id="myCarousel" class="carousel slide" data-ride="carousel">
-				<span id="titrePromoC" style="visibility: visible">PROMOTIONS</span>
-				<!-- Indicators -->
-				<ol class="carousel-indicators">
-					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					<li data-target="#myCarousel" data-slide-to="1"></li>
-					<li data-target="#myCarousel" data-slide-to="2"></li>
-					
-				</ol>
+		<h:form>
+			<!-- ICI Le Contenu  -->
+			<!-- Espace Promotions -->
+			<div id="contenuDetailProduit">
+				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+					<span id="titrePromoC" style="visibility: visible">PROMOTIONS</span>
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li>
 
-				
-				<div class="carousel-inner" role="listbox">
-					<div class="item active">
-						<span class="reducNumber" style="visibility: visible"></span> <img
-							src="#{accueilManagedBean.listPromotion.get(0).photo}" />
+					</ol>
+
+
+					<div class="carousel-inner" role="listbox">
+						<div class="item active">
+							<span class="reducNumber" style="visibility: visible"></span> <img
+								src="#{accueilManagedBean.listPromotion.get(0).photo}" />
+
+						</div>
+
+						<div class="item">
+							<span class="reducNumber" style="visibility: visible"></span> <img
+								src="#{accueilManagedBean.listPromotion.get(1).photo}" />
+
+						</div>
+
+						<div class="item">
+							<span class="reducNumber" style="visibility: visible"></span> <img
+								src="#{accueilManagedBean.listPromotion.get(2).photo}" />
+
+						</div>
+
 
 					</div>
 
-					<div class="item">
-						<span class="reducNumber" style="visibility: visible"></span>
-						<img src="#{accueilManagedBean.listPromotion.get(1).photo}" />
 
-					</div>
-
-					<div class="item">
-						<span class="reducNumber" style="visibility: visible"></span>
-						<img src="#{accueilManagedBean.listPromotion.get(2).photo}" />
-
-					</div>
-
-				
+					<!-- Left and right controls -->
+					<a class="left carousel-control" href="#myCarousel" role="button"
+						data-slide="prev"> <span
+						class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a> <a class="right carousel-control" href="#myCarousel" role="button"
+						data-slide="next"> <span
+						class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
 				</div>
 
 
-				<!-- Left and right controls -->
-				<a class="left carousel-control" href="#myCarousel" role="button"
-					data-slide="prev"> <span
-					class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a> <a class="right carousel-control" href="#myCarousel" role="button"
-					data-slide="next"> <span
-					class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
-			</div>
-
-			
 				<div id="titrePageDetailProduit">
-					<span>Présentation Détaillées du </span><span>#{detailProduitMBean.produit.nom} </span>
+					<span>Présentation Détaillées du </span><span>#{detailProduitMBean.produit.nom}
+					</span>
 				</div>
 				<div id="ficheDetail">
 
 					<div class="detailNiveau">
 						<div id="alignementNiveau1">
 							<div id="nomProdEtRef">
-							<span class="miniTitreNiveaux">Produit : </span> 
-								<h:outputText value="#{detailProduitMBean.produit.nom}" /> <br />
-									<br /> <span class="miniTitreNiveaux">Référence : </span> 
-									<h:outputText value="#{detailProduitMBean.produit.id}" /> <br /> <br />
-									<span class="miniTitreNiveaux">Catégorie : </span> 
-									<h:outputText value="#{detailProduitMBean.produit.categorie.nom}" /> <br /> <br />
-									<span class="miniTitreNiveaux">Type : </span> 
-									<h:outputText value="#{detailProduitMBean.produit.type.nom}" />
+								<span class="miniTitreNiveaux">Produit : </span>
+								<h:outputText value="#{detailProduitMBean.produit.nom}" />
+								<br /> <br /> <span class="miniTitreNiveaux">Référence
+									: </span>
+								<h:outputText value="#{detailProduitMBean.produit.id}" />
+								<br /> <br /> <span class="miniTitreNiveaux">Catégorie
+									: </span>
+								<h:outputText
+									value="#{detailProduitMBean.produit.categorie.nom}" />
+								<br /> <br /> <span class="miniTitreNiveaux">Type : </span>
+								<h:outputText value="#{detailProduitMBean.produit.type.nom}" />
 							</div>
 							<div id="imgFicheDetail">
 								<img src="#{detailProduitMBean.produit.photo}" />
 							</div>
 							<div id="descDroite">
 								<span class="miniTitreNiveaux">Description</span>
-								<p>
-									#{detailProduitMBean.produit.description}
-								</p>
+								<p>#{detailProduitMBean.produit.description}</p>
 							</div>
 							<div id="prixAjoutPanier">
 								<div id="zoneFavorisIcones">
 									<div id="buttNoFavIcone"></div>
 									<div id="buttYesFavIcone"></div>
 								</div>
-								<span class="miniTitreNiveaux">Prix : </span> <br /> <br /> 
-								<h:outputText value="2 450 000" class="miniTitreNiveaux" /> <br /> <br />
-								<br />
-								<h:commandButton action="#{detailProduitMBean.ajoutProduitAuPanier()}" value="Ajouter au Panier" class="buttDetailProdAjoutPanier" />
+								<span class="miniTitreNiveaux">Prix : </span> <br /> <br />
+								<h:outputText value="2 450 000" class="miniTitreNiveaux" />
+								<br /> <br /> <br />
+								<h:commandButton
+									action="#{detailProduitMBean.ajoutProduitAuPanier()}"
+									value="Ajouter au Panier" class="buttDetailProdAjoutPanier" />
 							</div>
 						</div>
 					</div>
@@ -131,7 +135,8 @@
 								<tr>
 									<td class="tailleColonneCaracFicheDetaille">#{detailProduitMBean.produit.nombreEquipage}</td>
 									<td class="tailleColonneCaracFicheDetaille">#{detailProduitMBean.produit.nombrePassagersMax}</td>
-									<td class="tailleColonneCaracFicheDetaille">#{detailProduitMBean.produit.vitesse} Km/h</td>
+									<td class="tailleColonneCaracFicheDetaille">#{detailProduitMBean.produit.vitesse}
+										Km/h</td>
 									<td class="tailleColonneCaracFicheDetaille">#{detailProduitMBean.produit.couleur.nom}</td>
 								</tr>
 								<tr>
@@ -143,7 +148,7 @@
 									<td>#{detailProduitMBean.produit.longueur} m</td>
 									<td>#{detailProduitMBean.produit.largeur} m</td>
 									<td>#{detailProduitMBean.produit.poids} kg</td>
-									
+
 								</tr>
 							</table>
 						</div>
@@ -178,22 +183,25 @@
 						</div>
 						<!--  Ici c'est l'ajout de commentaire visible uniquement si on est connecté  -->
 						<fieldset>
-							<legend><h:inputText value="Nom" class="centVingtpx"/></legend>
+							<legend>
+								<h:inputText value="Nom" class="centVingtpx" />
+							</legend>
 							<h:inputTextarea rows="4" cols="125" />
 						</fieldset>
 					</div>
 				</div>
-			
 
-			<!-- Panier lateral droit -->
-			<div id="panierDetailProduit">
-				<div id="hauteurPanierDetailProduit">
-					<div id="titrePanier">
-						<a href="">Panier</a>
-						<div id="iconePanier"></div>
-					</div>
-					<div id="listePanierDetailProduit">
-							<ui:repeat var="ligne" value="#{testPanierMB.lignesPanier}">
+
+				<!-- Panier lateral droit -->
+				<div id="panierDetailProduit">
+					<div id="hauteurPanierDetailProduit">
+						<div id="titrePanier">
+							<a href="">Panier</a>
+							<div id="iconePanier"></div>
+						</div>
+						<div id="listePanierDetailProduit">
+							<ui:repeat var="ligne"
+								value="#{testPanierMB.panier.lignesPieceClient}">
 								<div>
 									<h:outputText value="#{ligne.produit.nom}" />
 									:<br />
@@ -211,22 +219,27 @@
 									</h:commandLink>
 								</div>
 							</ui:repeat>
-				</div>
-				</div>
+						</div>
+					</div>
 					<div id="totalPanierDetailProduit">
 						Total :
 						<h:outputText value="#{testPanierMB.montantTotalTTCPanier()}" />
 						€
 					</div>
-				<div>
-					<br />
-					<h:commandButton action="#{detailProduitMBean.accesDetailPanier()}" value="Detail du Panier" class="detailPanierDetailProduit" />
-						 <br /> <br />
-					<h:commandButton action="#{detailProduitMBean.validerLaCommande()}" value="Effectuer votre Commande" class="lancerCommandeDetailProduit" />
+					<div>
+						<br />
+						<h:commandButton
+							action="#{detailProduitMBean.accesDetailPanier()}"
+							value="Detail du Panier" class="detailPanierDetailProduit" />
+						<br /> <br />
+						<h:commandButton
+							action="#{detailProduitMBean.validerLaCommande()}"
+							value="Effectuer votre Commande"
+							class="lancerCommandeDetailProduit" />
+					</div>
 				</div>
 			</div>
-		</div>
-</h:form>
+		</h:form>
 
 		<script>
 function blink(ob)

@@ -16,8 +16,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
-public class CommandeClient implements Serializable
-{
+public class CommandeClient implements Serializable {
 
 	/**
 	 * 
@@ -49,14 +48,16 @@ public class CommandeClient implements Serializable
 	private FactureClient factureClient;
 
 	@OneToMany(mappedBy = "commandeClient")
-	private Set<LignePieceClient> lignesPieceClient = new LinkedHashSet<LignePieceClient>();
+	private List<LignePieceClient> lignesPieceClient = new ArrayList<>();// LinkedHashSet<LignePieceClient>();
 
 	@ManyToOne
 	@JoinColumn(name = "idtva")
 	private TVA tva;
 
-	public CommandeClient(Integer id, Double remise, Date dateCreation, Date dateAnnulation, Date dateDerniereTentativePaiement, Date datePaiementAccepte, Date dateSoldee, Date dateEnvoi, Carte carte, Client client, FactureClient factureClient)
-	{
+	public CommandeClient(Integer id, Double remise, Date dateCreation,
+			Date dateAnnulation, Date dateDerniereTentativePaiement,
+			Date datePaiementAccepte, Date dateSoldee, Date dateEnvoi,
+			Carte carte, Client client, FactureClient factureClient) {
 		super();
 		this.id = id;
 		this.remise = remise;
@@ -71,8 +72,9 @@ public class CommandeClient implements Serializable
 		this.factureClient = factureClient;
 	}
 
-	public CommandeClient(Integer id, Double remise, Date dateCreation, Date dateAnnulation, Date dateDerniereTentativePaiement, Date datePaiementAccepte, Date dateSoldee, Date dateEnvoi)
-	{
+	public CommandeClient(Integer id, Double remise, Date dateCreation,
+			Date dateAnnulation, Date dateDerniereTentativePaiement,
+			Date datePaiementAccepte, Date dateSoldee, Date dateEnvoi) {
 		super();
 		this.id = id;
 		this.remise = remise;
@@ -84,160 +86,145 @@ public class CommandeClient implements Serializable
 		this.dateEnvoi = dateEnvoi;
 	}
 
-	public CommandeClient()
-	{
+	public CommandeClient() {
 		super();
 	}
 
-	public Integer getId()
-	{
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Integer id)
-	{
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public Double getRemise()
-	{
+	public Double getRemise() {
 		return remise;
 	}
 
-	public void setRemise(Double remise)
-	{
+	public void setRemise(Double remise) {
 		this.remise = remise;
 	}
 
-	public Date getDateCreation()
-	{
+	public Date getDateCreation() {
 		return dateCreation;
 	}
 
-	public void setDateCreation(Date dateCreation)
-	{
+	public void setDateCreation(Date dateCreation) {
 		this.dateCreation = dateCreation;
 	}
 
-	public Date getDateAnnulation()
-	{
+	public Date getDateAnnulation() {
 		return dateAnnulation;
 	}
 
-	public void setDateAnnulation(Date dateAnnulation)
-	{
+	public void setDateAnnulation(Date dateAnnulation) {
 		this.dateAnnulation = dateAnnulation;
 	}
 
-	public Date getDateDerniereTentativePaiement()
-	{
+	public Date getDateDerniereTentativePaiement() {
 		return dateDerniereTentativePaiement;
 	}
 
-	public void setDateDerniereTentativePaiement(Date dateDerniereTentativePaiement)
-	{
+	public void setDateDerniereTentativePaiement(
+			Date dateDerniereTentativePaiement) {
 		this.dateDerniereTentativePaiement = dateDerniereTentativePaiement;
 	}
 
-	public Date getDatePaiementAccepte()
-	{
+	public Date getDatePaiementAccepte() {
 		return datePaiementAccepte;
 	}
 
-	public void setDatePaiementAccepte(Date datePaiementAccepte)
-	{
+	public void setDatePaiementAccepte(Date datePaiementAccepte) {
 		this.datePaiementAccepte = datePaiementAccepte;
 	}
 
-	public Date getDateSoldee()
-	{
+	public Date getDateSoldee() {
 		return dateSoldee;
 	}
 
-	public void setDateSoldee(Date dateSoldee)
-	{
+	public void setDateSoldee(Date dateSoldee) {
 		this.dateSoldee = dateSoldee;
 	}
 
-	public Date getDateEnvoi()
-	{
+	public Date getDateEnvoi() {
 		return dateEnvoi;
 	}
 
-	public void setDateEnvoi(Date dateEnvoi)
-	{
+	public void setDateEnvoi(Date dateEnvoi) {
 		this.dateEnvoi = dateEnvoi;
 	}
 
-	public Carte getCarte()
-	{
+	public Carte getCarte() {
 		return carte;
 	}
 
-	public void setCarte(Carte carte)
-	{
+	public void setCarte(Carte carte) {
 		this.carte = carte;
 	}
 
-	public Client getClient()
-	{
+	public Client getClient() {
 		return client;
 	}
 
-	public void setClient(Client client)
-	{
+	public void setClient(Client client) {
 		this.client = client;
 	}
 
-	public FactureClient getFacture()
-	{
+	public FactureClient getFacture() {
 		return factureClient;
 	}
 
-	public void setFacture(FactureClient facture)
-	{
+	public void setFacture(FactureClient facture) {
 		this.factureClient = facture;
 	}
 
-	public FactureClient getFactureClient()
-	{
+	public FactureClient getFactureClient() {
 		return factureClient;
 	}
 
-	public void setFactureClient(FactureClient factureClient)
-	{
+	public void setFactureClient(FactureClient factureClient) {
 		this.factureClient = factureClient;
 	}
 
-	public Set<LignePieceClient> getLignesPieceClient()
-	{
-		return lignesPieceClient;
-	}
+	// public Set<LignePieceClient> getLignesPieceClient() {
+	// return lignesPieceClient;
+	// }
+	//
+	// public void setLignesPieceClient(Set<LignePieceClient> lignesPieceClient)
+	// {
+	// this.lignesPieceClient = lignesPieceClient;
+	// }
 
-	public void setLignesPieceClient(Set<LignePieceClient> lignesPieceClient)
-	{
-		this.lignesPieceClient = lignesPieceClient;
-	}
-
-	public TVA getTva()
-	{
+	public TVA getTva() {
 		return tva;
 	}
 
-	public void setTva(TVA tva)
-	{
+	public void setTva(TVA tva) {
 		this.tva = tva;
 	}
 
-	public static long getSerialversionuid()
-	{
+	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
 
 	@Override
-	public String toString()
-	{
-		return "\n\n" + getClass().getName() + " {\n\tid: " + id + "\n\tremise: " + remise + "\n\tdateCreation: " + dateCreation + "\n\tdateAnnulation: " + dateAnnulation + "\n\tdateDerniereTentativePaiement: " + dateDerniereTentativePaiement + "\n\tdatePaiementAccepte: " + datePaiementAccepte + "\n\tdateSoldee: " + dateSoldee + "\n\tdateEnvoi: " + dateEnvoi + "\n}\n";
+	public String toString() {
+		return "\n\n" + getClass().getName() + " {\n\tid: " + id
+				+ "\n\tremise: " + remise + "\n\tdateCreation: " + dateCreation
+				+ "\n\tdateAnnulation: " + dateAnnulation
+				+ "\n\tdateDerniereTentativePaiement: "
+				+ dateDerniereTentativePaiement + "\n\tdatePaiementAccepte: "
+				+ datePaiementAccepte + "\n\tdateSoldee: " + dateSoldee
+				+ "\n\tdateEnvoi: " + dateEnvoi + "\n}\n";
+	}
+
+	public List<LignePieceClient> getLignesPieceClient() {
+		return lignesPieceClient;
+	}
+
+	public void setLignesPieceClient(List<LignePieceClient> lignesPieceClient) {
+		this.lignesPieceClient = lignesPieceClient;
 	}
 
 }

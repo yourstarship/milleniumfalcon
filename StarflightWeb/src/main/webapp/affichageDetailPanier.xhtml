@@ -25,7 +25,8 @@
 					<span>Contenu Détaillé de Votre Panier </span>
 				</div>
 				<div id="ficheDetailPanier">
-					<ui:repeat var="ligne" value="#{detailPanierMBean.lignesPanier}">
+					<ui:repeat var="ligne"
+						value="#{testPanierMB.panier.lignesPieceClient}">
 						<div class="detailProdPanier">
 
 							<div id="alignementNiveau1">
@@ -88,7 +89,8 @@
 							<div id="iconePanier"></div>
 						</div>
 						<div id="listePanierDetailProduit">
-							<ui:repeat var="ligne" value="#{testPanierMB.lignesPanier}">
+							<ui:repeat var="ligne"
+								value="#{testPanierMB.panier.lignesPieceClient}">
 								<div>
 									<h:outputText value="#{ligne.produit.nom}" />
 									:<br />

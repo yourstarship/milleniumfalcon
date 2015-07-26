@@ -39,7 +39,7 @@ public class ServiceClientImpl implements IServiceClient
 	@Override
 	public Client clientParId(int id)
 	{
-		return daoClient.rechercherParId(id);
+		return daoClient.rechercherClientParId(id);
 	}
 
 	@Override
