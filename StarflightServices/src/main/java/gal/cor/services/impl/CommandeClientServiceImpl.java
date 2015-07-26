@@ -41,10 +41,6 @@ public class CommandeClientServiceImpl implements ICommandeClientService
 	{
 		boolean result = false;
 		lignePieceClient.setQuantite(lignePieceClient.getQuantite() + 1);
-		if (client != null)
-		{
-			iDaoLignePieceClient.mettreAjourLignePieceClient(lignePieceClient);
-		}
 		return lignePieceClient.getCommandeClient();
 	}
 
@@ -54,10 +50,6 @@ public class CommandeClientServiceImpl implements ICommandeClientService
 		if (lignePieceClient.getQuantite() > 1)
 		{
 			lignePieceClient.setQuantite(lignePieceClient.getQuantite() - 1);
-			if (client != null)
-			{
-				iDaoLignePieceClient.mettreAjourLignePieceClient(lignePieceClient);
-			}
 		} else if (lignePieceClient.getQuantite() == 1)
 		{
 			lignePieceClient.setQuantite(lignePieceClient.getQuantite() - 1);
@@ -70,10 +62,6 @@ public class CommandeClientServiceImpl implements ICommandeClientService
 	public CommandeClient miseAJourQuantiteLigne(Client client, LignePieceClient lignePieceClient, int nouvelleQuantite)
 	{
 		lignePieceClient.setQuantite(nouvelleQuantite);
-		if (client != null)
-		{
-			iDaoLignePieceClient.mettreAjourLignePieceClient(lignePieceClient);
-		}
 		return lignePieceClient.getCommandeClient();
 	}
 
@@ -81,10 +69,6 @@ public class CommandeClientServiceImpl implements ICommandeClientService
 	public CommandeClient supprimerLignePieceClient(Client client, LignePieceClient lignePieceClient)
 	{
 		lignePieceClient.getCommandeClient().getLignesPieceClient().remove(lignePieceClient);
-		if (client != null)
-		{
-			iDaoLignePieceClient.supprimerLignePieceClient(lignePieceClient);
-		}
 		return lignePieceClient.getCommandeClient();
 	}
 
@@ -94,13 +78,6 @@ public class CommandeClientServiceImpl implements ICommandeClientService
 		List<LignePieceClient> lesLignesDuPanier = commandeClient.getLignesPieceClient();
 		if (lesLignesDuPanier.size() > 0)
 		{
-			if (client != null)
-			{
-				for (LignePieceClient lignePieceClient : lesLignesDuPanier)
-				{
-					iDaoLignePieceClient.supprimerLignePieceClient(lignePieceClient);
-				}
-			}
 			lesLignesDuPanier.clear();
 		}
 		return commandeClient;

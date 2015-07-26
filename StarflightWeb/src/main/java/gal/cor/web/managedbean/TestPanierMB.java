@@ -76,7 +76,7 @@ public class TestPanierMB
 		// this.rechargeLignes();
 	}
 
-	public void viderPanier()// TODO :Fil +Client client
+	public void viderPanier()
 	{
 		this.panier = iCommandeClientService.viderPanier(gestionUtilisateurMBean.getClient(), this.panier);
 	}
