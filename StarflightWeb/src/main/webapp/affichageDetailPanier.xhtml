@@ -25,11 +25,12 @@
 					<span>Contenu Détaillé de Votre Panier </span>
 				</div>
 				<div id="ficheDetailPanier">
+					<ui:repeat var="ligne" value="#{detailPanierMBean.lignesPanier}">
+						<div class="detailProdPanier">
 
-					<div class="detailProdPanier">
-						<div id="alignementNiveau1">
-							<ui:repeat var="ligne" value="#{detailPanierMBean.lignesPanier}">
-								<div id="nomProdEtRef">
+							<div id="alignementNiveau1">
+
+								<div class="nomProdEtRef">
 
 									<span class="miniTitreNiveaux">Produit : </span>
 									#{ligne.produit.nom} <br /> <br /> <span
@@ -41,13 +42,23 @@
 									#{ligne.produit.type.nom}
 
 								</div>
-								<div id="imgFicheDetail">
+								<div class="imgFicheDetail">
 									<img src="#{ligne.produit.photo}" />
 								</div>
-								<div id="orgaDetailPanier">
+								<div class="orgaDetailPanier">
 									<span class="miniTitreNiveaux">Organisation</span> <br /> <br />
 									<span>Ajouter une quantité : </span>
-									<h:inputText value="" class="qteProdDetailPanier" />
+									<h:inputText value="#{ligne.quantite}" id="idQte"
+										class="qteProdDetailPanier" binding="#{qte}" />
+									<h:commandLink
+										action="#{testPanierMB.miseAJourQuantiteLigne(ligne, qte.value)}">
+										<img src="image/refresh.png" width="15px" height="15px" />
+									</h:commandLink>
+									<h:commandLink
+										action="#{testPanierMB.supprimerLignePieceClient(ligne)}"
+										value="">
+										<img src="image/delete.png" width="10px" height="10px" />
+									</h:commandLink>
 									<br /> <br /> <span>Prix unitaire : </span>
 									#{testPanierMB.montantTTCProduit(ligne.produit)} <span>
 										Crédits</span> <br /> <br />
@@ -55,17 +66,18 @@
 										action="#{detailPanierMBean.accesDetailProduit(ligne.produit)}"
 										value="Détailler" class="buttDetailProduitDetailPanier" />
 								</div>
-								<div id="prixAjoutPanier">
+								<div class="prixAjoutPanier">
 									<span class="miniTitreNiveaux">Coût Total : </span> <br /> <br />
 									<h:outputText
 										value="#{testPanierMB.montantTotalTTCLigne(ligne)}"
 										class="miniTitreNiveaux" />
 									<span class="miniTitreNiveaux"> Crédits</span> <br />
 								</div>
-							</ui:repeat>
-						</div>
-					</div>
 
+							</div>
+
+						</div>
+					</ui:repeat>
 				</div>
 
 				<!-- Panier lateral droit -->
@@ -76,19 +88,31 @@
 							<div id="iconePanier"></div>
 						</div>
 						<div id="listePanierDetailProduit">
-							<ul>
-								<li>v1 <h:commandLink value="annuler1"
-										action="#{compteUtilisateurMBean}" /></li>
-								<li>v2 <h:commandLink value="annuler2"
-										action="#{compteUtilisateurMBean}" /></li>
-								<li>v4 <h:commandLink value="annuler3"
-										action="#{compteUtilisateurMBean}" /></li>
-								<li>v8 <h:commandLink value="annuler4"
-										action="#{compteUtilisateurMBean}" /></li>
-							</ul>
+							<ui:repeat var="ligne" value="#{testPanierMB.lignesPanier}">
+								<div>
+									<h:outputText value="#{ligne.produit.nom}" />
+									:<br />
+									<h:outputText
+										value="#{testPanierMB.montantTTCProduit(ligne.produit)}" />
+									<span> x </span>
+									<h:outputText value="#{ligne.quantite}" />
+									<span> = </span>
+									<h:outputText
+										value="#{testPanierMB.montantTotalTTCLigne(ligne)}" />
+									<h:commandLink
+										action="#{testPanierMB.supprimerLignePieceClient(ligne)}"
+										value="">
+										<img src="image/delete.png" width="10px" height="10px" />
+									</h:commandLink>
+								</div>
+							</ui:repeat>
 						</div>
 					</div>
-					<div id="totalPanierDetailProduit">Total : 125€</div>
+					<div id="totalPanierDetailProduit">
+						Total :
+						<h:outputText value="#{testPanierMB.montantTotalTTCPanier()}" />
+						€
+					</div>
 					<div>
 						<br /> <br /> <br />
 						<h:commandButton action="#{detailPanierMBean.validerLaCommande()}"

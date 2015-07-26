@@ -69,14 +69,13 @@ public class TestPanierMB
 		lignesPanier.addAll(panier.getLignesPieceClient());
 	}
 
-	public String ajouterUnProduitChoisi(Produit produit)
+	public void ajouterUnProduitChoisi(Produit produit)
 	{
 		this.panier = iCommandeClientService.ajouterProduitAuPanier(gestionUtilisateurMBean.getClient(), produit, panier);
 		this.rechargeLignes();
-		return "";
 	}
 
-	public String viderPanier()//TODO	:Fil +Client client
+	public void viderPanier()//TODO	:Fil +Client client
 	{
 
 		/**
@@ -89,9 +88,8 @@ public class TestPanierMB
 		/**
 		 * Fin code de test
 		 */
-		iCommandeClientService.viderPanier(commande);
+		this.panier = iCommandeClientService.viderPanier(commande);
 		this.rechargeLignes();
-		return "";
 	}
 
 	/**
@@ -105,7 +103,7 @@ public class TestPanierMB
 		return iCommandeClientService.panierClient(client);
 	}
 
-	public boolean incrementeQuantiteLigne()//TODO	:Fil ajouter args : LignePieceClient lignePieceClient
+	public void incrementeQuantiteLigne()//TODO	:Fil ajouter args : LignePieceClient lignePieceClient
 	{
 		/**
 		 * TODO :Fil, supprimer code pour test
@@ -119,13 +117,12 @@ public class TestPanierMB
 		/**
 		 * Fin code de test
 		 */
-		boolean result = false;
-		iCommandeClientService.incrementeQuantiteLigne(lignePieceClient);
+
+		this.panier = iCommandeClientService.incrementeQuantiteLigne(gestionUtilisateurMBean.getClient(), lignePieceClient);
 		this.rechargeLignes();
-		return result;
 	}
 
-	public boolean decrementeQuantiteLigne() //TODO	:Fil	: ajouter args : CommandeClient commandeClient, LignePieceClient lignePieceClient
+	public void decrementeQuantiteLigne() //TODO	:Fil	: ajouter args : CommandeClient commandeClient, LignePieceClient lignePieceClient
 	{
 		/**
 		 * TODO :Fil, supprimer code pour test
@@ -139,18 +136,21 @@ public class TestPanierMB
 		/**
 		 * Fin code de test
 		 */
-		boolean result = false;
-		iCommandeClientService.decrementeQuantiteLigne(gestionUtilisateurMBean.getClient(), commandeClient, lignePieceClient);
+		this.panier = iCommandeClientService.decrementeQuantiteLigne(gestionUtilisateurMBean.getClient(), lignePieceClient);
 		this.rechargeLignes();
-		return result;
 	}
 
-	public boolean supprimerLignePieceClient(LignePieceClient lignePieceClient)
+	public void supprimerLignePieceClient(LignePieceClient lignePieceClient)
 	{
-		boolean result = false;
-		iCommandeClientService.supprimerLignePieceClient(gestionUtilisateurMBean.getClient(), panier, lignePieceClient);
+		this.panier = iCommandeClientService.supprimerLignePieceClient(gestionUtilisateurMBean.getClient(), lignePieceClient);
 		this.rechargeLignes();
-		return result;
+
+	}
+
+	public void miseAJourQuantiteLigne(LignePieceClient lignePieceClient, int nouvelleQuantite)
+	{
+		this.panier = iCommandeClientService.miseAJourQuantiteLigne(gestionUtilisateurMBean.getClient(), lignePieceClient, nouvelleQuantite);
+		this.rechargeLignes();
 	}
 
 	//historique des commandes

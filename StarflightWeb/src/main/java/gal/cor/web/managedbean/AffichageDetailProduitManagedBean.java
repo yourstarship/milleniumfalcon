@@ -15,6 +15,9 @@ public class AffichageDetailProduitManagedBean
 	@ManagedProperty(value = "#{accueilManagedBean}")
 	private AccueilManagedBean accueilManagedBean;
 
+	@ManagedProperty(value = "#{testPanierMB}")
+	private TestPanierMB testPanierMB;
+
 	private Produit produit;
 
 	public void ajoutProduitAuPanier()
@@ -54,6 +57,16 @@ public class AffichageDetailProduitManagedBean
 	public void setProduit(Produit produit)
 	{
 		this.produit = produit;
+	}
+
+	public TestPanierMB getTestPanierMB()
+	{
+		return testPanierMB;
+	}
+
+	public void setTestPanierMB(TestPanierMB testPanierMB)
+	{
+		this.testPanierMB = testPanierMB;
 	}
 
 }

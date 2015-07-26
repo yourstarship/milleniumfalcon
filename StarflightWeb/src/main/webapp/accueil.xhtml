@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 
@@ -154,7 +155,8 @@
 							<span> Crédits</span> <br />
 							<h:commandButton
 								action="#{testPanierMB.ajouterUnProduitChoisi(produit)}"
-								value="Ajouter" class="buttListeAccueil" />
+								value="Ajouter" class="buttListeAccueil">
+							</h:commandButton>
 							<h:commandButton
 								action="#{accueilManagedBean.accesDetailProduit(produit)}"
 								value="Détailler" class="buttListeAccueil" />
@@ -164,38 +166,40 @@
 
 				<!-- Panier lateral droit -->
 				<div id="panierAccueil">
-					<div id="hauteurPanierAccueil">
-						<div id="titrePanier">
-							<a href="">Panier</a>
-							<div id="iconePanier"></div>
-						</div>
-						<div id="listePanierAccueil">
+					<h:panelGroup>
+						<div id="hauteurPanierAccueil">
+							<div id="titrePanier">
+								<a href="">Panier</a>
+								<div id="iconePanier"></div>
+							</div>
+							<div id="listePanierAccueil">
 
-							<ui:repeat var="ligne" value="#{testPanierMB.lignesPanier}">
-								<div>
-									<h:outputText value="#{ligne.produit.nom}" />
-									:<br />
-									<h:outputText
-										value="#{testPanierMB.montantTTCProduit(ligne.produit)}" />
-									<span> x </span>
-									<h:outputText value="#{ligne.quantite}" />
-									<span> = </span>
-									<h:outputText
-										value="#{testPanierMB.montantTotalTTCLigne(ligne)}" />
-									<h:commandLink
-										action="#{testPanierMB.supprimerLignePieceClient(ligne)}"
-										value="">
-										<img src="image/delete.png" width="10px" height="10px" />
-									</h:commandLink>
-								</div>
-							</ui:repeat>
+								<ui:repeat var="ligne" value="#{testPanierMB.lignesPanier}">
+									<div>
+										<h:outputText value="#{ligne.produit.nom}" />
+										:<br />
+										<h:outputText
+											value="#{testPanierMB.montantTTCProduit(ligne.produit)}" />
+										<span> x </span>
+										<h:outputText value="#{ligne.quantite}" />
+										<span> = </span>
+										<h:outputText
+											value="#{testPanierMB.montantTotalTTCLigne(ligne)}" />
+										<h:commandLink
+											action="#{testPanierMB.supprimerLignePieceClient(ligne)}"
+											value="">
+											<img src="image/delete.png" width="10px" height="10px" />
+										</h:commandLink>
+									</div>
+								</ui:repeat>
+							</div>
 						</div>
-					</div>
-					<div id="totalPanierAccueil">
-						Total :
-						<h:outputText value="#{testPanierMB.montantTotalTTCPanier()}" />
-						€
-					</div>
+						<div id="totalPanierAccueil">
+							Total :
+							<h:outputText value="#{testPanierMB.montantTotalTTCPanier()}" />
+							€
+						</div>
+					</h:panelGroup>
 					<div>
 						<br />
 						<h:commandButton

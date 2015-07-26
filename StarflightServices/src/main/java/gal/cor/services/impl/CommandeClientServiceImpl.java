@@ -37,54 +37,60 @@ public class CommandeClientServiceImpl implements ICommandeClientService
 	Logger logger = Logger.getLogger(CommandeClientServiceImpl.class);
 
 	@Override
-	public boolean incrementeQuantiteLigne(LignePieceClient lignePieceClient)
+	public CommandeClient incrementeQuantiteLigne(Client client, LignePieceClient lignePieceClient)
 	{
 		boolean result = false;
 		lignePieceClient.setQuantite(lignePieceClient.getQuantite() + 1);
-		iDaoLignePieceClient.mettreAjourLignePieceClient(lignePieceClient);
-		return result;
+		if (client != null)
+		{
+			iDaoLignePieceClient.mettreAjourLignePieceClient(lignePieceClient);
+		}
+		return lignePieceClient.getCommandeClient();
 	}
 
 	@Override
-	public boolean decrementeQuantiteLigne(Client client, CommandeClient commandeClient, LignePieceClient lignePieceClient)
+	public CommandeClient decrementeQuantiteLigne(Client client, LignePieceClient lignePieceClient)
 	{
-		boolean result = false;
 		if (lignePieceClient.getQuantite() > 1)
 		{
 			lignePieceClient.setQuantite(lignePieceClient.getQuantite() - 1);
-			iDaoLignePieceClient.mettreAjourLignePieceClient(lignePieceClient);
+			if (client != null)
+			{
+				iDaoLignePieceClient.mettreAjourLignePieceClient(lignePieceClient);
+			}
 		} else if (lignePieceClient.getQuantite() == 1)
 		{
 			lignePieceClient.setQuantite(lignePieceClient.getQuantite() - 1);
-			this.supprimerLignePieceClient(client, commandeClient, lignePieceClient);
+			this.supprimerLignePieceClient(client, lignePieceClient);
 		}
-		return result;
-	}
-
-	public boolean miseAJourQuantiteLigne(LignePieceClient lignePieceClient, int nouvelleQuantite)
-	{
-		boolean result = false;
-		lignePieceClient.setQuantite(nouvelleQuantite);
-		iDaoLignePieceClient.mettreAjourLignePieceClient(lignePieceClient);
-		return result;
+		return lignePieceClient.getCommandeClient();
 	}
 
 	@Override
-	public boolean supprimerLignePieceClient(Client client, CommandeClient commandeClient, LignePieceClient lignePieceClient)
+	public CommandeClient miseAJourQuantiteLigne(Client client, LignePieceClient lignePieceClient, int nouvelleQuantite)
 	{
-		boolean result = false;
-		commandeClient.getLignesPieceClient().remove(lignePieceClient);
+		lignePieceClient.setQuantite(nouvelleQuantite);
+		if (client != null)
+		{
+			iDaoLignePieceClient.mettreAjourLignePieceClient(lignePieceClient);
+		}
+		return lignePieceClient.getCommandeClient();
+	}
+
+	@Override
+	public CommandeClient supprimerLignePieceClient(Client client, LignePieceClient lignePieceClient)
+	{
+		lignePieceClient.getCommandeClient().getLignesPieceClient().remove(lignePieceClient);
 		if (client != null)
 		{
 			iDaoLignePieceClient.supprimerLignePieceClient(lignePieceClient);
 		}
-		return result;
+		return lignePieceClient.getCommandeClient();
 	}
 
 	@Override
-	public boolean viderPanier(CommandeClient commandeClient)
+	public CommandeClient viderPanier(CommandeClient commandeClient)
 	{
-		boolean result = false;
 		Set<LignePieceClient> lesLignesDuPanier = commandeClient.getLignesPieceClient();
 		if (lesLignesDuPanier.size() > 0)
 		{
@@ -94,7 +100,7 @@ public class CommandeClientServiceImpl implements ICommandeClientService
 			}
 			lesLignesDuPanier.clear();
 		}
-		return result;
+		return commandeClient;
 	}
 
 	@Override
@@ -238,6 +244,7 @@ public class CommandeClientServiceImpl implements ICommandeClientService
 		return montantTotalTTCommande;
 	}
 
+	@Override
 	public double montantTotalTTCLigne(LignePieceClient lignePieceClient)
 	{
 		return montantTTCProduit(lignePieceClient.getProduit()) * lignePieceClient.getQuantite();

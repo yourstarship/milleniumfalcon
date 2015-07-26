@@ -15,60 +15,64 @@
 
 	</ui:define>
 	<ui:define name="content">
-	<h:form>
-		<!-- ICI Le Contenu  -->
-		<!-- Espace Promotions -->
-		<div id="contenuDetailProduit">
-			<div class="Promo">
-				<span id="titrePromo" style="visibility: visible">PROMOTIONS</span>
-				<div id="imgPromo1" class="alignePromo">
-					<span id="reducPromo" style="visibility: visible">-5%</span> <img
-						src="image/e04b1581.jpg" />
+		<h:form>
+			<!-- ICI Le Contenu  -->
+			<!-- Espace Promotions -->
+			<div id="contenuDetailProduit">
+				<div class="Promo">
+					<span id="titrePromo" style="visibility: visible">PROMOTIONS</span>
+					<div id="imgPromo1" class="alignePromo">
+						<span id="reducPromo" style="visibility: visible">-5%</span> <img
+							src="image/e04b1581.jpg" />
+					</div>
+					<div id="imgPromo2" class="alignePromo">
+						<img src="image/Promos/29 - AT-ST.jpg" />
+					</div>
+					<div id="imgPromo3" class="alignePromo">
+						<img src="image/Promos/63 - T47 A-Wing.jpg" />
+					</div>
 				</div>
-				<div id="imgPromo2" class="alignePromo">
-					<img src="image/Promos/29 - AT-ST.jpg" />
-				</div>
-				<div id="imgPromo3" class="alignePromo">
-					<img src="image/Promos/63 - T47 A-Wing.jpg" />
-				</div>
-			</div>
 
-			
+
 				<div id="titrePageDetailProduit">
-					<span>Présentation Détaillées du </span><span>#{detailProduitMBean.produit.nom} </span>
+					<span>Présentation Détaillées du </span><span>#{detailProduitMBean.produit.nom}
+					</span>
 				</div>
 				<div id="ficheDetail">
 
 					<div class="detailNiveau">
 						<div id="alignementNiveau1">
 							<div id="nomProdEtRef">
-							<span class="miniTitreNiveaux">Produit : </span> 
-								<h:outputText value="#{detailProduitMBean.produit.nom}" /> <br />
-									<br /> <span class="miniTitreNiveaux">Référence : </span> 
-									<h:outputText value="#{detailProduitMBean.produit.id}" /> <br /> <br />
-									<span class="miniTitreNiveaux">Catégorie : </span> 
-									<h:outputText value="#{detailProduitMBean.produit.categorie.nom}" /> <br /> <br />
-									<span class="miniTitreNiveaux">Type : </span> 
-									<h:outputText value="#{detailProduitMBean.produit.type.nom}" />
+								<span class="miniTitreNiveaux">Produit : </span>
+								<h:outputText value="#{detailProduitMBean.produit.nom}" />
+								<br /> <br /> <span class="miniTitreNiveaux">Référence
+									: </span>
+								<h:outputText value="#{detailProduitMBean.produit.id}" />
+								<br /> <br /> <span class="miniTitreNiveaux">Catégorie
+									: </span>
+								<h:outputText
+									value="#{detailProduitMBean.produit.categorie.nom}" />
+								<br /> <br /> <span class="miniTitreNiveaux">Type : </span>
+								<h:outputText value="#{detailProduitMBean.produit.type.nom}" />
 							</div>
 							<div id="imgFicheDetail">
 								<img src="#{detailProduitMBean.produit.photo}" />
 							</div>
 							<div id="descDroite">
 								<span class="miniTitreNiveaux">Description</span>
-								<p>
-									#{detailProduitMBean.produit.description}
-								</p>
+								<p>#{detailProduitMBean.produit.description}</p>
 							</div>
 							<div id="prixAjoutPanier">
 								<div id="zoneFavorisIcones">
 									<div id="buttNoFavIcone"></div>
 									<div id="buttYesFavIcone"></div>
 								</div>
-								<span class="miniTitreNiveaux">Prix : </span> <br /> <br /> 
-								<h:outputText value="2 450 000" class="miniTitreNiveaux" /> <br /> <br />
-								<br />
-								<h:commandButton action="#{detailProduitMBean.ajoutProduitAuPanier()}" value="Ajouter au Panier" class="buttDetailProdAjoutPanier" />
+								<span class="miniTitreNiveaux">Prix : </span> <br /> <br />
+								<h:outputText value="2 450 000" class="miniTitreNiveaux" />
+								<br /> <br /> <br />
+								<h:commandButton
+									action="#{detailProduitMBean.ajoutProduitAuPanier()}"
+									value="Ajouter au Panier" class="buttDetailProdAjoutPanier" />
 							</div>
 						</div>
 					</div>
@@ -89,7 +93,8 @@
 								<tr>
 									<td class="tailleColonneCaracFicheDetaille">#{detailProduitMBean.produit.nombreEquipage}</td>
 									<td class="tailleColonneCaracFicheDetaille">#{detailProduitMBean.produit.nombrePassagersMax}</td>
-									<td class="tailleColonneCaracFicheDetaille">#{detailProduitMBean.produit.vitesse} Km/h</td>
+									<td class="tailleColonneCaracFicheDetaille">#{detailProduitMBean.produit.vitesse}
+										Km/h</td>
 									<td class="tailleColonneCaracFicheDetaille">#{detailProduitMBean.produit.couleur.nom}</td>
 								</tr>
 								<tr>
@@ -101,7 +106,7 @@
 									<td>#{detailProduitMBean.produit.longueur} m</td>
 									<td>#{detailProduitMBean.produit.largeur} m</td>
 									<td>#{detailProduitMBean.produit.poids} kg</td>
-									
+
 								</tr>
 							</table>
 						</div>
@@ -136,39 +141,62 @@
 						</div>
 						<!--  Ici c'est l'ajout de commentaire visible uniquement si on est connecté  -->
 						<fieldset>
-							<legend><h:inputText value="Nom" class="centVingtpx"/></legend>
+							<legend>
+								<h:inputText value="Nom" class="centVingtpx" />
+							</legend>
 							<h:inputTextarea rows="4" cols="125" />
 						</fieldset>
 					</div>
 				</div>
-			
 
-			<!-- Panier lateral droit -->
-			<div id="panierDetailProduit">
-				<div id="hauteurPanierDetailProduit">
-					<div id="titrePanier">
-						<a href="">Panier</a>
-						<div id="iconePanier"></div>
+
+				<!-- Panier lateral droit -->
+				<div id="panierDetailProduit">
+					<div id="hauteurPanierDetailProduit">
+						<div id="titrePanier">
+							<a href="">Panier</a>
+							<div id="iconePanier"></div>
+						</div>
+						<div id="listePanierDetailProduit">
+							<ui:repeat var="ligne" value="#{testPanierMB.lignesPanier}">
+								<div>
+									<h:outputText value="#{ligne.produit.nom}" />
+									:<br />
+									<h:outputText
+										value="#{testPanierMB.montantTTCProduit(ligne.produit)}" />
+									<span> x </span>
+									<h:outputText value="#{ligne.quantite}" />
+									<span> = </span>
+									<h:outputText
+										value="#{testPanierMB.montantTotalTTCLigne(ligne)}" />
+									<h:commandLink
+										action="#{testPanierMB.supprimerLignePieceClient(ligne)}"
+										value="">
+										<img src="image/delete.png" width="10px" height="10px" />
+									</h:commandLink>
+								</div>
+							</ui:repeat>
+						</div>
 					</div>
-					<div id="listePanierDetailProduit">
-					<ul>
-							<li>v1 <h:commandLink value="annuler1" action="#{compteUtilisateurMBean}" /></li>
-							<li>v2 <h:commandLink value="annuler2" action="#{compteUtilisateurMBean}" /></li>
-							<li>v4 <h:commandLink value="annuler3" action="#{compteUtilisateurMBean}" /></li>
-							<li>v8 <h:commandLink value="annuler4" action="#{compteUtilisateurMBean}" /></li>
-					</ul>
-				</div>
-				</div>
-				<div id="totalPanierDetailProduit">Total : 125€</div>
-				<div>
-					<br />
-					<h:commandButton action="#{detailProduitMBean.accesDetailPanier()}" value="Detail du Panier" class="detailPanierDetailProduit" />
-						 <br /> <br />
-					<h:commandButton action="#{detailProduitMBean.validerLaCommande()}" value="Effectuer votre Commande" class="lancerCommandeDetailProduit" />
+					<div id="totalPanierDetailProduit">
+						Total :
+						<h:outputText value="#{testPanierMB.montantTotalTTCPanier()}" />
+						€
+					</div>
+					<div>
+						<br />
+						<h:commandButton
+							action="#{detailProduitMBean.accesDetailPanier()}"
+							value="Detail du Panier" class="detailPanierDetailProduit" />
+						<br /> <br />
+						<h:commandButton
+							action="#{detailProduitMBean.validerLaCommande()}"
+							value="Effectuer votre Commande"
+							class="lancerCommandeDetailProduit" />
+					</div>
 				</div>
 			</div>
-		</div>
-</h:form>
+		</h:form>
 
 		<script>
 function blink(ob)

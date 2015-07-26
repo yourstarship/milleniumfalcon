@@ -18,16 +18,16 @@ public interface ICommandeClientService
 	public CommandeClient panierClient(Client client);
 
 	//testée
-	public boolean incrementeQuantiteLigne(LignePieceClient lignePieceClient);
+	public CommandeClient incrementeQuantiteLigne(Client client, LignePieceClient lignePieceClient);
 
 	//testée
-	public boolean decrementeQuantiteLigne(Client client, CommandeClient commandeClient, LignePieceClient lignePieceClient);
+	public CommandeClient decrementeQuantiteLigne(Client client, LignePieceClient lignePieceClient);
 
 	//testée
-	public boolean viderPanier(CommandeClient commandeClient);
+	public CommandeClient viderPanier(CommandeClient commandeClient);
 
 	//testée
-	public boolean supprimerLignePieceClient(Client client, CommandeClient commandeClient, LignePieceClient lignePieceClient);
+	public CommandeClient supprimerLignePieceClient(Client client, LignePieceClient lignePieceClient);
 
 	public CommandeClient rechercherParId(int id);
 
@@ -49,5 +49,7 @@ public interface ICommandeClientService
 	public double montantTotalTTCLigne(LignePieceClient lignePieceClient);
 
 	public double montantTTCProduit(Produit produit);
+
+	public CommandeClient miseAJourQuantiteLigne(Client client, LignePieceClient lignePieceClient, int nouvelleQuantite);
 
 }
