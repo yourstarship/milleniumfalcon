@@ -22,241 +22,252 @@
 	</ui:define>
 
 	<ui:define name="content">
-		<h:form>
-			<div id="contenuFormInscription">
+		<f:view>
+			<h:form id="formFormulaireInscription">
+				<div id="contenuFormInscription">
 
-				<div id="titrePageFormInsc">
-					<span>Formulaire d'Inscription</span>
-				</div>
+					<div id="titrePageFormInsc">
+						<span>Formulaire d'Inscription</span>
+					</div>
 
-				<div id="myCarousel" class="carousel slide" data-ride="carousel">
-					<span id="titrePromoC" style="visibility: visible">PROMOTIONS</span>
-					<!-- Indicators -->
-					<ol class="carousel-indicators">
-						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-						<li data-target="#myCarousel" data-slide-to="1"></li>
-						<li data-target="#myCarousel" data-slide-to="2"></li>
+					<div id="myCarousel" class="carousel slide" data-ride="carousel">
+						<span id="titrePromoC" style="visibility: visible">PROMOTIONS</span>
+						<!-- Indicators -->
+						<ol class="carousel-indicators">
+							<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+							<li data-target="#myCarousel" data-slide-to="1"></li>
+							<li data-target="#myCarousel" data-slide-to="2"></li>
 
-					</ol>
+						</ol>
 
 
-					<div class="carousel-inner" role="listbox">
-						<div class="item active">
-							<span class="reducNumber" style="visibility: visible"></span> <img
-								src="#{accueilManagedBean.listPromotion.get(0).photo}" />
+						<div class="carousel-inner" role="listbox">
+							<div class="item active">
+								<span class="reducNumber" style="visibility: visible"></span> <img
+									src="#{accueilManagedBean.listPromotion.get(0).photo}" />
+
+							</div>
+
+							<div class="item">
+								<span class="reducNumber" style="visibility: visible"></span> <img
+									src="#{accueilManagedBean.listPromotion.get(1).photo}" />
+
+							</div>
+
+							<div class="item">
+								<span class="reducNumber" style="visibility: visible"></span> <img
+									src="#{accueilManagedBean.listPromotion.get(2).photo}" />
+
+							</div>
+
 
 						</div>
 
-						<div class="item">
-							<span class="reducNumber" style="visibility: visible"></span> <img
-								src="#{accueilManagedBean.listPromotion.get(1).photo}" />
+
+						<!-- Left and right controls -->
+						<a class="left carousel-control" href="#myCarousel" role="button"
+							data-slide="prev"> <span
+							class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a> <a class="right carousel-control" href="#myCarousel"
+							role="button" data-slide="next"> <span
+							class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+
+
+					<div class="colonneFormeInscription">
+						<span class="titreColonneFormInsc">Information personnelle</span>
+						<br /> <br />
+						<div class="bottom">
+							<span>Civilité : </span>
+							<div class="droite">
+								<input type="radio" name="civilite" value="M.">M.</input> <input
+									type="radio" name="civilite" value="Mme">Mme.</input>
+							</div>
+						</div>
+						<div class="bottom">
+							<span>Nom : </span>
+							<div class="droite">
+								<h:inputText value="Nom" class="centVingtpx" />
+							</div>
+						</div>
+						<div class="bottom">
+							<span>Prénom : </span>
+							<div class="droite">
+								<h:inputText value="Prénom" class="centVingtpx" />
+							</div>
 
 						</div>
-
-						<div class="item">
-							<span class="reducNumber" style="visibility: visible"></span> <img
-								src="#{accueilManagedBean.listPromotion.get(2).photo}" />
+						<div class="bottom">
+							<span>naissance : </span>
+							<div class="droite">
+								<h:inputText name="14/02/1989" class="centVingtpx" />
+							</div>
 
 						</div>
+						<div class="bottom">
+							<span>Tel : </span>
+							<div class="droite">
+								<h:inputText value="0145708432" class="centVingtpx" />
+							</div>
+						</div>
+						<div class="bottom">
+							<span>Mail : </span>
+							<div class="droite">
+								<h:inputText value="xx@mma.fr" class="centVingtpx" />
+							</div>
+						</div>
+					</div>
 
+					<div class="colonneFormeInscription">
+						<span class="titreColonneFormInsc">Adresse</span> <br /> <br />
+						<br /> <br />
+						<div class="bottom">
+							<span>Coordonnée X : </span>
+							<div class="droite">
+								<h:inputText value="32" class="centVingtpx" />
+							</div>
+						</div>
+						<div class="bottom">
+							<span>Coordonnée Y : </span>
+							<div class="droite">
+								<h:inputText value="64" class="centVingtpx" />
+							</div>
+						</div>
+						<div class="bottom">
+							<span>Coordonnée Z : </span>
+							<div class="droite">
+								<h:inputText value="78" class="centVingtpx" />
+							</div>
+						</div>
+						<div class="bottom">
+							<span>Planète : </span>
+							<div class="droite">
+								<select name="Planete" size="1" class="centVingtpx">
+									<option>Agamar</option>
+									<option>Hoth</option>
+									<option>Kashyyyk</option>
+									<option>Naboo</option>
+								</select>
+							</div>
+
+						</div>
+						<div class="bottom">
+							<span>Système : </span>
+							<div class="droite">
+								<select name="systeme" size="1" class="centVingtpx">
+									<option>Agamar</option>
+									<option>Hoth</option>
+									<option>Kashyyyk</option>
+									<option>Naboo</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<div class="colonneFormeInscription">
+						<span class="titreColonneFormInsc">Identification</span> <br /> <br />
+						<br /> <br />
+						<div class="bottom">
+							<span>Login : </span>
+							<div class="droite">
+								<h:inputText value="Login" class="centVingtpx" />
+							</div>
+						</div>
+						<div class="bottom">
+							<span>mot de passe : </span>
+							<div class="droite">
+								<h:inputText value="Mdp" class="centVingtpx" />
+							</div>
+						</div>
+						<div class="bottom">
+							<span>Type : </span>
+							<div class="droite">
+								<select name="type" size="1" class="centVingtpx">
+									<option id="choixCivil">Civil</option>
+									<option id="choixMilitaire">Militaire</option>
+								</select>
+							</div>
+						</div>
+						<div class="bottom" id="accesCodeMilitaire">
+							<span>Code Militaire : </span>
+							<div class="droite">
+								<h:inputText value="Code" class="centVingtpx" />
+							</div>
+						</div>
+						<div class="bottom">
+							<div class="center">
+								<h:commandButton
+									action="#{formInsciptMBean.accesCompteUtilisateur()}"
+									value="Valider" class="buttValiderFormInsc" />
+								<h:commandButton action="#{formInsciptMBean}" value="Annuler"
+									class="buttAnnulerFormInsc" />
+							</div>
+						</div>
 
 					</div>
 
 
-					<!-- Left and right controls -->
-					<a class="left carousel-control" href="#myCarousel" role="button"
-						data-slide="prev"> <span
-						class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-						<span class="sr-only">Previous</span>
-					</a> <a class="right carousel-control" href="#myCarousel" role="button"
-						data-slide="next"> <span
-						class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-						<span class="sr-only">Next</span>
-					</a>
-				</div>
+					<!-- Panier lateral droit -->
+					<h:panelGroup id="ccooco" layout="block">
 
-
-				<div class="colonneFormeInscription">
-					<span class="titreColonneFormInsc">Information personnelle</span> <br />
-					<br />
-					<div class="bottom">
-						<span>Civilité : </span>
-						<div class="droite">
-							<input type="radio" name="civilite" value="M.">M.</input> <input
-								type="radio" name="civilite" value="Mme">Mme.</input>
-						</div>
-					</div>
-					<div class="bottom">
-						<span>Nom : </span>
-						<div class="droite">
-							<h:inputText value="Nom" class="centVingtpx" />
-						</div>
-					</div>
-					<div class="bottom">
-						<span>Prénom : </span>
-						<div class="droite">
-							<h:inputText value="Prénom" class="centVingtpx" />
-						</div>
-
-					</div>
-					<div class="bottom">
-						<span>naissance : </span>
-						<div class="droite">
-							<h:inputText name="14/02/1989" class="centVingtpx" />
-						</div>
-
-					</div>
-					<div class="bottom">
-						<span>Tel : </span>
-						<div class="droite">
-							<h:inputText value="0145708432" class="centVingtpx" />
-						</div>
-					</div>
-					<div class="bottom">
-						<span>Mail : </span>
-						<div class="droite">
-							<h:inputText value="xx@mma.fr" class="centVingtpx" />
-						</div>
-					</div>
-				</div>
-
-				<div class="colonneFormeInscription">
-					<span class="titreColonneFormInsc">Adresse</span> <br /> <br /> <br />
-					<br />
-					<div class="bottom">
-						<span>Coordonnée X : </span>
-						<div class="droite">
-							<h:inputText value="32" class="centVingtpx" />
-						</div>
-					</div>
-					<div class="bottom">
-						<span>Coordonnée Y : </span>
-						<div class="droite">
-							<h:inputText value="64" class="centVingtpx" />
-						</div>
-					</div>
-					<div class="bottom">
-						<span>Coordonnée Z : </span>
-						<div class="droite">
-							<h:inputText value="78" class="centVingtpx" />
-						</div>
-					</div>
-					<div class="bottom">
-						<span>Planète : </span>
-						<div class="droite">
-							<select name="Planete" size="1" class="centVingtpx">
-								<option>Agamar</option>
-								<option>Hoth</option>
-								<option>Kashyyyk</option>
-								<option>Naboo</option>
-							</select>
-						</div>
-
-					</div>
-					<div class="bottom">
-						<span>Système : </span>
-						<div class="droite">
-							<select name="systeme" size="1" class="centVingtpx">
-								<option>Agamar</option>
-								<option>Hoth</option>
-								<option>Kashyyyk</option>
-								<option>Naboo</option>
-							</select>
-						</div>
-					</div>
-				</div>
-
-				<div class="colonneFormeInscription">
-					<span class="titreColonneFormInsc">Identification</span> <br /> <br />
-					<br /> <br />
-					<div class="bottom">
-						<span>Login : </span>
-						<div class="droite">
-							<h:inputText value="Login" class="centVingtpx" />
-						</div>
-					</div>
-					<div class="bottom">
-						<span>mot de passe : </span>
-						<div class="droite">
-							<h:inputText value="Mdp" class="centVingtpx" />
-						</div>
-					</div>
-					<div class="bottom">
-						<span>Type : </span>
-						<div class="droite">
-							<select name="type" size="1" class="centVingtpx">
-								<option id="choixCivil">Civil</option>
-								<option id="choixMilitaire">Militaire</option>
-							</select>
-						</div>
-					</div>
-					<div class="bottom" id="accesCodeMilitaire">
-						<span>Code Militaire : </span>
-						<div class="droite">
-							<h:inputText value="Code" class="centVingtpx" />
-						</div>
-					</div>
-					<div class="bottom">
-						<div class="center">
-							<h:commandButton
-								action="#{formInsciptMBean.accesCompteUtilisateur()}"
-								value="Valider" class="buttValiderFormInsc" />
-							<h:commandButton action="#{formInsciptMBean}" value="Annuler"
-								class="buttAnnulerFormInsc" />
-						</div>
-					</div>
-
-				</div>
-
-
-				<!-- Panier lateral droit -->
-				<div id="panierFormInscript">
-					<div id="hauteurPanierFormInscript">
-						<div id="titrePanier">
-							<span>Panier</span>
-							<div id="iconePanier"></div>
-						</div>
-						<div id="listePanierFormInsc">
-							<ui:repeat var="ligne"
-								value="#{testPanierMB.panier.lignesPieceClient}">
-								<div>
-									<h:commandLink
-										action="#{accueilManagedBean.accesDetailProduit(ligne.produit)}">
-										<h:outputText value="#{ligne.produit.nom}" />
-									</h:commandLink>
-									:<br />
-									<h:outputText
-										value="#{testPanierMB.montantTTCProduit(ligne.produit)}" />
-									<span> x </span>
-									<h:outputText value="#{ligne.quantite}" />
-									<span> = </span>
-									<h:outputText
-										value="#{testPanierMB.montantTotalTTCLigne(ligne)}" />
-									<h:commandLink
-										action="#{testPanierMB.supprimerLignePieceClient(ligne)}"
-										value="">
-										<img src="image/delete.png" width="10px" height="10px" />
-									</h:commandLink>
+						<div id="panierFormInscript">
+							<div id="hauteurPanierFormInscript">
+								<div id="titrePanier">
+									<span>Panier</span>
+									<div id="iconePanier"></div>
 								</div>
-							</ui:repeat>
+								<div id="listePanierFormInsc">
+									<ui:repeat var="ligne"
+										value="#{testPanierMB.panier.lignesPieceClient}">
+										<div>
+											<h:commandLink value="">
+												<img src="image/delete.png" width="10px" height="10px" />
+												<f:ajax
+													listener="#{testPanierMB.supprimerLignePieceClient(ligne)}"
+													event="click" render=":formFormulaireInscription:ccooco"></f:ajax>
+											</h:commandLink>
+											<span> </span>
+											<h:commandLink
+												action="#{accueilManagedBean.accesDetailProduit(ligne.produit)}">
+												<h:outputText value="#{ligne.produit.nom}" />
+											</h:commandLink>
+											:<br />
+											<h:outputText
+												value="#{testPanierMB.montantTTCProduit(ligne.produit)}" />
+											<span> x </span>
+											<h:outputText value="#{ligne.quantite}" />
+											<span> = </span>
+											<h:outputText
+												value="#{testPanierMB.montantTotalTTCLigne(ligne)}" />
+
+										</div>
+									</ui:repeat>
+								</div>
+							</div>
+							<div id="totalPanierFormInscript">
+								Total :
+								<h:outputText value="#{testPanierMB.montantTotalTTCPanier()}" />
+								€
+								<h:commandLink action="" value="">
+									<img src="image/delete.png" width="10px" height="10px" />
+									<f:ajax listener="#{testPanierMB.viderPanier()}" event="click"
+										render=":formFormulaireInscription:ccooco"></f:ajax>
+								</h:commandLink>
+							</div>
+							<div>
+								<br /> <br /> <br />
+								<h:commandButton
+									action="#{formInsciptMBean.accesDetailPanier()}"
+									value="Detail du Panier" class="detailPanierFormInscript" />
+							</div>
 						</div>
-					</div>
-					<div id="totalPanierFormInscript">
-						Total :
-						<h:outputText value="#{testPanierMB.montantTotalTTCPanier()}" />
-						€
-						<h:commandLink action="#{testPanierMB.viderPanier()}" value="">
-							<img src="image/delete.png" width="10px" height="10px" />
-						</h:commandLink>
-					</div>
-					<div>
-						<br /> <br /> <br />
-						<h:commandButton action="#{formInsciptMBean.accesDetailPanier()}"
-							value="Detail du Panier" class="detailPanierFormInscript" />
-					</div>
+					</h:panelGroup>
 				</div>
-			</div>
-		</h:form>
+			</h:form>
+		</f:view>
 		<script>
 function blink(ob)
 {

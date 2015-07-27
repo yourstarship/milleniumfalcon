@@ -23,438 +23,447 @@
 	</ui:define>
 
 	<ui:define name="content">
-		<h:form>
-			<div id="contenuCompteUtilisateur">
+		<f:view>
+			<h:form id="formCompteUtilisateur">
+				<div id="contenuCompteUtilisateur">
 
-				<div id="titrePageCompteUtilisateur">
-					<span>Compte Utilisateur</span>
-				</div>
-
-				<!-- Espace Promotions -->
-				<div id="myCarousel" class="carousel slide" data-ride="carousel">
-					<span id="titrePromoC" style="visibility: visible">PROMOTIONS</span>
-					<!-- Indicators -->
-					<ol class="carousel-indicators">
-						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-						<li data-target="#myCarousel" data-slide-to="1"></li>
-						<li data-target="#myCarousel" data-slide-to="2"></li>
-						<li data-target="#myCarousel" data-slide-to="3"></li>
-					</ol>
-
-					<!-- Wrapper for slides -->
-					<div class="carousel-inner" role="listbox">
-						<div class="item active">
-							<span class="reducNumber" style="visibility: visible">-5%</span>
-							<img src="image/logoXWingVR.png" alt="-5%" />
-
-						</div>
-
-						<div class="item">
-							<span class="reducNumber" style="visibility: visible">-15%</span>
-							<img src="image/logoXWingVR.png" alt="-15%" />
-
-						</div>
-
-						<div class="item">
-							<span class="reducNumber" style="visibility: visible">-25%</span>
-							<img src="image/logoXWingVR.png" alt="-25%" />
-
-						</div>
-
-						<div class="item">
-							<span class="reducNumber" style="visibility: visible">-35%</span>
-							<img src="image/logoXWingVR.png" alt="-35%" />
-
-						</div>
+					<div id="titrePageCompteUtilisateur">
+						<span>Compte Utilisateur</span>
 					</div>
 
+					<!-- Espace Promotions -->
+					<div id="myCarousel" class="carousel slide" data-ride="carousel">
+						<span id="titrePromoC" style="visibility: visible">PROMOTIONS</span>
+						<!-- Indicators -->
+						<ol class="carousel-indicators">
+							<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+							<li data-target="#myCarousel" data-slide-to="1"></li>
+							<li data-target="#myCarousel" data-slide-to="2"></li>
+							<li data-target="#myCarousel" data-slide-to="3"></li>
+						</ol>
 
-					<!-- Left and right controls -->
-					<a class="left carousel-control" href="#myCarousel" role="button"
-						data-slide="prev"> <span
-						class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-						<span class="sr-only">Previous</span>
-					</a> <a class="right carousel-control" href="#myCarousel" role="button"
-						data-slide="next"> <span
-						class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-						<span class="sr-only">Next</span>
-					</a>
-				</div>
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner" role="listbox">
+							<div class="item active">
+								<span class="reducNumber" style="visibility: visible">-5%</span>
+								<img src="image/logoXWingVR.png" alt="-5%" />
 
+							</div>
 
+							<div class="item">
+								<span class="reducNumber" style="visibility: visible">-15%</span>
+								<img src="image/logoXWingVR.png" alt="-15%" />
 
-				<div id="ficheUtilisateurInfoPerso">
-					<span class="titreColonneUtilisateur">Information
-						personnelle</span> <br /> <br />
-					<div class="colonneUtil">
-						<span>Civilité : </span>
-						<div class="droite">
-							<h:inputText
-								value="#{compteUtilisateurMBean.client.civilite.libelle}"
-								class="centVingtpx" />
+							</div>
 
-						</div>
-					</div>
-					<div class="colonneUtil">
-						<span>Nom : </span>
-						<div class="droite">
-							<h:inputText value="#{compteUtilisateurMBean.client.nom}"
-								class="centVingtpx" />
-						</div>
-					</div>
-					<div class="colonneUtil">
-						<span>Prénom : </span>
-						<div class="droite">
-							<h:inputText value="#{compteUtilisateurMBean.client.prenom}"
-								class="centVingtpx" />
-						</div>
+							<div class="item">
+								<span class="reducNumber" style="visibility: visible">-25%</span>
+								<img src="image/logoXWingVR.png" alt="-25%" />
 
-					</div>
-					<div class="colonneUtil">
-						<span>Naissance : </span>
-						<div class="droite">
-							<h:inputText
-								value="#{compteUtilisateurMBean.client.dateDeNaissance}"
-								class="centVingtpx">
-								<f:convertDateTime pattern="dd/MM/yyyy" />
-							</h:inputText>
+							</div>
 
+							<div class="item">
+								<span class="reducNumber" style="visibility: visible">-35%</span>
+								<img src="image/logoXWingVR.png" alt="-35%" />
 
-
-
-
-						</div>
-
-					</div>
-					<div class="colonneUtil">
-						<span>Tel : </span>
-						<div class="droite">
-							<h:inputText value="#{compteUtilisateurMBean.client.telephone}"
-								class="centVingtpx" />
-						</div>
-					</div>
-					<div class="colonneUtil">
-						<span>Mail : </span>
-						<div class="droite">
-							<h:inputText value="#{compteUtilisateurMBean.client.email}"
-								class="centVingtpx" />
-						</div>
-					</div>
-				</div>
-
-				<div id="ficheUtilisateurAdresse">
-					<span class="titreColonneUtilisateur">Adresse</span> <br /> <br />
-					<div class="colonneUtil">
-						<span>Num Voie : </span>
-						<div class="droite">
-							<h:inputText type="text"
-								value="#{compteUtilisateurMBean.client.adresse.numeroVoie}"
-								class="centVingtpx" />
-						</div>
-					</div>
-					<div class="colonneUtil">
-						<span>Nom Voie : </span>
-						<div class="droite">
-							<h:inputText type="text"
-								value="#{compteUtilisateurMBean.client.adresse.nomVoie}"
-								class="centVingtpx" />
-						</div>
-					</div>
-					<div class="colonneUtil">
-						<span>Latitude : </span>
-						<div class="droite">
-							<h:inputText type="text"
-								value="#{compteUtilisateurMBean.client.adresse.latitude}"
-								class="centVingtpx" />
-						</div>
-					</div>
-					<div class="colonneUtil">
-						<span>Longitude : </span>
-						<div class="droite">
-							<h:inputText type="text"
-								value="#{compteUtilisateurMBean.client.adresse.longitude}"
-								class="centVingtpx" />
-						</div>
-					</div>
-					<div class="colonneUtil">
-						<span>Planète : </span>
-						<div class="droite">
-							<h:inputText type="text"
-								value="#{compteUtilisateurMBean.client.adresse.planete.nom}"
-								class="centVingtpx" />
-						</div>
-					</div>
-					<div class="colonneUtil">
-						<span>Système : </span>
-						<div class="droite">
-							<h:inputText type="text"
-								value="#{compteUtilisateurMBean.client.adresse.planete.systeme.nom}"
-								class="centVingtpx" />
-						</div>
-					</div>
-				</div>
-
-				<div id="ficheUtilisateurIdentification">
-					<span class="titreColonneUtilisateur">Identification</span>
-					<div class="colonneUtilIdent">
-						<span>Login : </span>
-						<div class="centerIdent">
-							<h:inputText value="#{compteUtilisateurMBean.client.identifiant}"
-								class="centVingtpx" />
-							<h:commandButton
-								action="#{compteUtilisateurMBean.accesDetailPanier()}"
-								value="Favoris" class="buttFicheUtilisateur" />
-
-						</div>
-					</div>
-					<div class="colonneUtilIdent">
-						<span>mot de passe : </span>
-						<div class="centerIdent">
-							<h:inputText value="#{compteUtilisateurMBean.client.motDePasse}"
-								class="centVingtpx" />
-							<h:commandButton
-								action="#{compteUtilisateurMBean.accesDetailPanier()}"
-								value="Annuler" class="buttFicheUtilisateur" />
-						</div>
-					</div>
-					<div class="colonneUtilIdent">
-						<span>Type : </span>
-						<div class="centerIdent">
-							<select name="type" size="1" class="centVingtpx">
-								<option id="choixCivil">Civil</option>
-								<option id="choixMilitaire">Militaire</option>
-							</select>
-							<h:commandButton
-								action="#{compteUtilisateurMBean.accesDetailPanier()}"
-								value="Sauvegarder" class="buttFicheUtilisateur" />
-
-						</div>
-					</div>
-					<div class="colonneUtilIdent" id="accesCodeMilitaire">
-						<span>code militaire : </span>
-						<div class="centerIdent">
-							<h:inputText value="Code" class="centVingtpx" />
-						</div>
-					</div>
-				</div>
-
-
-				<!-- Listing Produit Acheté -->
-				<div id="ColonneCentraleUtilisateur">
-					<!-- Informations de Payement et Livraisons -->
-					<div id="ficheUtiliPayementLivraison">
-						<span class="titreColonneUtilisateur">Informations de
-							Payements et de Livraisons</span>
-						<div class="colonneUtilIdent">
-							<span>Sélectionner le type de payement : </span>
-							<div class="centerIdent">
-								<select name="type" size="1" class="centVingtpxPlus">
-									<option id="carteBanquaire">Carte Banquaire</option>
-									<option id="Paypal">Paypal</option>
-								</select>
 							</div>
 						</div>
-						<div class="colonneUtilIdent" id="typeCarteBanquaire">
-							<span>Mes cartes : </span>
-							<ui:repeat var="carte" value="#{compteUtilisateurMBean.cartes}">
-								<div id="numCarte">
-									<br /> <span>Numéro de la carte : </span>
-									<h:inputText value="#{carte.numero}"
-										class="numCarteBanqueCompte" />
-									<span class="titreCodeSecuriteUtil">Code de Sécurité : </span>
-									<h:inputText value="#{carte.cryptogramme}"
-										class="codeSecuriteUtil" />
-									<br /> <br /> <span>Propriétaire de la Carte : </span>
-									<h:inputText value="#{carte.client.nom}" class="centVingtpx" />
-									<span id="dateCarteBanquaire">Date d'expiration : </span>
-									<h:inputText value="#{carte.dateExpiration}"
-										class="centVingtpx" />
 
-								</div>
-							</ui:repeat>
-						</div>
-						<div class="colonneUtilIdent" id="typePaypal">
-							<span>Numéro de Compte : </span>
-							<h:inputText value="7548 6245 4855 7854"
-								class="numCarteBanqueCompte" />
-							<span class="titreCodeSecuriteUtil">Code de Sécurité : </span>
-							<h:inputText value="987" class="codeSecuriteUtil" />
 
-							<div id="numCompte"></div>
-						</div>
-						<div class="colonneUtilIdent" id="localisationLivraison">
-							<span>Lieu de Livraison : </span>
-							<div class="centerIdent">
-								<select name="type" size="1" id="selectLocalLivraison">
-									<option id="adressePersonnelle">Adresse Personnelle</option>
-									<option id="autreAdresse">Autre Adresse</option>
-								</select>
-							</div>
-							<br /> <span id="lienAutreLieuDeLivraison">Déployer
-								Nouvelle Adresse</span>
-						</div>
+						<!-- Left and right controls -->
+						<a class="left carousel-control" href="#myCarousel" role="button"
+							data-slide="prev"> <span
+							class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a> <a class="right carousel-control" href="#myCarousel"
+							role="button" data-slide="next"> <span
+							class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
 					</div>
-					<div id="autreLieuDeLivraison">
-						<span class="titreColonneAutreLieuDeLivraison">Nouvelle
-							Adresse de Livraison</span> <br /> <br /> <br />
+
+
+
+					<div id="ficheUtilisateurInfoPerso">
+						<span class="titreColonneUtilisateur">Information
+							personnelle</span> <br /> <br />
 						<div class="colonneUtil">
-							<span>Coordonnée X : </span>
+							<span>Civilité : </span>
 							<div class="droite">
-								<h:inputText value="32" class="centVingtpx" />
+								<h:inputText
+									value="#{compteUtilisateurMBean.client.civilite.libelle}"
+									class="centVingtpx" />
+
 							</div>
 						</div>
 						<div class="colonneUtil">
-							<span>Coordonnée Y : </span>
+							<span>Nom : </span>
 							<div class="droite">
-								<h:inputText value="64" class="centVingtpx" />
+								<h:inputText value="#{compteUtilisateurMBean.client.nom}"
+									class="centVingtpx" />
 							</div>
 						</div>
 						<div class="colonneUtil">
-							<span>Coordonnée Z : </span>
+							<span>Prénom : </span>
 							<div class="droite">
-								<h:inputText value="78" class="centVingtpx" />
+								<h:inputText value="#{compteUtilisateurMBean.client.prenom}"
+									class="centVingtpx" />
+							</div>
+
+						</div>
+						<div class="colonneUtil">
+							<span>Naissance : </span>
+							<div class="droite">
+								<h:inputText
+									value="#{compteUtilisateurMBean.client.dateDeNaissance}"
+									class="centVingtpx">
+									<f:convertDateTime pattern="dd/MM/yyyy" />
+								</h:inputText>
+
+
+
+
+
+							</div>
+
+						</div>
+						<div class="colonneUtil">
+							<span>Tel : </span>
+							<div class="droite">
+								<h:inputText value="#{compteUtilisateurMBean.client.telephone}"
+									class="centVingtpx" />
+							</div>
+						</div>
+						<div class="colonneUtil">
+							<span>Mail : </span>
+							<div class="droite">
+								<h:inputText value="#{compteUtilisateurMBean.client.email}"
+									class="centVingtpx" />
+							</div>
+						</div>
+					</div>
+
+					<div id="ficheUtilisateurAdresse">
+						<span class="titreColonneUtilisateur">Adresse</span> <br /> <br />
+						<div class="colonneUtil">
+							<span>Num Voie : </span>
+							<div class="droite">
+								<h:inputText type="text"
+									value="#{compteUtilisateurMBean.client.adresse.numeroVoie}"
+									class="centVingtpx" />
+							</div>
+						</div>
+						<div class="colonneUtil">
+							<span>Nom Voie : </span>
+							<div class="droite">
+								<h:inputText type="text"
+									value="#{compteUtilisateurMBean.client.adresse.nomVoie}"
+									class="centVingtpx" />
+							</div>
+						</div>
+						<div class="colonneUtil">
+							<span>Latitude : </span>
+							<div class="droite">
+								<h:inputText type="text"
+									value="#{compteUtilisateurMBean.client.adresse.latitude}"
+									class="centVingtpx" />
+							</div>
+						</div>
+						<div class="colonneUtil">
+							<span>Longitude : </span>
+							<div class="droite">
+								<h:inputText type="text"
+									value="#{compteUtilisateurMBean.client.adresse.longitude}"
+									class="centVingtpx" />
 							</div>
 						</div>
 						<div class="colonneUtil">
 							<span>Planète : </span>
 							<div class="droite">
-								<select name="Planete" size="1" class="centVingtpx">
-									<option>Agamar</option>
-									<option>Hoth</option>
-									<option>Kashyyyk</option>
-									<option>Naboo</option>
-								</select>
+								<h:inputText type="text"
+									value="#{compteUtilisateurMBean.client.adresse.planete.nom}"
+									class="centVingtpx" />
 							</div>
 						</div>
 						<div class="colonneUtil">
 							<span>Système : </span>
 							<div class="droite">
-								<select name="systeme" size="1" class="centVingtpx">
-									<option>Agamar</option>
-									<option>Hoth</option>
-									<option>Kashyyyk</option>
-									<option>Naboo</option>
-								</select>
+								<h:inputText type="text"
+									value="#{compteUtilisateurMBean.client.adresse.planete.systeme.nom}"
+									class="centVingtpx" />
 							</div>
 						</div>
-						<span class="titreColonneAutreLieuDeLivraison"> Réduire </span>
 					</div>
 
-					<div id="listingProduitAchete">
-						<!-- Listing Produit Acheté -->
-						<div id="titreListingProduitAchete">
-							<span>Vos Achats Passés : </span>
+					<div id="ficheUtilisateurIdentification">
+						<span class="titreColonneUtilisateur">Identification</span>
+						<div class="colonneUtilIdent">
+							<span>Login : </span>
+							<div class="centerIdent">
+								<h:inputText
+									value="#{compteUtilisateurMBean.client.identifiant}"
+									class="centVingtpx" />
+								<h:commandButton
+									action="#{compteUtilisateurMBean.accesDetailPanier()}"
+									value="Favoris" class="buttFicheUtilisateur" />
+
+							</div>
 						</div>
-						<!-- Ce qui suit est à mettre dans un ui:repeater -->
-						<br /> <span class="msgAlert">### Message à Caractère
-							informatif, ###</span> <br /> <span class="msgAlert">### les
-							lignes du tableau sont à mettre dans un ui:repeater, ###</span>
-
-						<div id="ListeProduitUtilisateur">
-							<table id="tableListeProdUtilisateur">
-								<tr id="titreTableCompteUtilisateur">
-									<th class="bordTabUtiltitre">Date</th>
-									<th class="bordTabUtiltitre">Numero</th>
-									<th class="bordTabUtiltitre">Montant</th>
-									<th class="bordTabUtiltitre">Détail de la commande</th>
-								</tr>
-								<ui:repeat var="commande"
-									value="#{compteUtilisateurMBean.commandesClients}">
-									<tr>
-										<td class="bordTabUtil">#{commande.dateCreation}</td>
-										<td class="bordTabUtil">#{commande.id}</td>
-										<td class="bordTabUtil">1250 Credits</td>
-										<td class="bordTabUtil"><a href="#">plus</a></td>
-									</tr>
-								</ui:repeat>
-
-
-							</table>
+						<div class="colonneUtilIdent">
+							<span>mot de passe : </span>
+							<div class="centerIdent">
+								<h:inputText value="#{compteUtilisateurMBean.client.motDePasse}"
+									class="centVingtpx" />
+								<h:commandButton
+									action="#{compteUtilisateurMBean.accesDetailPanier()}"
+									value="Annuler" class="buttFicheUtilisateur" />
+							</div>
 						</div>
-					</div>
+						<div class="colonneUtilIdent">
+							<span>Type : </span>
+							<div class="centerIdent">
+								<select name="type" size="1" class="centVingtpx">
+									<option id="choixCivil">Civil</option>
+									<option id="choixMilitaire">Militaire</option>
+								</select>
+								<h:commandButton
+									action="#{compteUtilisateurMBean.accesDetailPanier()}"
+									value="Sauvegarder" class="buttFicheUtilisateur" />
 
-					<div id="listingProduitFavoris">
-						<!-- Listing Produit Favorisé -->
-						<div id="titreListingProduitFavoris">
-							<span>Vos Favoris : </span>
+							</div>
 						</div>
-						<!-- Ce qui suit est à mettre dans un ui:repeater -->
-						<br /> <span class="msgAlert">### Message à Caractère
-							informatif, ###</span> <br /> <span class="msgAlert">### les
-							lignes du tableau sont à mettre dans un ui:repeater, ###</span>
-
-						<div id="ListeProduitUtilisateur">
-							<table id="tableListeProdUtilisateur">
-								<tr id="titreTableCompteUtilisateur">
-									<th class="bordTabUtiltitre">Date</th>
-									<th class="bordTabUtiltitre">Numero</th>
-									<th class="bordTabUtiltitre">Montant</th>
-								</tr>
-								<tr>
-									<td class="bordTabUtil">Achats</td>
-
-								</tr>
-
-							</table>
+						<div class="colonneUtilIdent" id="accesCodeMilitaire">
+							<span>code militaire : </span>
+							<div class="centerIdent">
+								<h:inputText value="Code" class="centVingtpx" />
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<!-- Panier lateral droit -->
-				<div id="panierCompteUtilisateur">
-					<div id="hauteurPanierCompteUtilisateur">
-						<div id="titrePanier">
-							<span>Panier</span>
-							<div id="iconePanierUtilisateur"></div>
-						</div>
-						<div id="listePanierFCompteUtilisateur">
-							<ui:repeat var="ligne"
-								value="#{testPanierMB.panier.lignesPieceClient}">
-								<div>
-									<h:commandLink
-										action="#{accueilManagedBean.accesDetailProduit(ligne.produit)}">
-										<h:outputText value="#{ligne.produit.nom}" />
-									</h:commandLink>
-									:<br />
-									<h:outputText
-										value="#{testPanierMB.montantTTCProduit(ligne.produit)}" />
-									<span> x </span>
-									<h:outputText value="#{ligne.quantite}" />
-									<span> = </span>
-									<h:outputText
-										value="#{testPanierMB.montantTotalTTCLigne(ligne)}" />
-									<h:commandLink
-										action="#{testPanierMB.supprimerLignePieceClient(ligne)}"
-										value="">
-										<img src="image/delete.png" width="10px" height="10px" />
-									</h:commandLink>
+
+					<!-- Listing Produit Acheté -->
+					<div id="ColonneCentraleUtilisateur">
+						<!-- Informations de Payement et Livraisons -->
+						<div id="ficheUtiliPayementLivraison">
+							<span class="titreColonneUtilisateur">Informations de
+								Payements et de Livraisons</span>
+							<div class="colonneUtilIdent">
+								<span>Sélectionner le type de payement : </span>
+								<div class="centerIdent">
+									<select name="type" size="1" class="centVingtpxPlus">
+										<option id="carteBanquaire">Carte Banquaire</option>
+										<option id="Paypal">Paypal</option>
+									</select>
 								</div>
-							</ui:repeat>
+							</div>
+							<div class="colonneUtilIdent" id="typeCarteBanquaire">
+								<span>Mes cartes : </span>
+								<ui:repeat var="carte" value="#{compteUtilisateurMBean.cartes}">
+									<div id="numCarte">
+										<br /> <span>Numéro de la carte : </span>
+										<h:inputText value="#{carte.numero}"
+											class="numCarteBanqueCompte" />
+										<span class="titreCodeSecuriteUtil">Code de Sécurité :
+										</span>
+										<h:inputText value="#{carte.cryptogramme}"
+											class="codeSecuriteUtil" />
+										<br /> <br /> <span>Propriétaire de la Carte : </span>
+										<h:inputText value="#{carte.client.nom}" class="centVingtpx" />
+										<span id="dateCarteBanquaire">Date d'expiration : </span>
+										<h:inputText value="#{carte.dateExpiration}"
+											class="centVingtpx" />
+
+									</div>
+								</ui:repeat>
+							</div>
+							<div class="colonneUtilIdent" id="typePaypal">
+								<span>Numéro de Compte : </span>
+								<h:inputText value="7548 6245 4855 7854"
+									class="numCarteBanqueCompte" />
+								<span class="titreCodeSecuriteUtil">Code de Sécurité : </span>
+								<h:inputText value="987" class="codeSecuriteUtil" />
+
+								<div id="numCompte"></div>
+							</div>
+							<div class="colonneUtilIdent" id="localisationLivraison">
+								<span>Lieu de Livraison : </span>
+								<div class="centerIdent">
+									<select name="type" size="1" id="selectLocalLivraison">
+										<option id="adressePersonnelle">Adresse Personnelle</option>
+										<option id="autreAdresse">Autre Adresse</option>
+									</select>
+								</div>
+								<br /> <span id="lienAutreLieuDeLivraison">Déployer
+									Nouvelle Adresse</span>
+							</div>
+						</div>
+						<div id="autreLieuDeLivraison">
+							<span class="titreColonneAutreLieuDeLivraison">Nouvelle
+								Adresse de Livraison</span> <br /> <br /> <br />
+							<div class="colonneUtil">
+								<span>Coordonnée X : </span>
+								<div class="droite">
+									<h:inputText value="32" class="centVingtpx" />
+								</div>
+							</div>
+							<div class="colonneUtil">
+								<span>Coordonnée Y : </span>
+								<div class="droite">
+									<h:inputText value="64" class="centVingtpx" />
+								</div>
+							</div>
+							<div class="colonneUtil">
+								<span>Coordonnée Z : </span>
+								<div class="droite">
+									<h:inputText value="78" class="centVingtpx" />
+								</div>
+							</div>
+							<div class="colonneUtil">
+								<span>Planète : </span>
+								<div class="droite">
+									<select name="Planete" size="1" class="centVingtpx">
+										<option>Agamar</option>
+										<option>Hoth</option>
+										<option>Kashyyyk</option>
+										<option>Naboo</option>
+									</select>
+								</div>
+							</div>
+							<div class="colonneUtil">
+								<span>Système : </span>
+								<div class="droite">
+									<select name="systeme" size="1" class="centVingtpx">
+										<option>Agamar</option>
+										<option>Hoth</option>
+										<option>Kashyyyk</option>
+										<option>Naboo</option>
+									</select>
+								</div>
+							</div>
+							<span class="titreColonneAutreLieuDeLivraison"> Réduire </span>
+						</div>
+
+						<div id="listingProduitAchete">
+							<!-- Listing Produit Acheté -->
+							<div id="titreListingProduitAchete">
+								<span>Vos Achats Passés : </span>
+							</div>
+							<!-- Ce qui suit est à mettre dans un ui:repeater -->
+							<br /> <span class="msgAlert">### Message à Caractère
+								informatif, ###</span> <br /> <span class="msgAlert">### les
+								lignes du tableau sont à mettre dans un ui:repeater, ###</span>
+
+							<div id="ListeProduitUtilisateur">
+								<table id="tableListeProdUtilisateur">
+									<tr id="titreTableCompteUtilisateur">
+										<th class="bordTabUtiltitre">Date</th>
+										<th class="bordTabUtiltitre">Numero</th>
+										<th class="bordTabUtiltitre">Montant</th>
+										<th class="bordTabUtiltitre">Détail de la commande</th>
+									</tr>
+									<ui:repeat var="commande"
+										value="#{compteUtilisateurMBean.commandesClients}">
+										<tr>
+											<td class="bordTabUtil">#{commande.dateCreation}</td>
+											<td class="bordTabUtil">#{commande.id}</td>
+											<td class="bordTabUtil">1250 Credits</td>
+											<td class="bordTabUtil"><a href="#">plus</a></td>
+										</tr>
+									</ui:repeat>
+
+
+								</table>
+							</div>
+						</div>
+
+						<div id="listingProduitFavoris">
+							<!-- Listing Produit Favorisé -->
+							<div id="titreListingProduitFavoris">
+								<span>Vos Favoris : </span>
+							</div>
+							<!-- Ce qui suit est à mettre dans un ui:repeater -->
+							<br /> <span class="msgAlert">### Message à Caractère
+								informatif, ###</span> <br /> <span class="msgAlert">### les
+								lignes du tableau sont à mettre dans un ui:repeater, ###</span>
+
+							<div id="ListeProduitUtilisateur">
+								<table id="tableListeProdUtilisateur">
+									<tr id="titreTableCompteUtilisateur">
+										<th class="bordTabUtiltitre">Date</th>
+										<th class="bordTabUtiltitre">Numero</th>
+										<th class="bordTabUtiltitre">Montant</th>
+									</tr>
+									<tr>
+										<td class="bordTabUtil">Achats</td>
+
+									</tr>
+
+								</table>
+							</div>
 						</div>
 					</div>
-					<div id="totalPanierCompteUtilisateur">
-						Total :
-						<h:outputText value="#{testPanierMB.montantTotalTTCPanier()}" />
-						€
-						<h:commandLink action="#{testPanierMB.viderPanier()}" value="">
-							<img src="image/delete.png" width="10px" height="10px" />
-						</h:commandLink>
-					</div>
-					<div>
-						<br />
-						<h:commandButton
-							action="#{compteUtilisateurMBean.accesDetailPanier()}"
-							value="Detail du Panier" class="detailPanierCompteUtilisateur" />
-						<br /> <br />
-						<h:commandButton
-							action="#{compteUtilisateurMBean.validerLaCommande()}"
-							value="Effectuer votre Commande"
-							class="lancerCommandeCompteUtilisateur" />
-					</div>
-				</div>
 
-			</div>
-		</h:form>
+					<!-- Panier lateral droit -->
+					<h:panelGroup id="ccooco" layout="block">
+						<div id="panierCompteUtilisateur">
+							<div id="hauteurPanierCompteUtilisateur">
+								<div id="titrePanier">
+									<span>Panier</span>
+									<div id="iconePanierUtilisateur"></div>
+								</div>
+								<div id="listePanierFCompteUtilisateur">
+									<ui:repeat var="ligne"
+										value="#{testPanierMB.panier.lignesPieceClient}">
+										<div>
+											<h:commandLink value="">
+												<img src="image/delete.png" width="10px" height="10px" />
+												<f:ajax
+													listener="#{testPanierMB.supprimerLignePieceClient(ligne)}"
+													event="click" render=":formCompteUtilisateur:ccooco"></f:ajax>
+											</h:commandLink><span> </span>
+											<h:commandLink
+												action="#{accueilManagedBean.accesDetailProduit(ligne.produit)}">
+												<h:outputText value="#{ligne.produit.nom}" />
+											</h:commandLink>
+											:<br />
+											<h:outputText
+												value="#{testPanierMB.montantTTCProduit(ligne.produit)}" />
+											<span> x </span>
+											<h:outputText value="#{ligne.quantite}" />
+											<span> = </span>
+											<h:outputText
+												value="#{testPanierMB.montantTotalTTCLigne(ligne)}" />
+
+										</div>
+									</ui:repeat>
+								</div>
+							</div>
+							<div id="totalPanierCompteUtilisateur">
+								Total :
+								<h:outputText value="#{testPanierMB.montantTotalTTCPanier()}" />
+								€
+								<h:commandLink value="">
+									<img src="image/delete.png" width="10px" height="10px" />
+									<f:ajax listener="#{testPanierMB.viderPanier()}" event="click"
+										render=":formCompteUtilisateur:ccooco"></f:ajax>
+								</h:commandLink>
+							</div>
+							<div>
+								<br />
+								<h:commandButton
+									action="#{compteUtilisateurMBean.accesDetailPanier()}"
+									value="Detail du Panier" class="detailPanierCompteUtilisateur" />
+								<br /> <br />
+								<h:commandButton
+									action="#{compteUtilisateurMBean.validerLaCommande()}"
+									value="Effectuer votre Commande"
+									class="lancerCommandeCompteUtilisateur" />
+							</div>
+						</div>
+					</h:panelGroup>
+				</div>
+			</h:form>
+		</f:view>
 		<script>
 		function blink(ob)
 		{
