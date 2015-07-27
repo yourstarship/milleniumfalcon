@@ -34,7 +34,7 @@ public class TestPanierMB
 	private GestionUtilisateurMBean gestionUtilisateurMBean;
 
 	private Logger logger = Logger.getLogger(this.getClass());
-	private DecimalFormat dF = new DecimalFormat("### ### ### ### ### ##0.00");
+	private DecimalFormat dF = new DecimalFormat("###,###,###,###,###,##0.00");
 
 	private CommandeClient panier;
 
