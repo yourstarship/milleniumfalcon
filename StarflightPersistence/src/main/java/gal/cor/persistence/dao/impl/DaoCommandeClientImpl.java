@@ -5,6 +5,7 @@ import gal.cor.persistence.dao.apis.IDaoCommandeClient;
 import gal.cor.persistence.entities.Client;
 import gal.cor.persistence.entities.CommandeClient;
 import gal.cor.persistence.entities.LignePieceClient;
+import gal.cor.persistence.entities.Produit;
 import gal.cor.persistence.entities.TVA;
 
 import java.io.IOException;
@@ -26,14 +27,16 @@ import org.apache.log4j.Logger;
 
 @Remote
 @Stateless
-public class DaoCommandeClientImpl implements IDaoCommandeClient, Serializable {
+public class DaoCommandeClientImpl implements IDaoCommandeClient, Serializable
+{
 	@PersistenceContext(unitName = "YourStarshipPersistence")
 	private EntityManager em;
 
 	Logger logger = Logger.getLogger(getClass());
 
 	@Override
-	public CommandeClient creerCommandeClient(CommandeClient commandeClient) {
+	public CommandeClient creerCommandeClient(CommandeClient commandeClient)
+	{
 		// commandeClient.setClient(em.find(Client.class,
 		// commandeClient.getClient().getId()));
 		em.persist(commandeClient);
@@ -42,66 +45,88 @@ public class DaoCommandeClientImpl implements IDaoCommandeClient, Serializable {
 	}
 
 	@Override
-	public void supprimerCommandeClient(CommandeClient t) {
+	public void supprimerCommandeClient(CommandeClient t)
+	{
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public CommandeClient mettreAjourCommandeClient(CommandeClient t) {
+	public CommandeClient mettreAjourCommandeClient(CommandeClient t)
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public CommandeClient rechercherParId(int id) {
+	public CommandeClient rechercherParId(int id)
+	{
 		String request = "SELECT c FROM CommandeClient c INNER JOIN FETCH c.lignesPieceClient WHERE c.id = :param ";
 		Query query = em.createQuery(request);
 		query.setParameter("param", id);
 		List<CommandeClient> liste = query.getResultList();
 		CommandeClient commandeClient = new CommandeClient();
-		if (!liste.isEmpty()) {
+		if (!liste.isEmpty())
+		{
 			commandeClient = liste.get(0);
 		}
 		return commandeClient;
 	}
 
 	@Override
-	public CommandeClient rechercherCommandeParIdAvecSesLignesEtSesProduits(
-			int id) {
+	public CommandeClient rechercherCommandeParIdAvecSesLignesEtSesProduits(int id)
+	{
 		CommandeClient resultat = null;
 		String rawQuery = "from CommandeClient c left join fetch c.lignesPieceClient l left join fetch l.produit where c.id = :id";
 		Query query = em.createQuery(rawQuery);
 		query.setParameter("id", id);
 		List<CommandeClient> resultats = query.getResultList();
-		if (resultats.size() > 0) {
+		if (resultats.size() > 0)
+		{
 			resultat = resultats.get(0);
 		}
 		return resultat;
 	}
 
 	@Override
-	public TVA tauxTVACommande() {
+	public TVA tauxTVACommande()
+	{
 		TVA tva = null;
-		String nom_minuscules_taux_tva_commandes = ConstantLoader.load(
-				"nom_minuscules_taux_tva_commandes", "TvaCommandes.properties");
+		String nom_minuscules_taux_tva_commandes = ConstantLoader.load("nom_minuscules_taux_tva_commandes", "TvaCommandes.properties");
 		String rawQuery = "from TVA tva where lower(tva.nom)=:tvaName";
 		Query query = em.createQuery(rawQuery);
 		query.setParameter("tvaName", nom_minuscules_taux_tva_commandes);
 		List<TVA> tvas = query.getResultList();
-		if (tvas.size() > 0) {
+		if (tvas.size() > 0)
+		{
 			tva = tvas.get(0);
 		}
 		return tva;
 	}
 
 	@Override
-	public List<CommandeClient> recupeCommandesParClient(Integer idClient) {
+	public List<CommandeClient> recupeCommandesParClient(Integer idClient)
+	{
 		String request = "SELECT c FROM CommandeClient c WHERE c.client.id = :param";
 		Query query = em.createQuery(request);
 		query.setParameter("param", idClient);
 		List<CommandeClient> liste = new ArrayList<CommandeClient>();
 		liste = query.getResultList();
 		return liste;
+	}
+
+	@Override
+	public double prixVenteHTParIdProduit(int id)
+	{
+		double resultat = 0;
+		String rawQuery = "select p from Produit p where id=:id";
+		Query query = em.createQuery(rawQuery);
+		query.setParameter("id", id);
+		List<Produit> produits = query.getResultList();
+		if (!produits.isEmpty())
+		{
+			resultat = produits.get(0).getPrixVenteHT();
+		}
+		return resultat;
 	}
 }

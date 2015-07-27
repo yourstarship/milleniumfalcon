@@ -151,13 +151,13 @@ public class Produit implements Serializable
 		this.prixAchatHT = prixAchatHT;
 	}
 
-	public Double getPrixVenteHT()
-	{
-		
-		Double prix;
-		prix = this.prixAchatHT*(1+this.marge/100)*(1+this.getTva().getTaux()/100);
-		return prix;
-	}
+	//	public Double getPrixVenteHT()
+	//	{
+	//		
+	//		Double prix;
+	//		prix = this.prixAchatHT*(1+this.marge/100);
+	//		return prix;
+	//	}
 
 	public void setPrixVenteHT(Double prixVenteHT)
 	{
@@ -379,4 +379,15 @@ public class Produit implements Serializable
 	{
 		return "\n\n" + getClass().getName() + " {\n\tid: " + id + "\n\tnom: " + nom + "\n\tdescription: " + description + "\n\tphoto: " + photo + "\n\tprixAchatHT: " + prixAchatHT + "\n\tprixVenteHT: " + prixVenteHT + "\n\tmarge: " + marge + "\n\tdateCreation: " + dateCreation + "\n\testMilitaire: " + estMilitaire + "\n\tquantiteDisponible: " + quantiteDisponible + "\n\tdateVisible: " + dateVisible + "\n\tdateInvisible: " + dateInvisible + "\n\tvitesse: " + vitesse + "\n\tpoids: " + poids + "\n\tlongueur: " + longueur + "\n\tlargeur: " + largeur + "\n\thauteur: " + hauteur + "\n\tnombrePassagersMax: " + nombrePassagersMax + "\n\tnombreEquipage: " + nombreEquipage + "\n}\n";
 	}
+
+	public static long getSerialversionuid()
+	{
+		return serialVersionUID;
+	}
+
+	public Double getPrixVenteHT()
+	{
+		return prixVenteHT;
+	}
+
 }

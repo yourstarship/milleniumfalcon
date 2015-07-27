@@ -5,7 +5,8 @@ import gal.cor.persistence.entities.TVA;
 
 import java.util.List;
 
-public interface IDaoCommandeClient {
+public interface IDaoCommandeClient
+{
 	public CommandeClient creerCommandeClient(CommandeClient t);
 
 	public void supprimerCommandeClient(CommandeClient t);
@@ -14,10 +15,11 @@ public interface IDaoCommandeClient {
 
 	public CommandeClient rechercherParId(int id);
 
-	public CommandeClient rechercherCommandeParIdAvecSesLignesEtSesProduits(
-			int id);
+	public CommandeClient rechercherCommandeParIdAvecSesLignesEtSesProduits(int id);
 
 	public TVA tauxTVACommande();
 
 	List<CommandeClient> recupeCommandesParClient(Integer idClient);
+
+	public double prixVenteHTParIdProduit(int id);
 }

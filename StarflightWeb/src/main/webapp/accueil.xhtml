@@ -148,7 +148,6 @@
 						</ul></li>
 				</ul>
 				</nav>
-
 				<!-- Espace d'Affichage Central -->
 				<div class="Liste">
 					<ui:repeat var="produit" value="#{accueilManagedBean.listeProduit}">
@@ -163,7 +162,7 @@
 							<span> Crédits</span> <br />
 							<h:commandButton
 								action="#{testPanierMB.ajouterUnProduitChoisi(produit)}"
-								value="Ajouter" class="buttListeAccueil">
+								value="Ajouter" class="buttListeAccueil" render="panierAccueil">
 							</h:commandButton>
 							<h:commandButton
 								action="#{accueilManagedBean.accesDetailProduit(produit)}"

@@ -236,4 +236,9 @@ public class CommandeClientServiceImpl implements ICommandeClientService
 		return iDaoCommandeClient.recupeCommandesParClient(idClient);
 	}
 
+	public double prixVenteHTParIdProduit(int id)
+	{
+		return iDaoCommandeClient.prixVenteHTParIdProduit(id);
+	}
+
 }
