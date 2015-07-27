@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
 
 
 <ui:composition>
@@ -12,71 +13,44 @@
 			src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
 
 	</ui:define>
-	<f:view>
-		<h:form id="formHeader">
-			<div>
-				<div id="titreLogo">
-					<img src="image/logoXWingVR.png" />
-				</div>
-				<h:commandLink class="titreHeaderSite" value="Your Starship"
-					action="#{informationsLogin.retourAccueil()}" />
+	<h:form>
+	<div>
+		<div id="titreLogo">
+				<img src="image/logoXWingVR.png" />
+		</div>
+			<h:commandLink class="titreHeaderSite" value="Your Starship" action="#{informationsLogin.retourAccueil()}" />
+	</div>
+	<h:panelGroup layout="block" rendered="#{gestionUtilisateurMBean.estConnecte()}" styleClass="loginIn">
+	
+		<div class="utilConnecteHead">
+			<span>Bonjour : </span>
+			<h:outputText value="#{gestionUtilisateurMBean.client.civilite.libelle} #{gestionUtilisateurMBean.client.nom}" />
+		</div>
+		<br />
+		<div >
+			<h:commandButton action="#{gestionUtilisateurMBean.deconnecter()}" value="Déconnexion" class="buttloginOut" />
+			<div id="accesGestionDuCompte">
+					<h:commandLink value="Gérer" action="#{accueilManagedBean.validerLaCommande()}" class="titreAccesCompteAccueil"/>
+					<div id="iconeAccessCompteClient"></div>
+					<br /> <h:commandLink value="votre Compte" action="#{accueilManagedBean.validerLaCommande()}" class="titreAccesCompteAccueil"/>
 			</div>
-
-			<div id="loginIn">
-				<div>
-					<h:inputText value="#{informationsLogin.login}" />
-				</div>
-				<div>
-					<h:inputSecret value="#{informationsLogin.motDePasse}" />
-				</div>
-				<div id="buttloginIn">
-
-					<h:commandButton value="OK">
-						<f:ajax listener="#{gestionUtilisateurMBean.connecter()}"
-							event="click" render=":formHeader"></f:ajax>
-					</h:commandButton>
-					<h:commandButton
-						action="#{gestionUtilisateurMBean.affichePageInscriptionClient()}"
-						value="Inscription" />
-				</div>
-			</div>
-			<div id="loginOut">
-				<div>
-					<span>Bonjour : </span>
-					<h:outputText value="{#{gestionUtilisateurMBean.client.nom}}" />
-				</div>
-				<br />
-				<div id="buttloginOut">
-					<h:commandButton value="Déconnexion">
-						<f:ajax listener="#{gestionUtilisateurMBean.deconnecter()}"
-							event="click" render=":formHeader"></f:ajax>
-					</h:commandButton>
-					<div id="accesGestionDuCompte">
-						<h:commandLink value="Gérer" action="#{informationsLogin.login}"
-							class="titreAccesCompteAccueil" />
-						<div id="iconeAccessCompteClient"></div>
-						<br />
-						<h:commandLink value="votre Compte"
-							action="#{informationsLogin.retourAccueil()}"
-							class="titreAccesCompteAccueil" />
-					</div>
-				</div>
-			</div>
-		</h:form>
-	</f:view>
-	<script>		
-		$('buttloginIn').click(function () {	 
-        	$('#loginIn').toggle();
-         	$('#loginOut').toggle();
-         	$('#fieldCommentaire').toggle();
-         	$('#fieldAjoutCommentaire').toggle();
-     	  });
-		$('#buttloginOut').click(function () {
-			$('#loginOut').toggle(); 
-        	$('#loginIn').toggle();	
-        	$('#fieldAjoutCommentaire').toggle();
-        	$('#fieldCommentaire').toggle();
-     	  });
-		</script>
+		</div>
+	</h:panelGroup>
+	<h:panelGroup layout="block" rendered="#{!gestionUtilisateurMBean.estConnecte()}" styleClass="loginOut">
+		<div>
+			<label>login : </label>	<h:inputText value="#{informationsLogin.login}"/>
+		</div>
+		<div>
+			<label>mot de passe : </label><h:inputSecret value="#{informationsLogin.motDePasse}"/>
+		</div>
+		<div>
+				<h:commandButton action="#{gestionUtilisateurMBean.connecter()}" value="OK" class="buttloginIn" />
+				<h:commandButton action="#{gestionUtilisateurMBean.affichePageInscriptionClient()}" value="Inscription" class="buttInscription"/>
+		</div>
+	
+	</h:panelGroup>
+	
+	</h:form>
+	
 </ui:composition>
 </html>

@@ -94,8 +94,8 @@
 					<div class="recherche">
 						Recherche :
 						<h:inputText value="#{accueilManagedBean.nomRecherche}" />
-						<h:commandButton value="recherche"
-							action="#{accueilManagedBean.afficherListeProduitParRecherche(accueilManagedBean.nomRecherche)}" />
+					<h:commandButton value="Rechercher"
+						action="#{accueilManagedBean.afficherListeProduitParRecherche(accueilManagedBean.nomRecherche)}" class="buttRechercheAccueil"/>
 					</div>
 					<ul id="menuAccordeon">
 						<li><h:commandLink value="Véhicule aquatique"
@@ -212,10 +212,9 @@
 								</div>
 							</div>
 							<div id="totalPanierAccueil">
-
 								Total :
 								<h:outputText value="#{testPanierMB.montantTotalTTCPanier()}" />
-								€
+								C
 								<h:commandLink value="">
 									<img src="image/delete.png" width="10px" height="10px" />
 									<f:ajax listener="#{testPanierMB.viderPanier()}" event="click"

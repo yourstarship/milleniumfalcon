@@ -23,8 +23,8 @@ nav
 	border: 2px,solid,black;
 	border-radius:10px;
 	float :left;
-	margin-right:130px;
-	width: 190px;
+	margin-right:120px;
+	width: 220px;
 	height:500px;
 	background-color: rgba(150, 200, 255, 0.3);
 }
@@ -40,15 +40,31 @@ nav
 	font-family: Lucida Sans;
 }
 
- #buttRechercheAccueil
+ .buttRechercheAccueil
 {
-	background-image: url("./../image/Icones/bouton-search.30px.30px.png");
+	/*background-image: url("./../image/Icones/bouton-search.30px.30px.png");
 	width: 30px;
 	margin-top: 2%;
 	margin-left: 1.5%;
-	height: 30px;
+	height: 30px;*/
+	
+	width:187px;
+	height:26px;
+	border-radius:10px;
+	border:2px solid black;
+	margin-left:-1%;
+	background-color: #ABBAC8;
+	color: #3E186F;
 }
 
+ .buttRechercheAccueil:hover
+ {
+	-moz-box-shadow: 0 0 25px #64EDAD;
+	-webkit-box-shadow: 0 0 25px #64EDAD;
+	box-shadow: 0 0 25px #64EDAD;
+}
+
+ 
 #menuAccordeon {
   padding:0;
   margin:0;
@@ -111,7 +127,7 @@ nav
 
 .Liste
 {
-	width: 1000px;
+	width: 745px;
 	height: 585px;
 	margin-left: -5%;
 	margin-right: auto;
@@ -119,7 +135,8 @@ nav
 	background-color: rgba(128, 128, 128, 0.43);
 	border-radius: 10px;
 	overflow: auto;
-	color:#321954;
+	color:#ffffff;
+	font-size: 15pt;
 }
 
 .buttListeAccueil
@@ -129,6 +146,9 @@ nav
 	height:25px;
 	border-radius:10px;
 	border:2px solid black;
+	color:#321954;
+	background-color: #ABBAC8;
+	font-size: 12pt !important;	
 }
 
 .buttListeAccueil:hover
@@ -167,7 +187,7 @@ nav
 #panierAccueil
 {
 	float :right;
-	width: 200px;
+	width: 218px;
 	height: 399px;
 	border-radius:10px;
 	background-color: rgba(150, 200, 255, 0.3);
@@ -175,7 +195,7 @@ nav
 	padding-top: 0.4%;
 	padding-left: 1%;
 	color: #E2C926;
-	font-size: 1em;
+	font-size: 12pt;
 	margin-right: 1%;
 }
 
@@ -183,7 +203,7 @@ nav
 {
 	font-weight: bold;
 	font-family: Lucida Sans;
-	font-size: 1.1em;
+	font-size: 15pt;
 	color: #E2C926;
 }
 
@@ -206,7 +226,7 @@ nav
 {
 	font-weight: bold;
 	font-family: Lucida Sans;
-	font-size: 1em;
+	font-size: 15pt;
 }
 
 .listePanierAccueil
@@ -228,6 +248,9 @@ nav
 	border-radius:10px;
 	border:2px solid black;
 	margin-left:-3%;
+	background-color: #ABBAC8;
+	color: #3E186F;
+	font-size: 12pt;
 }
 
 .detailPanierAccueil:hover
@@ -244,6 +267,9 @@ nav
 	border-radius:10px;
 	border:2px solid black;
 	margin-left:-3%;
+	background-color: #ABBAC8;
+	color: #3E186F;
+	font-size: 12pt;
 }
 
 .lancerCommandeAccueil:hover

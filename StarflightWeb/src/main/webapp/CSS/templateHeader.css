@@ -46,22 +46,96 @@
 	box-shadow: 0 0 25px #BDF22D;
 }
 
-#loginIn
+.loginIn
 {
 	float:right;
 	margin-top:10px;
 	margin-right: 1%;
+	width: 300px;
 }
 
-#loginOut
+.buttloginIn
 {
-	float:right;
+	width:50px;
+	height:26px;
+	border-radius:10px;
+	border:2px solid black;
+	margin-left:-1%;
+	background-color: #ABBAC8;
+	color: #3E186F;
+}
+
+.buttloginIn:hover
+ {
+	-moz-box-shadow: 0 0 25px #64EDAD;
+	-webkit-box-shadow: 0 0 25px #64EDAD;
+	box-shadow: 0 0 25px #64EDAD;
+}
+
+.buttInscription
+{
+	/*margin-left: 14px;*/ 
+	width:100px;
+	height:26px;
+	border-radius:10px;
+	border:2px solid black;
+	background-color: #ABBAC8;
+	color: #3E186F;
+}
+
+.buttInscription:hover
+ {
+	-moz-box-shadow: 0 0 25px #BDF22D;
+	-webkit-box-shadow: 0 0 25px #BDF22D;
+	box-shadow: 0 0 25px #BDF22D;
+}
+
+.loginOut
+{
+	float:right; 
 	margin-top:10px;
 	margin-right: 1%;
-	display:none;
 	font-size: 1.1em;
 	color: #00C6DC;
 	font-family: Lucida Sans;
+	width: 310px; 
+}
+
+.utilConnecteHead
+{
+	font-size: 1.1em;
+	color: #00C6DC;
+	font-family: Lucida Sans;
+}
+
+.loginOut input[type=text],  .loginOut input[type=password]{
+	float: right;
+	width:150px;
+}
+.loginOut input[type=submit]{ 
+	float: left;
+	width:150px;
+}
+.loginOut label {
+	width:130px;
+	float: left;
+}
+.buttloginOut
+{
+	width:100px;
+	height:26px;
+	border-radius:10px;
+	border:2px solid black;
+	margin-left:-1%;
+	background-color: #ABBAC8;
+	color: #3E186F;
+}
+
+.buttloginOut:hover
+ {
+	-moz-box-shadow: 0 0 25px #64EDAD;
+	-webkit-box-shadow: 0 0 25px #64EDAD;
+	box-shadow: 0 0 25px #64EDAD;
 }
 
 #lienPasDeCompte
@@ -72,10 +146,11 @@
 
 #accesGestionDuCompte
 {
-	float: right;
-	font-size: 0.9em;
-	color: #2C8FC5;
-	margin-top: -2%;
+float: right;
+font-size: 1.3em;
+color: #2C8FC5;
+margin-top: -3%;
+margin-right: 15%;
 }
 
 #accesGestionDuCompte:hover

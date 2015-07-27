@@ -45,28 +45,36 @@
 						<!-- Wrapper for slides -->
 						<div class="carousel-inner" role="listbox">
 							<div class="item active">
-								<span class="reducNumber" style="visibility: visible">-5%</span>
-								<img src="image/logoXWingVR.png" alt="-5%" />
+								<span class="reducNumber" style="visibility: visible"></span>
+
+								<h:commandLink value=""
+									action="#{accueilManagedBean.accesDetailProduit(accueilManagedBean.listPromotion.get(0))}">
+									<img src="#{accueilManagedBean.listPromotion.get(0).photo}" />
+								</h:commandLink>
 
 							</div>
 
 							<div class="item">
-								<span class="reducNumber" style="visibility: visible">-15%</span>
-								<img src="image/logoXWingVR.png" alt="-15%" />
+								<span class="reducNumber" style="visibility: visible"></span>
+
+								<h:commandLink value=""
+									action="#{accueilManagedBean.accesDetailProduit(accueilManagedBean.listPromotion.get(1))}">
+									<img src="#{accueilManagedBean.listPromotion.get(1).photo}" />
+								</h:commandLink>
 
 							</div>
 
 							<div class="item">
-								<span class="reducNumber" style="visibility: visible">-25%</span>
-								<img src="image/logoXWingVR.png" alt="-25%" />
+								<span class="reducNumber" style="visibility: visible"></span>
+
+								<h:commandLink value=""
+									action="#{accueilManagedBean.accesDetailProduit(accueilManagedBean.listPromotion.get(2))}">
+									<img src="#{accueilManagedBean.listPromotion.get(2).photo}" />
+								</h:commandLink>
 
 							</div>
 
-							<div class="item">
-								<span class="reducNumber" style="visibility: visible">-35%</span>
-								<img src="image/logoXWingVR.png" alt="-35%" />
 
-							</div>
 						</div>
 
 
@@ -119,11 +127,6 @@
 									class="centVingtpx">
 									<f:convertDateTime pattern="dd/MM/yyyy" />
 								</h:inputText>
-
-
-
-
-
 							</div>
 
 						</div>
@@ -420,7 +423,8 @@
 												<f:ajax
 													listener="#{testPanierMB.supprimerLignePieceClient(ligne)}"
 													event="click" render=":formCompteUtilisateur:ccooco"></f:ajax>
-											</h:commandLink><span> </span>
+											</h:commandLink>
+											<span> </span>
 											<h:commandLink
 												action="#{accueilManagedBean.accesDetailProduit(ligne.produit)}">
 												<h:outputText value="#{ligne.produit.nom}" />
@@ -441,7 +445,7 @@
 							<div id="totalPanierCompteUtilisateur">
 								Total :
 								<h:outputText value="#{testPanierMB.montantTotalTTCPanier()}" />
-								€
+								C
 								<h:commandLink value="">
 									<img src="image/delete.png" width="10px" height="10px" />
 									<f:ajax listener="#{testPanierMB.viderPanier()}" event="click"
