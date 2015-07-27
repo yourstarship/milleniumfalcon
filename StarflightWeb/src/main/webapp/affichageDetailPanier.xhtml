@@ -15,134 +15,154 @@
 
 	</ui:define>
 	<ui:define name="content">
-		<h:form>
-			<!-- ICI Le Contenu  -->
-			<!-- Espace Promotions -->
-			<div id="contenuDetailPanier">
-				<div class="Promo"></div>
+		<f:view>
+			<h:form id="detailPanier">
 
-				<div id="titrePageDetailPanier">
-					<span>Contenu Détaillé de Votre Panier </span>
-				</div>
-				<div id="ficheDetailPanier">
-					<ui:repeat var="ligne"
-						value="#{testPanierMB.panier.lignesPieceClient}">
-						<div class="detailProdPanier">
+				<!-- ICI Le Contenu  -->
+				<!-- Espace Promotions -->
+				<div id="contenuDetailPanier">
+					<div class="Promo"></div>
 
-							<div id="alignementNiveau1">
-
-								<div class="nomProdEtRef">
-
-									<span class="miniTitreNiveaux">Produit : </span>
-									#{ligne.produit.nom} <br /> <br /> <span
-										class="miniTitreNiveaux">Référence : </span>
-									#{ligne.produit.id}<br /> <br /> <span
-										class="miniTitreNiveaux">Catégorie : </span>
-									#{ligne.produit.categorie.nom} <br /> <br /> <span
-										class="miniTitreNiveaux">Type : </span>
-									#{ligne.produit.type.nom}
-
-								</div>
-								<div class="imgFicheDetail">
-									<img src="#{ligne.produit.photo}" />
-								</div>
-								<div class="orgaDetailPanier">
-									<span class="miniTitreNiveaux">Organisation</span> <br /> <br />
-									<span>Ajouter une quantité : </span>
-
-									<h:commandLink
-										action="#{testPanierMB.decrementeQuantiteLigne(ligne)}">
-										<img src="image/left.png" width="15px" height="15px" />
-									</h:commandLink>
-
-									<h:inputText value="#{ligne.quantite}" id="idQte"
-										class="qteProdDetailPanier" binding="#{qte}" />
-
-									<h:commandLink
-										action="#{testPanierMB.incrementeQuantiteLigne(ligne)}">
-										<img src="image/right.png" width="15px" height="15px" />
-									</h:commandLink>
-
-									<h:commandLink
-										action="#{testPanierMB.miseAJourQuantiteLigne(ligne, qte.value)}">
-										<img src="image/refresh.png" width="15px" height="15px" />
-									</h:commandLink>
-									<h:commandLink
-										action="#{testPanierMB.supprimerLignePieceClient(ligne)}"
-										value="">
-										<img src="image/delete.png" width="10px" height="10px" />
-									</h:commandLink>
-									<br /> <br /> <span>Prix unitaire : </span>
-									#{testPanierMB.montantTTCProduit(ligne.produit)} <span>
-										Crédits</span> <br /> <br />
-									<h:commandButton
-										action="#{detailPanierMBean.accesDetailProduit(ligne.produit)}"
-										value="Détailler" class="buttDetailProduitDetailPanier" />
-								</div>
-								<div class="prixAjoutPanier">
-									<span class="miniTitreNiveaux">Coût Total : </span> <br /> <br />
-									<h:outputText
-										value="#{testPanierMB.montantTotalTTCLigne(ligne)}"
-										class="miniTitreNiveaux" />
-									<span class="miniTitreNiveaux"> Crédits</span> <br />
-								</div>
-
-							</div>
-
-						</div>
-					</ui:repeat>
-				</div>
-
-				<!-- Panier lateral droit -->
-				<div id="panierDetailProduit">
-					<div id="hauteurPanierDetailProduit">
-						<div id="titrePanier">
-							<span>Panier</span>
-							<div id="iconePanier"></div>
-						</div>
-						<div id="listePanierDetailProduit">
+					<div id="titrePageDetailPanier">
+						<span>Contenu Détaillé de Votre Panier </span>
+					</div>
+					<h:panelGroup id="ccooco" layout="block">
+						<div id="ficheDetailPanier">
 							<ui:repeat var="ligne"
 								value="#{testPanierMB.panier.lignesPieceClient}">
-								<div>
-									<h:commandLink
-										action="#{accueilManagedBean.accesDetailProduit(ligne.produit)}">
-										<h:outputText value="#{ligne.produit.nom}" />
-									</h:commandLink>
-									:<br />
-									<h:outputText
-										value="#{testPanierMB.montantTTCProduit(ligne.produit)}" />
-									<span> x </span>
-									<h:outputText value="#{ligne.quantite}" />
-									<span> = </span>
-									<h:outputText
-										value="#{testPanierMB.montantTotalTTCLigne(ligne)}" />
-									<h:commandLink
-										action="#{testPanierMB.supprimerLignePieceClient(ligne)}"
-										value="">
-										<img src="image/delete.png" width="10px" height="10px" />
-									</h:commandLink>
+								<div class="detailProdPanier">
+
+									<div id="alignementNiveau1">
+
+										<div class="nomProdEtRef">
+
+											<span class="miniTitreNiveaux">Produit : </span>
+											#{ligne.produit.nom} <br /> <br /> <span
+												class="miniTitreNiveaux">Référence : </span>
+											#{ligne.produit.id}<br /> <br /> <span
+												class="miniTitreNiveaux">Catégorie : </span>
+											#{ligne.produit.categorie.nom} <br /> <br /> <span
+												class="miniTitreNiveaux">Type : </span>
+											#{ligne.produit.type.nom}
+
+										</div>
+										<div class="imgFicheDetail">
+											<img src="#{ligne.produit.photo}" />
+										</div>
+										<div class="orgaDetailPanier">
+											<span class="miniTitreNiveaux">Organisation</span> <br /> <br />
+											<span>Ajouter une quantité : </span>
+
+											<h:commandLink>
+												<img src="image/left.png" width="15px" height="15px" />
+												<f:ajax
+													listener="#{testPanierMB.decrementeQuantiteLigne(ligne)}"
+													event="click"
+													render=":detailPanier:ccooco :detailPanier:coco"></f:ajax>
+											</h:commandLink>
+
+											<h:inputText value="#{ligne.quantite}" id="idQte"
+												class="qteProdDetailPanier" binding="#{qte}" />
+
+											<h:commandLink>
+												<img src="image/right.png" width="15px" height="15px" />
+												<f:ajax
+													listener="#{testPanierMB.incrementeQuantiteLigne(ligne)}"
+													event="click"
+													render=":detailPanier:ccooco :detailPanier:coco"></f:ajax>
+											</h:commandLink>
+
+											<h:commandLink
+												action="#{testPanierMB.miseAJourQuantiteLigne(ligne, qte.value)}">
+												<img src="image/refresh.png" width="15px" height="15px" />
+											</h:commandLink>
+											<h:commandLink value="">
+												<img src="image/delete.png" width="10px" height="10px" />
+												<f:ajax
+													listener="#{testPanierMB.supprimerLignePieceClient(ligne)}"
+													event="click"
+													render=":detailPanier:ccooco :detailPanier:coco"></f:ajax>
+											</h:commandLink>
+											<br /> <br /> <span>Prix unitaire : </span>
+											#{testPanierMB.montantTTCProduit(ligne.produit)} <span>
+												Crédits</span> <br /> <br />
+											<h:commandButton
+												action="#{detailPanierMBean.accesDetailProduit(ligne.produit)}"
+												value="Détailler" class="buttDetailProduitDetailPanier" />
+										</div>
+										<div class="prixAjoutPanier">
+											<span class="miniTitreNiveaux">Coût Total : </span> <br /> <br />
+											<h:outputText
+												value="#{testPanierMB.montantTotalTTCLigne(ligne)}"
+												class="miniTitreNiveaux" />
+											<span class="miniTitreNiveaux"> Crédits</span> <br />
+										</div>
+
+									</div>
+
 								</div>
 							</ui:repeat>
 						</div>
-					</div>
-					<div id="totalPanierDetailProduit">
-						Total :
-						<h:outputText value="#{testPanierMB.montantTotalTTCPanier()}" />
-						€
-						<h:commandLink action="#{testPanierMB.viderPanier()}" value="">
-							<img src="image/delete.png" width="10px" height="10px" />
-						</h:commandLink>
-					</div>
-					<div>
-						<br /> <br /> <br />
-						<h:commandButton action="#{detailPanierMBean.validerLaCommande()}"
-							value="Effectuer votre Commande"
-							class="lancerCommandeDetailProduit" />
-					</div>
-				</div>
-			</div>
-		</h:form>
+					</h:panelGroup>
 
+					<!-- Panier lateral droit -->
+					<h:panelGroup id="coco" layout="block">
+						<div id="panierDetailProduit">
+							<div id="hauteurPanierDetailProduit">
+								<div id="titrePanier">
+									<span>Panier</span>
+									<div id="iconePanier"></div>
+								</div>
+								<div id="listePanierDetailProduit">
+									<ui:repeat var="ligne"
+										value="#{testPanierMB.panier.lignesPieceClient}">
+										<div>
+											<h:commandLink value="">
+												<img src="image/delete.png" width="10px" height="10px" />
+												<f:ajax
+													listener="#{testPanierMB.supprimerLignePieceClient(ligne)}"
+													event="click"
+													render=":detailPanier:ccooco :detailPanier:coco"></f:ajax>
+											</h:commandLink><span> </span>
+											<h:commandLink
+												action="#{accueilManagedBean.accesDetailProduit(ligne.produit)}">
+												<h:outputText value="#{ligne.produit.nom}" />
+											</h:commandLink>
+											:<br />
+											<h:outputText
+												value="#{testPanierMB.montantTTCProduit(ligne.produit)}" />
+											<span> x </span>
+											<h:outputText value="#{ligne.quantite}" />
+											<span> = </span>
+											<h:outputText
+												value="#{testPanierMB.montantTotalTTCLigne(ligne)}" />
+
+										</div>
+									</ui:repeat>
+								</div>
+							</div>
+							<div id="totalPanierDetailProduit">
+								Total :
+								<h:outputText value="#{testPanierMB.montantTotalTTCPanier()}" />
+								€
+								<h:commandLink value="">
+									<img src="image/delete.png" width="10px" height="10px" />
+									<f:ajax listener="#{testPanierMB.viderPanier()}" event="click"
+										render=":detailPanier:ccooco :detailPanier:coco"></f:ajax>
+								</h:commandLink>
+							</div>
+							<div>
+								<br /> <br /> <br />
+								<h:commandButton
+									action="#{detailPanierMBean.validerLaCommande()}"
+									value="Effectuer votre Commande"
+									class="lancerCommandeDetailProduit" />
+							</div>
+						</div>
+					</h:panelGroup>
+				</div>
+			</h:form>
+		</f:view>
 		<script>
 function blink(ob)
 {

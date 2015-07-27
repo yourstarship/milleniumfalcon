@@ -12,43 +12,58 @@
 			src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
 
 	</ui:define>
-	<h:form>
-	<div>
-		<div id="titreLogo">
-				<img src="image/logoXWingVR.png" />
-		</div>
-			<h:commandLink class="titreHeaderSite" value="Your Starship" action="#{informationsLogin.retourAccueil()}" />
-	</div>
-	
-	<div id="loginIn">
-		<div>
-			<h:inputText value="#{informationsLogin.login}" />
-		</div>
-		<div>
-			<h:inputSecret value="#{informationsLogin.motDePasse}" />
-		</div>
-		<div id="buttloginIn">
-				
-				<h:commandButton action="#{gestionUtilisateurMBean.connecter()}" value="OK"  />
-				<h:commandButton action="#{gestionUtilisateurMBean.affichePageInscriptionClient()}" value="Inscription" />
-		</div>
-	</div>
-	<div id="loginOut">
-		<div>
-			<span>Bonjour : </span>
-			<h:outputText value="{#{gestionUtilisateurMBean.client.nom}}" />
-		</div>
-		<br />
-		<div id="buttloginOut">
-			<h:commandButton action="#{gestionUtilisateurMBean.deconnecter()}" value="Déconnexion"  />
-			<div id="accesGestionDuCompte">
-					<h:commandLink value="Gérer" action="#{informationsLogin.login}" class="titreAccesCompteAccueil"/>
-					<div id="iconeAccessCompteClient"></div>
-					<br /> <h:commandLink value="votre Compte" action="#{informationsLogin.retourAccueil()}" class="titreAccesCompteAccueil"/>
+	<f:view>
+		<h:form id="formHeader">
+			<div>
+				<div id="titreLogo">
+					<img src="image/logoXWingVR.png" />
+				</div>
+				<h:commandLink class="titreHeaderSite" value="Your Starship"
+					action="#{informationsLogin.retourAccueil()}" />
 			</div>
-		</div>
-	</div>
-	</h:form>
+
+			<div id="loginIn">
+				<div>
+					<h:inputText value="#{informationsLogin.login}" />
+				</div>
+				<div>
+					<h:inputSecret value="#{informationsLogin.motDePasse}" />
+				</div>
+				<div id="buttloginIn">
+
+					<h:commandButton value="OK">
+						<f:ajax listener="#{gestionUtilisateurMBean.connecter()}"
+							event="click" render=":formHeader"></f:ajax>
+					</h:commandButton>
+					<h:commandButton
+						action="#{gestionUtilisateurMBean.affichePageInscriptionClient()}"
+						value="Inscription" />
+				</div>
+			</div>
+			<div id="loginOut">
+				<div>
+					<span>Bonjour : </span>
+					<h:outputText value="{#{gestionUtilisateurMBean.client.nom}}" />
+				</div>
+				<br />
+				<div id="buttloginOut">
+					<h:commandButton value="Déconnexion">
+						<f:ajax listener="#{gestionUtilisateurMBean.deconnecter()}"
+							event="click" render=":formHeader"></f:ajax>
+					</h:commandButton>
+					<div id="accesGestionDuCompte">
+						<h:commandLink value="Gérer" action="#{informationsLogin.login}"
+							class="titreAccesCompteAccueil" />
+						<div id="iconeAccessCompteClient"></div>
+						<br />
+						<h:commandLink value="votre Compte"
+							action="#{informationsLogin.retourAccueil()}"
+							class="titreAccesCompteAccueil" />
+					</div>
+				</div>
+			</div>
+		</h:form>
+	</f:view>
 	<script>		
 		$('buttloginIn').click(function () {	 
         	$('#loginIn').toggle();
