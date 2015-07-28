@@ -9,14 +9,19 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
 import org.apache.log4j.Logger;
 
 @ManagedBean(name = "accueilManagedBean")
 @SessionScoped
-public class AccueilManagedBean
+public class AccueilManagedBean	
 {
+	@ManagedProperty(value="#{gestionUtilisateurMBean}")
+	private GestionUtilisateurMBean gestion;
+	
+	
 	@EJB
 	private IProduitServices proxyProduitServices;
 
@@ -89,7 +94,15 @@ public class AccueilManagedBean
 
 	public String validerLaCommande()
 	{
-		return ("compteUtilisateur.xhtml");
+		
+		if(gestion.getClient() !=null){
+			
+			return ("compteUtilisateur.xhtml");
+		}
+		else{
+			return ("formulaireInscription.xhtml");
+		}
+		
 	}
 
 	/******************* GETTER && SETTER *********************/
@@ -327,6 +340,16 @@ public class AccueilManagedBean
 	public void setNomRecherche(String nomRecherche)
 	{
 		this.nomRecherche = nomRecherche;
+	}
+
+	public GestionUtilisateurMBean getGestion()
+	{
+		return gestion;
+	}
+
+	public void setGestion(GestionUtilisateurMBean gestion)
+	{
+		this.gestion = gestion;
 	}
 
 	/***** [ Fonctions ] *****/

@@ -30,7 +30,7 @@
 	position: absolute;
 	font-weight: bold;
 	font-family: Lucida Sans;
-	color: #BDE3DE;
+	color: #EAF9F7;
 }
 
 /*************************************************/
@@ -41,7 +41,7 @@
 {
 	font-weight: bold;
 	font-family: Lucida Sans;
-	color: #BDE3DE;
+	color: #EAF9F7;
 	text-align: center;
 	margin-left: 5%;
 }
@@ -64,6 +64,7 @@
 {
 	float:right;
 	width:150px;
+	color: #3E186F !important;
 }
 
 #ficheUtilisateurInfoPerso
@@ -71,7 +72,7 @@
 	border-radius: 10px;
 	float: left;
 	margin-left: 1%;
-	width: 255px;
+	width: 245px;
 	height: 340px;
 	background-color: rgba(128, 128, 128, 0.43);
 	margin-top: 4%;
@@ -84,7 +85,7 @@
 	border-radius: 10px;
 	float: left;
 	margin-left: 1%;
-	width: 255px;
+	width: 245px;
 	height: 340px;
 	background-color: rgba(128, 128, 128, 0.43);
 	margin-top: 4%;
@@ -97,12 +98,12 @@
 	background-color: rgba(128, 128, 128, 0.43);
 	border-radius: 10px;
 	margin-left: 1%;
-	width: 530px;
+	width: 503px;
 	height: 151px;
 	padding-top: 0.4%;
 	padding-left: 1%;
 	position: absolute;
-	margin-top: 26.5%;
+	margin-top: 31.5%;
 }
 
 .detailNiveau1,.detailNiveau3,.detailNiveau2
@@ -121,14 +122,14 @@ padding-bottom:20px;
  .colonneUtil
  {
 	margin-bottom:30px;
-	color:#321954;
+color: #EAF9F7;
 	font-weight: bold;
  }
  
  .colonneUtilIdent
  {
 	margin-bottom:10px;
-	color:#321954;
+	color: #EAF9F7;
 	font-weight: bold;
  }
  
@@ -143,6 +144,7 @@ padding-bottom:20px;
  {
 	margin-right: 40%;
 	float: right;
+	color: #3E186F !important;
  }
  
 .centVingtpxPlus
@@ -157,6 +159,8 @@ padding-bottom:20px;
 	border:2px solid black;
 	margin-left: 12%;
 	position: absolute;
+	background-color: #ABBAC8;
+	color: #3E186F;
  }
  
 .buttFicheUtilisateur:hover
@@ -187,17 +191,17 @@ padding-bottom:20px;
 /*********   Informations de Payement et Livraisons  ************/
 /****************************************************************/
 
-#ficheUtiliPayementLivraison
-{
-	background-color: rgba(128, 128, 128, 0.43);
-	border-radius: 10px;
-	margin-left: -2%;
-	width: 660px;
-	height: 215px;
-	padding-top: 0.4%;
-	padding-left: 1%;
-	position: absolute;
-	margin-top: -14.8%;
+#ficheUtiliPayementLivraison {
+    background-color: rgba(128, 128, 128, 0.43);
+    border-radius: 10px;
+    margin-left: 42%;
+    width: 660px;
+    height: 330px;
+    padding-top: 0.4%;
+    padding-left: 1%;
+    position: absolute;
+    margin-top: 4%;
+    	overflow: auto;	
 }
 
 #typePaypal
@@ -241,11 +245,11 @@ padding-bottom:20px;
 	display:none;
 	border-radius: 30px;
 	float: left;
-	margin-left: 18%;
+	margin-left: 45%;
 	width: 275px;
 	height: 353px;
 	background-color: rgba(100, 150, 200, 0.89);
-	margin-top: -2.5%;
+	margin-top: 28.5%;
 	padding-top: 1%;
 	padding-left: 1%;
 	position: absolute;
@@ -255,7 +259,7 @@ padding-bottom:20px;
 {
 	display:none;
 	font-family: Lucida Sans;
-	color: #3E186F;
+	color: #EAF9F7;
 	text-align: center;
 	margin-left: 5%;
 	font-size: 0.8em;
@@ -265,7 +269,7 @@ padding-bottom:20px;
 {
 	font-weight: bold;
 	font-family: Lucida Sans;
-	color: #BDE3DE;
+	color: #EAF9F7;
 	text-align: center;
 	margin-left: 5%;
 	font-size: 1em;
@@ -284,7 +288,7 @@ padding-bottom:20px;
 	padding-top: 0.5%;
 	padding-left: 1%;
 	font-size: 1em;
-	margin-right: 2%;
+	margin-right: 6%;
 	margin-top: 15%;
 	
 }
@@ -379,7 +383,7 @@ padding-bottom:20px;
 	padding-top: 0.4%;
 	padding-left: 1%;
 	color: #E2C926;
-	font-size: 1em;
+	font-size: 12pt;
 	margin-right: 1%;
 	margin-left: 82.5%;
 	position:absolute;
@@ -389,7 +393,7 @@ padding-bottom:20px;
 {
 	font-weight: bold;
 	font-family: Lucida Sans;
-	font-size: 1.1em;
+	font-size: 15pt;
 		color: #E2C926;
 	
 }
@@ -417,13 +421,13 @@ padding-bottom:20px;
 
 #listePanierCompteUtilisateur
 {
-	color: #BDE3DE;
+	color: #EAF9F7;
 	overflow: auto;	
 }
 
 #listePanierCompteUtilisateur a
 {
-	color: #BDE3DE;	
+	color: #EAF9F7;	
 }
 
 #totalPanierCompteUtilisateur
@@ -433,18 +437,18 @@ padding-bottom:20px;
 	font-size: 1em;
 }
 
-.detailPanierCompteUtilisateur
+.detailPanierUtilTempo
 {
 	width:200px;
 	height:30px;
 	border-radius:10px;
 	border:2px solid black;
-	margin-left:-3%;
+	margin-left:10%;
 	background-color: #ABBAC8;
 	color: #3E186F;
 }
 
-.detailPanierCompteUtilisateur:hover
+.detailPanierUtilTempo:hover
  {
 	-moz-box-shadow: 0 0 25px #64EDAD;
 	-webkit-box-shadow: 0 0 25px #64EDAD;

@@ -56,13 +56,13 @@
 
 .buttloginIn
 {
-	width:50px;
 	height:26px;
 	border-radius:10px;
 	border:2px solid black;
 	margin-left:-1%;
 	background-color: #ABBAC8;
 	color: #3E186F;
+	margin-right: 4%;
 }
 
 .buttloginIn:hover
@@ -177,3 +177,10 @@ margin-right: 15%;
 	margin-top: -1.9%;
 	margin-left: 3.5%;
 }
+
+#lblHeader {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 6px;
+    font-weight: 700;
+    }

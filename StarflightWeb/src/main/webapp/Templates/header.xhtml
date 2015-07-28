@@ -41,7 +41,7 @@
 			<label>login : </label>	<h:inputText value="#{informationsLogin.login}"/>
 		</div>
 		<div>
-			<label>mot de passe : </label><h:inputSecret value="#{informationsLogin.motDePasse}"/>
+			<label id="lblHeader">mot de passe : </label><h:inputSecret value="#{informationsLogin.motDePasse}"/>
 		</div>
 		<div>
 				<h:commandButton action="#{gestionUtilisateurMBean.connecter()}" value="OK" class="buttloginIn" />
