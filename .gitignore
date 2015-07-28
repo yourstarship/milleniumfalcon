@@ -6,8 +6,6 @@
 *.jar
 *.war
 *.ear
-*.png
-*.jpg
 .settings
 .classpath
 .project
