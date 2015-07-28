@@ -29,7 +29,7 @@
 	text-align: center;
 	font-weight: bold;
 	font-family: Lucida Sans;
-	color: #BDE3DE;
+	color: #EAF9F7;
 }
 
 #ficheDetail
@@ -49,7 +49,7 @@
 .afficheInfoDetailProduit
 {
 	font-family: Lucida Sans;
-	color: #321954;
+	color: #EAF9F7;
 	font-size: 1em;
 }
 
@@ -62,7 +62,7 @@
 	height: 160px;
 	margin-top: 1%;
  	margin-bottom: 1%;
- 	color: #321954;
+ 	color: #EAF9F7;
 }
 
 #nomProdEtRef
@@ -94,7 +94,8 @@
  	float:left;
  	margin-right: 1%;
  	width: 29%;
- 	color: #321954;
+ 	color: #EAF9F7;
+ 	overflow: auto;	
  }
  
  /***** [ Zone droite : Favoris + Prix + Ajout-Panier ] *****/
@@ -139,6 +140,8 @@
 	height:25px;
 	border-radius:10px;
 	border:2px solid black;
+	background-color: #ABBAC8;
+	color: #3E186F;
  }
  
  .buttDetailProdAjoutPanier:hover
@@ -176,7 +179,7 @@
 #panierDetailProduit
 {
 	float :right;
-	width: 200px;
+	width: 218px;
 	height: 399px;
 	border-radius:10px;
 	background-color: rgba(150, 200, 255, 0.3);
@@ -184,7 +187,7 @@
 	padding-top: 0.4%;
 	padding-left: 1%;
 	color: #E2C926;
-	font-size: 1em;
+	font-size: 12pt;
 	margin-right: 1%;
 }
 
@@ -192,7 +195,7 @@
 {
 	font-weight: bold;
 	font-family: Lucida Sans;
-	font-size: 1.1em;
+	font-size: 15pt;
 		color: #E2C926;
 	
 }
@@ -206,10 +209,10 @@
 {
 	background-image: url("./../image/Icones/cadie.39px.39px.png");
 	position: absolute;
-	width: 2.5%;
-	height: 38px;
-	margin-left: 10%;
-	margin-top: -1.6%;
+width: 3.2%;
+height: 38px;
+margin-left: 13%;
+margin-top: -2.6%;
 }
 
 #hauteurPanierDetailProduit
@@ -219,13 +222,13 @@
 
 #listePanierDetailProduit
 {
-	color: #BDE3DE;
+	color: #EAF9F7;
 	overflow: auto;	
 }
 
 #listePanierDetailProduit a
 {
-	color: #BDE3DE;	
+	color: #EAF9F7;	
 }
 
 #totalPanierDetailProduit
@@ -242,6 +245,8 @@
 	border-radius:10px;
 	border:2px solid black;
 	margin-left:-3%;
+	background-color: #ABBAC8;
+	color: #3E186F;
 }
 
 .detailPanierDetailProduit:hover
@@ -258,6 +263,8 @@
 	border-radius:10px;
 	border:2px solid black;
 	margin-left:-3%;
+	background-color: #ABBAC8;
+	color: #3E186F;
 }
 
 .lancerCommandeDetailProduit:hover

@@ -109,7 +109,7 @@
 								</div>
 								<div id="descDroite">
 									<span class="miniTitreNiveaux">Description</span>
-									<p>#{detailProduitMBean.produit.description}</p>
+									<p id="descDroiteContenu">#{detailProduitMBean.produit.description}</p>
 								</div>
 								<div id="prixAjoutPanier">
 									<div id="zoneFavorisIcones">
@@ -170,21 +170,6 @@
 								<br />
 							</div>
 							<!--  Ici on fait un système de repeat  -->
-							<fieldset>
-								<legend>@ auteur du commentaire @</legend>
-								<span>Il est trop bien ce vaisseau ! aucun problème.
-									léger, rapide comme prévu</span>
-							</fieldset>
-							<fieldset>
-								<legend>@ auteur du commentaire @</legend>
-								<span>Il est trop bien ce vaisseau ! aucun problème.
-									léger, rapide comme prévu</span>
-							</fieldset>
-							<fieldset>
-								<legend>@ auteur du commentaire @</legend>
-								<span>Il est trop bien ce vaisseau ! aucun problème.
-									léger, rapide comme prévu</span>
-							</fieldset>
 						</div>
 						<div class="detailNiveau" id="fieldAjoutCommentaire">
 							<div>
@@ -252,9 +237,9 @@
 								<h:commandButton
 									action="#{detailProduitMBean.accesDetailPanier()}"
 									value="Detail du Panier" class="detailPanierDetailProduit" />
-								<br /> <br />
+								<br />
 								<h:commandButton
-									action="#{detailProduitMBean.validerLaCommande()}"
+									action="#{accueilManagedBean.validerLaCommande()}"
 									value="Effectuer votre Commande"
 									class="lancerCommandeDetailProduit" />
 							</div>

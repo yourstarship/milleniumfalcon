@@ -31,7 +31,7 @@
 	position: absolute;
 	font-weight: bold;
 	font-family: Lucida Sans;
-	color: #BDE3DE;
+	color: #EAF9F7;	
 }
 
 /****************************************************/
@@ -42,7 +42,7 @@
 {
 	font-weight: bold;
 	font-family: Lucida Sans;
-	color: #BDE3DE;
+	color: #EAF9F7;	
 	text-align: center;
 	margin-left: 5%;
 }
@@ -54,6 +54,9 @@
 	width:80px;
 	border-radius:10px;
 	border:2px solid black;
+	background-color: #ABBAC8;
+	color: #3E186F;
+	font-size: 12pt;
 }
 
 .buttAnnulerFormInsc:hover
@@ -79,14 +82,14 @@
 	border: 2px, solid, black;
 	border-radius: 10px;
 	float: left;
-	margin-left: 85px;
-	width: 300px;
+	margin-left: 30px;
+	width: 290px;
 	height: 400px;
 	background-color: rgba(128, 128, 128, 0.43);
 	margin-top: 110px;
 	padding-top: 1%;
 	padding-left: 1%;
-	color:#321954;
+	color: #EAF9F7;	
 }
 
 .detailNiveau1,.detailNiveau3,.detailNiveau2
@@ -126,6 +129,9 @@ padding-bottom:20px;
 	width:80px;
 	border-radius:10px;
 	border:2px solid black;
+	background-color: #ABBAC8;
+	color: #3E186F;
+	font-size: 12pt;
  }
  
  .buttValiderFormInsc:hover
@@ -165,7 +171,7 @@ padding-bottom:20px;
 	padding-top: 0.4%;
 	padding-left: 1%;
 	color: #E2C926;
-	font-size: 1em;
+	font-size: 12pt;
 	margin-right: 1%;
 }
 
@@ -173,7 +179,7 @@ padding-bottom:20px;
 {
 	font-weight: bold;
 	font-family: Lucida Sans;
-	font-size: 1.1em;
+	font-size: 15pt;
 		color: #E2C926;
 	
 }
@@ -201,13 +207,13 @@ padding-bottom:20px;
 
 #listePanierFormInsc
 {
-	color: #BDE3DE;
+	color: #EAF9F7;
 	overflow: auto;	
 }
 
 #listePanierFormInsc a
 {
-	color: #BDE3DE;	
+	color: #EAF9F7;	
 }
 
 #totalPanierFormInscript
@@ -217,34 +223,21 @@ padding-bottom:20px;
 	font-size: 1em;
 }
 
-#detailPanierFormInscript
+.detailPanierFormInscript
 {
 	width:200px;
 	height:30px;
 	border-radius:10px;
 	border:2px solid black;
 	margin-left:-3%;
+	background-color: #ABBAC8;
+	color: #3E186F;
+	font-size: 12pt;
 }
 
-#detailPanierFormInscript:hover
+.detailPanierFormInscript:hover
  {
 	-moz-box-shadow: 0 0 25px #64EDAD;
 	-webkit-box-shadow: 0 0 25px #64EDAD;
 	box-shadow: 0 0 25px #64EDAD;
-}
-
-.lancerCommandeFormInscript
-{
-	width:200px;
-	height:30px;
-	border-radius:10px;
-	border:2px solid black;
-	margin-left:-3%;
-}
-
-.lancerCommandeFormInscript:hover
-{
-	-moz-box-shadow: 0 0 25px #BDF22D;
-	-webkit-box-shadow: 0 0 25px #BDF22D;
-	box-shadow: 0 0 25px #BDF22D;
 }

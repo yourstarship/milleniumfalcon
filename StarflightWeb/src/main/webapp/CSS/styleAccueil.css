@@ -25,7 +25,7 @@ nav
 	float :left;
 	margin-right:120px;
 	width: 220px;
-	height:500px;
+	height:520px;
 	background-color: rgba(150, 200, 255, 0.3);
 }
 
@@ -129,7 +129,7 @@ nav
 {
 	width: 745px;
 	height: 585px;
-	margin-left: -5%;
+	margin-left: -9%;
 	margin-right: auto;
 	float: left;
 	background-color: rgba(128, 128, 128, 0.43);
@@ -211,33 +211,33 @@ nav
 {
 	background-image: url("./../image/Icones/cadie.39px.39px.png");
 	position: absolute;
-	width: 2.5%;
-	height: 38px;
-	margin-left: 10%;
-	margin-top: -1.6%;
+width: 3.2%;
+height: 38px;
+margin-left: 13%;
+margin-top: -2.6%;
 }
 
 #hauteurPanierAccueil
 {
-	height:270px;
+	height:235px;
 }
 
 #totalPanierAccueil
 {
 	font-weight: bold;
 	font-family: Lucida Sans;
-	font-size: 15pt;
+	font-size: 14pt;
 }
 
 .listePanierAccueil
 {
-	color: #BDE3DE;
+	color: #EAF9F7;
 	overflow: auto;	
 }
 
 .listePanierAccueil a
 {
-	color: #BDE3DE;	
+	color: #EAF9F7;	
 	text-decoration : underline;
 }
 
