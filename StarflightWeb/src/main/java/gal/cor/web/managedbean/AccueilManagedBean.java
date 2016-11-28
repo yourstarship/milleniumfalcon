@@ -22,6 +22,8 @@ public class AccueilManagedBean
 	private GestionUtilisateurMBean gestion;
 	
 	
+	
+	
 	@EJB
 	private IProduitServices proxyProduitServices;
 
@@ -31,6 +33,8 @@ public class AccueilManagedBean
 	private Produit produit;
 	private List<Produit> listPromotion = new ArrayList<Produit>();
 
+	private Integer testGt = 10;
+	private Integer m = 10;
 	private Integer nomCategorie = 1;
 	private Integer nomCategorie1 = 2;
 	private Integer nomCategorie2 = 3;
